@@ -83,3 +83,20 @@ A visitor should think:
 - this feels expensive
 - these people understand systems
 - I want to know more
+
+## Advanced Experience Layer
+
+The site should simulate the feeling of high-end WebGL experiences (like Active Theory) using performant methods first.
+
+If advanced rendering is introduced:
+- It must be isolated to specific components
+- It must not degrade performance
+- It must gracefully degrade on mobile
+
+Prefer:
+- Framer Motion
+- CSS transforms
+- layered depth effects
+
+Before:
+- full WebGL scenes
