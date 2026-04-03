@@ -2,7 +2,7 @@
 ## Purpose
 The case studies are proof pillars. They show range, execution quality, and systems thinking across different industries and use cases.
 
-## 1. Serene# Mariner Nexus Case Studies
+## 1. Serene Origins
  Origins
 Category: wellness / digital business / subscription ecosystem
 
