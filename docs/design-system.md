@@ -57,3 +57,23 @@ After load, optionally hydrate a premium animated layer using:
 - Desktop: full lockup and layered hero experience
 - Tablet: stacked lockups and slightly reduced motion
 - Mobile: simplified icon in nav and lighter animation load
+
+## Advanced Rendering Layer (Future-Ready)
+
+The Mariner Nexus experience may incorporate WebGL or Three.js-based rendering for premium interactive elements.
+
+Guidelines:
+- Use WebGL selectively (hero sections or special components only)
+- Never block initial page load with heavy rendering
+- Always provide a static fallback (image or video)
+- Prioritize performance over visual complexity
+
+Potential use cases:
+- Interactive logo (3D rotation, glow pulse)
+- Background particle fields or light systems
+- Depth-based scene transitions
+
+Implementation options:
+- React Three Fiber (Three.js for React)
+- Lightweight canvas effects
+- Video-based fallback for mobile
