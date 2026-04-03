@@ -1,78 +1,174 @@
 # Mariner Nexus Site Structure
-- strategy
-- systems
-- automation
-- execution
+
+## Global Navigation
+
+* Home
+* Case Studies
+* Services
+* About
+* Contact
+* Book Strategy Call (Primary CTA)
+
+---
+
+## Homepage Structure
+
+### 1. Hero Section
+
+Purpose:
+Create immediate impact and stop scrolling.
+
+Components:
+
+* Mariner Nexus logo (cinematic presentation)
+* Headline
+* Subheadline
+* Primary CTA: Book Strategy Call
+* Secondary CTA: View Case Studies
+* Subtle motion / glow / depth
+
+---
+
+### 2. Credibility Layer
+
+Purpose:
+Establish trust immediately.
+
+Content:
+
+* AI Systems
+* Automation
+* CRM Integration
+* Digital Infrastructure
+* Business Optimization
+
+---
+
+### 3. What We Do
+
+Break into core pillars:
+
+* Strategy
+* Systems
+* Automation
+* Execution
+
+---
 
 ### 4. Case Studies Preview
-Feature the four completed case studies:
-- Serene Origins
-- Undugu
-- Amplify Voices
-- Gary L Mariner II
 
-Each card should hint at transformation, not just show screenshots.
+Display:
 
-### 5. Services / Solutions Section
-Present solutions in outcome language.
+* Serene Origins
+* Undugu
+* Amplify Voices
+* Gary Mariner
 
-### 6. Process / Operating Model
-Explain how Mariner Nexus works:
-- Discover
-- Architect
-- Build
-- Optimize
+Each card:
 
-### 7. About / Founder Section
-Introduce Gary as the strategist/operator behind Mariner Nexus.
-Focus on execution, systems thinking, and cross-domain results.
+* visual
+* short description
+* link to full case study
 
-### 8. CTA Section
-High-intent conversion section with booking embed or clear booking CTA.
+---
+
+### 5. Services Section
+
+Focus on outcomes, not tasks:
+
+* AI Systems
+* Website Infrastructure
+* CRM + Automation
+* Optimization
+
+---
+
+### 6. Process Section
+
+Explain how you work:
+
+1. Discover
+2. Architect
+3. Build
+4. Optimize
+
+---
+
+### 7. About Section
+
+Introduce:
+
+* Gary Mariner
+* Systems mindset
+* AI + operations experience
+* execution focus
+
+---
+
+### 8. Conversion Section
+
+* Booking integration (Cal.com)
+* Lead capture form
+* Clear CTA
+
+---
 
 ### 9. Footer
-- compact nav
-- contact
-- case studies
-- social links
-- brand mark
+
+* Navigation links
+* Contact info
+* Case studies
+* Social links
+* Brand mark
+
+---
 
 ## Case Studies Page
-Grid or cinematic list of all case studies.
-Each entry should include:
-- client/project name
-- challenge
-- system built
-- result or transformation
 
-## Individual Case Study Page Structure
-- hero
-- overview
-- problem
-- solution
-- system built
-- tools / stack
-- outcome
-- optional gallery
-- CTA
+Grid layout:
+
+* Title
+* Category
+* Short summary
+* Link to full breakdown
+
+---
+
+## Individual Case Study Page
+
+* Hero
+* Overview
+* Problem
+* Solution
+* System Built
+* Tools Used
+* Outcome
+* CTA
+
+---
 
 ## Services Page
-Sections:
-- overview
-- solutions grid
-- implementation model
-- who it is for
-- CTA
+
+* Overview
+* Solutions breakdown
+* Who it’s for
+* CTA
+
+---
 
 ## About Page
-- brand story
-- founder perspective
-- why this company exists
-- principles
-- CTA
 
-## Contact / Book Page
-- short high-trust intro
-- embedded Cal.com booking
-- lead capture form
-- optional qualification questions
+* Story
+* Vision
+* Philosophy
+* CTA
+
+---
+
+## Contact Page
+
+* Intro
+* Booking embed (Cal.com)
+* Contact form
+* Qualification questions (optional)
+
