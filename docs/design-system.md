@@ -1,79 +1,143 @@
 # Mariner Nexus Design System
-## Logo Usage
-### Variants
-- Full 3D logo: hero, about, major brand moments
-- Simplified icon: nav, cards, feature markers, mobile contexts
-- Micro mark: favicon, minimal system marks
-- Light mode logo: documents, light surfaces, select sections
 
-### Minimum Sizes
-- Full 3D logo: 120px wide minimum
-- Simplified icon: 32px minimum
-- Micro mark: 16px minimum
+## Experience Model
 
-### Clear Space
-Use at least 50% of logo width as clear space around the mark.
+The site combines:
 
-## Motion Principles
-Motion must feel:
-- controlled
-- intelligent
-- premium
-- slightly mysterious
+* Executive clarity (Linear)
+* Interactive intelligence (Active Theory)
+* Cinematic impact (Resn)
 
-Avoid:
-- bouncy consumer-app motion
-- flashy cyberpunk effects
-- noisy transitions
+---
 
-### Motion Recommendations
-- slow fades
-- directional reveals
-- soft parallax
-- light pulsing
-- subtle rotation only in premium brand moments
+## Color Palette
 
-## Hero Animation Guidance
-Use a static WebP or PNG logo fallback for initial render.
-After load, optionally hydrate a premium animated layer using:
-- CSS + blur/glow effects for light pulse
-- video loop for hero background moment
-- WebGL / Three.js only if performance remains strong
+### Core
 
-## Surfaces
-- dark glass cards
-- subtle borders
-- soft glows beneath premium elements
-- occasional polished metallic highlights
+* Black: #0A0A0A
+* White: #FFFFFF
+* Soft White: #F5F7FA
+
+### Accent
+
+* Nexus Blue: #2563EB
+* Glow Blue: #4DA3FF
+* Core Energy: #7DD3FC
+
+### Supporting
+
+* Border: rgba(255,255,255,0.12)
+* Glass: rgba(255,255,255,0.06)
+* Glow Layer: rgba(37,99,235,0.18)
+
+---
+
+## Typography
+
+Recommended:
+
+* Inter
+* Geist
+* Satoshi
+* Manrope
+
+### Style
+
+* Clean
+* Geometric
+* High contrast
+* Strong hierarchy
+
+---
 
 ## Layout Principles
-- spacious
-- grid-based
-- asymmetrical where helpful
-- visually rich but not cluttered
-- every section must have a reason to exist
 
-## Responsive Logic
-- Desktop: full lockup and layered hero experience
-- Tablet: stacked lockups and slightly reduced motion
-- Mobile: simplified icon in nav and lighter animation load
+* Spacious
+* Grid-based
+* Minimal clutter
+* Every section must have purpose
 
-## Advanced Rendering Layer (Future-Ready)
+---
 
-The Mariner Nexus experience may incorporate WebGL or Three.js-based rendering for premium interactive elements.
+## Logo Usage
 
-Guidelines:
-- Use WebGL selectively (hero sections or special components only)
-- Never block initial page load with heavy rendering
-- Always provide a static fallback (image or video)
-- Prioritize performance over visual complexity
+### Variants
 
-Potential use cases:
-- Interactive logo (3D rotation, glow pulse)
-- Background particle fields or light systems
-- Depth-based scene transitions
+* Full 3D logo → hero sections
+* Simplified icon → UI/navigation
+* Micro mark → favicon
+* Light version → documents
 
-Implementation options:
-- React Three Fiber (Three.js for React)
-- Lightweight canvas effects
-- Video-based fallback for mobile
+### Minimum Sizes
+
+* Full logo: 120px
+* Icon: 32px
+* Micro: 16px
+
+### Clear Space
+
+50% of logo width minimum
+
+---
+
+## Motion Principles
+
+Motion must feel:
+
+* controlled
+* intelligent
+* premium
+
+### Use
+
+* soft fades
+* subtle parallax
+* glow pulses
+* depth transitions
+
+### Avoid
+
+* excessive movement
+* gimmicky effects
+* noisy animations
+
+---
+
+## Hero Animation
+
+* static fallback first
+* motion loads after
+* optional video or WebGL layer
+
+---
+
+## Advanced Rendering Layer
+
+Use selectively:
+
+* Three.js / React Three Fiber
+* Canvas effects
+
+Rules:
+
+* never block load
+* always provide fallback
+* limit to hero or key moments
+
+---
+
+## Surfaces
+
+* glass cards
+* soft glow edges
+* subtle borders
+* dark premium backgrounds
+
+---
+
+## Responsive Behavior
+
+* Desktop → full experience
+* Tablet → reduced motion
+* Mobile → simplified + performant
+
