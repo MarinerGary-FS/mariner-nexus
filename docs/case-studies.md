@@ -1,61 +1,136 @@
 # Mariner Nexus Case Studies
+
 ## Purpose
-The case studies are proof pillars. They show range, execution quality, and systems thinking across different industries and use cases.
+
+The case studies are proof pillars. They demonstrate execution quality, systems thinking, and transformation across different industries.
+
+Each case study should clearly communicate:
+
+* the problem
+* the system built
+* the transformation achieved
+
+---
 
 ## 1. Serene Origins
- Origins
-Category: wellness / digital business / subscription ecosystem
 
-Focus:
-- premium brand redesign
-- conversion-oriented web experience
-- subscription and payment architecture
-- scalable digital customer journey
+**Category:** Wellness / Digital Business / Subscription Ecosystem
 
-Narrative angle:
-Transform a wellness concept into a premium digital business platform with cleaner UX, stronger brand presence, and scalable monetization logic.
+### Focus
+
+* Premium brand redesign
+* Conversion-focused web experience
+* Subscription/payment infrastructure
+* Scalable digital customer journey
+
+### Narrative
+
+Serene Origins was transformed from a concept-driven wellness brand into a structured digital business platform with premium positioning and a clear monetization pathway.
+
+### System Built
+
+* Website + conversion flow
+* Stripe subscription integration
+* Content + onboarding structure
+* Brand identity refinement
+
+### Outcome
+
+A scalable digital wellness platform with improved clarity, stronger visual authority, and a defined revenue system.
+
+---
 
 ## 2. Undugu
-Category: community foundation / operational infrastructure / engagement systems
 
-Focus:
-- modernized digital presence
-- communication architecture
-- intake and engagement systems
-- community growth support
+**Category:** Community / Foundation / Operational Infrastructure
 
-Narrative angle:
-Build a digital infrastructure layer that helps a growing community organization communicate more clearly, operate more smoothly, and scale engagement intentionally.
+### Focus
+
+* Digital presence modernization
+* Communication system architecture
+* Member intake + engagement tracking
+* CRM-ready workflow design
+
+### Narrative
+
+Undugu required structure to support its growth. The system built enables consistent communication, organized member engagement, and scalable operations.
+
+### System Built
+
+* Website + funnel structure
+* CRM intake logic (GoHighLevel)
+* Discord + community flow alignment
+* Event and engagement tracking system
+
+### Outcome
+
+A foundation positioned for scale with clear communication pathways and operational infrastructure.
+
+---
 
 ## 3. Amplify Voices
-Category: media / messaging / web experience
 
-Focus:
-- elevated visual storytelling
-- modern brand system
-- polished web presentation
-- stronger credibility and communication structure
+**Category:** Media / Messaging / Digital Experience
 
-Narrative angle:
-Reimagine the digital front door of a voice-driven brand so that messaging, design, and user experience work together with more authority.
+### Focus
+
+* Elevated brand presentation
+* Story-driven layout
+* Modern web experience
+* Authority positioning
+
+### Narrative
+
+Amplify Voices was reimagined as a polished media platform where design and messaging work together to amplify credibility and clarity.
+
+### System Built
+
+* High-end website design
+* Content hierarchy + storytelling flow
+* Brand system refinement
+
+### Outcome
+
+A modern, visually compelling platform that communicates authority and purpose effectively.
+
+---
 
 ## 4. Gary L Mariner II
-Category: personal brand / executive presence / authority platform
 
-Focus:
-- strategic positioning
-- premium personal site design
-- offer clarity
-- authority building through digital experience
+**Category:** Personal Brand / Executive Presence
 
-Narrative angle:
-Turn a personal brand into a polished authority platform that communicates leadership, strategic thinking, and modern relevance.
+### Focus
+
+* Strategic positioning
+* Premium personal website
+* Offer clarity
+* Authority platform development
+
+### Narrative
+
+The personal brand was transformed into a structured authority platform that reflects leadership, systems thinking, and modern execution.
+
+### System Built
+
+* Personal website
+* Messaging + positioning system
+* Booking + contact integration
+
+### Outcome
+
+A professional digital presence that supports credibility, influence, and future opportunities.
+
+---
 
 ## Presentation Guidance
-For each case study page include:
-- project overview
-- challenge
-- solution
-- systems built
-- visual transformation
-- business value
+
+Each case study page should include:
+
+* Overview
+* Problem
+* Solution
+* System Built
+* Tools Used
+* Outcome
+* CTA (Book Strategy Call)
+
