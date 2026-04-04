@@ -1,57 +1,150 @@
-# Mariner Nexus Services
+# Mariner Nexus — Services Architecture
 
-## Positioning
-Services should be framed as outcomes and systems, not generic deliverables.
+## Core Philosophy
 
-## Core Solutions
+We do not sell websites.
 
-### 1. AI Business System Design
-Design intelligent systems that streamline operations, automate routine work, and support scale.
+We deliver:
+- systems
+- positioning
+- outcomes
 
-Best for:
-- growing businesses
-- teams buried in manual processes
-- operators ready to modernize workflows
+Each service is defined by:
+- transformation
+- business impact
+- execution level
 
-### 2. Website + Funnel Infrastructure
-Build premium digital experiences that capture attention, communicate authority, and convert traffic into qualified leads.
+---
+
+## Service Categories
+
+### 1. Revenue Systems
+
+Purpose:
+Increase leads, sales, and conversion.
+
+Includes:
+- high-conversion websites
+- e-commerce builds
+- funnel integration
+- CTA optimization
 
 Best for:
 - service businesses
+- product brands
+- growth-stage companies
+
+---
+
+### 2. Authority Systems
+
+Purpose:
+Position individuals and brands as leaders.
+
+Includes:
+- personal brand platforms
+- executive sites
+- speaking / consulting positioning
+- narrative restructuring
+
+Best for:
 - founders
-- premium brands
-- organizations needing stronger digital presence
+- consultants
+- executives
 
-### 3. CRM + Automation Architecture
-Connect forms, pipelines, email, SMS, and lead segmentation into one operating system.
+---
+
+### 3. System Builds
+
+Purpose:
+Create scalable infrastructure.
+
+Includes:
+- CRM-connected websites
+- dashboards
+- community platforms
+- internal systems
 
 Best for:
-- teams using disconnected tools
-- brands needing lead follow-up consistency
-- businesses wanting cleaner conversion workflows
+- organizations
+- communities
+- foundations
+- operational teams
 
-### 4. Optimization + Growth Systems
-Audit, refine, and improve existing systems to increase clarity, efficiency, and conversion performance.
+---
 
-Best for:
-- brands with existing infrastructure
-- teams that already launched but need tightening
-- organizations scaling into the next level
+## Pricing Logic
 
-## Offer Structure
+Pricing is based on:
+- complexity
+- system depth
+- business impact
 
-### Strategy Call
-A focused session to identify bottlenecks, missed opportunities, and the highest-value system improvements.
+---
 
-### Build Sprint
-A concentrated implementation engagement for one high-impact area such as a site, funnel, automation layer, or integrated workflow.
+### Tier 1 — Foundation ($2K–$5K)
+- clean build
+- fast turnaround
+- limited customization
 
-### Full System Build
-A complete transformation project combining digital presence, automation, CRM structure, and operational logic.
+---
 
-### Optimization Retainer
-Ongoing refinement, iteration, and system performance improvement.
+### Tier 2 — Growth ($6K–$12K)
+- full strategy
+- conversion-focused
+- UX refinement
 
-## Promise
-Mariner Nexus does not just make things look better.
-It builds systems that work better.
+---
+
+### Tier 3 — Authority ($12K–$25K)
+- high-end positioning
+- premium design + structure
+- brand system integration
+
+---
+
+### Tier 4 — Systems ($20K–$50K+)
+- CRM integration
+- dashboards
+- automation-ready builds
+- complex architecture
+
+---
+
+## Add-On Layer
+
+### Optimization (Monthly)
+- performance improvements
+- conversion refinement
+- content updates
+- AI integrations (future)
+
+---
+
+## Case Study Alignment
+
+Each service must connect to proof:
+
+- Revenue → Serene Origins / Act of Valor
+- Authority → GaryMariner / Nexus
+- Systems → Undugu / Amplify Voices
+
+---
+
+## Messaging Principle
+
+Do not describe:
+- features
+
+Describe:
+- outcomes
+
+---
+
+## Objective
+
+Users should feel:
+
+“They don’t just build sites.”
+
+“They build systems that move businesses forward.”
