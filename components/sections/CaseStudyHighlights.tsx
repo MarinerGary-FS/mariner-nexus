@@ -9,114 +9,125 @@ const caseStudies = [
   {
     slug: "serene-origins",
     category: "Revenue System",
+    industry: "Wellness",
     title: "Serene Origins",
-    tagline: "A wellness concept transformed into a structured digital business platform with clear monetization.",
+    description:
+      "A wellness concept transformed into a structured digital business platform with premium positioning and a defined subscription revenue pathway.",
     outcome: "Subscription infrastructure + conversion-focused redesign",
-    tags: ["Brand Redesign", "Subscription System", "Stripe Integration"],
+    tags: ["Brand Redesign", "Stripe", "Conversion Design"],
+    span: "col-span-1",
   },
   {
     slug: "undugu",
     category: "System Build",
+    industry: "Community",
     title: "Undugu",
-    tagline: "Community foundation rebuilt for scale — with CRM intake, member tracking, and communication architecture.",
-    outcome: "CRM-ready workflow + operational infrastructure",
-    tags: ["GoHighLevel", "Community Platform", "CRM Architecture"],
+    description:
+      "A foundation rebuilt for scale — CRM intake, member tracking, and communication architecture that supports organizational growth.",
+    outcome: "CRM-ready workflows + operational infrastructure",
+    tags: ["GoHighLevel", "CRM Architecture", "Community Platform"],
+    span: "col-span-1",
   },
   {
     slug: "amplify-voices",
     category: "Authority System",
+    industry: "Media",
     title: "Amplify Voices",
-    tagline: "A media platform reimagined with story-driven layout and authority positioning that commands attention.",
-    outcome: "Premium web presence + brand authority",
-    tags: ["Media Platform", "Brand System", "Storytelling Design"],
+    description:
+      "A media platform reimagined with story-driven layout, elevated brand presentation, and authority positioning that holds attention.",
+    outcome: "Premium media presence + brand authority",
+    tags: ["Media Platform", "Storytelling Design", "Brand System"],
+    span: "col-span-1",
   },
   {
     slug: "gary-mariner",
     category: "Personal Brand",
+    industry: "Executive",
     title: "Gary L Mariner II",
-    tagline: "Personal brand elevated into a structured authority platform reflecting leadership and strategic execution.",
+    description:
+      "Personal brand elevated into a structured authority platform — reflecting leadership, strategic execution, and the depth of the thinking behind it.",
     outcome: "Executive digital presence + booking integration",
     tags: ["Personal Brand", "Positioning System", "Cal.com"],
+    span: "col-span-1",
   },
 ];
 
 export default function CaseStudyHighlights() {
   return (
     <section className="section-padding bg-black relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(37,99,235,0.07),transparent)]" />
+      <div className="divider-glow absolute top-0 left-0 right-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_50%_100%,rgba(37,99,235,0.06),transparent)]" />
 
       <div className="container-tight relative">
-        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        {/* Section header */}
+        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-14">
           <div>
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-4">
-              Case Studies
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <p className="eyebrow mb-4">Case Studies</p>
+            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.1]">
               Four builds.
               <br />
-              <span className="text-white/40">One consistent principle.</span>
+              <span className="text-white/32">One consistent principle.</span>
             </h2>
           </div>
-          <Link
-            href="/case-studies"
-            className="shrink-0 text-sm font-medium text-white/50 hover:text-white transition-colors flex items-center gap-2"
-          >
+          <Link href="/case-studies" className="link-arrow shrink-0">
             View all case studies
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Grid */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {caseStudies.map((cs) => (
             <StaggerItem key={cs.slug}>
               <Link href={`/case-studies/${cs.slug}`} className="group block h-full">
                 <motion.div
                   whileHover={{ y: -3 }}
-                  transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-                  className="h-full glass-card rounded-2xl p-8 flex flex-col gap-5 glass-card-hover"
+                  transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                  className="h-full glass-card glass-card-hover rounded-2xl p-7 flex flex-col gap-5"
                 >
                   {/* Top row */}
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="text-xs font-semibold tracking-[0.15em] uppercase text-glow-blue/60">
-                      {cs.category}
-                    </span>
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex items-center gap-2">
+                      <span className="eyebrow text-glow-blue/55">{cs.category}</span>
+                      <span className="text-white/15 text-xs">·</span>
+                      <span className="text-[0.6875rem] text-white/28 font-medium">{cs.industry}</span>
+                    </div>
                     <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      className="text-white/20 group-hover:text-white/50 transition-colors mt-0.5"
+                      width="14" height="14" viewBox="0 0 14 14" fill="none"
+                      className="text-white/15 group-hover:text-white/40 transition-colors duration-200 mt-0.5 shrink-0"
                     >
-                      <path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
 
-                  {/* Title + tagline */}
+                  {/* Title + description */}
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight group-hover:text-gradient transition-all">
+                    <h3 className="text-[1.125rem] font-bold text-white mb-2.5 tracking-tight group-hover:text-gradient transition-all duration-300">
                       {cs.title}
                     </h3>
-                    <p className="text-white/45 text-sm leading-relaxed">
-                      {cs.tagline}
+                    <p className="text-white/40 text-[0.8125rem] leading-[1.65]">
+                      {cs.description}
                     </p>
                   </div>
 
-                  {/* Outcome */}
-                  <div className="py-4 border-t border-b border-white/[0.06]">
-                    <p className="text-xs text-white/30 uppercase tracking-widest font-medium mb-1">
+                  {/* Outcome callout */}
+                  <div className="rounded-lg bg-white/[0.025] border border-white/[0.05] px-4 py-3">
+                    <p className="text-[0.625rem] text-white/25 uppercase tracking-[0.14em] font-semibold mb-1">
                       Outcome
                     </p>
-                    <p className="text-white/65 text-sm font-medium">{cs.outcome}</p>
+                    <p className="text-white/60 text-[0.8125rem] font-medium leading-snug">
+                      {cs.outcome}
+                    </p>
                   </div>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mt-auto">
+                  <div className="flex flex-wrap gap-1.5 mt-auto">
                     {cs.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs text-white/35 bg-white/[0.04] border border-white/[0.06] px-2.5 py-1 rounded-full"
+                        className="text-[0.6875rem] text-white/28 bg-white/[0.04] border border-white/[0.055] px-2.5 py-1 rounded-full"
                       >
                         {tag}
                       </span>

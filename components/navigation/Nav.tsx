@@ -18,7 +18,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 32);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -27,65 +27,102 @@ export default function Nav() {
     setMenuOpen(false);
   }, [pathname]);
 
+  // Lock scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
+
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-black/80 backdrop-blur-xl border-b border-white/[0.06]"
+            ? "bg-black/75 backdrop-blur-2xl border-b border-white/[0.055]"
             : "bg-transparent"
         }`}
       >
         <div className="container-tight">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-[60px] md:h-[68px]">
+
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-8 h-8">
-                <div className="absolute inset-0 rounded-full bg-nexus-blue/20 blur-sm group-hover:bg-nexus-blue/30 transition-colors" />
-                <div className="relative w-8 h-8 rounded-full border border-glow-blue/40 flex items-center justify-center bg-black/50">
-                  <span className="text-glow-blue font-bold text-xs tracking-wider">MN</span>
+            <Link href="/" className="flex items-center gap-2.5 group" aria-label="Mariner Nexus home">
+              <div className="relative w-7 h-7 md:w-8 md:h-8 shrink-0">
+                <div className="absolute inset-0 rounded-full bg-nexus-blue/15 blur-md group-hover:bg-nexus-blue/25 transition-colors duration-300" />
+                <div className="relative w-full h-full rounded-full border border-glow-blue/30 bg-black/60 flex items-center justify-center">
+                  {/* Inline nexus micro-mark */}
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="7" cy="7" r="6" stroke="rgba(77,163,255,0.3)" strokeWidth="0.75" />
+                    <circle cx="7" cy="7" r="2" fill="rgba(77,163,255,0.9)" />
+                    <line x1="7" y1="1" x2="7" y2="4" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
+                    <line x1="7" y1="10" x2="7" y2="13" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
+                    <line x1="1" y1="7" x2="4" y2="7" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
+                    <line x1="10" y1="7" x2="13" y2="7" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
+                  </svg>
                 </div>
               </div>
-              <span className="text-white font-semibold text-sm tracking-wide hidden sm:block">
+              <span className="text-white/85 group-hover:text-white font-semibold text-[0.8125rem] tracking-wide hidden sm:block transition-colors duration-200">
                 Mariner Nexus
               </span>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`text-sm font-medium transition-colors duration-200 ${
-                    pathname === link.href
-                      ? "text-white"
-                      : "text-white/50 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            {/* Desktop nav */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative px-3.5 py-2 text-[0.8125rem] font-medium transition-colors duration-200 rounded-lg ${
+                      isActive
+                        ? "text-white"
+                        : "text-white/45 hover:text-white/85 hover:bg-white/[0.04]"
+                    }`}
+                  >
+                    {link.label}
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-active"
+                        className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-glow-blue/70"
+                      />
+                    )}
+                  </Link>
+                );
+              })}
             </nav>
 
-            {/* CTA + Mobile toggle */}
-            <div className="flex items-center gap-4">
-              <Link
-                href="/contact"
-                className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-nexus-blue hover:bg-glow-blue transition-colors duration-200 text-white"
-              >
-                Book Strategy Call
-              </Link>
+            {/* CTA + hamburger */}
+            <div className="flex items-center gap-3">
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="hidden md:block">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[0.8125rem] font-semibold bg-nexus-blue hover:bg-[#1d4ed8] text-white transition-colors duration-200"
+                >
+                  Book a Call
+                </Link>
+              </motion.div>
+
+              {/* Hamburger */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
-                aria-label="Toggle menu"
+                className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-[5px] rounded-lg hover:bg-white/[0.05] transition-colors"
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
               >
-                <span
-                  className={`block h-px w-5 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[3px]" : ""}`}
+                <motion.span
+                  animate={menuOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                  className="block h-px w-[18px] bg-white origin-center"
                 />
-                <span
-                  className={`block h-px w-5 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[3px]" : ""}`}
+                <motion.span
+                  animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+                  transition={{ duration: 0.2 }}
+                  className="block h-px w-[18px] bg-white"
+                />
+                <motion.span
+                  animate={menuOpen ? { rotate: -45, y: -5 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                  className="block h-px w-[18px] bg-white origin-center"
                 />
               </button>
             </div>
@@ -93,46 +130,59 @@ export default function Nav() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col pt-24 px-6"
+            className="fixed inset-0 z-40 bg-black/96 backdrop-blur-2xl"
           >
-            <nav className="flex flex-col gap-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.06 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="text-2xl font-semibold text-white/80 hover:text-white transition-colors"
+            <motion.div
+              initial={{ opacity: 0, y: -16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.3, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col h-full pt-24 px-6 pb-10"
+            >
+              <nav className="flex flex-col gap-1 flex-1">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.08 + i * 0.05, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={link.href}
+                      className={`block text-3xl font-bold py-2 tracking-tight transition-colors ${
+                        pathname === link.href ? "text-white" : "text-white/40 hover:text-white/80"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </nav>
+
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.06 }}
-                className="pt-4"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.4 }}
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-6 py-3 rounded-lg text-base font-semibold bg-nexus-blue hover:bg-glow-blue transition-colors text-white"
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-base font-semibold transition-colors"
                 >
-                  Book Strategy Call
+                  Book a Strategy Call
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </Link>
               </motion.div>
-            </nav>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

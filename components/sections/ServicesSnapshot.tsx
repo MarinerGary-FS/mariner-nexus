@@ -12,7 +12,7 @@ const services = [
     title: "Revenue Systems",
     description:
       "High-conversion web builds, e-commerce infrastructure, and funnel architecture designed to increase qualified leads and close rates.",
-    deliverables: ["Conversion-focused design", "Payment + subscription setup", "CTA hierarchy engineering"],
+    deliverables: ["Conversion-focused design", "Payment + subscription setup", "CTA hierarchy"],
   },
   {
     id: "authority",
@@ -20,7 +20,7 @@ const services = [
     title: "Authority Systems",
     description:
       "Personal brand platforms and executive digital presence built to position you as the clear, credible choice in your market.",
-    deliverables: ["Brand narrative + positioning", "Premium web experience", "Speaking + consulting infrastructure"],
+    deliverables: ["Brand narrative + positioning", "Premium web experience", "Booking integration"],
   },
   {
     id: "systems",
@@ -28,76 +28,80 @@ const services = [
     title: "System Builds",
     description:
       "CRM-connected sites, community platforms, and operational infrastructure built for organizations that need scalable architecture.",
-    deliverables: ["GoHighLevel integration", "Community + member systems", "Automation-ready infrastructure"],
+    deliverables: ["GoHighLevel integration", "Community + member systems", "Automation-ready builds"],
   },
 ];
 
 export default function ServicesSnapshot() {
   return (
-    <section className="section-padding bg-[#0A0A0A] relative">
+    <section className="section-padding bg-surface-1 relative">
+      <div className="divider-glow absolute top-0 left-0 right-0" />
+
       <div className="container-tight">
-        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-14">
           <div>
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-4">
-              Services
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <p className="eyebrow mb-4">Services</p>
+            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.1]">
               Not websites.
               <br />
-              <span className="text-white/40">Systems that move businesses forward.</span>
+              <span className="text-white/32">Systems that move businesses forward.</span>
             </h2>
           </div>
-          <Link
-            href="/services"
-            className="shrink-0 text-sm font-medium text-white/50 hover:text-white transition-colors flex items-center gap-2"
-          >
-            Full services breakdown
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <Link href="/services" className="link-arrow shrink-0">
+            Full breakdown + pricing
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </Link>
         </FadeIn>
 
-        <StaggerContainer className="space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
+        {/* Service rows */}
+        <StaggerContainer className="rounded-2xl overflow-hidden border border-white/[0.06] divide-y divide-white/[0.05]">
           {services.map((service) => (
             <StaggerItem key={service.id}>
               <Link href={`/services#${service.id}`} className="group block">
-                <div className="grid grid-cols-1 lg:grid-cols-[100px_1fr_auto] gap-6 p-8 bg-black hover:bg-white/[0.02] transition-colors duration-300 items-start border-b border-white/[0.06] last:border-b-0">
-                  <span className="text-3xl font-bold text-white/10 group-hover:text-nexus-blue/30 transition-colors tabular-nums">
-                    {service.number}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+                <div className="grid grid-cols-[64px_1fr] lg:grid-cols-[64px_1fr_auto] items-start gap-0 bg-black hover:bg-white/[0.018] transition-colors duration-300">
+                  {/* Number gutter */}
+                  <div className="flex items-start justify-center pt-7 pb-7 pl-7">
+                    <span className="text-[0.75rem] font-semibold tabular-nums text-white/15 group-hover:text-nexus-blue/50 transition-colors duration-200 mt-0.5">
+                      {service.number}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <div className="py-7 pr-7 lg:pr-0">
+                    <h3 className="text-white/90 font-semibold text-base mb-2 tracking-tight">
                       {service.title}
                     </h3>
-                    <p className="text-white/45 text-sm leading-relaxed mb-5">
+                    <p className="text-white/38 text-[0.8125rem] leading-[1.65] mb-4 max-w-lg">
                       {service.description}
                     </p>
-                    <ul className="flex flex-wrap gap-x-6 gap-y-1">
+                    <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
                       {service.deliverables.map((d) => (
-                        <li key={d} className="text-xs text-white/30 flex items-center gap-1.5">
-                          <span className="w-1 h-1 rounded-full bg-glow-blue/40" />
+                        <li key={d} className="flex items-center gap-1.5 text-[0.6875rem] text-white/28">
+                          <span className="w-1 h-1 rounded-full bg-glow-blue/35 shrink-0" />
                           {d}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    className="text-white/15 group-hover:text-white/40 transition-colors mt-1 hidden lg:block"
-                  >
-                    <path d="M4 10h12M12 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+
+                  {/* Arrow — desktop */}
+                  <div className="hidden lg:flex items-center justify-center px-8 self-stretch">
+                    <svg
+                      width="18" height="18" viewBox="0 0 18 18" fill="none"
+                      className="text-white/12 group-hover:text-white/35 transition-colors duration-200"
+                    >
+                      <path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                 </div>
               </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>
 
-        <FadeIn delay={0.3} className="mt-10 text-center">
+        <FadeIn delay={0.2} className="mt-8 flex justify-center">
           <Button href="/services" variant="secondary" size="md">
             View All Services + Pricing
           </Button>
