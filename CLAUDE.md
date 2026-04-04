@@ -1,102 +1,182 @@
-# Mariner Nexus — Build System Instructions
+# Mariner Nexus — Claude Build System
+
+## Overview
+This project is a high-end digital experience platform for Mariner Nexus.
+
+It must feel:
+- Cinematic
+- Premium
+- Strategic
+- Conversion-focused
+
+This is NOT a template-based marketing site.
+
+It is a controlled, immersive experience that communicates:
+- Authority
+- Intelligence
+- Execution capability
+
+---
 
 ## Tech Stack
 - Next.js (App Router)
-- TypeScript
 - Tailwind CSS
-- Framer Motion
-- shadcn/ui where useful
-- Vercel deployment target
+- Framer Motion (for animation)
+- Vercel deployment
+
+---
 
 ## Design Influence
-Take inspiration from the polish and restraint of brands like Vercel, Stripe, Linear, Arc, and premium AI infrastructure companies.
-Do not copy any brand directly.
+- Apple → clarity, hierarchy, minimalism
+- RESN → immersion, motion, interaction
+
+---
 
 ## Visual Direction
-- Dark-first premium interface with light-mode support where appropriate
-- Strong contrast
-- Glass / metal / blue energy cues inspired by the Mariner Nexus logo system
-- Motion should feel controlled, intelligent, and expensive
-- Avoid gimmicky cyberpunk effects, overloaded gradients, or cheesy AI visuals
+- Dark UI (black / deep grey base)
+- High contrast typography
+- Large, intentional spacing
+- Subtle accent colors per section
+- No clutter, no generic layouts
 
-## Logo System Usage
-Use these rules:
-- Full 3D logo for hero and major brand moments
-- Simplified icon for interface areas and mobile contexts
-- Micro mark for favicon and very small uses
-- Respect minimum sizes and spacing from the design system
+---
 
-## Performance Standards
-- Prioritize fast initial load
-- Use static hero fallback image before advanced animation loads
-- Animate only where it adds value
-- Avoid excessive GPU-heavy effects on mobile
-- Use Intersection Observer or equivalent for any heavy animated elements
+## Experience Principles
 
-## Core Pages
-- Home
-- Case Studies
-- Individual Case Study Pages
-- Services
-- About
-- Contact / Book
+### Cinematic Flow
+- Pages should feel like a sequence of scenes
+- Each section transitions naturally into the next
+- Avoid “stacked blocks” layout patterns
 
-## Conversion Goals
-Primary CTA:
-- Book a Strategy Call
+### Controlled Pacing
+- Use scroll to reveal content progressively
+- Avoid overwhelming the user with too much at once
 
-Secondary CTA:
-- View Case Studies
+### Intentional Motion
+- Use animation to guide attention, not decorate
+- Prefer smooth, subtle transitions over flashy effects
 
-## CRM / Automation Goal
-The site must be architected to connect with:
-- GoHighLevel forms or webhook endpoints
-- Cal.com embedded scheduling
-- future email/SMS automation
-- future lead scoring / segmentation
+---
 
-## Homepage Intent
-The homepage should feel like:
-- first impression: executive, mysterious, premium
-- second impression: highly capable systems company
-- third impression: clear offer, clear proof, clear next step
+## Cognitive Skill Stack
+
+Apply these skills in order of priority across all pages and components:
+
+### 1. Cinematic Storytelling
+- Structure pages as narrative experiences
+- Each section should feel like a scene
+- Control pacing through scroll and transitions
+
+### 2. First-Principles Thinking
+- Break every section down to its core purpose
+- Remove anything that does not support clarity, trust, or conversion
+
+### 3. Conversion Engineering
+- Every section must guide the user toward belief or action
+- Use clear CTA hierarchy and friction reduction
+
+### 4. Premium UI/UX Design Thinking
+- Use minimal, high-discipline layouts
+- Avoid template patterns and visual clutter
+
+### 5. Systems Thinking
+- Treat the site as an interconnected system
+- Ensure UX, messaging, and structure support each other
+
+### 6. Brand Positioning
+- Present Mariner Nexus as a high-end execution partner
+- Emphasize outcomes, not effort
+
+### 7. Attention Engineering
+- Direct user focus using spacing, scale, contrast, and motion
+
+### 8. Perception Design
+- Make the experience feel premium and intentional
+- Use restraint and polish
+
+### 9. Performance Awareness
+- Keep animations smooth and optimized
+- Ensure mobile and tablet performance
+
+### 10. Modular Build Thinking
+- Build reusable components and patterns
+- Avoid one-off implementations
+
+---
+
+## Page Goals
+
+### Homepage
+- Establish authority immediately
+- Guide user into “Choose Your Outcome”
+- Feel immersive and high-end
+
+### Case Studies
+- Cinematic walkthroughs of business transformations
+- Focus on strategy, system, and outcome
+- Keep users inside experience before linking out
+
+### Services
+- Clearly define outcomes, not deliverables
+- Tie directly to case studies
+
+---
 
 ## Writing Style
-- crisp
-- high-trust
-- strategic
-- not fluffy
-- not overhyped
-- short paragraphs
-- strong headlines
-- premium tone
 
-## Important Constraints
-- No generic stock AI imagery
-- No cliché robots, circuits, or floating dashboards everywhere
-- No overcrowded layouts
-- No template-like agency sections without purpose
+- Confident
+- Minimal
+- Strategic
+- Outcome-driven
 
-## Success Criteria
-A visitor should think:
-- this company is different
-- this feels expensive
-- these people understand systems
-- I want to know more
+### Avoid:
+- Buzzwords
+- Generic marketing phrases
+- Over-explaining
 
-## Advanced Experience Layer
+### Prefer:
+- Strong declarative statements
+- Business-focused language
 
-The site should simulate the feeling of high-end WebGL experiences (like Active Theory) using performant methods first.
+Example:
+❌ “We created a beautiful website”
+✅ “We engineered a system designed to increase conversion and trust”
 
-If advanced rendering is introduced:
-- It must be isolated to specific components
-- It must not degrade performance
-- It must gracefully degrade on mobile
+---
 
-Prefer:
-- Framer Motion
-- CSS transforms
-- layered depth effects
+## Constraints
 
-Before:
-- full WebGL scenes
+- Do NOT create generic layouts
+- Do NOT overload with animations
+- Do NOT prioritize visuals over clarity
+- Every element must serve a purpose
+
+---
+
+## Objective
+
+The goal is to create a digital experience that makes users think:
+
+“I need this level of execution for my business.”
+
+## WebGL Usage Guidelines
+
+WebGL is used selectively to enhance perceived value and immersion.
+
+### Where to Use
+- Homepage hero
+- Key cinematic moments in case studies
+- Subtle scene transitions
+
+### Where NOT to Use
+- Forms and CTAs
+- Text-heavy sections
+- Repeated sections across the site
+
+### Performance Rules
+- Lazy load all WebGL components
+- Provide fallback for mobile and low-performance devices
+- Keep interactions subtle and controlled
+
+### Principle
+WebGL should enhance the experience, not dominate it.
