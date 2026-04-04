@@ -1,143 +1,144 @@
-# Mariner Nexus Design System
+# Mariner Nexus — Design System
 
-## Experience Model
+## Core Philosophy
+The design system must support:
+- Clarity
+- Control
+- Perceived value
+- Conversion
 
-The site combines:
+This is not decorative design.
 
-* Executive clarity (Linear)
-* Interactive intelligence (Active Theory)
-* Cinematic impact (Resn)
-
----
-
-## Color Palette
-
-### Core
-
-* Black: #0A0A0A
-* White: #FFFFFF
-* Soft White: #F5F7FA
-
-### Accent
-
-* Nexus Blue: #2563EB
-* Glow Blue: #4DA3FF
-* Core Energy: #7DD3FC
-
-### Supporting
-
-* Border: rgba(255,255,255,0.12)
-* Glass: rgba(255,255,255,0.06)
-* Glow Layer: rgba(37,99,235,0.18)
+This is functional, strategic design.
 
 ---
 
-## Typography
+## Visual Foundation
 
-Recommended:
+### Color
+- Primary: Black / Deep Grey
+- Secondary: White / Light Grey
+- Accent: Contextual per case study
 
-* Inter
-* Geist
-* Satoshi
-* Manrope
+### Typography
+- Large, bold headings
+- Clean, readable body text
+- Strong hierarchy
 
-### Style
-
-* Clean
-* Geometric
-* High contrast
-* Strong hierarchy
-
----
-
-## Layout Principles
-
-* Spacious
-* Grid-based
-* Minimal clutter
-* Every section must have purpose
+### Spacing
+- Generous whitespace
+- Clear separation between sections
+- Avoid dense layouts
 
 ---
 
-## Logo Usage
+## Layout System
 
-### Variants
+- Grid-based structure
+- Consistent alignment
+- Predictable rhythm
 
-* Full 3D logo → hero sections
-* Simplified icon → UI/navigation
-* Micro mark → favicon
-* Light version → documents
-
-### Minimum Sizes
-
-* Full logo: 120px
-* Icon: 32px
-* Micro: 16px
-
-### Clear Space
-
-50% of logo width minimum
+Each section must:
+- Have a clear purpose
+- Be easy to scan
+- Guide the user forward
 
 ---
 
-## Motion Principles
+## Motion System
 
-Motion must feel:
+### Principles
+- Motion must guide attention
+- Motion must support storytelling
+- Motion must not distract
 
-* controlled
-* intelligent
-* premium
-
-### Use
-
-* soft fades
-* subtle parallax
-* glow pulses
-* depth transitions
-
-### Avoid
-
-* excessive movement
-* gimmicky effects
-* noisy animations
+### Behavior
+- Smooth transitions
+- Scroll-based reveals
+- Subtle parallax where appropriate
 
 ---
 
-## Hero Animation
+## Experience Intelligence
 
-* static fallback first
-* motion loads after
-* optional video or WebGL layer
+### Attention Engineering
+- Use contrast, spacing, and scale to direct focus
+- Highlight key elements (headlines, CTAs)
 
----
+### Perception Design
+- Use restraint to increase perceived value
+- Avoid visual noise
+- Maintain a polished, premium feel
 
-## Advanced Rendering Layer
-
-Use selectively:
-
-* Three.js / React Three Fiber
-* Canvas effects
-
-Rules:
-
-* never block load
-* always provide fallback
-* limit to hero or key moments
+### Performance Awareness
+- Optimize animations for performance
+- Ensure smooth experience across devices
+- Avoid heavy, unnecessary effects
 
 ---
 
-## Surfaces
+## Component Philosophy
 
-* glass cards
-* soft glow edges
-* subtle borders
-* dark premium backgrounds
+Components must be:
+- Reusable
+- Scalable
+- Consistent
+
+Examples:
+- Hero sections
+- Case study blocks
+- CTA sections
+- Feature layouts
+
+Avoid:
+- One-off components
+- Inconsistent styling
 
 ---
 
-## Responsive Behavior
+## Interaction Design
 
-* Desktop → full experience
-* Tablet → reduced motion
-* Mobile → simplified + performant
+- Buttons must feel responsive
+- Hover states should be subtle and intentional
+- Navigation should be smooth and predictable
+
+---
+
+## Responsive Design
+
+### Desktop
+- Full cinematic experience
+- Layered motion and interaction
+
+### Tablet
+- Simplified motion
+- Maintain clarity and structure
+
+### Mobile
+- Prioritize speed and readability
+- Reduce heavy animations
+- Keep interactions intuitive
+
+---
+
+## Constraints
+
+- No clutter
+- No generic templates
+- No unnecessary motion
+- Every element must serve a purpose
+
+---
+
+## Objective
+
+Create a system where:
+
+- The user feels guided
+- The experience feels premium
+- The design supports conversion
+
+Final perception:
+
+“This is high-end, intentional, and built by experts.”
 
