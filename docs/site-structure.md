@@ -1,174 +1,222 @@
-# Mariner Nexus Site Structure
+# Mariner Nexus — Site Structure
+
+## Core Philosophy
+
+The site is not a collection of pages.
+
+It is a **guided system** that:
+- controls user flow
+- builds belief
+- demonstrates capability
+- leads to conversion
+
+Every page must serve a role in:
+- positioning
+- proof
+- conversion
+
+---
 
 ## Global Navigation
 
-* Home
-* Case Studies
-* Services
-* About
-* Contact
-* Book Strategy Call (Primary CTA)
+Primary Navigation:
+- Home
+- Case Studies
+- Services
+- About
+- Contact
+
+Persistent CTA:
+- Book a Strategy Call
+
+---
+
+## Core Routing Logic
+
+The site should guide users through:
+
+1. Awareness → “This feels different”
+2. Alignment → “This applies to me”
+3. Proof → “They’ve done this before”
+4. Value → “This would help my business”
+5. Action → “I want to work with them”
 
 ---
 
 ## Homepage Structure
 
-### 1. Hero Section
-
-Purpose:
-Create immediate impact and stop scrolling.
-
-Components:
-
-* Mariner Nexus logo (cinematic presentation)
-* Headline
-* Subheadline
-* Primary CTA: Book Strategy Call
-* Secondary CTA: View Case Studies
-* Subtle motion / glow / depth
+### Scene 1 — Hero
+- cinematic intro
+- strong positioning
+- primary CTA
 
 ---
 
-### 2. Credibility Layer
-
-Purpose:
-Establish trust immediately.
-
-Content:
-
-* AI Systems
-* Automation
-* CRM Integration
-* Digital Infrastructure
-* Business Optimization
+### Scene 2 — Positioning
+- what Mariner Nexus actually is
+- systems > websites
 
 ---
 
-### 3. What We Do
+### Scene 3 — Choose Your Outcome
 
-Break into core pillars:
+Three primary paths:
 
-* Strategy
-* Systems
-* Automation
-* Execution
+#### Make More Money
+- routes to:
+  - Serene Origins
+  - Act of Valor
+  - Eazie
 
----
+#### Build Authority
+- routes to:
+  - GaryMariner
+  - Mariner Nexus
 
-### 4. Case Studies Preview
-
-Display:
-
-* Serene Origins
-* Undugu
-* Amplify Voices
-* Gary Mariner
-
-Each card:
-
-* visual
-* short description
-* link to full case study
+#### Build Systems / Community
+- routes to:
+  - Undugu
+  - Amplify Voices
 
 ---
 
-### 5. Services Section
-
-Focus on outcomes, not tasks:
-
-* AI Systems
-* Website Infrastructure
-* CRM + Automation
-* Optimization
+### Scene 4 — Case Study Highlights
+- preview 2–3 key projects
+- link into full case studies
 
 ---
 
-### 6. Process Section
-
-Explain how you work:
-
-1. Discover
-2. Architect
-3. Build
-4. Optimize
+### Scene 5 — Services Snapshot
+- high-level overview
+- outcome-based
 
 ---
 
-### 7. About Section
-
-Introduce:
-
-* Gary Mariner
-* Systems mindset
-* AI + operations experience
-* execution focus
+### Scene 6 — Trust / Credibility
+- results
+- positioning
+- authority signals
 
 ---
 
-### 8. Conversion Section
-
-* Booking integration (Cal.com)
-* Lead capture form
-* Clear CTA
+### Scene 7 — CTA
+- Book Strategy Call
+- reinforce premium positioning
 
 ---
 
-### 9. Footer
+## Case Studies Structure
 
-* Navigation links
-* Contact info
-* Case studies
-* Social links
-* Brand mark
-
----
-
-## Case Studies Page
-
-Grid layout:
-
-* Title
-* Category
-* Short summary
-* Link to full breakdown
+### Case Studies Index Page
+- grid or list
+- categorized by outcome:
+  - Revenue
+  - Authority
+  - Systems
 
 ---
 
-## Individual Case Study Page
+### Individual Case Study Pages
+Follow:
+- CASE_STUDY_ENGINE.md
 
-* Hero
-* Overview
-* Problem
-* Solution
-* System Built
-* Tools Used
-* Outcome
-* CTA
+Flow:
+- internal experience first
+- external link last
 
 ---
 
-## Services Page
+## Services Structure
 
-* Overview
-* Solutions breakdown
-* Who it’s for
-* CTA
+Services should NOT feel like packages.
 
----
-
-## About Page
-
-* Story
-* Vision
-* Philosophy
-* CTA
+They should feel like:
+- transformation systems
 
 ---
 
-## Contact Page
+### Service Categories
 
-* Intro
-* Booking embed (Cal.com)
-* Contact form
-* Qualification questions (optional)
+#### Revenue Systems
+- conversion-focused builds
+- e-commerce
+- lead generation
+
+---
+
+#### Authority Systems
+- personal brands
+- executive positioning
+- high-trust presence
+
+---
+
+#### System Builds
+- CRM-connected sites
+- dashboards
+- community infrastructure
+
+---
+
+## Conversion Flow
+
+### Entry Points
+- homepage
+- case studies
+- services page
+
+---
+
+### Mid-Funnel
+- case study pages
+- service breakdowns
+
+---
+
+### Conversion Points
+- Book Strategy Call
+- Contact Form
+- (future) lead qualification
+
+---
+
+## Internal Linking Strategy
+
+- homepage → case studies
+- case studies → services
+- services → CTA
+- all paths lead back to:
+  - booking
+  - inquiry
+
+---
+
+## Key Principle
+
+Do not let users wander.
+
+Guide them.
+
+Every page should:
+- direct attention
+- clarify value
+- move them forward
+
+---
+
+## Objective
+
+The site should feel like:
+
+- a controlled experience
+- a strategic system
+- a premium environment
+
+Final outcome:
+
+“I understand what they do.”
+
+“I trust how they think.”
+
+“I want to work with them.”
 
