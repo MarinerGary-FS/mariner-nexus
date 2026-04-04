@@ -197,11 +197,14 @@
   /* ─── Noise texture overlay ─────────────────────────────── */
   /* Subtle grain elevates perceived surface quality */
 
+  /* Noise overlay — uses ::before so it sits BEHIND content in DOM stacking order.
+     No z-index needed; ::before renders before the element's children, so it
+     naturally sits behind them without any stacking context manipulation. */
   .noise-overlay {
     position: relative;
   }
 
-  .noise-overlay::after {
+  .noise-overlay::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -209,7 +212,7 @@
     background-size: 200px 200px;
     opacity: 0.025;
     pointer-events: none;
-    z-index: 1;
+    /* No z-index — ::before stacks behind content by DOM order */
   }
 
   /* ─── Interactive states ─────────────────────────────────── */
