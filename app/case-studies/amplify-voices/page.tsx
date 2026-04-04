@@ -40,6 +40,7 @@ const data = {
     "Consistent brand presentation across all digital touchpoints",
     "Elevated credibility that supports future audience growth and partnerships",
   ],
+  mockupImage: "/case-studies/amplify-voices/mockup.png",
   nextStudy: {
     title: "Gary L Mariner II",
     href: "/case-studies/gary-mariner",

@@ -41,6 +41,7 @@ const data = {
     "Mobile-optimized experience matching the consumption patterns of a creator audience",
     "A digital foundation that can scale with the brand — merchandise, events, and collabs",
   ],
+  mockupImage: "/case-studies/eaziedagod/mockup.png",
   nextStudy: {
     title: "Act of Valor",
     href: "/case-studies/act-of-valor",

@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
 import Button from "@/components/ui/Button";
@@ -15,42 +18,62 @@ interface CaseStudyData {
   tools: string[];
   outcome: string;
   outcomePoints: string[];
-  mockupImage?: string; // Optional: /case-studies/[slug]/mockup.png
+  mockupImage?: string; // /case-studies/[slug]/mockup.png
   nextStudy?: {
     title: string;
     href: string;
   };
 }
 
-/* ── Mockup placeholder — renders a real image if available,
-   otherwise a premium wireframe placeholder ── */
+/* ── Mockup Frame — real image when available, premium wireframe otherwise ── */
 function MockupFrame({ src, title }: { src?: string; title: string }) {
   if (src) {
     return (
-      <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.07] bg-black">
+      <motion.div
+        initial={{ opacity: 0, y: 16, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
+        className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden"
+        style={{
+          boxShadow: "0 2px 0 0 rgba(255,255,255,0.06) inset, 0 0 0 1px rgba(255,255,255,0.07), 0 24px 64px rgba(0,0,0,0.6)",
+        }}
+      >
+        {/* Glow behind image */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(37,99,235,0.12),transparent_60%)] z-10 pointer-events-none" />
         <Image
           src={src}
-          alt={`${title} mockup`}
+          alt={`${title} — site mockup`}
           fill
           className="object-cover"
-          sizes="(max-width: 1200px) 100vw, 600px"
+          sizes="(max-width: 1024px) 100vw, 560px"
           priority={false}
         />
-      </div>
+        {/* Top-edge glass reflection */}
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent z-20 pointer-events-none" />
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 pointer-events-none" />
+      </motion.div>
     );
   }
 
-  // Placeholder — structured wireframe feel
+  // Premium wireframe placeholder
   return (
-    <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.07] bg-surface-1">
+    <div
+      className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden"
+      style={{
+        background: "rgba(15,15,15,1)",
+        boxShadow: "0 2px 0 0 rgba(255,255,255,0.05) inset, 0 0 0 1px rgba(255,255,255,0.07)",
+      }}
+    >
       {/* Browser chrome */}
-      <div className="absolute top-0 left-0 right-0 h-8 bg-white/[0.03] border-b border-white/[0.06] flex items-center gap-1.5 px-4">
-        <div className="w-2 h-2 rounded-full bg-white/[0.1]" />
+      <div className="absolute top-0 left-0 right-0 h-8 bg-white/[0.025] border-b border-white/[0.05] flex items-center gap-1.5 px-4">
+        <div className="w-2 h-2 rounded-full bg-white/[0.12]" />
         <div className="w-2 h-2 rounded-full bg-white/[0.07]" />
         <div className="w-2 h-2 rounded-full bg-white/[0.07]" />
-        <div className="ml-4 flex-1 max-w-[200px] h-3 rounded-full bg-white/[0.05]" />
+        <div className="ml-4 flex-1 max-w-[180px] h-3 rounded-full bg-white/[0.05]" />
       </div>
-      {/* Wireframe content */}
+      {/* Wireframe layout */}
       <div className="absolute top-8 left-0 right-0 bottom-0 p-5 flex flex-col gap-3">
         <div className="h-5 w-3/5 rounded bg-white/[0.06]" />
         <div className="h-3 w-4/5 rounded bg-white/[0.04]" />
@@ -61,7 +84,6 @@ function MockupFrame({ src, title }: { src?: string; title: string }) {
         </div>
         <div className="flex-1 mt-2 rounded-lg bg-white/[0.02] border border-white/[0.04] flex items-center justify-center">
           <p className="text-white/15 text-[0.6875rem] font-medium tracking-wide">
-            {/* PLACEHOLDER — Add mockup: public/case-studies/[slug]/mockup.png */}
             Mockup · {title}
           </p>
         </div>
@@ -75,15 +97,15 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
     <>
       {/* ── Hero ── */}
       <section className="pt-36 pb-20 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(37,99,235,0.1),transparent_65%)]" />
-        <div className="absolute inset-0 grid-pattern opacity-60" />
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_55%_at_50%_0%,rgba(37,99,235,0.11),transparent_62%)]" />
+        <div className="absolute inset-0 grid-pattern opacity-50" />
+        <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-black to-transparent" />
 
         <div className="container-tight relative z-10">
           <FadeIn>
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-2 text-[0.8125rem] text-white/28 hover:text-white/55 transition-colors mb-10 group"
+              className="inline-flex items-center gap-2 text-[0.8125rem] text-white/25 hover:text-white/55 transition-colors mb-10 group"
             >
               <svg
                 width="12" height="12" viewBox="0 0 12 12" fill="none"
@@ -95,10 +117,10 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
             </Link>
 
             <p className="eyebrow mb-5">{data.category}</p>
-            <h1 className="text-[3rem] md:text-[4rem] lg:text-[5rem] font-bold tracking-[-0.035em] text-white mb-4 leading-[1.0]">
+            <h1 className="text-[3rem] md:text-[4.25rem] lg:text-[5.25rem] font-bold tracking-[-0.036em] text-white mb-4 leading-[0.96]">
               {data.title}
             </h1>
-            <p className="text-white/38 text-[1rem] md:text-[1.125rem] max-w-xl leading-[1.72] mb-10">
+            <p className="text-white/35 text-[1rem] md:text-[1.125rem] max-w-[520px] leading-[1.74] mb-10">
               {data.tagline}
             </p>
           </FadeIn>
@@ -108,7 +130,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
             {data.tools.map((tool) => (
               <span
                 key={tool}
-                className="text-[0.6875rem] font-medium text-white/35 bg-white/[0.05] border border-white/[0.07] px-3 py-1.5 rounded-full"
+                className="text-[0.6875rem] font-medium text-white/32 bg-white/[0.045] border border-white/[0.065] px-3 py-1.5 rounded-full"
               >
                 {tool}
               </span>
@@ -120,16 +142,32 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
       {/* ── Problem / Strategy / Outcome ── */}
       <section className="bg-black pb-0">
         <div className="container-tight">
-          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-px bg-white/[0.05] rounded-2xl overflow-hidden">
+          <StaggerContainer
+            className="grid grid-cols-1 lg:grid-cols-3 rounded-2xl overflow-hidden border border-white/[0.05]"
+          >
             {[
               { label: "The Problem", body: data.problem },
               { label: "The Strategy", body: data.strategy },
               { label: "The Outcome", body: data.outcome },
-            ].map((block) => (
+            ].map((block, i) => (
               <StaggerItem key={block.label}>
-                <div className="bg-black p-8 lg:p-10 h-full">
-                  <p className="eyebrow text-glow-blue/55 mb-5">{block.label}</p>
-                  <p className="text-white/48 text-[0.875rem] leading-[1.78]">{block.body}</p>
+                <div
+                  className="bg-black p-8 lg:p-10 h-full"
+                  style={{
+                    borderRight: i < 2 ? "1px solid rgba(255,255,255,0.05)" : undefined,
+                    borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  }}
+                >
+                  <div className="flex items-center gap-2 mb-5">
+                    <span
+                      className="w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{
+                        background: i === 0 ? "rgba(255,255,255,0.25)" : i === 1 ? "rgba(77,163,255,0.7)" : "rgba(125,211,252,0.7)",
+                      }}
+                    />
+                    <p className="eyebrow text-glow-blue/50">{block.label}</p>
+                  </div>
+                  <p className="text-white/45 text-[0.875rem] leading-[1.8]">{block.body}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -140,26 +178,34 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
       {/* ── Mockup + System Built ── */}
       <section className="section-padding bg-black">
         <div className="container-tight">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16 items-start">
 
             {/* Mockup */}
-            <FadeIn direction="left">
+            <div>
               <MockupFrame src={data.mockupImage} title={data.title} />
-            </FadeIn>
+            </div>
 
             {/* System Built */}
             <FadeIn direction="right" delay={0.08}>
-              <h2 className="text-[1.625rem] font-bold text-white tracking-[-0.025em] mb-6">
-                The system we built
+              <p className="eyebrow mb-4 text-glow-blue/45">System Architecture</p>
+              <h2 className="text-[1.5rem] md:text-[1.75rem] font-bold text-white tracking-[-0.025em] mb-7 leading-tight">
+                What we engineered
               </h2>
               <ul className="space-y-4">
-                {data.systemBuilt.map((item) => (
-                  <li key={item} className="flex items-start gap-3.5">
-                    <span className="mt-1.5 w-4 h-4 rounded-full border border-glow-blue/25 bg-nexus-blue/8 flex items-center justify-center shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-glow-blue/60" />
+                {data.systemBuilt.map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: -8 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex items-start gap-3.5"
+                  >
+                    <span className="mt-[0.3rem] w-4 h-4 rounded-full border border-glow-blue/22 bg-nexus-blue/8 flex items-center justify-center shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-glow-blue/55" />
                     </span>
-                    <span className="text-white/48 text-[0.875rem] leading-[1.72]">{item}</span>
-                  </li>
+                    <span className="text-white/45 text-[0.875rem] leading-[1.74]">{item}</span>
+                  </motion.li>
                 ))}
               </ul>
             </FadeIn>
@@ -167,22 +213,30 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
 
           {/* Results */}
           <FadeIn>
-            <h2 className="text-[1.625rem] font-bold text-white tracking-[-0.025em] mb-7">
-              The results delivered
-            </h2>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="divider-glow flex-1 opacity-60" />
+              <p className="eyebrow text-glow-blue/45 shrink-0">Outcomes Delivered</p>
+              <div className="divider-glow flex-1 opacity-60" />
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {data.outcomePoints.map((point, i) => (
-                <div
+                <motion.div
                   key={i}
-                  className="glass-card rounded-xl p-5 flex items-start gap-3.5"
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.38, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                  className="glass-card glass-card-hover rounded-xl p-5 flex items-start gap-3.5 group"
                 >
-                  <span className="mt-0.5 w-4 h-4 rounded-full bg-nexus-blue/15 border border-nexus-blue/25 flex items-center justify-center shrink-0">
+                  <span className="mt-0.5 w-4 h-4 rounded-full bg-nexus-blue/12 border border-nexus-blue/22 flex items-center justify-center shrink-0 group-hover:border-nexus-blue/40 transition-colors duration-300">
                     <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                       <path d="M1.5 4l1.5 1.5L6.5 2" stroke="#4DA3FF" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <span className="text-white/55 text-[0.8125rem] leading-[1.65]">{point}</span>
-                </div>
+                  <span className="text-white/52 text-[0.8125rem] leading-[1.68] group-hover:text-white/65 transition-colors duration-300">
+                    {point}
+                  </span>
+                </motion.div>
               ))}
             </div>
           </FadeIn>
@@ -192,15 +246,16 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
       {/* ── CTA ── */}
       <section className="section-padding bg-black relative overflow-hidden">
         <div className="divider-glow absolute top-0 left-0 right-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_50%,rgba(37,99,235,0.09),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_65%_at_50%_50%,rgba(37,99,235,0.09),transparent)]" />
+        <div className="absolute inset-0 grid-pattern opacity-40" />
 
         <div className="container-tight relative text-center">
           <FadeIn>
             <p className="eyebrow mb-5">Ready to build yours?</p>
-            <h2 className="text-[2.25rem] md:text-[3rem] font-bold text-white tracking-[-0.03em] mb-3 leading-[1.1]">
+            <h2 className="text-[2.25rem] md:text-[3.25rem] font-bold text-white tracking-[-0.032em] mb-3 leading-[1.06]">
               This level of execution
             </h2>
-            <h2 className="text-[2.25rem] md:text-[3rem] font-bold tracking-[-0.03em] leading-[1.1] mb-8 text-white/28">
+            <h2 className="text-[2.25rem] md:text-[3.25rem] font-bold tracking-[-0.032em] leading-[1.06] mb-8 text-white/25">
               is available for your business.
             </h2>
 

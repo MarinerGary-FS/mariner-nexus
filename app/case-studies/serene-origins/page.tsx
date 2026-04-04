@@ -41,6 +41,7 @@ const data = {
     "Scalable digital platform built to grow with the business",
     "Consistent visual identity across all digital touchpoints",
   ],
+  mockupImage: "/case-studies/serene-origins/mockup.png",
   nextStudy: {
     title: "Undugu",
     href: "/case-studies/undugu",

@@ -34,6 +34,7 @@ const data = {
     "Framer Motion",
     "Vercel",
   ],
+  mockupImage: "/case-studies/gary-mariner-ii/mockup.png",
   outcomePoints: [
     "Authority digital presence that commands trust at first impression",
     "Clear offer structure that guides the right visitor toward the right action",

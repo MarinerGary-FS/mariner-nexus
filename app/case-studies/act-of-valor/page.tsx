@@ -42,6 +42,7 @@ const data = {
     "Local authority positioning supporting organic search visibility in the service area",
     "CRM-connected lead intake with automated response sequences for missed-call recovery",
   ],
+  mockupImage: "/case-studies/act-of-valor/mockup.png",
   nextStudy: {
     title: "Serene Origins",
     href: "/case-studies/serene-origins",

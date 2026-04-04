@@ -55,7 +55,7 @@
   }
 
   ::selection {
-    background: rgba(77, 163, 255, 0.25);
+    background: rgba(77, 163, 255, 0.22);
     color: #fff;
   }
 
@@ -66,13 +66,23 @@
     background: #0A0A0A;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(77, 163, 255, 0.25);
+    background: rgba(77, 163, 255, 0.22);
     border-radius: 2px;
   }
 
   /* Heading defaults */
   h1, h2, h3, h4, h5 {
     letter-spacing: -0.02em;
+  }
+
+  /* Reduce motion — disable non-essential animations globally */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -84,18 +94,47 @@
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
+  @media (min-width: 640px) {
+    .container-tight {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-tight {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Responsive section padding — tighter on mobile */
   .section-padding {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
   }
 
   .section-padding-sm {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding-sm {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
   }
 
   /* ─── Typography ────────────────────────────────────────── */
@@ -108,7 +147,7 @@
   }
 
   .text-gradient-subtle {
-    background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.5) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.48) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -119,67 +158,66 @@
     font-weight: 600;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(77, 163, 255, 0.7);
+    color: rgba(77, 163, 255, 0.68);
   }
 
   /* ─── Surfaces ──────────────────────────────────────────── */
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    /* Top-edge highlight = perceived depth */
+    background: rgba(255, 255, 255, 0.028);
+    border: 1px solid rgba(255, 255, 255, 0.075);
     box-shadow:
-      0 1px 0 0 rgba(255, 255, 255, 0.07) inset,
+      0 1px 0 0 rgba(255, 255, 255, 0.065) inset,
       0 0 0 1px rgba(255, 255, 255, 0.0) inset;
   }
 
   .glass-card-hover {
     transition:
-      background 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      background 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.26s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.26s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card-hover:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(77, 163, 255, 0.18);
+    background: rgba(255, 255, 255, 0.055);
+    border-color: rgba(77, 163, 255, 0.16);
     box-shadow:
-      0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
-      0 0 0 1px rgba(77, 163, 255, 0.0),
-      0 8px 32px rgba(0, 0, 0, 0.4);
+      0 1px 0 0 rgba(255, 255, 255, 0.09) inset,
+      0 8px 32px rgba(0, 0, 0, 0.45);
   }
 
   /* ─── Glow effects ──────────────────────────────────────── */
 
   .glow-blue {
     box-shadow:
-      0 0 40px rgba(37, 99, 235, 0.2),
-      0 0 80px rgba(37, 99, 235, 0.08);
+      0 0 40px rgba(37, 99, 235, 0.18),
+      0 0 80px rgba(37, 99, 235, 0.07);
   }
 
   .glow-blue-sm {
-    box-shadow: 0 0 20px rgba(77, 163, 255, 0.15);
+    box-shadow: 0 0 20px rgba(77, 163, 255, 0.14);
   }
 
   .glow-ring {
     box-shadow:
-      0 0 0 1px rgba(77, 163, 255, 0.2),
-      0 0 20px rgba(37, 99, 235, 0.15);
+      0 0 0 1px rgba(77, 163, 255, 0.18),
+      0 0 20px rgba(37, 99, 235, 0.14),
+      0 4px 16px rgba(0, 0, 0, 0.3);
   }
 
   /* ─── Grid pattern ──────────────────────────────────────── */
 
   .grid-pattern {
     background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
     background-size: 72px 72px;
   }
 
   .grid-pattern-fine {
     background-image:
-      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      linear-gradient(rgba(255,255,255,0.013) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.013) 1px, transparent 1px);
     background-size: 36px 36px;
   }
 
@@ -187,7 +225,7 @@
 
   .divider-glow {
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(77, 163, 255, 0.25), transparent);
+    background: linear-gradient(90deg, transparent, rgba(77, 163, 255, 0.22), transparent);
   }
 
   .fade-bottom {
@@ -197,9 +235,8 @@
   /* ─── Noise texture overlay ─────────────────────────────── */
   /* Subtle grain elevates perceived surface quality */
 
-  /* Noise overlay — uses ::before so it sits BEHIND content in DOM stacking order.
-     No z-index needed; ::before renders before the element's children, so it
-     naturally sits behind them without any stacking context manipulation. */
+  /* Uses ::before so it sits BEHIND content in stacking order.
+     No z-index needed — ::before renders before element's children. */
   .noise-overlay {
     position: relative;
   }
@@ -210,9 +247,8 @@
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
     background-size: 200px 200px;
-    opacity: 0.025;
+    opacity: 0.022;
     pointer-events: none;
-    /* No z-index — ::before stacks behind content by DOM order */
   }
 
   /* ─── Interactive states ─────────────────────────────────── */
@@ -223,12 +259,12 @@
     gap: 0.375rem;
     font-size: 0.8125rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.4);
     transition: color 0.2s ease;
   }
 
   .link-arrow:hover {
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.82);
   }
 
   .link-arrow svg {
@@ -237,5 +273,26 @@
 
   .link-arrow:hover svg {
     transform: translateX(3px);
+  }
+
+  /* ─── Mobile-specific improvements ─────────────────────────── */
+
+  /* Slightly more comfortable mobile tap targets */
+  @media (max-width: 640px) {
+    .section-padding {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    /* Tighter heading scale on small screens */
+    .text-clamp-hero {
+      font-size: clamp(2.25rem, 10vw, 3.5rem);
+    }
+  }
+
+  /* Performance: GPU-accelerate elements that animate */
+  .will-change-transform {
+    will-change: transform;
+    transform: translateZ(0);
   }
 }

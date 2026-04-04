@@ -41,6 +41,7 @@ const data = {
     "Operational infrastructure built to scale with community growth",
     "Foundation positioned for more sophisticated automation in Phase 2",
   ],
+  mockupImage: "/case-studies/undugu/mockup.png",
   nextStudy: {
     title: "Amplify Voices",
     href: "/case-studies/amplify-voices",
