@@ -1,28 +1,69 @@
 # Mariner Nexus — Cinematic Case Study Engine
 
 ## Core Philosophy
-Mariner Nexus case studies are not portfolios.  
-They are cinematic, high-impact experiences designed to communicate strategy, execution, and outcome.
+Case studies are not portfolios.
 
-Each case study must feel like a guided walkthrough of how a business transformation was engineered.
+They are cinematic, high-impact experiences that demonstrate:
+- Strategic thinking
+- System design
+- Business outcomes
 
-Reference styles:
-- Apple (clarity, precision, minimalism)
-- RESN (immersion, motion, interaction)
+Each case study must feel like a guided walkthrough of how a transformation was engineered.
+
+Reference:
+- Apple (clarity)
+- RESN (immersion)
+
+---
+
+## Applied Skill Stack for Case Studies
+
+### Cinematic Storytelling
+- Structure as a sequence of scenes
+- Avoid generic section stacking
+
+### First-Principles Thinking
+- Explain why decisions were made
+- Focus on problem → system → outcome
+
+### Conversion Engineering
+- Build desire for similar results
+- Guide user toward engagement
+
+### Premium UI/UX Design Thinking
+- Use clean, minimal, high-end layouts
+- Avoid template patterns
+
+### Systems Thinking
+- Show how all components work together
+- Avoid isolated feature descriptions
+
+### Brand Positioning
+- Speak with authority
+- Position work as transformation, not design
+
+### Attention Engineering
+- Control pacing and focus through layout and motion
+
+### Perception Design
+- Make the experience feel premium and intentional
+
+### Performance Awareness
+- Keep effects smooth and optimized
+
+### Modular Build Thinking
+- Structure reusable patterns for future case studies
 
 ---
 
 ## Structure: Scene-Based Storytelling
 
-Each case study MUST follow this structure:
-
 ### Scene 1 — Hook (Hero)
-- Fullscreen visual
+- Fullscreen
 - Minimal text
-- One powerful statement
 
 Format:
-“This was not a website. It was a system built to [primary outcome].”
+“This was not a website. It was a system built to [outcome].”
 
 CTA:
 - Enter Experience
@@ -30,47 +71,43 @@ CTA:
 ---
 
 ### Scene 2 — The Problem
-- Identify 2–3 key industry pain points
-- Keep language sharp and concise
-- Avoid fluff
+- 2–3 key pain points
+- Sharp, concise language
 
 ---
 
 ### Scene 3 — The Strategy
-- Explain the thinking behind the build
-- Focus on systems, not just design
-- Show transformation from problem → solution
+- Explain system thinking
+- Show transformation from problem to solution
 
 ---
 
 ### Scene 4 — The Build
-- Highlight key components:
-  - Hero section
-  - Conversion points (CTAs, forms)
-  - Layout and UX decisions
-- Include short captions:
-  - “Engineered for trust”
-  - “Optimized for conversion”
-  - “Built for scale”
+Highlight:
+- Hero
+- CTAs
+- UX decisions
+
+Use captions like:
+- Engineered for trust
+- Optimized for conversion
+- Built for scale
 
 ---
 
 ### Scene 5 — The Outcome
-- Show measurable or perceived outcomes
-- Use numbers when available
-- Otherwise emphasize positioning and system improvements
+- Metrics or perceived results
+- Focus on business impact
 
 ---
 
 ### Scene 6 — The Experience
-- Provide an interactive or visual preview
+- Visual or interactive preview
 - Simulate usage where possible
-- Focus on immersion
 
 ---
 
 ### Scene 7 — The Call to Action
-- Close with authority
 
 Format:
 “Want this level of execution for your business?”
@@ -81,52 +118,19 @@ Buttons:
 
 ---
 
-## Design Rules
-
-### Visual
-- Dark, high-contrast UI
-- Large typography
-- Minimal clutter
-- Accent color per case study
-
-### Motion
-- Smooth, intentional animations
-- Scroll-based storytelling
-- No unnecessary effects
-
-### Layout
-- Each section must feel intentional
-- Avoid template-like repetition
-
----
-
-## Tone & Language
-
-- Confident, controlled, authoritative
-- No hype language
-- No filler words
-- Speak like a strategist, not a designer
-
-Examples:
-❌ “We created a beautiful website”
-✅ “We engineered a system designed to increase conversion and trust”
-
----
-
 ## Critical Rules
 
 - Do NOT link externally at the beginning
 - Keep users inside the experience first
-- External links only at the end as optional validation
+- External links only at the end
 
 - Every section must answer:
-  “Why does this matter for business outcomes?”
+“Why does this matter for business outcomes?”
 
 ---
 
 ## Objective
 
-The goal is not to showcase work.
+Make the user think:
 
-The goal is to make the user think:
 “I need this level of execution for my business.”
