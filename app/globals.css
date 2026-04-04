@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-black: #0A0A0A;
+  --color-white: #FFFFFF;
+  --color-soft-white: #F5F7FA;
+
+  --color-nexus-blue: #2563EB;
+  --color-glow-blue: #4DA3FF;
+  --color-core-energy: #7DD3FC;
+
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-glass: rgba(255, 255, 255, 0.06);
+  --color-glow-layer: rgba(37, 99, 235, 0.18);
+
+  --color-surface-1: #0f0f0f;
+  --color-surface-2: #141414;
+  --color-surface-3: #1a1a1a;
+
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.65);
+  --color-text-muted: rgba(255, 255, 255, 0.35);
+
+  /* Typography */
+  --font-sans: 'Inter', 'Geist', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --spacing-section: 7rem;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Transitions */
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    font-family: 'Inter', 'Geist', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::selection {
+    background: rgba(77, 163, 255, 0.3);
+    color: #FFFFFF;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(77, 163, 255, 0.3);
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .glow-blue {
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.25), 0 0 80px rgba(37, 99, 235, 0.1);
+  }
+
+  .glow-blue-sm {
+    box-shadow: 0 0 20px rgba(77, 163, 255, 0.2);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px rgba(77, 163, 255, 0.5);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .glass-card-hover {
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(77, 163, 255, 0.2);
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.12);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #FFFFFF 0%, #7DD3FC 60%, #4DA3FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-glow {
+    border: 1px solid rgba(77, 163, 255, 0.25);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
+  }
+
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+
+  .container-tight {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
