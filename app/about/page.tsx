@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
 import Button from "@/components/ui/Button";
@@ -26,6 +27,10 @@ const values = [
   {
     title: "Premium Design With Purpose",
     body: "Visual quality is a trust signal. Every design decision serves clarity, conversion, or perception — not decoration.",
+  },
+  {
+    title: "Outcomes Over Output",
+    body: "Everything is measured by business performance, not just deliverables. The system isn't done until the metrics move.",
   },
 ];
 
@@ -76,10 +81,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Origin */}
+      {/* Origin — with founder photo */}
       <section className="section-padding bg-[#0A0A0A] relative">
         <div className="container-tight">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+            {/* Left — context */}
             <FadeIn direction="left">
               <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-6 leading-tight">
                 The same problem.
@@ -106,28 +113,49 @@ export default function AboutPage() {
               </div>
             </FadeIn>
 
+            {/* Right — founder card with photo */}
             <FadeIn direction="right" delay={0.15}>
-              <div className="glass-card rounded-2xl p-8 space-y-6">
-                <h3 className="text-white font-bold text-lg tracking-tight mb-6">
-                  Gary L Mariner II
-                  <span className="block text-white/35 text-sm font-normal mt-1">
-                    Founder, Mariner Nexus
-                  </span>
-                </h3>
-                <blockquote className="text-white/55 text-base leading-relaxed italic border-l-2 border-glow-blue/30 pl-5">
-                  &ldquo;I kept seeing the same story: a great business, a weak system, and a team
-                  doing double the work to compensate. My job is to fix the system — and make the
-                  work easier, faster, and more effective.&rdquo;
-                </blockquote>
-                <div className="pt-4 border-t border-white/[0.06] space-y-3">
-                  <p className="text-white/40 text-sm">
-                    Operating at the intersection of strategy, technology, and design — Gary
-                    brings first-principles thinking to every engagement and executes with
-                    the discipline of someone who cares about outcomes, not just deliverables.
-                  </p>
-                  <Button href="/case-studies/gary-mariner" variant="ghost" size="sm">
-                    View personal brand case study →
-                  </Button>
+              <div className="glass-card rounded-2xl overflow-hidden">
+                {/* Founder photo */}
+                <div className="relative w-full aspect-[4/3] bg-black overflow-hidden">
+                  <Image
+                    src="/founder/gary-mariner-ii.png"
+                    alt="Gary L Mariner II — Founder, Mariner Nexus"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 560px"
+                    priority
+                  />
+                  {/* Bottom gradient for text legibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
+                  {/* Name overlay */}
+                  <div className="absolute bottom-5 left-6 right-6">
+                    <p className="text-white font-bold text-lg tracking-tight leading-tight">
+                      Gary L Mariner II
+                    </p>
+                    <p className="text-white/50 text-sm font-normal mt-0.5">
+                      Founder, Mariner Nexus
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-7 space-y-5">
+                  <blockquote className="text-white/55 text-base leading-relaxed italic border-l-2 border-glow-blue/30 pl-5">
+                    &ldquo;I kept seeing the same story: a great business, a weak system, and a team
+                    doing double the work to compensate. My job is to fix the system — and make the
+                    work easier, faster, and more effective.&rdquo;
+                  </blockquote>
+                  <div className="pt-4 border-t border-white/[0.06] space-y-3">
+                    <p className="text-white/40 text-sm">
+                      Operating at the intersection of AI automation, conversion strategy, and
+                      premium design — Gary brings first-principles thinking to every engagement
+                      and executes with the discipline of someone who cares about outcomes, not
+                      just deliverables.
+                    </p>
+                    <Button href="/case-studies/gary-mariner" variant="ghost" size="sm">
+                      View personal brand case study →
+                    </Button>
+                  </div>
                 </div>
               </div>
             </FadeIn>
@@ -135,7 +163,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Five Principles */}
       <section className="section-padding bg-black">
         <div className="container-tight">
           <FadeIn className="text-center mb-16">
@@ -147,12 +175,20 @@ export default function AboutPage() {
             </h2>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            {values.map((value) => (
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {values.map((value, i) => (
               <StaggerItem key={value.title}>
-                <div className="glass-card rounded-xl p-7 glass-card-hover">
-                  <h3 className="text-white font-bold text-base mb-3 tracking-tight">{value.title}</h3>
-                  <p className="text-white/45 text-sm leading-relaxed">{value.body}</p>
+                {/* Fifth card spans full width on sm+ */}
+                <div className={`glass-card rounded-xl p-7 glass-card-hover h-full ${i === 4 ? "sm:col-span-2" : ""}`}>
+                  <div className="flex items-start gap-4">
+                    <span className="text-[0.625rem] font-bold text-white/15 tabular-nums shrink-0 mt-1 tracking-widest">
+                      0{i + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-white font-bold text-base mb-2.5 tracking-tight">{value.title}</h3>
+                      <p className="text-white/45 text-sm leading-relaxed">{value.body}</p>
+                    </div>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
@@ -178,8 +214,8 @@ export default function AboutPage() {
           <div className="space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
             {approach.map((item) => (
               <FadeIn key={item.number}>
-                <div className="grid grid-cols-[80px_1fr] gap-6 p-8 bg-black hover:bg-white/[0.02] transition-colors duration-300">
-                  <span className="text-3xl font-bold text-white/10 tabular-nums">{item.number}</span>
+                <div className="grid grid-cols-[64px_1fr] sm:grid-cols-[80px_1fr] gap-4 sm:gap-6 p-7 sm:p-8 bg-black hover:bg-white/[0.018] transition-colors duration-300">
+                  <span className="text-3xl font-bold text-white/8 tabular-nums">{item.number}</span>
                   <div>
                     <h3 className="text-white font-semibold text-base mb-2 tracking-tight">{item.title}</h3>
                     <p className="text-white/40 text-sm leading-relaxed">{item.body}</p>

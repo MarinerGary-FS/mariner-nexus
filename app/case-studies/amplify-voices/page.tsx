@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
+import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   title: "Amplify Voices — Mariner Nexus Case Study",
@@ -7,10 +8,13 @@ export const metadata: Metadata = {
     "A media platform reimagined with story-driven layout and authority positioning that commands attention.",
 };
 
+const cs = getCaseStudy("amplify-voices")!;
+const next = getNextStudy("amplify-voices");
+
 const data = {
-  category: "Authority System · Media",
-  title: "Amplify Voices",
-  industry: "Media / Messaging / Digital Experience",
+  category: cs.category,
+  title: cs.title,
+  industry: cs.industry,
   tagline:
     "A media platform reimagined — where design and messaging work together to amplify credibility, clarity, and impact.",
   problem:
@@ -26,13 +30,7 @@ const data = {
     "Authority positioning framework applied to copy structure and page architecture",
     "Performance-optimized build for fast load and consistent cross-device experience",
   ],
-  tools: [
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Framer Motion",
-    "Vercel",
-  ],
+  tools: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vercel"],
   outcomePoints: [
     "Immediate authority signal on first impression",
     "Clear content hierarchy that guides visitors without friction",
@@ -40,11 +38,8 @@ const data = {
     "Consistent brand presentation across all digital touchpoints",
     "Elevated credibility that supports future audience growth and partnerships",
   ],
-  mockupImage: "/case-studies/amplify-voices/mockup.png",
-  nextStudy: {
-    title: "Gary L Mariner II",
-    href: "/case-studies/gary-mariner",
-  },
+  mockupImage: cs.mockupImage,
+  nextStudy: next,
 };
 
 export default function AmplifyVoicesPage() {

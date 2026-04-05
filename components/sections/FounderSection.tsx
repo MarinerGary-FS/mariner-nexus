@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import FadeIn from "@/components/motion/FadeIn";
 import Button from "@/components/ui/Button";
@@ -41,19 +42,32 @@ export default function FounderSection() {
   return (
     <section className="section-padding bg-surface-1 relative overflow-hidden">
       <div className="divider-glow absolute top-0 left-0 right-0" />
-      {/* Directional ambient — right-side depth source */}
       <div className="absolute right-0 top-0 bottom-0 w-2/3 bg-[radial-gradient(ellipse_55%_70%_at_100%_40%,rgba(37,99,235,0.06),transparent)]" />
       <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/[0.035] to-transparent" />
 
       <div className="container-tight relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
 
-          {/* Left — founder context */}
+          {/* Left — founder context + photo */}
           <FadeIn direction="left">
             <p className="eyebrow mb-5">The Operator Behind the System</p>
-            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.04] mb-5">
+            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.04] mb-6">
               Gary L Mariner II
             </h2>
+
+            {/* Founder photo — compact, premium framing */}
+            <div className="relative w-full max-w-[340px] aspect-[4/3] rounded-xl overflow-hidden mb-7 border border-white/[0.07]"
+              style={{ boxShadow: "0 2px 0 0 rgba(255,255,255,0.05) inset, 0 16px 48px rgba(0,0,0,0.5)" }}
+            >
+              <Image
+                src="/founder/gary-mariner-ii.png"
+                alt="Gary L Mariner II — Founder, Mariner Nexus"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 340px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+            </div>
 
             <p className="text-white/42 text-[0.9375rem] leading-[1.82] mb-4 max-w-[420px]">
               Mariner Nexus was built by a systems thinker who kept seeing the same problem: businesses with real potential, operating inside digital infrastructure that couldn&apos;t keep up.
@@ -63,12 +77,12 @@ export default function FounderSection() {
               Gary operates at the intersection of AI automation, conversion strategy, and premium design. Every engagement starts with a systems audit — not a brief — and ends with infrastructure engineered to run, scale, and compound over time.
             </p>
 
-            {/* Capability tags — V3: adds visual specificity */}
+            {/* Capability tags */}
             <div className="flex flex-wrap gap-1.5 mb-8">
               {capabilities.map((cap) => (
                 <span
                   key={cap}
-                  className="text-[0.6875rem] font-medium text-white/30 bg-white/[0.04] border border-white/[0.06] px-2.5 py-1 rounded-full"
+                  className="text-[0.6875rem] font-medium text-white/28 bg-white/[0.04] border border-white/[0.055] px-2.5 py-1 rounded-full"
                 >
                   {cap}
                 </span>
@@ -89,7 +103,7 @@ export default function FounderSection() {
             </Button>
           </FadeIn>
 
-          {/* Right — stats + proof */}
+          {/* Right — stats proof */}
           <FadeIn direction="right" delay={0.1}>
             <StaggerContainer className="space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">
               {stats.map((item, i) => (
@@ -99,7 +113,6 @@ export default function FounderSection() {
                     whileHover={!prefersReduced ? { x: 2 } : {}}
                     transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
                   >
-                    {/* Metric */}
                     <div className="shrink-0 w-16">
                       <span className="text-[2.5rem] font-bold leading-none text-gradient">
                         {item.metric}
@@ -116,9 +129,9 @@ export default function FounderSection() {
                         {item.note}
                       </p>
                     </div>
-                    {/* Right accent line on hover */}
+                    {/* Per-stat accent edge */}
                     <div
-                      className="self-stretch w-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="self-stretch w-px opacity-0 group-hover:opacity-100 transition-opacity"
                       style={{
                         background: i === 0
                           ? "linear-gradient(to bottom, rgba(77,163,255,0.4), transparent)"
@@ -134,8 +147,8 @@ export default function FounderSection() {
 
             {/* Trust footnote */}
             <div className="mt-5 flex items-center gap-3 px-1">
-              <div className="w-1 h-1 rounded-full bg-glow-blue/40 shrink-0" />
-              <p className="text-white/20 text-[0.75rem] leading-relaxed">
+              <div className="w-1 h-1 rounded-full bg-glow-blue/38 shrink-0" />
+              <p className="text-white/18 text-[0.75rem] leading-relaxed">
                 All systems are designed for compounding returns — not one-time launches.
                 Infrastructure built today should work harder for the business six months from now.
               </p>

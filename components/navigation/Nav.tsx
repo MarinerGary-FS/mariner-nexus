@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -27,7 +28,6 @@ export default function Nav() {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Lock scroll when menu open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -38,28 +38,25 @@ export default function Nav() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-black/75 backdrop-blur-2xl border-b border-white/[0.055]"
+            ? "bg-black/78 backdrop-blur-2xl border-b border-white/[0.055]"
             : "bg-transparent"
         }`}
       >
         <div className="container-tight">
           <div className="flex items-center justify-between h-[60px] md:h-[68px]">
 
-            {/* Logo */}
+            {/* Logo — micro-logo.png in nav */}
             <Link href="/" className="flex items-center gap-2.5 group" aria-label="Mariner Nexus home">
               <div className="relative w-7 h-7 md:w-8 md:h-8 shrink-0">
-                <div className="absolute inset-0 rounded-full bg-nexus-blue/15 blur-md group-hover:bg-nexus-blue/25 transition-colors duration-300" />
-                <div className="relative w-full h-full rounded-full border border-glow-blue/30 bg-black/60 flex items-center justify-center">
-                  {/* Inline nexus micro-mark */}
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <circle cx="7" cy="7" r="6" stroke="rgba(77,163,255,0.3)" strokeWidth="0.75" />
-                    <circle cx="7" cy="7" r="2" fill="rgba(77,163,255,0.9)" />
-                    <line x1="7" y1="1" x2="7" y2="4" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
-                    <line x1="7" y1="10" x2="7" y2="13" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
-                    <line x1="1" y1="7" x2="4" y2="7" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
-                    <line x1="10" y1="7" x2="13" y2="7" stroke="rgba(77,163,255,0.5)" strokeWidth="0.75" strokeLinecap="round" />
-                  </svg>
-                </div>
+                <div className="absolute inset-0 rounded-full bg-nexus-blue/12 blur-md group-hover:bg-nexus-blue/22 transition-colors duration-300" />
+                <Image
+                  src="/brand/micro-logo.png"
+                  alt="Mariner Nexus"
+                  width={32}
+                  height={32}
+                  className="relative w-full h-full object-contain rounded-full"
+                  priority
+                />
               </div>
               <span className="text-white/85 group-hover:text-white font-semibold text-[0.8125rem] tracking-wide hidden sm:block transition-colors duration-200">
                 Mariner Nexus
@@ -69,7 +66,7 @@ export default function Nav() {
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = pathname === link.href || pathname.startsWith(link.href + "/");
                 return (
                   <Link
                     key={link.href}

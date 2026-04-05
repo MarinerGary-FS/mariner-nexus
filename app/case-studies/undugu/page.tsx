@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
+import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   title: "Undugu — Mariner Nexus Case Study",
@@ -7,10 +8,13 @@ export const metadata: Metadata = {
     "Community foundation rebuilt for scale with CRM intake, member tracking, and communication architecture.",
 };
 
+const cs = getCaseStudy("undugu")!;
+const next = getNextStudy("undugu");
+
 const data = {
-  category: "System Build · Community",
-  title: "Undugu",
-  industry: "Community / Foundation / Operational Infrastructure",
+  category: cs.category,
+  title: cs.title,
+  industry: cs.industry,
   tagline:
     "A community foundation rebuilt for scale — with CRM intake, member tracking, and operational infrastructure that grows with the organization.",
   problem:
@@ -26,14 +30,7 @@ const data = {
     "Event and engagement tracking system built for ongoing operational visibility",
     "Automated welcome and follow-up communication sequences",
   ],
-  tools: [
-    "Next.js",
-    "GoHighLevel",
-    "Discord API",
-    "Framer Motion",
-    "Vercel",
-    "Tailwind CSS",
-  ],
+  tools: ["Next.js", "GoHighLevel", "Discord API", "Framer Motion", "Vercel", "Tailwind CSS"],
   outcomePoints: [
     "Structured member intake replacing manual, inconsistent processes",
     "CRM-connected tagging and segmentation for targeted communication",
@@ -41,11 +38,8 @@ const data = {
     "Operational infrastructure built to scale with community growth",
     "Foundation positioned for more sophisticated automation in Phase 2",
   ],
-  mockupImage: "/case-studies/undugu/mockup.png",
-  nextStudy: {
-    title: "Amplify Voices",
-    href: "/case-studies/amplify-voices",
-  },
+  mockupImage: cs.mockupImage,
+  nextStudy: next,
 };
 
 export default function UnduguPage() {

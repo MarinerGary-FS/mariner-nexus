@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
+import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   title: "Serene Origins — Mariner Nexus Case Study",
@@ -7,10 +8,13 @@ export const metadata: Metadata = {
     "A wellness concept transformed into a structured digital business platform with premium positioning and a clear monetization pathway.",
 };
 
+const cs = getCaseStudy("serene-origins")!;
+const next = getNextStudy("serene-origins");
+
 const data = {
-  category: "Revenue System · Wellness",
-  title: "Serene Origins",
-  industry: "Wellness / Digital Business / Subscription",
+  category: cs.category,
+  title: cs.title,
+  industry: cs.industry,
   tagline:
     "A wellness concept transformed into a structured digital business platform with premium positioning and a clear revenue pathway.",
   problem:
@@ -26,14 +30,7 @@ const data = {
     "Onboarding content structure and digital customer journey mapping",
     "SEO foundation and performance-optimized build",
   ],
-  tools: [
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Stripe",
-    "Framer Motion",
-    "Vercel",
-  ],
+  tools: ["Next.js", "TypeScript", "Tailwind CSS", "Stripe", "Framer Motion", "Vercel"],
   outcomePoints: [
     "Premium brand presentation that commands trust at first glance",
     "Structured subscription pathway with clear value communication",
@@ -41,11 +38,8 @@ const data = {
     "Scalable digital platform built to grow with the business",
     "Consistent visual identity across all digital touchpoints",
   ],
-  mockupImage: "/case-studies/serene-origins/mockup.png",
-  nextStudy: {
-    title: "Undugu",
-    href: "/case-studies/undugu",
-  },
+  mockupImage: cs.mockupImage,
+  nextStudy: next,
 };
 
 export default function SereneOriginsPage() {

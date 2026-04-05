@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
+import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   title: "Act of Valor — Mariner Nexus Case Study",
@@ -7,10 +8,13 @@ export const metadata: Metadata = {
     "A high-trust emergency services platform engineered for credibility-first UX, urgent CTA structure, and local authority conversion.",
 };
 
+const cs = getCaseStudy("act-of-valor")!;
+const next = getNextStudy("act-of-valor");
+
 const data = {
-  category: "Revenue · Service Business · Conversion",
-  title: "Act of Valor",
-  industry: "Emergency Services / Local Service Business",
+  category: cs.category,
+  title: cs.title,
+  industry: cs.industry,
   tagline:
     "A high-trust service business platform built for the moment it matters most — credentials-forward design, urgent CTA architecture, and same-day conversion clarity.",
   problem:
@@ -27,14 +31,7 @@ const data = {
     "GoHighLevel CRM integration for lead intake, tagging, and automated follow-up sequences",
     "Mobile-first emergency UX — optimized for users calling from high-stress situations",
   ],
-  tools: [
-    "Next.js",
-    "TypeScript",
-    "GoHighLevel",
-    "Tailwind CSS",
-    "Framer Motion",
-    "Vercel",
-  ],
+  tools: ["Next.js", "TypeScript", "GoHighLevel", "Tailwind CSS", "Framer Motion", "Vercel"],
   outcomePoints: [
     "Credentials and trust signals surfaced immediately — no scrolling required",
     "Persistent CTA structure that keeps conversion path visible throughout the experience",
@@ -42,11 +39,8 @@ const data = {
     "Local authority positioning supporting organic search visibility in the service area",
     "CRM-connected lead intake with automated response sequences for missed-call recovery",
   ],
-  mockupImage: "/case-studies/act-of-valor/mockup.png",
-  nextStudy: {
-    title: "Serene Origins",
-    href: "/case-studies/serene-origins",
-  },
+  mockupImage: cs.mockupImage,
+  nextStudy: next,
 };
 
 export default function ActOfValorPage() {

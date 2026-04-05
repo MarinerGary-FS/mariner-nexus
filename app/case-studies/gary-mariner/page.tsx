@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
+import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   title: "Gary L Mariner II — Mariner Nexus Case Study",
@@ -7,10 +8,13 @@ export const metadata: Metadata = {
     "Personal brand elevated into a structured authority platform reflecting leadership and strategic execution.",
 };
 
+const cs = getCaseStudy("gary-mariner")!;
+const next = getNextStudy("gary-mariner");
+
 const data = {
-  category: "Personal Brand · Executive Presence",
-  title: "Gary L Mariner II",
-  industry: "Personal Brand / Executive / Consulting",
+  category: cs.category,
+  title: cs.title,
+  industry: cs.industry,
   tagline:
     "A high-level operator's personal brand transformed into a structured authority platform built for leadership, consulting, and long-term influence.",
   problem:
@@ -26,15 +30,7 @@ const data = {
     "Contact and intake structure built for future CRM connection",
     "Mobile-first, performance-optimized build across all device types",
   ],
-  tools: [
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Cal.com",
-    "Framer Motion",
-    "Vercel",
-  ],
-  mockupImage: "/case-studies/gary-mariner-ii/mockup.png",
+  tools: ["Next.js", "TypeScript", "Tailwind CSS", "Cal.com", "Framer Motion", "Vercel"],
   outcomePoints: [
     "Authority digital presence that commands trust at first impression",
     "Clear offer structure that guides the right visitor toward the right action",
@@ -42,6 +38,8 @@ const data = {
     "Professional presence supporting speaking, consulting, and partnership opportunities",
     "A platform built to evolve as the brand and offer expand",
   ],
+  mockupImage: cs.mockupImage,
+  nextStudy: next,
 };
 
 export default function GaryMarinerPage() {

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
+import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   title: "EazieDaGod — Mariner Nexus Case Study",
@@ -7,10 +8,13 @@ export const metadata: Metadata = {
     "A creator and artist brand transformed into an immersive digital identity — full-experience entry design, premium artist presentation, and strategic link architecture.",
 };
 
+const cs = getCaseStudy("eaziedagod")!;
+const next = getNextStudy("eaziedagod");
+
 const data = {
-  category: "Authority · Creator · Personal Brand",
-  title: "EazieDaGod",
-  industry: "Music / Creator / Artist Brand",
+  category: cs.category,
+  title: cs.title,
+  industry: cs.industry,
   tagline:
     "An artist brand rebuilt from the ground up — immersive digital identity, premium presentation, and a link architecture that turns every entry point into an experience.",
   problem:
@@ -27,13 +31,7 @@ const data = {
     "Brand identity system: typography, color language, and visual motion hierarchy",
     "Mobile-first build optimized for the social traffic patterns of a creator audience",
   ],
-  tools: [
-    "Next.js",
-    "TypeScript",
-    "Framer Motion",
-    "Tailwind CSS",
-    "Vercel",
-  ],
+  tools: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "Vercel"],
   outcomePoints: [
     "A single, immersive entry point that communicates brand identity within 3 seconds",
     "Structured link hub replacing fragmented social bios with intentional routing",
@@ -41,11 +39,8 @@ const data = {
     "Mobile-optimized experience matching the consumption patterns of a creator audience",
     "A digital foundation that can scale with the brand — merchandise, events, and collabs",
   ],
-  mockupImage: "/case-studies/eaziedagod/mockup.png",
-  nextStudy: {
-    title: "Act of Valor",
-    href: "/case-studies/act-of-valor",
-  },
+  mockupImage: cs.mockupImage,
+  nextStudy: next,
 };
 
 export default function EazieDaGodPage() {
