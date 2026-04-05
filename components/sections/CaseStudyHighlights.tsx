@@ -166,6 +166,16 @@ export default function CaseStudyHighlights() {
                           </span>
                         ))}
                       </div>
+
+                      {/* Hover CTA — slides into view */}
+                      <div className="pt-3 border-t border-white/[0.05] flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <span className="text-[0.75rem] font-semibold" style={{ color: "rgba(77,163,255,0.7)" }}>
+                          Read the build
+                        </span>
+                        <svg width="10" height="10" viewBox="0 0 12 12" fill="none" style={{ color: "rgba(77,163,255,0.55)" }}>
+                          <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
                     </div>
                   </motion.div>
                 </Link>

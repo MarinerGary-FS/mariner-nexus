@@ -28,13 +28,13 @@ export default function Footer() {
                 Limited availability.
               </p>
               <h2 className="text-2xl md:text-3xl font-bold text-white tracking-[-0.025em] leading-[1.12] mb-4">
-                Every serious system starts
+                If your infrastructure isn&apos;t keeping up —
                 <br />
-                <span className="text-white/35">with one honest conversation.</span>
+                <span className="text-white/35">it&apos;s time to fix it.</span>
               </h2>
               <p className="text-white/32 text-[0.875rem] leading-[1.72]">
-                No pitch. No pressure. Just a clear read on what your business
-                needs — and whether we&apos;re the right people to build it.
+                Mariner Nexus builds systems that scale. One conversation is all
+                it takes to find out if we&apos;re the right fit.
               </p>
             </div>
             <div className="flex flex-col gap-3 shrink-0">
@@ -85,8 +85,9 @@ export default function Footer() {
               </Link>
 
               <p className="text-white/30 text-[0.8125rem] leading-[1.76] max-w-[256px] mb-8">
-                AI-powered systems, premium digital infrastructure, and conversion
-                architecture — for businesses built to scale.
+                We build the digital systems, automation infrastructure, and
+                conversion architecture that let serious businesses scale without
+                the ceiling.
               </p>
 
               <div className="flex items-center gap-2">

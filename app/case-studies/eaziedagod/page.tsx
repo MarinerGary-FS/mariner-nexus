@@ -40,6 +40,7 @@ const data = {
     "A digital foundation that can scale with the brand — merchandise, events, and collabs",
   ],
   mockupImage: cs.mockupImage,
+  themeAccentRgb: "212,175,55",
   nextStudy: next,
 };
 

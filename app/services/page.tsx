@@ -84,14 +84,14 @@ const services = [
 const tiers = [
   {
     tier: "Foundation",
-    range: "$3.5K – $6K",
+    range: "Starts at $3,500",
     description: "Clean, fast, and professional. For businesses that need a strong digital presence without complexity.",
     includes: ["Core website (5–8 pages)", "Mobile-optimized build", "Performance-first delivery", "Basic CTA structure"],
     timeline: "2–3 weeks",
   },
   {
     tier: "Growth",
-    range: "$7.5K – $15K",
+    range: "Starts at $7,500",
     description: "Conversion-focused with strategic architecture. For brands ready to use their website as a real business tool.",
     includes: ["Full strategy session", "Conversion-engineered design", "CRM or booking integration", "UX refinement + copy review"],
     timeline: "3–5 weeks",
@@ -99,7 +99,7 @@ const tiers = [
   },
   {
     tier: "Authority",
-    range: "$12K – $25K",
+    range: "Starts at $12,000",
     description: "Premium positioning and brand system integration. For leaders who need a digital presence that commands the room.",
     includes: ["Brand system design", "Advanced interaction design", "Positioning + messaging framework", "Full integration layer"],
     timeline: "5–8 weeks",
@@ -116,7 +116,7 @@ const tiers = [
 
 const creatorOffer = {
   tier: "Creator Authority Launch",
-  range: "$3.5K – $6K",
+  range: "Starts at $3,500",
   description:
     "A focused, immersive authority platform built for music artists, creators, and personality-driven brands. Fast to launch. Built to last. Indistinguishable from brands with 10× the budget.",
   includes: [
@@ -128,7 +128,7 @@ const creatorOffer = {
   ],
   retainer: {
     label: "Creator Growth Retainer",
-    range: "$500 – $900 / month",
+    range: "From $500 / month",
     includes: [
       "Monthly site updates and content refreshes",
       "New release or drop page builds",
@@ -387,6 +387,9 @@ export default function ServicesPage() {
             <p className="text-white/45 text-base max-w-lg mx-auto">
               Pricing is based on complexity, system depth, and business impact — not arbitrary package tiers.
             </p>
+            <p className="text-white/25 text-sm max-w-md mx-auto mt-3">
+              Final scope and investment are defined after a discovery session — not before.
+            </p>
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -466,6 +469,9 @@ export default function ServicesPage() {
             <Button href="/contact" variant="primary" size="lg">
               Claim Your Strategy Call
             </Button>
+            <p className="text-white/17 text-xs mt-5">
+              We take on a limited number of builds at a time — to maintain the standard every client deserves.
+            </p>
           </FadeIn>
         </div>
       </section>

@@ -19,6 +19,7 @@ interface CaseStudyData {
   outcome: string;
   outcomePoints: string[];
   mockupImage?: string; // /case-studies/[slug]/mockup.png
+  themeAccentRgb?: string; // optional client identity accent, e.g. "212,175,55" for gold
   nextStudy?: {
     title: string;
     href: string;
@@ -103,6 +104,8 @@ function MockupFrame({ src, title }: { src?: string; title: string }) {
 }
 
 export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
+  const accentRgb = data.themeAccentRgb ?? "77,163,255";
+  const accentColor = `rgba(${accentRgb},0.7)`;
   return (
     <>
       {/* ── Hero ── */}
@@ -126,7 +129,10 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
               All Case Studies
             </Link>
 
-            <p className="eyebrow mb-5">{data.category}</p>
+            <div className="flex items-center gap-2 mb-5">
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: accentColor }} />
+              <p className="eyebrow" style={{ color: `rgba(${accentRgb},0.65)` }}>{data.category}</p>
+            </div>
             <h1 className="text-[3rem] md:text-[4.25rem] lg:text-[5.25rem] font-bold tracking-[-0.036em] text-white mb-4 leading-[0.96]">
               {data.title}
             </h1>
@@ -172,7 +178,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
                     <span
                       className="w-1.5 h-1.5 rounded-full shrink-0"
                       style={{
-                        background: i === 0 ? "rgba(255,255,255,0.25)" : i === 1 ? "rgba(77,163,255,0.7)" : "rgba(125,211,252,0.7)",
+                        background: i === 0 ? "rgba(255,255,255,0.25)" : i === 1 ? `rgba(${accentRgb},0.7)` : `rgba(${accentRgb},0.45)`,
                       }}
                     />
                     <p className="eyebrow text-glow-blue/50">{block.label}</p>
@@ -192,7 +198,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
 
             {/* Mockup */}
             <div>
-              <p className="eyebrow text-glow-blue/38 mb-4">The Build</p>
+              <p className="eyebrow mb-4" style={{ color: `rgba(${accentRgb},0.45)` }}>The Build</p>
               <MockupFrame src={data.mockupImage} title={data.title} />
             </div>
 
@@ -213,7 +219,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
                     className="flex items-start gap-3.5"
                   >
                     <span className="mt-[0.3rem] w-4 h-4 rounded-full border border-glow-blue/22 bg-nexus-blue/8 flex items-center justify-center shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-glow-blue/55" />
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ background: `rgba(${accentRgb},0.55)` }} />
                     </span>
                     <span className="text-white/45 text-[0.875rem] leading-[1.74]">{item}</span>
                   </motion.li>
@@ -226,7 +232,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
               <div className="divider-glow flex-1 opacity-60" />
-              <p className="eyebrow text-glow-blue/45 shrink-0">Outcomes Delivered</p>
+              <p className="eyebrow shrink-0" style={{ color: `rgba(${accentRgb},0.52)` }}>Outcomes Delivered</p>
               <div className="divider-glow flex-1 opacity-60" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
