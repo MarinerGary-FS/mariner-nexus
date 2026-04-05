@@ -23,10 +23,10 @@ export default function ConversionSection() {
           <p className="eyebrow mb-6">Ready to Build</p>
 
           <h2 className="text-[2.25rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold tracking-[-0.035em] text-white leading-[1.0] mb-3 max-w-2xl mx-auto">
-            If your business is outgrowing your systems —
+            If your business is outgrowing its systems —
           </h2>
           <h2 className="text-[2.25rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold tracking-[-0.035em] leading-[1.0] mb-8 text-white/30 max-w-2xl mx-auto">
-            it&apos;s time to build the infrastructure that matches.
+            we build the infrastructure that matches.
           </h2>
 
           <p className="text-white/38 text-[0.9375rem] max-w-md mx-auto leading-[1.7] mb-10">

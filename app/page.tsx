@@ -13,9 +13,9 @@ export default function HomePage() {
       <HeroSection />
       <PositioningSection />
       <OutcomePaths />
-      <CaseStudyHighlights />
       <ServicesSnapshot />
       <ProcessSection />
+      <CaseStudyHighlights />
       <FounderSection />
       <ConversionSection />
     </>

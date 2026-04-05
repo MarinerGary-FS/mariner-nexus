@@ -345,9 +345,9 @@ export default function HeroSection() {
           transition={{ duration: 0.65, delay: 0.84, ease: [0.16, 1, 0.3, 1] }}
           className="text-[0.9375rem] md:text-[1rem] text-white/38 max-w-[480px] leading-[1.78] mb-10 md:mb-11"
         >
-          We design AI-powered systems, premium web experiences, and automation
-          infrastructure that help modern businesses operate smarter, convert
-          better, and scale with clarity.
+          For businesses with real potential held back by infrastructure that
+          can&apos;t keep up. We build the systems — digital, automated, and
+          conversion-ready — that remove that ceiling.
         </motion.p>
 
         {/* CTAs */}

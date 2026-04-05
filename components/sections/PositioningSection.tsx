@@ -60,19 +60,18 @@ export default function PositioningSection() {
 
           {/* Left — manifesto text */}
           <FadeIn direction="left">
-            <p className="eyebrow mb-5">What We Build</p>
+            <p className="eyebrow mb-5">The Difference</p>
             <h2 className="text-[2.5rem] md:text-[3rem] font-bold tracking-[-0.03em] leading-[1.1] text-white mb-6">
               This isn&apos;t a website agency.
             </h2>
-            <p className="text-white/45 text-[0.9375rem] leading-[1.75] mb-6 max-w-sm">
-              Mariner Nexus transforms disconnected tools, unclear positioning,
-              and slow operations into intelligent systems built for modern growth.
+            <p className="text-white/48 text-[0.9375rem] leading-[1.78] mb-6 max-w-sm">
+              Mariner Nexus turns disconnected tools, weak positioning, and
+              manual operations into intelligent systems built for modern growth.
             </p>
-            <p className="text-white/30 text-sm leading-[1.7] max-w-sm">
-              We approach every engagement as a systems problem — mapping the
-              full architecture before writing a line of code. The result is a
-              build that fits how your business actually works and where it
-              needs to go.
+            <p className="text-white/30 text-[0.875rem] leading-[1.74] max-w-sm">
+              Every engagement starts with a systems audit — not a scope of work.
+              We map the full architecture before writing a line of code.
+              The result fits how your business works today and where it&apos;s going next.
             </p>
           </FadeIn>
 
@@ -85,10 +84,10 @@ export default function PositioningSection() {
                     {pillar.icon}
                   </span>
                   <div>
-                    <h3 className="text-white/90 font-semibold text-[0.875rem] mb-2 tracking-tight">
+                    <h3 className="text-white/88 font-semibold text-[0.875rem] mb-2 tracking-tight">
                       {pillar.title}
                     </h3>
-                    <p className="text-white/38 text-[0.8125rem] leading-[1.65]">{pillar.body}</p>
+                    <p className="text-white/40 text-[0.8125rem] leading-[1.68]">{pillar.body}</p>
                   </div>
                 </div>
               </StaggerItem>

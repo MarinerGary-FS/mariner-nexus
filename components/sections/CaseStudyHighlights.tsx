@@ -29,9 +29,9 @@ export default function CaseStudyHighlights() {
 
       <div className="container-tight relative">
         {/* Header */}
-        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-14">
+        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-12">
           <div>
-            <p className="eyebrow mb-4">Case Studies</p>
+            <p className="eyebrow mb-4">Proof of Work</p>
             <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.1]">
               Six builds.
               <br />

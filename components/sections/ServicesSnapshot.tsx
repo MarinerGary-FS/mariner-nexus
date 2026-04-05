@@ -38,9 +38,9 @@ export default function ServicesSnapshot() {
       <div className="divider-glow absolute top-0 left-0 right-0" />
 
       <div className="container-tight">
-        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-14">
+        <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-12">
           <div>
-            <p className="eyebrow mb-4">Services</p>
+            <p className="eyebrow mb-4">What We Build</p>
             <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.1]">
               Not websites.
               <br />
