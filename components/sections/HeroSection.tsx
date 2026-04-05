@@ -366,7 +366,7 @@ export default function HeroSection() {
               href="/contact"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-[0.875rem] font-semibold transition-colors duration-200 glow-ring"
             >
-              Book a Strategy Call
+              Start Your Build
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -382,13 +382,23 @@ export default function HeroSection() {
               href="/case-studies"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white/42 hover:text-white/78 text-[0.875rem] font-medium transition-colors duration-200"
             >
-              View Case Studies
+              See the Work
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </motion.div>
         </motion.div>
+
+        {/* Micro-trust line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1.18 }}
+          className="text-white/18 text-[0.75rem] mt-3 tracking-wide"
+        >
+          30-min discovery call &middot; No cost &middot; No commitment
+        </motion.p>
 
         {/* Scroll cue */}
         <motion.div

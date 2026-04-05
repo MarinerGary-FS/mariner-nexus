@@ -105,11 +105,12 @@ const tiers = [
     timeline: "5–8 weeks",
   },
   {
-    tier: "Systems",
-    range: "$25K – $60K+",
-    description: "Full-stack operational architecture. For organizations building serious digital infrastructure.",
-    includes: ["Complex CRM + automation setup", "Custom dashboards or platforms", "Multi-stakeholder architecture", "Ongoing retainer option"],
-    timeline: "8–14 weeks",
+    tier: "Custom Engagement",
+    range: "Scoped to mission",
+    description: "For organizations that need full-stack operational architecture. Scope, timeline, and investment are defined through a strategic discovery process — not a menu.",
+    includes: ["Full systems audit and architecture plan", "Complex CRM, automation + platform builds", "Multi-stakeholder infrastructure design", "Dedicated engagement model"],
+    timeline: "Discovery required",
+    isCustom: true,
   },
 ];
 
@@ -117,7 +118,7 @@ const creatorOffer = {
   tier: "Creator Authority Launch",
   range: "$3.5K – $6K",
   description:
-    "A lean, immersive authority platform built specifically for music artists, creators, and personality-driven brands. Fast launch. Premium presentation.",
+    "A focused, immersive authority platform built for music artists, creators, and personality-driven brands. Fast to launch. Built to last. Indistinguishable from brands with 10× the budget.",
   includes: [
     "Immersive artist or creator site (3–5 pages)",
     "Strategic link architecture (replaces fragmented bio links)",
@@ -157,6 +158,12 @@ export default function ServicesPage() {
             <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
               Every engagement is defined by transformation, business impact, and execution
               level — not page counts or feature lists.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.12} className="mt-6">
+            <p className="inline-flex items-center gap-2 text-white/28 text-sm border border-white/[0.07] rounded-full px-4 py-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-glow-blue/50 shrink-0" />
+              Mariner Nexus takes a limited number of new engagements each quarter.
             </p>
           </FadeIn>
         </div>
@@ -359,7 +366,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <Button href="/contact" variant="primary" size="md">
-                  Inquire About Retainer
+                  Apply for Retainer
                 </Button>
               </div>
             </FadeIn>
@@ -389,19 +396,25 @@ export default function ServicesPage() {
                   className={`h-full rounded-2xl p-7 flex flex-col gap-5 transition-all relative ${
                     tier.featured
                       ? "bg-nexus-blue/10 border border-nexus-blue/28"
+                      : tier.isCustom
+                      ? "bg-white/[0.02] border border-white/[0.12]"
                       : "glass-card"
                   }`}
                 >
                   {tier.featured && (
                     <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-semibold bg-nexus-blue text-white px-3 py-1 rounded-full whitespace-nowrap">
-                      Most Popular
+                      Most Requested
                     </span>
                   )}
                   <div>
                     <h3 className="text-white font-bold text-lg mb-1 tracking-tight">
                       {tier.tier}
                     </h3>
-                    <p className="text-2xl font-bold text-gradient">{tier.range}</p>
+                    {tier.isCustom ? (
+                      <p className="text-lg font-semibold text-white/55 tracking-tight">{tier.range}</p>
+                    ) : (
+                      <p className="text-2xl font-bold text-gradient">{tier.range}</p>
+                    )}
                   </div>
                   <p className="text-white/42 text-sm leading-relaxed">{tier.description}</p>
                   <ul className="space-y-2 flex-1">
@@ -416,10 +429,30 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {tier.isCustom && (
+                    <div className="mt-auto">
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-2 text-[0.8125rem] text-glow-blue/60 hover:text-glow-blue transition-colors duration-200 font-medium"
+                      >
+                        Apply for Discovery
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                          <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </Link>
+                    </div>
+                  )}
                   <div className="pt-4 border-t border-white/[0.06]">
-                    <p className="text-xs text-white/28">
-                      Timeline: <span className="text-white/48">{tier.timeline}</span>
-                    </p>
+                    {tier.isCustom ? (
+                      <p className="text-xs text-white/28">
+                        Begins with a{" "}
+                        <span className="text-glow-blue/55">scoping conversation</span>
+                      </p>
+                    ) : (
+                      <p className="text-xs text-white/28">
+                        Timeline: <span className="text-white/48">{tier.timeline}</span>
+                      </p>
+                    )}
                   </div>
                 </div>
               </StaggerItem>
@@ -428,10 +461,10 @@ export default function ServicesPage() {
 
           <FadeIn delay={0.3} className="mt-10 text-center">
             <p className="text-white/32 text-sm mb-6">
-              Not sure which tier is right? The strategy call answers that.
+              Not sure where you fit? The strategy call maps that in 30 minutes.
             </p>
             <Button href="/contact" variant="primary" size="lg">
-              Book a Strategy Call
+              Claim Your Strategy Call
             </Button>
           </FadeIn>
         </div>

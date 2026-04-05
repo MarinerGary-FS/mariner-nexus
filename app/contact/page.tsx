@@ -4,7 +4,7 @@ import ContactForm from "@/components/sections/ContactForm";
 import CalEmbed from "@/components/integrations/CalEmbed";
 
 export const metadata: Metadata = {
-  title: "Book a Strategy Call — Mariner Nexus",
+  title: "Start Your Build — Mariner Nexus",
   description:
     "Book a 30-minute strategy call to map your system, identify constraints, and define what the right build looks like for your business.",
 };
@@ -18,22 +18,22 @@ export default function ContactPage() {
         <div className="container-tight relative text-center">
           <FadeIn>
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-5">
-              Book a Strategy Call
+              Start Your Build
             </span>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-5 leading-tight">
-              Let&apos;s map your system.
+              The first step is a conversation.
             </h1>
             <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-              A 30-minute call to understand your business, identify the real constraints,
-              and define what the right build actually looks like.
+              A focused 30-minute call. We map your current system, identify the real
+              constraints, and define exactly what needs to be built — and what doesn&apos;t.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.15} className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
             {[
               "No pitch. No pressure.",
-              "Clear next steps either way.",
-              "30 minutes. High signal.",
+              "Proposal within 48 hrs if there's a fit.",
+              "Limited spots available each quarter.",
             ].map((item) => (
               <span key={item} className="flex items-center gap-2 text-white/40">
                 <span className="w-1.5 h-1.5 rounded-full bg-glow-blue/50" />
@@ -97,7 +97,7 @@ export default function ContactPage() {
               },
               {
                 q: "What happens after the call?",
-                a: "If there's a fit, we'll send a scoped proposal within 48 hours. If not, you'll still leave with useful direction and a clear sense of what you need.",
+                a: "If there's a clear fit, we send a scoped proposal within 48 hours — specific to your business, not a template. If it's not the right match, you'll leave with a clear picture of what you actually need and why.",
               },
             ].map((item) => (
               <FadeIn key={item.q}>

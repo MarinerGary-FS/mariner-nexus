@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div className="max-w-lg">
               <p className="text-[0.625rem] font-semibold tracking-[0.2em] uppercase text-glow-blue/55 mb-3">
-                Ready to build?
+                Limited availability.
               </p>
               <h2 className="text-2xl md:text-3xl font-bold text-white tracking-[-0.025em] leading-[1.12] mb-4">
                 Every serious system starts
@@ -42,7 +42,7 @@ export default function Footer() {
                 href="/contact"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-[0.8125rem] font-semibold transition-colors duration-200 glow-ring"
               >
-                Book a Strategy Call
+                Start Your Build
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -125,7 +125,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Mariner Nexus. All rights reserved.
             </p>
             <p className="text-white/12 text-[0.6875rem] tracking-[0.06em]">
-              Strategy first. Systems always. Execution without compromise.
+              Built for businesses that are serious about growth.
             </p>
           </div>
         </div>
