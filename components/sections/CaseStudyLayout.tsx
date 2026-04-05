@@ -33,12 +33,22 @@ function MockupFrame({ src, title }: { src?: string; title: string }) {
         initial={{ opacity: 0, y: 16, scale: 0.98 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}
+        whileHover={{ scale: 1.012 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden"
         style={{
-          boxShadow: "0 2px 0 0 rgba(255,255,255,0.06) inset, 0 0 0 1px rgba(255,255,255,0.07), 0 24px 64px rgba(0,0,0,0.6)",
+          boxShadow: "0 2px 0 0 rgba(255,255,255,0.06) inset, 0 0 0 1px rgba(255,255,255,0.09), 0 24px 64px rgba(0,0,0,0.65), 0 0 80px rgba(37,99,235,0.1)",
         }}
       >
+        {/* Browser chrome */}
+        <div className="absolute top-0 left-0 right-0 z-30 h-8 flex items-center gap-1.5 px-4 bg-gradient-to-b from-black/90 to-transparent pointer-events-none">
+          <div className="w-2.5 h-2.5 rounded-full bg-white/[0.12]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/[0.06]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/[0.06]" />
+          <div className="ml-4 h-3 rounded-full bg-white/[0.05] flex-1 max-w-[180px] flex items-center px-2.5">
+            <span className="text-[0.5rem] text-white/18 font-medium tracking-wide">marinernexus.com</span>
+          </div>
+        </div>
         {/* Glow behind image */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(37,99,235,0.12),transparent_60%)] z-10 pointer-events-none" />
         <Image
@@ -182,6 +192,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
 
             {/* Mockup */}
             <div>
+              <p className="eyebrow text-glow-blue/38 mb-4">The Build</p>
               <MockupFrame src={data.mockupImage} title={data.title} />
             </div>
 

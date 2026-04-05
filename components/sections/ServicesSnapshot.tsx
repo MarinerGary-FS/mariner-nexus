@@ -1,11 +1,21 @@
 "use client";
 
+import type { ReactNode } from "react";
 import Link from "next/link";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
 import Button from "@/components/ui/Button";
 
-const services = [
+interface ServiceItem {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+  deliverables: string[];
+  icon: ReactNode;
+}
+
+const services: ServiceItem[] = [
   {
     id: "revenue",
     number: "01",
@@ -13,6 +23,12 @@ const services = [
     description:
       "High-conversion web builds, e-commerce infrastructure, and funnel architecture designed to increase qualified leads and close rates.",
     deliverables: ["Conversion-focused design", "Payment + subscription setup", "CTA hierarchy"],
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+        <path d="M3 15l4-5 3 3 4-6 3-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M15 5h2v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
   {
     id: "authority",
@@ -21,6 +37,15 @@ const services = [
     description:
       "Personal brand platforms and executive digital presence built to position you as the clear, credible choice in your market.",
     deliverables: ["Brand narrative + positioning", "Premium web experience", "Booking integration"],
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.75"/>
+        <path d="M6.5 6.5a5 5 0 000 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M13.5 6.5a5 5 0 010 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M3.5 3.5a9.5 9.5 0 000 13" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" opacity="0.45"/>
+        <path d="M16.5 3.5a9.5 9.5 0 010 13" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" opacity="0.45"/>
+      </svg>
+    ),
   },
   {
     id: "systems",
@@ -29,6 +54,16 @@ const services = [
     description:
       "CRM-connected sites, community platforms, and operational infrastructure built for organizations that need scalable architecture.",
     deliverables: ["GoHighLevel integration", "Community + member systems", "Automation-ready builds"],
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
+        <circle cx="10" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.5"/>
+        <circle cx="3.5" cy="4" r="1.5" stroke="currentColor" strokeWidth="1.25"/>
+        <circle cx="16.5" cy="4" r="1.5" stroke="currentColor" strokeWidth="1.25"/>
+        <circle cx="3.5" cy="16" r="1.5" stroke="currentColor" strokeWidth="1.25"/>
+        <circle cx="16.5" cy="16" r="1.5" stroke="currentColor" strokeWidth="1.25"/>
+        <path d="M5 5L8.5 8.5M11.5 8.5L15 5M5 15L8.5 11.5M11.5 11.5L15 15" stroke="currentColor" strokeWidth="1" strokeLinecap="round" opacity="0.55"/>
+      </svg>
+    ),
   },
 ];
 
@@ -73,9 +108,14 @@ export default function ServicesSnapshot() {
 
                   {/* Content */}
                   <div className="py-7 pr-7 lg:pr-0">
-                    <h3 className="text-white/88 group-hover:text-white font-semibold text-base mb-2 tracking-tight transition-colors duration-200">
-                      {service.title}
-                    </h3>
+                    <div className="flex items-center gap-2.5 mb-2">
+                      <span className="text-glow-blue/42 group-hover:text-glow-blue/75 transition-colors duration-200 shrink-0">
+                        {service.icon}
+                      </span>
+                      <h3 className="text-white/88 group-hover:text-white font-semibold text-base tracking-tight transition-colors duration-200">
+                        {service.title}
+                      </h3>
+                    </div>
                     <p className="text-white/38 text-[0.8125rem] leading-[1.65] mb-4 max-w-lg">
                       {service.description}
                     </p>

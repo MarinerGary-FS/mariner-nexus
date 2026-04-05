@@ -67,13 +67,13 @@ export default function CaseStudyHighlights() {
               <StaggerItem key={cs.slug}>
                 <Link href={`/case-studies/${cs.slug}`} className="group block h-full">
                   <motion.div
-                    whileHover={!prefersReduced ? { y: -4 } : {}}
+                    whileHover={!prefersReduced ? { y: -5 } : {}}
                     transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
                     className="h-full flex flex-col overflow-hidden rounded-2xl"
                     style={{
                       background: "rgba(255,255,255,0.025)",
                       border: "1px solid rgba(255,255,255,0.07)",
-                      boxShadow: "0 1px 0 0 rgba(255,255,255,0.06) inset",
+                      boxShadow: "0 1px 0 0 rgba(255,255,255,0.06) inset, 0 0 0 1px rgba(255,255,255,0.07), 0 8px 32px rgba(0,0,0,0.4)",
                     }}
                   >
                     {/* Category accent bar */}
@@ -83,12 +83,19 @@ export default function CaseStudyHighlights() {
                     />
 
                     {/* Mockup preview strip */}
-                    <div className="relative w-full h-[138px] sm:h-[155px] overflow-hidden bg-black/60">
+                    <div className="relative w-full h-[200px] sm:h-[224px] overflow-hidden bg-black/60">
+                      {/* Browser chrome */}
+                      <div className="absolute top-0 left-0 right-0 z-20 h-7 flex items-center gap-1.5 px-3 bg-gradient-to-b from-black/85 to-transparent pointer-events-none">
+                        <div className="w-2 h-2 rounded-full opacity-40" style={{ background: config.dotColor }} />
+                        <div className="w-2 h-2 rounded-full bg-white/[0.08]" />
+                        <div className="w-2 h-2 rounded-full bg-white/[0.08]" />
+                        <div className="ml-3 h-2.5 rounded-full bg-white/[0.05] flex-1 max-w-[120px]" />
+                      </div>
                       <Image
                         src={cs.mockupImage}
                         alt={`${cs.title} preview`}
                         fill
-                        className="object-cover object-top opacity-50 group-hover:opacity-[0.72] scale-[1.02] group-hover:scale-[1.0] transition-[opacity,transform] duration-500"
+                        className="object-cover object-top opacity-[0.72] group-hover:opacity-[0.9] scale-[1.02] group-hover:scale-[1.0] transition-[opacity,transform] duration-500"
                         sizes="(max-width: 768px) 100vw, 560px"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 pointer-events-none" />

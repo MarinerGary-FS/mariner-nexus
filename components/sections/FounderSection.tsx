@@ -56,7 +56,7 @@ export default function FounderSection() {
           {/* Left — narrative + founder photo */}
           <FadeIn direction="left" className="order-2 lg:order-1">
             <p className="eyebrow mb-5">The Operator Behind the System</p>
-            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.04] mb-5">
+            <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.04] mb-3">
               Gary L Mariner II
             </h2>
 
@@ -69,12 +69,6 @@ export default function FounderSection() {
             {/* Bridge line — connects problem to operator */}
             <p className="text-white/62 text-[0.9375rem] leading-[1.72] mb-5 max-w-[420px] font-medium">
               That&apos;s the problem I built Mariner Nexus to solve.
-            </p>
-
-            <p className="text-white/32 text-[0.875rem] leading-[1.76] mb-6 max-w-[420px]">
-              Every engagement starts with a systems audit — not a brief. It ends
-              with infrastructure engineered to run, scale, and compound. AI automation,
-              conversion strategy, and premium design working as one.
             </p>
 
             {/* Capability tags */}
@@ -106,9 +100,11 @@ export default function FounderSection() {
           {/* Right — founder photo + stats */}
           <FadeIn direction="right" delay={0.1} className="order-1 lg:order-2">
             {/* Founder photo — answer to the narrative on the left */}
-            <div
+            <motion.div
               className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden mb-6 border border-white/[0.07]"
               style={{ boxShadow: "0 2px 0 0 rgba(255,255,255,0.05) inset, 0 20px 56px rgba(0,0,0,0.55)" }}
+              whileHover={!prefersReduced ? { scale: 1.012, y: -3 } : {}}
+              transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             >
               <Image
                 src="/founder/gary-mariner-ii.png"
@@ -119,6 +115,8 @@ export default function FounderSection() {
               />
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+              {/* Blue atmospheric depth */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_0%,rgba(37,99,235,0.1),transparent_60%)] pointer-events-none" />
               {/* Floating name badge */}
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
                 <div>
@@ -137,7 +135,7 @@ export default function FounderSection() {
                   </svg>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Stats — below photo, aligned to it */}
             <StaggerContainer className="space-y-px rounded-2xl overflow-hidden border border-white/[0.06]">

@@ -7,6 +7,7 @@ import {
   useTransform,
   useSpring,
   useReducedMotion,
+  useScroll,
 } from "framer-motion";
 import Link from "next/link";
 
@@ -195,6 +196,12 @@ export default function HeroSection() {
   const gridY  = useTransform(springY, [0, 1], [-6, 6]);
   const textX  = useTransform(springX, [0, 1], [-2.5, 2.5]);
 
+  const { scrollY } = useScroll();
+  const markScrollY      = useTransform(scrollY, [0, 500], [0, -55]);
+  const markScrollScale  = useTransform(scrollY, [0, 500], [1, 0.82]);
+  const markScrollOpacity = useTransform(scrollY, [0, 380], [1, 0]);
+  const contentScrollY   = useTransform(scrollY, [0, 500], [0, -28]);
+
   useEffect(() => {
     setMounted(true);
     if (prefersReduced) return;
@@ -246,7 +253,7 @@ export default function HeroSection() {
       />
 
       {/* ── L3: Radial depth — top-center atmospheric source ── */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_65%_at_50%_-10%,rgba(37,99,235,0.17),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_65%_at_50%_-10%,rgba(37,99,235,0.20),transparent_55%)]" />
 
       {/* ── L4: Radial depth — subtle bottom warmth ── */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_110%,rgba(37,99,235,0.05),transparent_55%)]" />
@@ -256,7 +263,7 @@ export default function HeroSection() {
         <motion.div
           className="absolute w-[1100px] h-[1100px] rounded-full pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(37,99,235,0.11) 0%, rgba(77,163,255,0.032) 38%, transparent 62%)",
+            background: "radial-gradient(circle, rgba(37,99,235,0.14) 0%, rgba(77,163,255,0.032) 38%, transparent 62%)",
             left: "50%", top: "50%",
             x: glowX, y: glowY,
             translateX: "-50%", translateY: "-50%",
@@ -291,11 +298,14 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
 
       {/* ── Content ── */}
-      <div className="relative z-20 container-tight pt-24 md:pt-28 flex flex-col items-center text-center">
+      <motion.div
+        style={mounted && !prefersReduced ? { y: contentScrollY } : {}}
+        className="relative z-20 container-tight pt-24 md:pt-28 flex flex-col items-center text-center"
+      >
 
         {/* Brand mark — parallax mid-depth, orchestrated entry */}
         <motion.div
-          style={mounted && !prefersReduced ? { x: markX, y: markY } : {}}
+          style={mounted && !prefersReduced ? { x: markX, y: markY, translateY: markScrollY, scale: markScrollScale, opacity: markScrollOpacity } : {}}
           className="mb-9 md:mb-10 relative"
         >
           <motion.div
@@ -416,7 +426,7 @@ export default function HeroSection() {
             <div className="w-px h-4 bg-gradient-to-b from-white/7 to-transparent" />
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
