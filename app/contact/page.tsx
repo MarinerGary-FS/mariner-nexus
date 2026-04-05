@@ -108,6 +108,15 @@ export default function ContactPage() {
               </FadeIn>
             ))}
           </div>
+          <FadeIn delay={0.2} className="mt-10 pt-8 border-t border-white/[0.055] text-center">
+            <p className="text-white/22 text-[0.8125rem] mb-2">Prefer email?</p>
+            <a
+              href="mailto:info@marinernexus.com"
+              className="text-white/45 hover:text-white/75 text-[0.9375rem] font-medium transition-colors duration-200"
+            >
+              info@marinernexus.com
+            </a>
+          </FadeIn>
         </div>
       </section>
     </>

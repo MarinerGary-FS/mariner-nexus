@@ -54,13 +54,13 @@ export default function FounderSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
 
           {/* Left — narrative + founder photo */}
-          <FadeIn direction="left">
+          <FadeIn direction="left" className="order-2 lg:order-1">
             <p className="eyebrow mb-5">The Operator Behind the System</p>
             <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.04] mb-5">
               Gary L Mariner II
             </h2>
 
-            <p className="text-white/42 text-[0.9375rem] leading-[1.82] mb-4 max-w-[420px]">
+            <p className="text-white/46 text-[0.9375rem] leading-[1.82] mb-4 max-w-[420px]">
               Mariner Nexus was built after watching the same story repeat: businesses with
               real potential, operating inside digital infrastructure that couldn&apos;t keep up.
               The gap wasn&apos;t effort — it was architecture.
@@ -71,7 +71,7 @@ export default function FounderSection() {
               That&apos;s the problem I built Mariner Nexus to solve.
             </p>
 
-            <p className="text-white/26 text-[0.875rem] leading-[1.76] mb-6 max-w-[420px]">
+            <p className="text-white/32 text-[0.875rem] leading-[1.76] mb-6 max-w-[420px]">
               Every engagement starts with a systems audit — not a brief. It ends
               with infrastructure engineered to run, scale, and compound. AI automation,
               conversion strategy, and premium design working as one.
@@ -104,7 +104,7 @@ export default function FounderSection() {
           </FadeIn>
 
           {/* Right — founder photo + stats */}
-          <FadeIn direction="right" delay={0.1}>
+          <FadeIn direction="right" delay={0.1} className="order-1 lg:order-2">
             {/* Founder photo — answer to the narrative on the left */}
             <div
               className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden mb-6 border border-white/[0.07]"

@@ -36,7 +36,7 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-black/78 backdrop-blur-2xl border-b border-white/[0.055]"
             : "bg-transparent"
@@ -91,7 +91,12 @@ export default function Nav() {
 
             {/* CTA + hamburger */}
             <div className="flex items-center gap-3">
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="hidden md:block">
+              <motion.div
+                whileHover={{ scale: 1.02, y: -1 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+                className="hidden md:block"
+              >
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[0.8125rem] font-semibold bg-nexus-blue hover:bg-[#1d4ed8] text-white transition-colors duration-200"

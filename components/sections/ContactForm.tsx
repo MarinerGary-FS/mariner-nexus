@@ -5,6 +5,13 @@ import { motion } from "framer-motion";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
+const intentOptions = [
+  { value: "project",     label: "I have a project to scope" },
+  { value: "strategy",    label: "I want a strategy conversation" },
+  { value: "general",     label: "I have a question or inquiry" },
+  { value: "partnership", label: "I have a partnership opportunity" },
+];
+
 const serviceOptions = [
   "Revenue System",
   "Authority System",
@@ -18,6 +25,7 @@ export default function ContactForm() {
     name: "",
     email: "",
     business: "",
+    intent: "",
     service: "",
     message: "",
   });
@@ -121,6 +129,27 @@ export default function ContactForm() {
         />
       </div>
 
+      {/* Intent */}
+      <div>
+        <label className="block text-xs text-white/40 font-medium mb-1.5" htmlFor="intent">
+          What brings you here?
+        </label>
+        <select
+          id="intent"
+          name="intent"
+          value={formData.intent}
+          onChange={handleChange}
+          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200 appearance-none"
+        >
+          <option value="" className="bg-black text-white/40">Select your intent</option>
+          {intentOptions.map((opt) => (
+            <option key={opt.value} value={opt.value} className="bg-black text-white">
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Service type */}
       <div>
         <label className="block text-xs text-white/40 font-medium mb-1.5" htmlFor="service">
@@ -182,6 +211,12 @@ export default function ContactForm() {
 
       <p className="text-white/20 text-xs text-center">
         We respond within 1 business day. No spam, no lists.
+      </p>
+      <p className="text-white/15 text-xs text-center">
+        Direct inquiries:{" "}
+        <a href="mailto:info@marinernexus.com" className="text-white/28 hover:text-white/50 transition-colors duration-200">
+          info@marinernexus.com
+        </a>
       </p>
     </form>
   );

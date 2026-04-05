@@ -28,10 +28,25 @@ const CONTACT_FROM_EMAIL      = process.env.CONTACT_FROM_EMAIL;
 const CONTACT_NOTIFY_EMAIL    = process.env.CONTACT_NOTIFY_EMAIL;
 const GOOGLE_SHEETS_WEBHOOK   = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
 
+// Email routing addresses — set in .env.local
+const EMAIL_GENERAL     = process.env.CONTACT_EMAIL_GENERAL     ?? "info@marinernexus.com";
+const EMAIL_SALES       = process.env.CONTACT_EMAIL_SALES       ?? "sales@marinernexus.com";
+const EMAIL_FOUNDER     = process.env.CONTACT_EMAIL_FOUNDER     ?? "gary@marinernexus.com";
+
+// Determine recipient address based on form intent
+function resolveRecipient(intent?: string): string {
+  switch (intent) {
+    case "project":     return EMAIL_SALES;
+    case "strategy":
+    case "partnership": return EMAIL_FOUNDER;
+    default:            return EMAIL_GENERAL;
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, business, service, message } = body;
+    const { name, email, business, service, intent, message } = body;
 
     // Validation
     if (!name || !email || !message) {
@@ -62,6 +77,7 @@ export async function POST(request: NextRequest) {
         customField: {
           service_type: service || "Not specified",
           inquiry_message: message,
+          inquiry_intent: intent || "unspecified",
         },
         tags: [
           "website-inquiry",
@@ -108,6 +124,11 @@ export async function POST(request: NextRequest) {
               <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-weight: 600;">Service</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #eee;">${service}</td>
             </tr>` : ""}
+            ${intent ? `
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-weight: 600;">Intent</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; text-transform: capitalize;">${intent}</td>
+            </tr>` : ""}
             <tr>
               <td style="padding: 10px 14px 10px 0; color: #666; font-weight: 600; vertical-align: top;">Message</td>
               <td style="padding: 10px 0;">
@@ -130,7 +151,7 @@ export async function POST(request: NextRequest) {
           },
           body: JSON.stringify({
             from: `Mariner Nexus <${CONTACT_FROM_EMAIL}>`,
-            to: [CONTACT_NOTIFY_EMAIL],
+            to: [resolveRecipient(intent)],
             reply_to: email,
             subject: `New inquiry — ${name}${business ? ` · ${business}` : ""}`,
             html: emailHtml,
@@ -154,6 +175,7 @@ export async function POST(request: NextRequest) {
             name,
             email,
             business: business || "",
+            intent: intent || "",
             service: service || "",
             message,
             source: "mariner-nexus-website",
@@ -173,6 +195,7 @@ export async function POST(request: NextRequest) {
         name,
         email,
         business,
+        intent,
         service,
         message,
       });

@@ -88,7 +88,7 @@ export default function CaseStudyHighlights() {
                         src={cs.mockupImage}
                         alt={`${cs.title} preview`}
                         fill
-                        className="object-cover object-top opacity-50 group-hover:opacity-72 transition-opacity duration-500 scale-[1.02] group-hover:scale-[1.0] transition-transform duration-700"
+                        className="object-cover object-top opacity-50 group-hover:opacity-[0.72] scale-[1.02] group-hover:scale-[1.0] transition-[opacity,transform] duration-500"
                         sizes="(max-width: 768px) 100vw, 560px"
                       />
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80 pointer-events-none" />
@@ -124,7 +124,7 @@ export default function CaseStudyHighlights() {
 
                       {/* Title + description */}
                       <div>
-                        <h3 className="text-[1.0625rem] font-bold text-white mb-2 tracking-tight group-hover:text-gradient transition-all duration-300 leading-snug">
+                        <h3 className="text-[1.125rem] font-bold text-white mb-2 tracking-tight group-hover:text-gradient transition-all duration-300 leading-snug">
                           {cs.title}
                         </h3>
                         <p className="text-white/35 text-[0.8125rem] leading-[1.65]">

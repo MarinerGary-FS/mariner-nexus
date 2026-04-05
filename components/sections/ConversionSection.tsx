@@ -35,8 +35,8 @@ export default function ConversionSection() {
           </p>
 
           {/* CTA */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-14">
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-11">
+            <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-sm font-semibold transition-colors duration-200 glow-ring"
@@ -67,7 +67,7 @@ export default function ConversionSection() {
             {trustSignals.map((item, i) => (
               <div
                 key={item.label}
-                className={`flex items-center gap-3 px-7 py-4 ${
+                className={`flex items-center gap-3 px-6 py-3.5 ${
                   i < trustSignals.length - 1 ? "border-b sm:border-b-0 sm:border-r border-white/[0.06]" : ""
                 }`}
               >
