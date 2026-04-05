@@ -48,7 +48,7 @@ export default function ProcessSection() {
       <div className="container-tight relative">
         <FadeIn className="text-center mb-16">
           <p className="eyebrow mb-4">The Method</p>
-          <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white">
+          <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white text-balance">
             Four stages.{" "}
             <span className="text-white/32">One standard of execution.</span>
           </h2>
@@ -58,30 +58,42 @@ export default function ProcessSection() {
           {steps.map((step, i) => (
             <StaggerItem key={step.number}>
               <motion.div
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                className="relative h-full rounded-2xl flex flex-col gap-5 p-7 group overflow-hidden"
-                style={{
-                  background: "rgba(255,255,255,0.025)",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  boxShadow: "0 1px 0 0 rgba(255,255,255,0.06) inset",
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+                variants={{
+                  rest:  { y: 0,  boxShadow: "0 0 0 1px rgba(255,255,255,0.07), 0 1px 0 0 rgba(255,255,255,0.06) inset" },
+                  hover: { y: -3, boxShadow: `0 0 0 1px rgba(${step.accentRgb},0.22), 0 12px 40px rgba(0,0,0,0.4), 0 1px 0 0 rgba(255,255,255,0.06) inset` },
                 }}
+                transition={{ duration: 0.24, ease: [0.16, 1, 0.3, 1] }}
+                className="relative h-full rounded-2xl flex flex-col gap-5 p-7 overflow-hidden"
+                style={{ background: "rgba(255,255,255,0.025)" }}
               >
-                {/* Top-edge accent on hover */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                {/* Top-edge accent — variant-driven */}
+                <motion.div
+                  variants={{
+                    rest:  { opacity: 0 },
+                    hover: { opacity: 1 },
+                  }}
+                  transition={{ duration: 0.22 }}
+                  className="absolute top-0 left-0 right-0 h-px pointer-events-none"
                   style={{
-                    background: `linear-gradient(90deg, rgba(${step.accentRgb},0.7), transparent 65%)`,
+                    background: `linear-gradient(90deg, rgba(${step.accentRgb},0.75), transparent 60%)`,
                   }}
                 />
 
-                {/* Step number — large background watermark */}
-                <div
-                  className="absolute top-4 right-5 text-[3.5rem] font-black leading-none select-none pointer-events-none transition-opacity duration-300"
-                  style={{ color: `rgba(${step.accentRgb},0.06)` }}
+                {/* Step number — large watermark, brightens on hover */}
+                <motion.div
+                  variants={{
+                    rest:  { opacity: 0.055 },
+                    hover: { opacity: 0.13 },
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute top-4 right-5 text-[3.5rem] font-black leading-none select-none pointer-events-none"
+                  style={{ color: `rgba(${step.accentRgb},1)` }}
                 >
                   {step.number}
-                </div>
+                </motion.div>
 
                 {/* Phase badge */}
                 <div className="flex items-center gap-2.5">

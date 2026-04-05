@@ -79,10 +79,14 @@ export default function PositioningSection() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/[0.05] rounded-2xl overflow-hidden">
             {pillars.map((pillar) => (
               <StaggerItem key={pillar.title}>
-                <div className="bg-black p-7 h-full flex flex-col gap-4 hover:bg-white/[0.02] transition-colors duration-300 group">
-                  <span className="text-glow-blue/50 group-hover:text-glow-blue/80 transition-colors duration-200 w-fit">
-                    {pillar.icon}
-                  </span>
+                <div className="bg-black p-7 h-full flex flex-col gap-4 hover:bg-white/[0.025] transition-colors duration-300 group">
+                  <div className="relative w-fit">
+                    {/* Ambient glow behind icon */}
+                    <div className="absolute inset-0 rounded-full bg-glow-blue/0 group-hover:bg-glow-blue/10 blur-xl scale-[2] transition-all duration-500 pointer-events-none" />
+                    <span className="relative text-glow-blue/48 group-hover:text-glow-blue/82 group-hover:scale-110 transition-all duration-300 w-fit block origin-center">
+                      {pillar.icon}
+                    </span>
+                  </div>
                   <div>
                     <h3 className="text-white/88 font-semibold text-[0.875rem] mb-2 tracking-tight">
                       {pillar.title}

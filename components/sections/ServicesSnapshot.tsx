@@ -60,17 +60,20 @@ export default function ServicesSnapshot() {
           {services.map((service) => (
             <StaggerItem key={service.id}>
               <Link href={`/services#${service.id}`} className="group block">
-                <div className="grid grid-cols-[64px_1fr] lg:grid-cols-[64px_1fr_auto] items-start gap-0 bg-black hover:bg-white/[0.018] transition-colors duration-300">
+                <div className="relative grid grid-cols-[64px_1fr] lg:grid-cols-[64px_1fr_auto] items-start gap-0 bg-black hover:bg-white/[0.018] transition-colors duration-300">
+                  {/* Left-edge accent — materializes on hover */}
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-glow-blue/38 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                   {/* Number gutter */}
                   <div className="flex items-start justify-center pt-7 pb-7 pl-7">
-                    <span className="text-[0.75rem] font-semibold tabular-nums text-white/15 group-hover:text-nexus-blue/50 transition-colors duration-200 mt-0.5">
+                    <span className="text-[0.75rem] font-semibold tabular-nums text-white/15 group-hover:text-nexus-blue/55 transition-colors duration-200 mt-0.5">
                       {service.number}
                     </span>
                   </div>
 
                   {/* Content */}
                   <div className="py-7 pr-7 lg:pr-0">
-                    <h3 className="text-white/90 font-semibold text-base mb-2 tracking-tight">
+                    <h3 className="text-white/88 group-hover:text-white font-semibold text-base mb-2 tracking-tight transition-colors duration-200">
                       {service.title}
                     </h3>
                     <p className="text-white/38 text-[0.8125rem] leading-[1.65] mb-4 max-w-lg">

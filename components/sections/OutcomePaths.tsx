@@ -19,6 +19,8 @@ const paths = [
     href: "/services#revenue",
     glow: "rgba(37,99,235,0.12)",
     accent: "rgba(77,163,255,0.55)",
+    borderAccent: "rgba(77,163,255,0.24)",
+    shadowAccent: "rgba(37,99,235,0.18)",
   },
   {
     outcome: "Build Authority",
@@ -33,6 +35,8 @@ const paths = [
     href: "/services#authority",
     glow: "rgba(125,211,252,0.09)",
     accent: "rgba(125,211,252,0.55)",
+    borderAccent: "rgba(125,211,252,0.2)",
+    shadowAccent: "rgba(125,211,252,0.1)",
   },
   {
     outcome: "Build Systems",
@@ -47,6 +51,8 @@ const paths = [
     href: "/services#systems",
     glow: "rgba(37,99,235,0.1)",
     accent: "rgba(37,99,235,0.6)",
+    borderAccent: "rgba(37,99,235,0.32)",
+    shadowAccent: "rgba(37,99,235,0.2)",
   },
 ];
 
@@ -74,12 +80,17 @@ export default function OutcomePaths() {
             <StaggerItem key={path.outcome}>
               <Link href={path.href} className="group block h-full">
                 <motion.div
-                  whileHover={{ y: -3 }}
-                  transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                  className="h-full rounded-2xl flex flex-col overflow-hidden transition-all duration-300"
+                  initial={{
+                    boxShadow: "0 0 0 1px rgba(255,255,255,0.07), 0 4px 24px rgba(0,0,0,0)",
+                  }}
+                  whileHover={{
+                    y: -3,
+                    boxShadow: `0 0 0 1px ${path.borderAccent}, 0 16px 48px rgba(0,0,0,0.45), 0 0 32px ${path.shadowAccent}`,
+                  }}
+                  transition={{ duration: 0.26, ease: [0.16, 1, 0.3, 1] }}
+                  className="h-full rounded-2xl flex flex-col overflow-hidden"
                   style={{
                     background: `radial-gradient(ellipse at top left, ${path.glow}, transparent 65%), rgba(255,255,255,0.025)`,
-                    border: `1px solid rgba(255,255,255,0.07)`,
                   }}
                 >
                   {/* Accent top line */}

@@ -24,11 +24,11 @@ export default function FadeIn({
   const isInView = useInView(ref, { once, margin: "-60px" });
 
   const directionOffset = {
-    up: { y: 24, x: 0 },
-    down: { y: -24, x: 0 },
-    left: { x: 24, y: 0 },
-    right: { x: -24, y: 0 },
-    none: { x: 0, y: 0 },
+    up:    { y: 18, x: 0 },
+    down:  { y: -18, x: 0 },
+    left:  { x: 20, y: 0 },
+    right: { x: -20, y: 0 },
+    none:  { x: 0, y: 0 },
   };
 
   const initial = {

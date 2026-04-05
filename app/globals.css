@@ -63,11 +63,28 @@
     width: 3px;
   }
   ::-webkit-scrollbar-track {
-    background: #0A0A0A;
+    background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(77, 163, 255, 0.22);
-    border-radius: 2px;
+    background: rgba(77, 163, 255, 0.18);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(77, 163, 255, 0.32);
+  }
+
+  /* Premium focus-visible — keyboard navigation feels considered */
+  :focus-visible {
+    outline: 2px solid rgba(77, 163, 255, 0.5);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Suppress on elements that own their focus style */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: none;
   }
 
   /* Heading defaults */
@@ -294,5 +311,30 @@
   .will-change-transform {
     will-change: transform;
     transform: translateZ(0);
+  }
+
+  /* ─── Typography helpers ────────────────────────────────── */
+
+  /* Balance headlines for clean wrapping on narrow viewports */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* ─── Shimmer sweep — selective use on loading states ───── */
+
+  @keyframes shimmer {
+    from { background-position: -200% center; }
+    to   { background-position:  200% center; }
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.06) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    background-size: 200% auto;
+    animation: shimmer 2.2s linear infinite;
   }
 }
