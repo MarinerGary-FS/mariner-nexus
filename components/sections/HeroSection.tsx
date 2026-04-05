@@ -246,7 +246,7 @@ export default function HeroSection() {
       />
 
       {/* ── L3: Radial depth — top-center atmospheric source ── */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_65%_at_50%_-10%,rgba(37,99,235,0.12),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_65%_at_50%_-10%,rgba(37,99,235,0.17),transparent_55%)]" />
 
       {/* ── L4: Radial depth — subtle bottom warmth ── */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_110%,rgba(37,99,235,0.05),transparent_55%)]" />
@@ -254,9 +254,9 @@ export default function HeroSection() {
       {/* ── L5: Cursor glow orb — fastest parallax ── */}
       {mounted && !prefersReduced && (
         <motion.div
-          className="absolute w-[900px] h-[900px] rounded-full pointer-events-none"
+          className="absolute w-[1100px] h-[1100px] rounded-full pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(37,99,235,0.09) 0%, rgba(77,163,255,0.025) 38%, transparent 62%)",
+            background: "radial-gradient(circle, rgba(37,99,235,0.11) 0%, rgba(77,163,255,0.032) 38%, transparent 62%)",
             left: "50%", top: "50%",
             x: glowX, y: glowY,
             translateX: "-50%", translateY: "-50%",
@@ -304,10 +304,11 @@ export default function HeroSection() {
             transition={{ duration: 1.3, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
             className="relative"
           >
-            {/* Layered glow halos — V3: three depth layers */}
-            <div className="absolute inset-0 rounded-full blur-[40px] scale-[2.8] bg-nexus-blue/5 pointer-events-none" />
-            <div className="absolute inset-0 rounded-full blur-2xl scale-[1.9] bg-nexus-blue/7 pointer-events-none" />
-            <div className="absolute inset-0 rounded-full blur-md scale-[1.3] bg-glow-blue/5 pointer-events-none" />
+            {/* Layered glow halos — V4: four depth layers */}
+            <div className="absolute inset-0 rounded-full blur-[80px] scale-[4.2] bg-nexus-blue/[0.035] pointer-events-none" />
+            <div className="absolute inset-0 rounded-full blur-[40px] scale-[2.8] bg-nexus-blue/[0.08] pointer-events-none" />
+            <div className="absolute inset-0 rounded-full blur-2xl scale-[1.9] bg-nexus-blue/[0.11] pointer-events-none" />
+            <div className="absolute inset-0 rounded-full blur-md scale-[1.3] bg-glow-blue/[0.08] pointer-events-none" />
             <NexusMark size={110} visible={mounted} />
           </motion.div>
         </motion.div>
@@ -357,8 +358,9 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center gap-3 sm:gap-3.5"
         >
           <motion.div
-            whileHover={!prefersReduced ? { scale: 1.025 } : {}}
+            whileHover={!prefersReduced ? { scale: 1.025, y: -2 } : {}}
             whileTap={!prefersReduced ? { scale: 0.975 } : {}}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <Link
               href="/contact"
@@ -372,8 +374,9 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div
-            whileHover={!prefersReduced ? { scale: 1.015 } : {}}
+            whileHover={!prefersReduced ? { scale: 1.015, y: -1 } : {}}
             whileTap={!prefersReduced ? { scale: 0.985 } : {}}
+            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <Link
               href="/case-studies"

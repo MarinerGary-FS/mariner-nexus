@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, type TargetAndTransition } from "framer-motion";
 import { cn } from "@/lib/cn";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
@@ -33,6 +33,15 @@ const sizes: Record<ButtonSize, string> = {
   lg: "px-7 py-3.5 text-[0.875rem] rounded-xl",
 };
 
+// Per-variant hover physics — primary lifts, secondary and ghost stay flat
+const hoverByVariant: Record<ButtonVariant, TargetAndTransition> = {
+  primary:   { scale: 1.02,  y: -1.5 },
+  secondary: { scale: 1.015, y: -1   },
+  ghost:     { scale: 1.01,  y: 0    },
+};
+
+const SPRING = { duration: 0.2, ease: [0.16, 1, 0.3, 1] as const };
+
 export default function Button({
   children,
   href,
@@ -43,6 +52,8 @@ export default function Button({
   type = "button",
   disabled,
 }: ButtonProps) {
+  const prefersReduced = useReducedMotion();
+
   const classes = cn(
     "inline-flex items-center justify-center gap-2 transition-all duration-200",
     variants[variant],
@@ -51,9 +62,16 @@ export default function Button({
     className
   );
 
+  const hover: TargetAndTransition | undefined = !prefersReduced && !disabled ? hoverByVariant[variant] : undefined;
+  const tap:   TargetAndTransition | undefined = !prefersReduced && !disabled ? { scale: 0.975 } : undefined;
+
   if (href) {
     return (
-      <motion.div whileHover={{ scale: 1.015 }} whileTap={{ scale: 0.985 }}>
+      <motion.div
+        whileHover={hover}
+        whileTap={tap}
+        transition={SPRING}
+      >
         <Link href={href} className={classes}>
           {children}
         </Link>
@@ -66,8 +84,9 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      whileHover={{ scale: disabled ? 1 : 1.015 }}
-      whileTap={{ scale: disabled ? 1 : 0.985 }}
+      whileHover={hover}
+      whileTap={tap}
+      transition={SPRING}
       className={classes}
     >
       {children}

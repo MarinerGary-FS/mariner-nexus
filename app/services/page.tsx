@@ -11,6 +11,13 @@ export const metadata: Metadata = {
     "Revenue Systems, Authority Systems, and System Builds. We don't sell websites — we deliver transformation, business impact, and execution.",
 };
 
+// Per-category visual accent
+const categoryAccent: Record<string, { accentColor: string; tintRgb: string }> = {
+  revenue:   { accentColor: "rgba(77,163,255,0.65)",  tintRgb: "77,163,255"  },
+  authority: { accentColor: "rgba(125,211,252,0.55)", tintRgb: "125,211,252" },
+  systems:   { accentColor: "rgba(37,99,235,0.75)",   tintRgb: "37,99,235"   },
+};
+
 const services = [
   {
     id: "revenue",
@@ -158,12 +165,19 @@ export default function ServicesPage() {
       {/* Service Categories — with dual proof mapping */}
       <section className="section-padding bg-black">
         <div className="container-tight space-y-5">
-          {services.map((service) => (
+          {services.map((service) => {
+            const accent = categoryAccent[service.id] ?? categoryAccent.revenue;
+            return (
             <FadeIn key={service.id}>
               <div
                 id={service.id}
                 className="glass-card rounded-2xl overflow-hidden"
               >
+                {/* Category accent bar */}
+                <div
+                  className="h-px w-full opacity-50"
+                  style={{ background: `linear-gradient(90deg, ${accent.accentColor}, transparent 60%)` }}
+                />
                 <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-0">
                   {/* Left */}
                   <div className="p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/[0.06] flex flex-col gap-6">
@@ -226,11 +240,14 @@ export default function ServicesPage() {
                           <Link
                             key={cs.href}
                             href={cs.href}
-                            className="flex-1 flex items-start gap-3 glass-card rounded-xl p-4 group hover:border-glow-blue/18 transition-colors duration-200"
+                            className="flex-1 flex items-start gap-3 rounded-xl p-4 group transition-all duration-200 border border-white/[0.06] hover:border-white/[0.14] bg-white/[0.025] hover:bg-white/[0.04]"
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-glow-blue/45 shrink-0 mt-1.5" />
+                            <div
+                              className="w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 opacity-65"
+                              style={{ background: accent.accentColor }}
+                            />
                             <div>
-                              <p className="text-white/70 text-sm font-semibold group-hover:text-white transition-colors duration-200">
+                              <p className="text-white/68 text-sm font-semibold group-hover:text-white transition-colors duration-200">
                                 {cs.label}
                               </p>
                               <p className="text-white/28 text-xs mt-0.5 leading-snug">
@@ -239,7 +256,7 @@ export default function ServicesPage() {
                             </div>
                             <svg
                               width="12" height="12" viewBox="0 0 14 14" fill="none"
-                              className="text-white/15 group-hover:text-white/40 transition-colors duration-200 shrink-0 mt-1 ml-auto"
+                              className="text-white/14 group-hover:text-white/42 transition-colors duration-200 shrink-0 mt-1 ml-auto"
                             >
                               <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -251,7 +268,8 @@ export default function ServicesPage() {
                 </div>
               </div>
             </FadeIn>
-          ))}
+          );
+          })}
         </div>
       </section>
 

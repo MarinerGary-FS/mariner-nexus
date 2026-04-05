@@ -3,26 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-/**
- * Contact Form — GoHighLevel Integration Placeholder
- *
- * INTEGRATION PLACEHOLDER
- * ─────────────────────────────────────────────────────────────────────────────
- * To connect to GoHighLevel:
- *
- * Option 1 — Webhook:
- *   Set GHL_WEBHOOK_URL to your GoHighLevel webhook endpoint.
- *   GHL will receive the form data and trigger any automation pipeline you configure.
- *
- * Option 2 — GHL Embedded Form:
- *   Replace this component with the GHL embed snippet from your funnel builder.
- *
- * Option 3 — API route (recommended for custom validation):
- *   POST to /api/contact → server validates → forwards to GHL webhook
- *   See /app/api/contact/route.ts (placeholder exists)
- * ─────────────────────────────────────────────────────────────────────────────
- */
-
 type FormState = "idle" | "submitting" | "success" | "error";
 
 const serviceOptions = [
@@ -105,7 +85,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Jane Smith"
-            className="w-full bg-white/[0.04] border border-white/[0.1] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-glow-blue/40 focus:bg-white/[0.06] transition-all"
+            className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200"
           />
         </div>
         <div>
@@ -120,7 +100,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="jane@company.com"
-            className="w-full bg-white/[0.04] border border-white/[0.1] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-glow-blue/40 focus:bg-white/[0.06] transition-all"
+            className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200"
           />
         </div>
       </div>
@@ -137,7 +117,7 @@ export default function ContactForm() {
           value={formData.business}
           onChange={handleChange}
           placeholder="Your company name"
-          className="w-full bg-white/[0.04] border border-white/[0.1] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-glow-blue/40 focus:bg-white/[0.06] transition-all"
+          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200"
         />
       </div>
 
@@ -151,7 +131,7 @@ export default function ContactForm() {
           name="service"
           value={formData.service}
           onChange={handleChange}
-          className="w-full bg-white/[0.04] border border-white/[0.1] rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-glow-blue/40 focus:bg-white/[0.06] transition-all appearance-none"
+          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200 appearance-none"
         >
           <option value="" className="bg-black text-white/40">Select a service type</option>
           {serviceOptions.map((opt) => (
@@ -175,7 +155,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Describe your current situation, what's not working, and what you want to achieve..."
-          className="w-full bg-white/[0.04] border border-white/[0.1] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-glow-blue/40 focus:bg-white/[0.06] transition-all resize-none"
+          className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200 resize-none"
         />
       </div>
 
@@ -188,11 +168,16 @@ export default function ContactForm() {
       <motion.button
         type="submit"
         disabled={formState === "submitting"}
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.99 }}
-        className="w-full bg-nexus-blue hover:bg-glow-blue disabled:opacity-50 text-white font-semibold text-sm py-3.5 rounded-lg transition-colors"
+        whileHover={{ scale: 1.015, y: -1 }}
+        whileTap={{ scale: 0.985 }}
+        transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
+        className="w-full bg-nexus-blue hover:bg-glow-blue disabled:opacity-50 text-white font-semibold text-sm py-3.5 rounded-lg transition-colors duration-200 relative overflow-hidden"
       >
-        {formState === "submitting" ? "Sending..." : "Send Message"}
+        <span className="relative z-10">
+          {formState === "submitting" ? "Sending…" : "Send Message"}
+        </span>
+        {/* Subtle inner highlight */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.08] to-transparent pointer-events-none rounded-lg" />
       </motion.button>
 
       <p className="text-white/20 text-xs text-center">

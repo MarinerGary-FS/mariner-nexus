@@ -175,11 +175,13 @@ export default function AboutPage() {
             </h2>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <StaggerContainer className="grid grid-cols-6 gap-4">
             {values.map((value, i) => (
-              <StaggerItem key={value.title}>
-                {/* Fifth card spans full width on sm+ */}
-                <div className={`glass-card rounded-xl p-7 glass-card-hover h-full ${i === 4 ? "sm:col-span-2" : ""}`}>
+              <StaggerItem
+                key={value.title}
+                className={i < 3 ? "col-span-6 sm:col-span-2" : "col-span-6 sm:col-span-3"}
+              >
+                <div className="glass-card rounded-xl p-7 glass-card-hover h-full">
                   <div className="flex items-start gap-4">
                     <span className="text-[0.625rem] font-bold text-white/15 tabular-nums shrink-0 mt-1 tracking-widest">
                       0{i + 1}
