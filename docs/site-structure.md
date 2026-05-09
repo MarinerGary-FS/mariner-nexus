@@ -21,13 +21,13 @@ Every page must serve a role in:
 
 Primary Navigation:
 - Home
-- Case Studies
+- Transformation Records
 - Services
 - About
-- Contact
+- Evolution Entry
 
 Persistent CTA:
-- Book a Strategy Call
+- Begin Your Evolution Briefing
 
 ---
 
@@ -100,7 +100,7 @@ Three primary paths:
 ---
 
 ### Scene 7 — CTA
-- Book Strategy Call
+- Begin Your Evolution Briefing
 - reinforce premium positioning
 
 ---
@@ -219,4 +219,3 @@ Final outcome:
 “I trust how they think.”
 
 “I want to work with them.”
-

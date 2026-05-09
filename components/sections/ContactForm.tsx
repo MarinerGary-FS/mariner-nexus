@@ -13,10 +13,10 @@ const intentOptions = [
 ];
 
 const serviceOptions = [
-  "Revenue System",
-  "Authority System",
-  "System Build",
-  "Not sure yet",
+  "Entry Ecosystem",
+  "Nexus Continuity Layer",
+  "Operational Evolution System",
+  "Strategic alignment unclear",
 ];
 
 export default function ContactForm() {
@@ -162,7 +162,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200 appearance-none"
         >
-          <option value="" className="bg-black text-white/40">Select an operating layer</option>
+          <option value="" className="bg-black text-white/40">Select an evolution pathway</option>
           {serviceOptions.map((opt) => (
             <option key={opt} value={opt} className="bg-black text-white">
               {opt}

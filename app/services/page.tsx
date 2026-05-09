@@ -6,470 +6,303 @@ import Button from "@/components/ui/Button";
 import ConversionSection from "@/components/sections/ConversionSection";
 
 export const metadata: Metadata = {
-  title: "Services — Mariner Nexus",
+  title: "Evolution Systems - Mariner Nexus",
   description:
-    "Revenue systems, authority systems, and operational ecosystems for businesses ready to evolve beyond fragmented infrastructure.",
+    "Entry ecosystems and operational evolution systems for creators, personal brands, scaling businesses, nonprofits, and organizations ready for synchronized growth.",
 };
 
-// Per-category visual accent
-const categoryAccent: Record<string, { accentColor: string; tintRgb: string }> = {
-  revenue:   { accentColor: "rgba(77,163,255,0.65)",  tintRgb: "77,163,255"  },
-  authority: { accentColor: "rgba(125,211,252,0.55)", tintRgb: "125,211,252" },
-  systems:   { accentColor: "rgba(37,99,235,0.75)",   tintRgb: "37,99,235"   },
-};
-
-const services = [
+const entryEcosystems = [
   {
-    id: "revenue",
-    number: "01",
-    category: "Revenue Systems",
-    tagline: "Built to convert. Designed to scale.",
+    name: "Creator Identity System",
+    investment: "Starting at $950",
+    audience: "Creators, artists, solo operators",
     description:
-      "We engineer revenue environments where trust, clarity, lead movement, and follow-up operate as one connected system.",
-    bestFor: ["Service businesses", "Product brands", "Growth-stage companies", "E-commerce operators"],
+      "A focused digital identity layer that gives social traffic a coherent place to land, understand, trust, and move.",
     includes: [
-      "Conversion-focused experience architecture",
-      "E-commerce + Stripe subscription infrastructure",
-      "Funnel design and lead capture integration",
-      "Evolution-entry CTA hierarchy and friction-reduction engineering",
-      "GoHighLevel CRM connection and lead segmentation",
-    ],
-    proofStudies: [
-      { label: "Act of Valor", href: "/case-studies/act-of-valor", note: "Emergency services · same-day conversion" },
-      { label: "Serene Origins", href: "/case-studies/serene-origins", note: "Wellness · subscription infrastructure" },
+      "Immersive one-page or compact multi-section experience",
+      "Strategic link architecture for music, offers, booking, or collaboration",
+      "Mobile-first interface for audience movement from social platforms",
+      "Foundational brand alignment across typography, color, and motion",
     ],
   },
   {
-    id: "authority",
-    number: "02",
-    category: "Authority Systems",
-    tagline: "Position yourself as the obvious choice.",
+    name: "Personal Brand Ecosystem",
+    investment: "Starting at $1,750",
+    audience: "Founders, consultants, speakers, emerging brands",
     description:
-      "We build personal brand platforms and executive digital presences that communicate credibility, expertise, and leadership at first glance. For founders and operators who know their reputation is a business asset.",
-    bestFor: ["Founders", "Consultants", "Executives", "Speakers + thought leaders", "Creators + artists"],
+      "A premium presence system for operators who need credibility, positioning, and conversion clarity without enterprise complexity.",
     includes: [
-      "Premium personal brand or creator experience system",
-      "Messaging and narrative positioning system",
-      "Booking integration (Cal.com) for frictionless engagement",
-      "Content architecture for authority building over time",
-      "Brand identity refinement aligned to strategic goals",
-    ],
-    proofStudies: [
-      { label: "EazieDaGod", href: "/case-studies/eaziedagod", note: "Music / creator · immersive identity platform" },
-      { label: "Gary L Mariner II", href: "/case-studies/gary-mariner", note: "Executive brand · authority platform" },
+      "3-5 page personal brand ecosystem",
+      "Authority narrative, offer framing, and proof architecture",
+      "Evolution-entry CTA flow for briefing, booking, or inquiry",
+      "Search-ready structure and performance-conscious implementation",
     ],
   },
   {
-    id: "systems",
-    number: "03",
-    category: "System Builds",
-    tagline: "Infrastructure that actually scales.",
+    name: "Nexus Identity System",
+    investment: "Starting at $2,900",
+    audience: "Early-stage businesses and future-state brands",
     description:
-      "For organizations that need more than a digital surface. We design CRM-connected platforms, community systems, and operational infrastructure that support real organizational growth.",
-    bestFor: ["Nonprofits + foundations", "Community organizations", "Operational teams", "Multi-stakeholder platforms"],
+      "An elevated entry ecosystem for organizations that need more than a page, but are not yet ready for full operational transformation.",
     includes: [
-      "Full experience architecture + community platform build",
-      "GoHighLevel CRM intake, tagging, and automation setup",
-      "Member onboarding and engagement tracking systems",
-      "Discord, Slack, or community platform integration",
-      "Internal dashboard and reporting infrastructure (scope dependent)",
-    ],
-    proofStudies: [
-      { label: "Undugu", href: "/case-studies/undugu", note: "Community foundation · CRM + operational infrastructure" },
-      { label: "Amplify Voices", href: "/case-studies/amplify-voices", note: "Media platform · brand authority system" },
+      "Core website ecosystem with essential conversion routes",
+      "Positioning refinement and trust architecture",
+      "Scheduling or intake integration path",
+      "Scalable structure for future CRM, automation, and content expansion",
     ],
   },
 ];
 
-const tiers = [
-  {
-    tier: "Foundation",
-    range: "Starts at $3,500",
-    description: "Clean, fast, and controlled. For businesses that need a credible operating presence without unnecessary complexity.",
-    includes: ["Core experience system (5–8 pages)", "Mobile-optimized build", "Performance-first delivery", "Clear evolution-entry structure"],
-    timeline: "2–3 weeks",
-  },
-  {
-    tier: "Growth",
-    range: "Starts at $7,500",
-    description: "Conversion-focused with strategic architecture. For brands ready to use their digital environment as a real business system.",
-    includes: ["Full evolution briefing", "Conversion-engineered experience", "CRM or scheduling integration", "UX refinement + copy review"],
-    timeline: "3–5 weeks",
-    featured: true,
-  },
-  {
-    tier: "Authority",
-    range: "Starts at $12,000",
-    description: "Premium positioning and brand system integration. For leaders who need a digital presence that commands the room.",
-    includes: ["Brand system design", "Advanced interaction design", "Positioning + messaging framework", "Full integration layer"],
-    timeline: "5–8 weeks",
-  },
-  {
-    tier: "Custom Engagement",
-    range: "Scoped to mission",
-    description: "For organizations that need full-stack operational architecture. Scope, timeline, and investment are defined through a strategic discovery process — not a menu.",
-    includes: ["Full systems audit and architecture plan", "Complex CRM, automation + platform builds", "Multi-stakeholder infrastructure design", "Dedicated engagement model"],
-    timeline: "Discovery required",
-    isCustom: true,
-  },
-];
-
-const creatorOffer = {
-  tier: "Creator Authority Launch",
-  range: "Starts at $3,500",
+const continuityLayer = {
+  name: "Nexus Continuity Layer",
+  investment: "$39.99/month",
   description:
-    "A focused, immersive authority platform built for music artists, creators, and personality-driven brands. Fast to launch. Built to last. Indistinguishable from brands with 10× the budget.",
+    "Ongoing ecosystem stewardship that keeps the identity layer stable, current, synchronized, and ready for future evolution.",
   includes: [
-    "Immersive artist or creator experience (3–5 pages)",
-    "Strategic link architecture (replaces fragmented bio links)",
-    "Mobile-first build for social traffic patterns",
-    "Brand identity integration — typography, color, motion",
-    "Stream, booking, and collaboration CTA flows",
+    "Ecosystem health checks",
+    "Core updates and continuity monitoring",
+    "Minor content synchronization",
+    "Future compatibility review",
+    "Operational stability oversight",
   ],
-  retainer: {
-    label: "Creator Growth Continuity",
-    range: "From $500 / month",
-    includes: [
-      "Monthly site updates and content refreshes",
-      "New release or drop page builds",
-      "Performance monitoring and CTA optimization",
-      "Priority turnaround on creative updates",
+};
+
+const operationalSystems = [
+  {
+    name: "Revenue Evolution System",
+    focus: "Trust, lead movement, conversion paths, CRM handoff, and follow-up architecture.",
+    bestFor: ["Service businesses", "Product brands", "E-commerce operators", "Growth-stage companies"],
+    proof: [
+      { label: "Act of Valor", href: "/case-studies/act-of-valor" },
+      { label: "Serene Origins", href: "/case-studies/serene-origins" },
     ],
   },
-  timeline: "1.5–2.5 weeks",
-};
+  {
+    name: "Authority Evolution System",
+    focus: "Executive credibility, thought leadership, strategic narrative, and high-trust digital presence.",
+    bestFor: ["Executive brands", "Consultants", "Founders", "Transformation-focused leaders"],
+    proof: [
+      { label: "Gary L Mariner II", href: "/case-studies/gary-mariner" },
+      { label: "Amplify Voices", href: "/case-studies/amplify-voices" },
+    ],
+  },
+  {
+    name: "Operational Ecosystem Architecture",
+    focus: "Connected platforms, community infrastructure, intake flows, automations, and scalable operations.",
+    bestFor: ["Nonprofits", "Community organizations", "Operational teams", "Multi-stakeholder platforms"],
+    proof: [
+      { label: "Undugu", href: "/case-studies/undugu" },
+      { label: "Amplify Voices", href: "/case-studies/amplify-voices" },
+    ],
+  },
+];
+
+const scopeSignals = [
+  "Current operational friction",
+  "Future-state ecosystem goals",
+  "Audience complexity and decision pathways",
+  "CRM, scheduling, automation, and integration depth",
+  "Content, proof, and trust architecture requirements",
+  "Launch timeline, internal readiness, and continuity needs",
+];
 
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-40 pb-20 bg-black relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(37,99,235,0.1),transparent)]" />
+      <section className="relative overflow-hidden bg-black pt-40 pb-20">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(37,99,235,0.12),transparent)]" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.16]" />
         <div className="container-tight relative text-center">
           <FadeIn>
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-5">
-              Evolution Systems
+            <span className="mb-5 block text-xs font-semibold uppercase tracking-[0.2em] text-glow-blue/70">
+              Evolution Pathways
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-              We don&apos;t sell services.
+            <h1 className="mx-auto mb-6 max-w-[22rem] text-4xl font-bold leading-tight tracking-tight text-white sm:max-w-none sm:text-5xl md:text-6xl lg:text-7xl">
+              Enter at the right layer.
               <br />
-              <span className="text-white/35">We engineer operating layers.</span>
+              <span className="text-white/35">Evolve with the right system.</span>
             </h1>
-            <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
-              Every engagement is defined by transformation, operational coherence, and future-state readiness — not page counts or feature lists.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.12} className="mt-6">
-            <p className="inline-flex items-center gap-2 text-white/28 text-sm border border-white/[0.07] rounded-full px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-glow-blue/50 shrink-0" />
-              Mariner Nexus takes a limited number of new engagements each quarter.
+            <p className="mx-auto max-w-[21rem] text-base leading-8 text-white/50 sm:max-w-2xl md:text-lg">
+              Mariner Nexus operates through two synchronized pathways: accessible entry ecosystems for emerging brands, and strategic operational evolution systems for organizations ready to transform.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* Service Categories — with dual proof mapping */}
-      <section className="section-padding bg-black">
-        <div className="container-tight space-y-5">
-          {services.map((service) => {
-            const accent = categoryAccent[service.id] ?? categoryAccent.revenue;
-            return (
-            <FadeIn key={service.id}>
-              <div
-                id={service.id}
-                className="glass-card rounded-2xl overflow-hidden"
-              >
-                {/* Category accent bar */}
-                <div
-                  className="h-px w-full opacity-50"
-                  style={{ background: `linear-gradient(90deg, ${accent.accentColor}, transparent 60%)` }}
-                />
-                <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-0">
-                  {/* Left */}
-                  <div className="p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-white/[0.06] flex flex-col gap-6">
-                    <div>
-                      <span className="text-xs font-semibold tracking-widest uppercase text-white/18 block mb-2">
-                        {service.number}
-                      </span>
-                      <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
-                        {service.category}
-                      </h2>
-                      <p className="text-glow-blue/58 text-sm font-medium italic">
-                        {service.tagline}
-                      </p>
-                    </div>
-                    <p className="text-white/45 text-sm leading-relaxed flex-1">
-                      {service.description}
-                    </p>
-                    <div>
-                      <p className="text-xs text-white/22 uppercase tracking-widest font-semibold mb-3">
-                        Best For
-                      </p>
-                      <ul className="space-y-1.5">
-                        {service.bestFor.map((b) => (
-                          <li key={b} className="flex items-center gap-2 text-sm text-white/42">
-                            <span className="w-1 h-1 rounded-full bg-glow-blue/38 shrink-0" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Right */}
-                  <div className="p-8 lg:p-10 flex flex-col gap-6">
-                    <div>
-                      <p className="text-xs text-white/22 uppercase tracking-widest font-semibold mb-4">
-                        Operating Layer
-                      </p>
-                      <ul className="space-y-3">
-                        {service.includes.map((item) => (
-                          <li key={item} className="flex items-start gap-3 text-sm text-white/52">
-                            <span className="w-4 h-4 rounded-full bg-nexus-blue/12 border border-nexus-blue/22 flex items-center justify-center shrink-0 mt-0.5">
-                              <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
-                                <path d="M1 3.5l1.5 1.5 3.5-3.5" stroke="#4DA3FF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            </span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Proof mapping — dual case studies */}
-                    <div className="mt-auto pt-6 border-t border-white/[0.06]">
-                      <p className="text-xs text-white/22 uppercase tracking-widest font-semibold mb-3">
-                        Transformation Records
-                      </p>
-                      <div className="flex flex-col sm:flex-row gap-3">
-                        {service.proofStudies.map((cs) => (
-                          <Link
-                            key={cs.href}
-                            href={cs.href}
-                            className="flex-1 flex items-start gap-3 rounded-xl p-4 group transition-all duration-200 border border-white/[0.06] hover:border-white/[0.14] bg-white/[0.025] hover:bg-white/[0.04]"
-                          >
-                            <div
-                              className="w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 opacity-65"
-                              style={{ background: accent.accentColor }}
-                            />
-                            <div>
-                              <p className="text-white/68 text-sm font-semibold group-hover:text-white transition-colors duration-200">
-                                {cs.label}
-                              </p>
-                              <p className="text-white/28 text-xs mt-0.5 leading-snug">
-                                {cs.note}
-                              </p>
-                            </div>
-                            <svg
-                              width="12" height="12" viewBox="0 0 14 14" fill="none"
-                              className="text-white/14 group-hover:text-white/42 transition-colors duration-200 shrink-0 mt-1 ml-auto"
-                            >
-                              <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-          );
-          })}
-        </div>
-      </section>
-
-      {/* Creator Authority Launch — spotlight offer */}
-      <section className="section-padding bg-surface-1 relative overflow-hidden">
-        <div className="divider-glow absolute top-0 left-0 right-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(37,99,235,0.055),transparent)]" />
-
-        <div className="container-tight relative">
-          <FadeIn className="mb-10">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-4">
-              Creator Offer
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-3 leading-tight">
-              Creator Authority Launch
-            </h2>
-            <p className="text-white/40 text-base max-w-xl leading-relaxed">
-              A purpose-built package for music artists, creators, and personality-driven brands.
-              Fast, immersive, and built for the way creator audiences actually move.
-            </p>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            {/* Main offer */}
-            <FadeIn direction="left">
-              <div className="glass-card rounded-2xl p-8 h-full flex flex-col gap-6">
-                <div>
-                  <p className="text-2xl font-bold text-gradient mb-1">{creatorOffer.range}</p>
-                  <p className="text-white/35 text-sm">Timeline: {creatorOffer.timeline}</p>
-                </div>
-                <p className="text-white/48 text-sm leading-relaxed">{creatorOffer.description}</p>
-                <ul className="space-y-3 flex-1">
-                  {creatorOffer.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-white/52">
-                      <span className="w-4 h-4 rounded-full bg-nexus-blue/12 border border-nexus-blue/22 flex items-center justify-center shrink-0 mt-0.5">
-                        <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
-                          <path d="M1 3.5l1.5 1.5 3.5-3.5" stroke="#4DA3FF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-5 border-t border-white/[0.06]">
-                  <p className="text-xs text-white/22 uppercase tracking-widest font-semibold mb-2.5">
-                    Proven In
-                  </p>
-                  <Link
-                    href="/case-studies/eaziedagod"
-                    className="inline-flex items-center gap-2 text-sm text-glow-blue/60 hover:text-glow-blue transition-colors font-medium"
-                  >
-                    EazieDaGod — creator identity platform
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Growth retainer */}
-            <FadeIn direction="right" delay={0.08}>
-              <div className="rounded-2xl p-8 h-full flex flex-col gap-6 border border-glow-blue/12 bg-nexus-blue/[0.04]">
-                <div>
-                  <span className="text-xs font-semibold tracking-[0.14em] uppercase text-glow-blue/55 block mb-3">
-                    Monthly Retainer
-                  </span>
-                  <h3 className="text-white font-bold text-xl tracking-tight mb-1">
-                    {creatorOffer.retainer.label}
-                  </h3>
-                  <p className="text-2xl font-bold text-gradient">{creatorOffer.retainer.range}</p>
-                </div>
-                <p className="text-white/42 text-sm leading-relaxed">
-                  Keep the environment current and the audience journey coherent without managing it yourself.
-                  Built for artists who release regularly and need disciplined execution.
+      <section className="bg-black pb-16">
+        <div className="container-tight">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.06] lg:grid-cols-2">
+            <FadeIn>
+              <Link href="#entry-ecosystems" className="group block h-full min-w-0 overflow-hidden bg-[#06080d] p-8 transition duration-300 hover:bg-white/[0.035] lg:p-10">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-glow-blue/65">Pathway 01</p>
+                <h2 className="mb-4 text-3xl font-semibold tracking-tight text-white">Entry Ecosystems</h2>
+                <p className="mb-8 max-w-lg break-words text-sm leading-7 text-white/46">
+                  Low-friction entry into the Nexus for creators, personal brands, solo operators, and emerging businesses that need a serious identity layer without enterprise scope.
                 </p>
-                <ul className="space-y-3 flex-1">
-                  {creatorOffer.retainer.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-white/50">
-                      <span className="w-4 h-4 rounded-full bg-nexus-blue/12 border border-nexus-blue/22 flex items-center justify-center shrink-0 mt-0.5">
-                        <svg width="7" height="7" viewBox="0 0 7 7" fill="none">
-                          <path d="M1 3.5l1.5 1.5 3.5-3.5" stroke="#4DA3FF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <Button href="/contact" variant="primary" size="md">
-                  Initiate Continuity
-                </Button>
-              </div>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-glow-blue/70">
+                  Review starting investments
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
+            </FadeIn>
+
+            <FadeIn delay={0.08}>
+              <Link href="#operational-evolution" className="group block h-full min-w-0 overflow-hidden bg-[#050608] p-8 transition duration-300 hover:bg-white/[0.035] lg:p-10">
+                <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-glow-blue/65">Pathway 02</p>
+                <h2 className="mb-4 text-3xl font-semibold tracking-tight text-white">Operational Evolution Systems</h2>
+                <p className="mb-8 max-w-lg break-words text-sm leading-7 text-white/46">
+                  Strategic evolution partnerships for scaling businesses, nonprofits, executive brands, and organizations where scope must be architected around real operating conditions.
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-glow-blue/70">
+                  Explore strategic scope
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Pricing Tiers */}
-      <section className="section-padding bg-[#0A0A0A]">
-        <div className="container-tight">
-          <FadeIn className="text-center mb-16">
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-4">
-              Engagement Architecture
+      <section id="entry-ecosystems" className="section-padding relative overflow-hidden bg-surface-1">
+        <div className="divider-glow absolute left-0 right-0 top-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_65%_50%_at_50%_20%,rgba(77,163,255,0.07),transparent)]" />
+        <div className="container-tight relative">
+          <FadeIn className="mb-12 max-w-3xl">
+            <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.2em] text-glow-blue/70">
+              Entry Ecosystems
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-              Scoped to your operating reality.
+            <h2 className="mb-4 max-w-[21rem] text-3xl font-bold tracking-tight text-white sm:max-w-none sm:text-4xl md:text-5xl">
+              Accessible entry without cheapening the standard.
             </h2>
-            <p className="text-white/45 text-base max-w-lg mx-auto">
-              Investment is based on complexity, system depth, and business impact — not arbitrary package tiers.
-            </p>
-            <p className="text-white/25 text-sm max-w-md mx-auto mt-3">
-              Final scope and investment are defined through an evolution briefing — not before.
+            <p className="text-base leading-8 text-white/45">
+              These starting investment levels create a lower-friction path into the Nexus while preserving strategic clarity, atmosphere, and future compatibility.
             </p>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {tiers.map((tier) => (
-              <StaggerItem key={tier.tier}>
-                <div
-                  className={`h-full rounded-2xl p-7 flex flex-col gap-5 transition-all relative ${
-                    tier.featured
-                      ? "bg-nexus-blue/10 border border-nexus-blue/28"
-                      : tier.isCustom
-                      ? "bg-white/[0.02] border border-white/[0.12]"
-                      : "glass-card"
-                  }`}
-                >
-                  {tier.featured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-xs font-semibold bg-nexus-blue text-white px-3 py-1 rounded-full whitespace-nowrap">
-                      Most Requested
-                    </span>
-                  )}
-                  <div>
-                    <h3 className="text-white font-bold text-lg mb-1 tracking-tight">
-                      {tier.tier}
-                    </h3>
-                    {tier.isCustom ? (
-                      <p className="text-lg font-semibold text-white/55 tracking-tight">{tier.range}</p>
-                    ) : (
-                      <p className="text-2xl font-bold text-gradient">{tier.range}</p>
-                    )}
+          <StaggerContainer className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            {entryEcosystems.map((item) => (
+              <StaggerItem key={item.name}>
+                <div className="glass-card flex h-full min-w-0 flex-col overflow-hidden rounded-2xl p-7">
+                  <div className="mb-6">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/24">{item.audience}</p>
+                    <h3 className="mb-3 text-xl font-bold tracking-tight text-white">{item.name}</h3>
+                    <p className="text-2xl font-bold text-gradient">{item.investment}</p>
                   </div>
-                  <p className="text-white/42 text-sm leading-relaxed">{tier.description}</p>
-                  <ul className="space-y-2 flex-1">
-                    {tier.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-xs text-white/48">
-                        <span className="w-3.5 h-3.5 rounded-full bg-nexus-blue/12 border border-nexus-blue/22 flex items-center justify-center shrink-0 mt-0.5">
-                          <svg width="6" height="6" viewBox="0 0 6 6" fill="none">
-                            <path d="M1 3l1.2 1.2 2.8-2.8" stroke="#4DA3FF" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </span>
-                        {item}
+                  <p className="mb-6 text-sm leading-7 text-white/45">{item.description}</p>
+                  <ul className="mt-auto space-y-3">
+                    {item.includes.map((include) => (
+                      <li key={include} className="flex items-start gap-3 text-sm leading-6 text-white/50">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-glow-blue/50" />
+                        {include}
                       </li>
                     ))}
                   </ul>
-                  {tier.isCustom && (
-                    <div className="mt-auto">
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center gap-2 text-[0.8125rem] text-glow-blue/60 hover:text-glow-blue transition-colors duration-200 font-medium"
-                      >
-                        Initiate Discovery
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </Link>
-                    </div>
-                  )}
-                  <div className="pt-4 border-t border-white/[0.06]">
-                    {tier.isCustom ? (
-                      <p className="text-xs text-white/28">
-                        Begins with an{" "}
-                        <span className="text-glow-blue/55">evolution briefing</span>
-                      </p>
-                    ) : (
-                      <p className="text-xs text-white/28">
-                        Timeline: <span className="text-white/48">{tier.timeline}</span>
-                      </p>
-                    )}
-                  </div>
                 </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
-          <FadeIn delay={0.3} className="mt-10 text-center">
-            <p className="text-white/32 text-sm mb-6">
-              Not sure where the system begins? The evolution briefing maps that with clarity.
+          <FadeIn className="mt-5">
+            <div className="grid grid-cols-1 gap-5 rounded-2xl border border-glow-blue/16 bg-nexus-blue/[0.045] p-7 lg:grid-cols-[0.85fr_1.15fr] lg:p-9">
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-glow-blue/60">Continuity Layer</p>
+                <h3 className="mb-2 text-2xl font-bold tracking-tight text-white">{continuityLayer.name}</h3>
+                <p className="text-3xl font-bold text-gradient">{continuityLayer.investment}</p>
+              </div>
+              <div>
+                <p className="mb-5 text-sm leading-7 text-white/45">{continuityLayer.description}</p>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {continuityLayer.includes.map((item) => (
+                    <div key={item} className="rounded-xl border border-white/[0.07] bg-black/25 px-4 py-3 text-sm text-white/48">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section id="operational-evolution" className="section-padding relative overflow-hidden bg-[#050608]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_0%,rgba(37,99,235,0.09),transparent_62%)]" />
+        <div className="absolute inset-0 grid-pattern opacity-[0.15]" />
+        <div className="container-tight relative">
+          <FadeIn className="mx-auto mb-14 max-w-3xl text-center">
+            <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.2em] text-glow-blue/70">
+              Operational Evolution Systems
+            </span>
+            <h2 className="mb-5 text-4xl font-bold tracking-tight text-white md:text-5xl">
+              Transformation is architected, not purchased.
+            </h2>
+            <p className="text-base leading-8 text-white/45">
+              Every operational ecosystem is architected around the realities, friction points, future-state goals, and scalability requirements of the organization it serves. Strategic scope and investment are defined through the Evolution Briefing process.
             </p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+            {operationalSystems.map((system) => (
+              <FadeIn key={system.name}>
+                <div className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-white/[0.025] p-7">
+                  <h3 className="mb-4 text-xl font-bold tracking-tight text-white">{system.name}</h3>
+                  <p className="mb-6 text-sm leading-7 text-white/46">{system.focus}</p>
+                  <div className="mb-6">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/24">Best aligned for</p>
+                    <ul className="space-y-2">
+                      {system.bestFor.map((item) => (
+                        <li key={item} className="flex items-center gap-2 text-sm text-white/44">
+                          <span className="h-1 w-1 rounded-full bg-glow-blue/45" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-auto border-t border-white/[0.06] pt-5">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-white/24">Transformation records</p>
+                    <div className="flex flex-wrap gap-2">
+                      {system.proof.map((proof) => (
+                        <Link key={proof.href} href={proof.href} className="rounded-full border border-white/[0.08] px-3 py-1.5 text-xs text-white/45 transition hover:border-glow-blue/25 hover:text-white/70">
+                          {proof.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn className="mt-5">
+            <div className="rounded-2xl border border-white/[0.08] bg-black/35 p-7 lg:p-9">
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+                <div>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-glow-blue/60">Strategic Scope Framing</p>
+                  <h3 className="mb-4 text-2xl font-bold tracking-tight text-white">Investment follows operational reality.</h3>
+                  <p className="text-sm leading-7 text-white/45">
+                    This pathway does not use public fixed pricing, package comparisons, or deliverable menus. The briefing defines the shape of the system before investment is discussed with precision.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {scopeSignals.map((signal) => (
+                    <div key={signal} className="rounded-xl border border-white/[0.07] bg-white/[0.025] px-4 py-3 text-sm leading-6 text-white/48">
+                      {signal}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.15} className="mt-10 text-center">
             <Button href="/contact" variant="primary" size="lg">
               Begin Your Evolution Briefing
             </Button>
-            <p className="text-white/17 text-xs mt-5">
-              We take on a limited number of builds at a time — to maintain the standard every client deserves.
+            <p className="mx-auto mt-5 max-w-md text-xs leading-6 text-white/22">
+              The briefing determines whether the correct next step is entry ecosystem, continuity layer, or operational evolution partnership.
             </p>
           </FadeIn>
         </div>

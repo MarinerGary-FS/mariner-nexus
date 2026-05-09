@@ -19,10 +19,10 @@ const services: ServiceItem[] = [
   {
     id: "revenue",
     number: "01",
-    title: "Revenue Systems",
+    title: "Revenue Evolution Systems",
     description:
-      "High-conversion web builds, e-commerce infrastructure, and funnel architecture designed to increase qualified leads and close rates.",
-    deliverables: ["Conversion-focused design", "Payment + subscription setup", "CTA hierarchy"],
+      "Strategic environments where trust, lead movement, conversion paths, CRM handoff, and follow-up operate as one system.",
+    deliverables: ["Trust architecture", "Lead movement", "CRM-ready flow"],
     icon: (
       <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
         <path d="M3 15l4-5 3 3 4-6 3-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -33,10 +33,10 @@ const services: ServiceItem[] = [
   {
     id: "authority",
     number: "02",
-    title: "Authority Systems",
+    title: "Identity & Authority Systems",
     description:
-      "Personal brand platforms and executive digital presence built to position you as the clear, credible choice in your market.",
-    deliverables: ["Brand narrative + positioning", "Premium experience system", "Scheduling integration"],
+      "Creator identity systems, personal brand ecosystems, and executive presence layers built for credibility and future expansion.",
+    deliverables: ["Creator identity", "Authority narrative", "Evolution entry"],
     icon: (
       <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
         <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.75"/>
@@ -50,10 +50,10 @@ const services: ServiceItem[] = [
   {
     id: "systems",
     number: "03",
-    title: "System Builds",
+    title: "Operational Evolution Systems",
     description:
-      "CRM-connected sites, community platforms, and operational infrastructure built for organizations that need scalable architecture.",
-    deliverables: ["GoHighLevel integration", "Community + member systems", "Automation-ready builds"],
+      "Briefing-defined operational ecosystems for organizations that need connected platforms, automation paths, and scalable architecture.",
+    deliverables: ["Strategic scope", "Operational architecture", "Continuity path"],
     icon: (
       <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
         <circle cx="10" cy="10" r="2.5" stroke="currentColor" strokeWidth="1.5"/>
@@ -83,7 +83,7 @@ export default function ServicesSnapshot() {
             </h2>
           </div>
           <Link href="/services" className="link-arrow shrink-0">
-            Full breakdown + pricing
+            Explore evolution pathways
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
               <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -146,7 +146,7 @@ export default function ServicesSnapshot() {
 
         <FadeIn delay={0.2} className="mt-8 flex justify-center">
           <Button href="/services" variant="secondary" size="md">
-            View All Services + Pricing
+            View Evolution Pathways
           </Button>
         </FadeIn>
       </div>
