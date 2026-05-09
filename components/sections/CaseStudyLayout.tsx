@@ -18,7 +18,14 @@ interface CaseStudyData {
   tools: string[];
   outcome: string;
   outcomePoints: string[];
-  mockupImage?: string; // /case-studies/[slug]/mockup.png
+  mockupImage?: string;
+  proofAlt?: string;
+  proofStates?: {
+    label: string;
+    src: string;
+    alt: string;
+    format: "mobile" | "desktop";
+  }[];
   themeAccentRgb?: string; // optional client identity accent, e.g. "212,175,55" for gold
   nextStudy?: {
     title: string;
@@ -27,7 +34,17 @@ interface CaseStudyData {
 }
 
 /* ── Mockup Frame — real image when available, premium wireframe otherwise ── */
-function MockupFrame({ src, title }: { src?: string; title: string }) {
+function MockupFrame({
+  src,
+  title,
+  alt,
+  format = "desktop",
+}: {
+  src?: string;
+  title: string;
+  alt?: string;
+  format?: "mobile" | "desktop";
+}) {
   if (src) {
     return (
       <motion.div
@@ -36,7 +53,7 @@ function MockupFrame({ src, title }: { src?: string; title: string }) {
         viewport={{ once: true, margin: "-80px" }}
         whileHover={{ scale: 1.012 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden"
+        className={`relative w-full ${format === "mobile" ? "max-w-[360px] aspect-[9/14]" : "aspect-[16/10]"} rounded-2xl overflow-hidden`}
         style={{
           boxShadow: "0 2px 0 0 rgba(255,255,255,0.06) inset, 0 0 0 1px rgba(255,255,255,0.09), 0 24px 64px rgba(0,0,0,0.65), 0 0 80px rgba(37,99,235,0.1)",
         }}
@@ -54,16 +71,16 @@ function MockupFrame({ src, title }: { src?: string; title: string }) {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(37,99,235,0.12),transparent_60%)] z-10 pointer-events-none" />
         <Image
           src={src}
-          alt={`${title} — site mockup`}
+          alt={alt ?? `${title} digital ecosystem proof view`}
           fill
           className="object-cover"
-          sizes="(max-width: 1024px) 100vw, 560px"
+          sizes={format === "mobile" ? "(max-width: 768px) 78vw, 360px" : "(max-width: 1024px) 100vw, 560px"}
           priority={false}
         />
         {/* Top-edge glass reflection */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent z-20 pointer-events-none" />
         {/* Subtle overlay for depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent z-10 pointer-events-none" />
       </motion.div>
     );
   }
@@ -199,7 +216,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
             {/* Mockup */}
             <div>
               <p className="eyebrow mb-4" style={{ color: `rgba(${accentRgb},0.45)` }}>The Build</p>
-              <MockupFrame src={data.mockupImage} title={data.title} />
+              <MockupFrame src={data.mockupImage} title={data.title} alt={data.proofAlt} />
             </div>
 
             {/* System Built */}
@@ -227,6 +244,33 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
               </ul>
             </FadeIn>
           </div>
+
+          {data.proofStates && data.proofStates.length > 0 && (
+            <FadeIn>
+              <div className="mb-16">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="divider-glow flex-1 opacity-50" />
+                  <p className="eyebrow shrink-0" style={{ color: `rgba(${accentRgb},0.52)` }}>Experience States</p>
+                  <div className="divider-glow flex-1 opacity-50" />
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
+                  {data.proofStates.map((state) => (
+                    <div key={state.label} className="rounded-2xl border border-white/[0.06] bg-white/[0.025] p-4 md:p-5">
+                      <p className="eyebrow mb-4" style={{ color: `rgba(${accentRgb},0.48)` }}>{state.label}</p>
+                      <div className={state.format === "mobile" ? "flex justify-center" : ""}>
+                        <MockupFrame
+                          src={state.src}
+                          title={`${data.title} ${state.label}`}
+                          alt={state.alt}
+                          format={state.format}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </FadeIn>
+          )}
 
           {/* Continuation */}
           <FadeIn>
@@ -272,9 +316,9 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
             <h2 className="text-[2.25rem] md:text-[3.25rem] font-bold text-white tracking-[-0.032em] mb-3 leading-[1.06]">
               This level of synchronization
             </h2>
-            <h2 className="text-[2.25rem] md:text-[3.25rem] font-bold tracking-[-0.032em] leading-[1.06] mb-8 text-white/25">
+            <p className="text-[2.25rem] md:text-[3.25rem] font-bold tracking-[-0.032em] leading-[1.06] mb-8 text-white/25">
               can be mapped for your business.
-            </h2>
+            </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Button href="/contact" variant="primary" size="lg">

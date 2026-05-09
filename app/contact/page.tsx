@@ -1,13 +1,15 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import FadeIn from "@/components/motion/FadeIn";
 import ContactForm from "@/components/sections/ContactForm";
 import CalEmbed from "@/components/integrations/CalEmbed";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Evolution Entry — Mariner Nexus",
+export const metadata: Metadata = createMetadata({
+  title: "Evolution Entry | Map Your Future-State Ecosystem",
   description:
     "Begin an evolution briefing to map your current operating reality, identify constraints, and define the future-state ecosystem your business needs.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

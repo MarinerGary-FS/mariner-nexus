@@ -351,8 +351,8 @@ function ProofScene() {
               >
                 <div className="relative aspect-[1.45] overflow-hidden bg-black">
                   <Image
-                    src={study.mockupImage}
-                    alt=""
+                    src={study.cardImage}
+                    alt={study.proofAlt}
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover opacity-72 transition duration-700 group-hover:scale-[1.03] group-hover:opacity-90"

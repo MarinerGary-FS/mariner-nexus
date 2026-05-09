@@ -1,14 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
 import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
-
-export const metadata: Metadata = {
-  title: "Serene Origins — Mariner Nexus Case Study",
-  description:
-    "A wellness concept transformed into a structured digital business platform with premium positioning and a clear monetization pathway.",
-};
+import { createMetadata } from "@/lib/seo";
 
 const cs = getCaseStudy("serene-origins")!;
+
+export const metadata: Metadata = createMetadata({
+  title: "Serene Origins Transformation Record",
+  description:
+    "A wellness concept transformed into a structured digital business platform with premium positioning, customer experience clarity, and a subscription-ready monetization pathway.",
+  path: cs.detailHref,
+  image: cs.ogImage,
+  type: "article",
+});
+
 const next = getNextStudy("serene-origins");
 
 const data = {
@@ -39,6 +44,7 @@ const data = {
     "Consistent visual identity across all digital touchpoints",
   ],
   mockupImage: cs.mockupImage,
+  proofAlt: cs.proofAlt,
   nextStudy: next,
 };
 

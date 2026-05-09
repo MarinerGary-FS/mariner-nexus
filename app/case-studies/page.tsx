@@ -1,233 +1,185 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
 import ConversionSection from "@/components/sections/ConversionSection";
+import { caseStudyGroups, projectRecords } from "@/lib/case-studies";
+import { absoluteUrl, createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Transformation Records — Mariner Nexus",
+export const metadata: Metadata = createMetadata({
+  title: "Transformation Records | Live Digital Ecosystem Proof",
   description:
-    "Transformation records across revenue systems, authority platforms, and operational infrastructure. One consistent principle: synchronized systems create future-state clarity.",
-};
+    "Live transformation records showing digital authority systems, customer experience architecture, AI-native business operations, and communication ecosystems built by Mariner Nexus.",
+  path: "/case-studies",
+});
 
-const categoryGroups = [
-  {
-    group: "Revenue · Service Business",
-    accentColor: "rgba(77,163,255,0.6)",
-    description: "Systems engineered to connect trust, lead movement, conversion, and follow-up.",
-    studies: [
-      {
-        slug: "act-of-valor",
-        category: "Revenue · Service Business",
-        industry: "Emergency Services",
-        title: "Act of Valor",
-        problem: "A high-stakes service business facing conversion friction at the most critical moment of consideration — when trust is required and time is short.",
-        system: "Credentials-forward homepage + urgent evolution-entry architecture + GoHighLevel CRM intake + persistent action path across all scroll depths.",
-        outcome: "A high-trust conversion environment where authority is communicated immediately and the path to action is frictionless.",
-        tags: ["Conversion Architecture", "GoHighLevel", "Local Authority", "Emergency UX"],
-      },
-      {
-        slug: "serene-origins",
-        category: "Revenue · Wellness",
-        industry: "Digital Business",
-        title: "Serene Origins",
-        problem: "A wellness brand with real potential but a digital environment that undermined trust and offered no clear path to subscription.",
-        system: "Premium brand redesign + conversion-focused experience + Stripe subscription infrastructure + onboarding journey.",
-        outcome: "A structured digital wellness platform with clear monetization, stronger visual authority, and a defined revenue system.",
-        tags: ["Brand Redesign", "Stripe", "Subscription System", "Conversion Design"],
-      },
-    ],
-  },
-  {
-    group: "Authority · Creator · Personal Brand",
-    accentColor: "rgba(125,211,252,0.55)",
-    description: "Environments built to position individuals and brands as the clear, credible choice.",
-    studies: [
-      {
-        slug: "eaziedagod",
-        category: "Authority · Creator",
-        industry: "Music / Artist",
-        title: "EazieDaGod",
-        problem: "A distinct creative identity with a fragmented digital footprint — scattered links, no immersive entry point, and a presence that did not match the caliber of the art.",
-        system: "Immersive full-experience entry design + premium artist presentation platform + strategic link architecture + creator-specific CTA flows.",
-        outcome: "A unified digital identity that communicates brand authority within seconds and routes every visitor with intention.",
-        tags: ["Creator Brand", "Immersive Design", "Link Architecture", "Artist Platform"],
-      },
-      {
-        slug: "gary-mariner",
-        category: "Authority · Executive",
-        industry: "Personal Brand",
-        title: "Gary L Mariner II",
-        problem: "A high-level operator without a digital presence that matched the depth of his thinking, network, or strategic capability.",
-        system: "Premium personal website + messaging and positioning system + Cal.com booking integration + authority platform architecture.",
-        outcome: "A professional digital presence that commands trust, communicates leadership, and creates clear pathways for the right people to connect.",
-        tags: ["Personal Brand", "Positioning System", "Cal.com", "Executive Presence"],
-      },
-    ],
-  },
-  {
-    group: "Systems · Community · Media",
-    accentColor: "rgba(37,99,235,0.7)",
-    description: "Operational infrastructure and digital systems built for organizations ready to scale coherently.",
-    studies: [
-      {
-        slug: "undugu",
-        category: "Systems · Community",
-        industry: "Foundation",
-        title: "Undugu",
-        problem: "A growing community foundation operating without the systems to support its growth — manual intake, inconsistent communication, no engagement tracking.",
-        system: "Website + funnel structure + GoHighLevel CRM + Discord community alignment + event and engagement tracking.",
-        outcome: "A foundation positioned for scale with structured intake, targeted communication, and operational infrastructure that grows with the organization.",
-        tags: ["GoHighLevel", "CRM Architecture", "Community Platform", "Workflow Design"],
-      },
-      {
-        slug: "amplify-voices",
-        category: "Systems · Media",
-        industry: "Media Platform",
-        title: "Amplify Voices",
-        problem: "A media platform with an important mission undermined by a visual presence and information architecture that did not match its credibility.",
-        system: "High-end website redesign + content hierarchy restructuring + storytelling-driven layout + brand system refinement.",
-        outcome: "A modern, compelling media platform that communicates authority and purpose effectively — and looks like it belongs at the top of its category.",
-        tags: ["Media Platform", "Storytelling Design", "Brand System", "Authority Positioning"],
-      },
-    ],
-  },
-];
+const itemListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Mariner Nexus transformation records",
+  url: absoluteUrl("/case-studies"),
+  itemListElement: projectRecords.map((record, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: record.title,
+    url: record.detailHref ? absoluteUrl(record.detailHref) : record.liveUrl,
+    description: record.description,
+  })),
+};
 
 export default function CaseStudiesPage() {
   return (
     <>
-      {/* Hero */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+
       <section className="pt-40 pb-20 bg-black relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(37,99,235,0.1),transparent)]" />
         <div className="container-tight relative text-center">
           <FadeIn>
             <p className="eyebrow mb-5">Transformation Records</p>
             <h1 className="text-[3rem] md:text-[4rem] lg:text-[5rem] font-bold tracking-[-0.035em] text-white mb-5 leading-[1.0]">
-              Six records.
+              Live proof.
               <br />
-              <span className="text-white/32">One consistent principle.</span>
+              <span className="text-white/32">Systems made visible.</span>
             </h1>
-            <p className="text-white/45 text-base md:text-lg max-w-lg mx-auto leading-[1.7]">
-              Synchronized systems create future-state clarity across revenue, authority,
-              and operational infrastructure.
+            <p className="text-white/45 text-base md:text-lg max-w-2xl mx-auto leading-[1.7]">
+              Current production ecosystems showing the movement from fragmented digital presence
+              to synchronized authority, customer experience, and operational clarity.
             </p>
-          </FadeIn>
-
-          {/* Category legend */}
-          <FadeIn delay={0.12} className="mt-8 flex flex-wrap items-center justify-center gap-5">
-            {[
-              { label: "Revenue · Service Business", color: "rgba(77,163,255,0.6)" },
-              { label: "Authority · Creator · Personal Brand", color: "rgba(125,211,252,0.55)" },
-              { label: "Systems · Community · Media", color: "rgba(37,99,235,0.7)" },
-            ].map((cat) => (
-              <span key={cat.label} className="flex items-center gap-2 text-[0.75rem] text-white/35 font-medium">
-                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: cat.color }} />
-                {cat.label}
-              </span>
-            ))}
           </FadeIn>
         </div>
       </section>
 
-      {/* Transformation records — grouped by category */}
       <section className="pb-0 bg-black">
         <div className="container-tight space-y-20">
-          {categoryGroups.map((group) => (
+          {caseStudyGroups.map((group) => (
             <FadeIn key={group.group}>
-              {/* Group header */}
               <div className="flex items-center gap-4 mb-8">
-                <div
-                  className="w-2 h-2 rounded-full shrink-0"
-                  style={{ backgroundColor: group.accentColor }}
-                />
+                <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: group.color }} />
                 <div>
                   <h2 className="text-[0.75rem] font-semibold tracking-[0.16em] uppercase text-white/45">
-                    {group.group}
+                    {group.group} Evolution
                   </h2>
-                  <p className="text-white/25 text-[0.75rem] mt-0.5">{group.description}</p>
+                  <p className="text-white/25 text-[0.75rem] mt-0.5">
+                    Transformation records grouped by the primary operational layer they strengthen.
+                  </p>
                 </div>
               </div>
 
-              {/* Studies in group */}
-              <StaggerContainer className="grid grid-cols-1 gap-4">
-                {group.studies.map((cs) => (
-                  <StaggerItem key={cs.slug}>
-                    <Link href={`/case-studies/${cs.slug}`} className="group block">
+              <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                {group.studies.map((record) => {
+                  const content = (
+                    <article className="glass-card glass-card-hover rounded-2xl overflow-hidden h-full">
                       <div
-                        className="glass-card glass-card-hover rounded-2xl overflow-hidden"
-                      >
-                        {/* Category accent line */}
-                        <div
-                          className="h-px w-full opacity-30 group-hover:opacity-70 transition-opacity duration-300"
-                          style={{ background: `linear-gradient(90deg, ${group.accentColor}, transparent 60%)` }}
+                        className="h-px w-full opacity-35 group-hover:opacity-75 transition-opacity duration-300"
+                        style={{ background: `linear-gradient(90deg, ${group.color}, transparent 60%)` }}
+                      />
+                      <div className="relative aspect-[16/10] overflow-hidden bg-black">
+                        <Image
+                          src={record.cardImage}
+                          alt={record.proofAlt}
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover object-top opacity-75 transition duration-700 group-hover:scale-[1.025] group-hover:opacity-95"
                         />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/86 via-black/18 to-transparent" />
+                        <div className="absolute left-5 top-5 rounded-full border border-white/[0.08] bg-black/45 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-white/48 backdrop-blur">
+                          {record.category}
+                        </div>
+                      </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-0">
-                          {/* Left panel */}
-                          <div className="p-8 lg:p-9 border-b lg:border-b-0 lg:border-r border-white/[0.055] flex flex-col justify-between gap-6">
-                            <div>
-                              <span className="eyebrow text-glow-blue/55 block mb-3">
-                                {cs.category}
-                              </span>
-                              <h3 className="text-[1.25rem] font-bold text-white tracking-tight group-hover:text-gradient transition-all duration-300">
-                                {cs.title}
-                              </h3>
-                              <p className="text-white/30 text-[0.8125rem] mt-1">{cs.industry}</p>
-                            </div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {cs.tags.slice(0, 2).map((tag) => (
-                                <span
-                                  key={tag}
-                                  className="text-[0.6875rem] text-white/30 bg-white/[0.04] border border-white/[0.055] px-2.5 py-1 rounded-full"
-                                >
-                                  {tag}
-                                </span>
-                              ))}
-                            </div>
+                      <div className="p-6 md:p-7">
+                        <div className="flex items-start justify-between gap-4">
+                          <div>
+                            <h3 className="text-[1.35rem] font-bold text-white tracking-[-0.02em]">
+                              {record.title}
+                            </h3>
+                            <p className="mt-2 text-sm text-white/34">{record.transformationType}</p>
                           </div>
+                          <span className="shrink-0 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-white/25">
+                            {record.industry}
+                          </span>
+                        </div>
 
-                          {/* Right content */}
-                          <div className="p-8 lg:p-9 grid grid-cols-1 md:grid-cols-3 gap-7">
-                            {[
-                              { label: "Fragmented State", body: cs.problem },
-                              { label: "Synchronization", body: cs.system },
-                              { label: "Evolution", body: cs.outcome },
-                            ].map((block) => (
-                              <div key={block.label}>
-                                <p className="text-[0.625rem] text-white/22 uppercase tracking-[0.14em] font-semibold mb-2">
-                                  {block.label}
-                                </p>
-                                <p className={`text-[0.8125rem] leading-[1.65] ${
-                                  block.label === "Evolution" ? "text-white/55 font-medium" : "text-white/40"
-                                }`}>
-                                  {block.body}
-                                </p>
-                                {block.label === "Evolution" && (
-                                  <div className="mt-4 flex items-center gap-1.5 text-white/22 group-hover:text-glow-blue/60 transition-colors duration-200 text-[0.8125rem] font-medium">
-                                    View transformation record
-                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                      <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                  </div>
-                                )}
-                              </div>
+                        <p className="mt-5 text-[0.9rem] leading-7 text-white/48">{record.description}</p>
+
+                        <div className="mt-6">
+                          <p className="text-[0.62rem] font-semibold uppercase tracking-[0.15em] text-white/24">
+                            Evolution Layers
+                          </p>
+                          <div className="mt-3 flex flex-wrap gap-2">
+                            {record.evolutionLayers.map((layer) => (
+                              <span
+                                key={layer}
+                                className="rounded-full border border-white/[0.06] bg-white/[0.035] px-3 py-1 text-[0.72rem] text-white/38"
+                              >
+                                {layer}
+                              </span>
                             ))}
                           </div>
                         </div>
+
+                        <div className="mt-6 border-t border-white/[0.06] pt-5">
+                          <p className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-white/22">
+                            Future-State Outcome
+                          </p>
+                          <p className="mt-2 text-sm leading-6 text-white/58">{record.outcome}</p>
+                        </div>
+
+                        <div className="mt-6 flex flex-wrap items-center gap-3">
+                          {record.detailHref ? (
+                            <Link
+                              href={record.detailHref}
+                              className="inline-flex items-center gap-2 text-sm font-medium text-glow-blue/65 hover:text-glow-blue transition-colors"
+                            >
+                              View transformation record
+                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </Link>
+                          ) : (
+                            <a
+                              href={record.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 text-sm font-medium text-glow-blue/65 hover:text-glow-blue transition-colors"
+                            >
+                              View live ecosystem
+                              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M3 3h6v6M8.5 3.5L3 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </a>
+                          )}
+                          <a
+                            href={record.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-white/28 hover:text-white/55 transition-colors"
+                          >
+                            Production site
+                          </a>
+                        </div>
                       </div>
-                    </Link>
-                  </StaggerItem>
-                ))}
+                    </article>
+                  );
+
+                  return (
+                    <StaggerItem key={record.slug}>
+                      <div className="group h-full">{content}</div>
+                    </StaggerItem>
+                  );
+                })}
               </StaggerContainer>
             </FadeIn>
           ))}
         </div>
       </section>
 
-      {/* Bottom padding before CTA */}
       <div className="pb-20 bg-black" />
-
       <ConversionSection />
     </>
   );

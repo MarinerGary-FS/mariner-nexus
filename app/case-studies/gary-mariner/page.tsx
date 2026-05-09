@@ -1,14 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
 import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
-
-export const metadata: Metadata = {
-  title: "Gary L Mariner II — Mariner Nexus Transformation Record",
-  description:
-    "Personal brand elevated into a structured authority platform reflecting leadership and strategic execution.",
-};
+import { createMetadata } from "@/lib/seo";
 
 const cs = getCaseStudy("gary-mariner")!;
+
+export const metadata: Metadata = createMetadata({
+  title: "Gary L Mariner II Transformation Record",
+  description:
+    "An executive personal brand elevated into a structured authority platform with social gateway entry, full-experience positioning, and strategic briefing pathways.",
+  path: cs.detailHref,
+  image: cs.ogImage,
+  type: "article",
+});
+
 const next = getNextStudy("gary-mariner");
 
 const data = {
@@ -39,6 +44,21 @@ const data = {
     "A platform built to evolve as the brand and offer expand",
   ],
   mockupImage: cs.mockupImage,
+  proofAlt: cs.proofAlt,
+  proofStates: [
+    {
+      label: "Social Gateway Entry",
+      src: cs.entryImage!,
+      alt: cs.entryAlt!,
+      format: "mobile" as const,
+    },
+    {
+      label: "Full Experience View",
+      src: cs.fullExperienceImage!,
+      alt: cs.fullExperienceAlt!,
+      format: "desktop" as const,
+    },
+  ],
   nextStudy: next,
 };
 

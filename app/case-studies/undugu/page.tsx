@@ -1,14 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
 import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
-
-export const metadata: Metadata = {
-  title: "Undugu — Mariner Nexus Case Study",
-  description:
-    "Community foundation rebuilt for scale with CRM intake, member tracking, and communication architecture.",
-};
+import { createMetadata } from "@/lib/seo";
 
 const cs = getCaseStudy("undugu")!;
+
+export const metadata: Metadata = createMetadata({
+  title: "Undugu Foundation Transformation Record",
+  description:
+    "A community foundation rebuilt for scalable nonprofit storytelling, event engagement, CRM intake, member tracking, and communication architecture.",
+  path: cs.detailHref,
+  image: cs.ogImage,
+  type: "article",
+});
+
 const next = getNextStudy("undugu");
 
 const data = {
@@ -39,6 +44,7 @@ const data = {
     "Foundation positioned for more sophisticated automation in Phase 2",
   ],
   mockupImage: cs.mockupImage,
+  proofAlt: cs.proofAlt,
   nextStudy: next,
 };
 

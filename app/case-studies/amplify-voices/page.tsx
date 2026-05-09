@@ -1,14 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
 import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
-
-export const metadata: Metadata = {
-  title: "Amplify Voices — Mariner Nexus Case Study",
-  description:
-    "A media platform reimagined with story-driven layout and authority positioning that commands attention.",
-};
+import { createMetadata } from "@/lib/seo";
 
 const cs = getCaseStudy("amplify-voices")!;
+
+export const metadata: Metadata = createMetadata({
+  title: "Amplify Voices Transformation Record",
+  description:
+    "A leadership media platform reimagined with story-driven layout, authority positioning, communication clarity, and customer experience pathways.",
+  path: cs.detailHref,
+  image: cs.ogImage,
+  type: "article",
+});
+
 const next = getNextStudy("amplify-voices");
 
 const data = {
@@ -39,6 +44,7 @@ const data = {
     "Elevated credibility that supports future audience growth and partnerships",
   ],
   mockupImage: cs.mockupImage,
+  proofAlt: cs.proofAlt,
   nextStudy: next,
 };
 

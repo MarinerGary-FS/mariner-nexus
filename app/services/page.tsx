@@ -1,15 +1,17 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
 import Button from "@/components/ui/Button";
 import ConversionSection from "@/components/sections/ConversionSection";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Evolution Systems - Mariner Nexus",
+export const metadata: Metadata = createMetadata({
+  title: "Evolution Systems | AI-Native Business Operations Architecture",
   description:
-    "Entry ecosystems and operational evolution systems for creators, personal brands, scaling businesses, nonprofits, and organizations ready for synchronized growth.",
-};
+    "Explore entry ecosystems and operational evolution systems for creators, executive brands, scaling businesses, nonprofits, and organizations ready for synchronized growth.",
+  path: "/services",
+});
 
 const entryEcosystems = [
   {

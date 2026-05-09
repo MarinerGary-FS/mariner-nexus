@@ -1,14 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
 import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
-
-export const metadata: Metadata = {
-  title: "EazieDaGod — Mariner Nexus Case Study",
-  description:
-    "A creator and artist brand transformed into an immersive digital identity — full-experience entry design, premium artist presentation, and strategic link architecture.",
-};
+import { createMetadata } from "@/lib/seo";
 
 const cs = getCaseStudy("eaziedagod")!;
+
+export const metadata: Metadata = createMetadata({
+  title: "EazieDaGod Transformation Record",
+  description:
+    "A creator and artist brand transformed into an immersive digital identity with mobile link-in-bio entry, full-experience presentation, and strategic fan routing.",
+  path: cs.detailHref,
+  image: cs.ogImage,
+  type: "article",
+});
+
 const next = getNextStudy("eaziedagod");
 
 const data = {
@@ -40,6 +45,21 @@ const data = {
     "A digital foundation that can scale with the brand — merchandise, events, and collabs",
   ],
   mockupImage: cs.mockupImage,
+  proofAlt: cs.proofAlt,
+  proofStates: [
+    {
+      label: "Mobile Link-In-Bio Entry",
+      src: cs.entryImage!,
+      alt: cs.entryAlt!,
+      format: "mobile" as const,
+    },
+    {
+      label: "Full Experience View",
+      src: cs.fullExperienceImage!,
+      alt: cs.fullExperienceAlt!,
+      format: "desktop" as const,
+    },
+  ],
   themeAccentRgb: "212,175,55",
   nextStudy: next,
 };

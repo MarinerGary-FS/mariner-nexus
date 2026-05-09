@@ -1,15 +1,17 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Image from "next/image";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
 import Button from "@/components/ui/Button";
 import ConversionSection from "@/components/sections/ConversionSection";
+import { createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About — Mariner Nexus",
+export const metadata: Metadata = createMetadata({
+  title: "Doctrine | Human-Centered Operational Evolution",
   description:
-    "Mariner Nexus exists to evolve fragmented businesses into synchronized operational ecosystems where clarity, automation, experience, and execution move together.",
-};
+    "The Mariner Nexus doctrine centers human intelligence, operational clarity, AI-native systems, and synchronized digital ecosystems for business evolution.",
+  path: "/about",
+});
 
 const values = [
   {

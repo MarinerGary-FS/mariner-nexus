@@ -1,14 +1,19 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/sections/CaseStudyLayout";
 import { getCaseStudy, getNextStudy } from "@/lib/case-studies";
-
-export const metadata: Metadata = {
-  title: "Act of Valor — Mariner Nexus Case Study",
-  description:
-    "A high-trust emergency services platform engineered for credibility-first UX, urgent CTA structure, and local authority conversion.",
-};
+import { createMetadata } from "@/lib/seo";
 
 const cs = getCaseStudy("act-of-valor")!;
+
+export const metadata: Metadata = createMetadata({
+  title: "Act of Valor Transformation Record",
+  description:
+    "A high-trust emergency services platform engineered for credibility-first customer experience, urgent CTA structure, CRM intake, and local authority conversion.",
+  path: cs.detailHref,
+  image: cs.ogImage,
+  type: "article",
+});
+
 const next = getNextStudy("act-of-valor");
 
 const data = {
@@ -40,6 +45,7 @@ const data = {
     "CRM-connected lead intake with automated response sequences for missed-call recovery",
   ],
   mockupImage: cs.mockupImage,
+  proofAlt: cs.proofAlt,
   nextStudy: next,
 };
 

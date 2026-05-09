@@ -92,8 +92,8 @@ export default function CaseStudyHighlights() {
                         <div className="ml-3 h-2.5 rounded-full bg-white/[0.05] flex-1 max-w-[120px]" />
                       </div>
                       <Image
-                        src={cs.mockupImage}
-                        alt={`${cs.title} preview`}
+                        src={cs.cardImage}
+                        alt={cs.proofAlt}
                         fill
                         className="object-cover object-top opacity-[0.72] group-hover:opacity-[0.9] scale-[1.02] group-hover:scale-[1.0] transition-[opacity,transform] duration-500"
                         sizes="(max-width: 768px) 100vw, 560px"
