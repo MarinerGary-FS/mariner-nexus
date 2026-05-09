@@ -5,13 +5,13 @@ import { footerWorkLinks } from "@/lib/case-studies";
 const footerLinks = {
   Company: [
     { label: "About", href: "/about" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Transformation Records", href: "/case-studies" },
     { label: "Services", href: "/services" },
   ],
   Work: footerWorkLinks,
   Connect: [
-    { label: "Book a Strategy Call", href: "/contact" },
-    { label: "Contact", href: "/contact" },
+    { label: "Begin Your Evolution Briefing", href: "/contact" },
+    { label: "Map Your Future-State Ecosystem", href: "/contact" },
   ],
 };
 
@@ -28,13 +28,13 @@ export default function Footer() {
                 Limited availability.
               </p>
               <h2 className="text-2xl md:text-3xl font-bold text-white tracking-[-0.025em] leading-[1.12] mb-4">
-                If your infrastructure isn&apos;t keeping up —
+                If your infrastructure is no longer holding the business —
                 <br />
-                <span className="text-white/35">it&apos;s time to fix it.</span>
+                <span className="text-white/35">it is time to evolve the system.</span>
               </h2>
               <p className="text-white/32 text-[0.875rem] leading-[1.72]">
-                Mariner Nexus builds systems that scale. One conversation is all
-                it takes to find out if we&apos;re the right fit.
+                Mariner Nexus builds synchronized environments for businesses
+                ready to move beyond fragmented operational reality.
               </p>
             </div>
             <div className="flex flex-col gap-3 shrink-0">
@@ -42,7 +42,7 @@ export default function Footer() {
                 href="/contact"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-[0.8125rem] font-semibold transition-colors duration-200 glow-ring"
               >
-                Start Your Build
+                Begin Your Evolution Briefing
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -51,7 +51,7 @@ export default function Footer() {
                 href="/case-studies"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white/38 hover:text-white/65 text-[0.8125rem] font-medium transition-colors duration-200 border border-white/[0.06] hover:border-white/[0.1]"
               >
-                View the work
+                View Transformation Records
                 <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -85,9 +85,8 @@ export default function Footer() {
               </Link>
 
               <p className="text-white/30 text-[0.8125rem] leading-[1.76] max-w-[256px] mb-8">
-                We build the digital systems, automation infrastructure, and
-                conversion architecture that let serious businesses scale without
-                the ceiling.
+                We engineer synchronized digital environments where experience,
+                operations, automation, and human trust move as one system.
               </p>
 
               <div className="flex items-center gap-2">
@@ -126,7 +125,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Mariner Nexus. All rights reserved.
             </p>
             <p className="text-white/12 text-[0.6875rem] tracking-[0.06em]">
-              Built for businesses that are serious about growth.
+              Built for businesses ready to operate at another level.
             </p>
           </div>
         </div>

@@ -126,7 +126,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
               >
                 <path d="M10 6H2M5 9L2 6l3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              All Case Studies
+              All Transformation Records
             </Link>
 
             <div className="flex items-center gap-2 mb-5">
@@ -155,16 +155,16 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
         </div>
       </section>
 
-      {/* ── Problem / Strategy / Outcome ── */}
+      {/* ── Fragmented State / Synchronization / Evolution ── */}
       <section className="bg-black pb-0">
         <div className="container-tight">
           <StaggerContainer
             className="grid grid-cols-1 lg:grid-cols-3 rounded-2xl overflow-hidden border border-white/[0.05]"
           >
             {[
-              { label: "The Problem", body: data.problem },
-              { label: "The Strategy", body: data.strategy },
-              { label: "The Outcome", body: data.outcome },
+              { label: "Fragmented State", body: data.problem },
+              { label: "Synchronization", body: data.strategy },
+              { label: "Evolution", body: data.outcome },
             ].map((block, i) => (
               <StaggerItem key={block.label}>
                 <div
@@ -181,7 +181,7 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
                         background: i === 0 ? "rgba(255,255,255,0.25)" : i === 1 ? `rgba(${accentRgb},0.7)` : `rgba(${accentRgb},0.45)`,
                       }}
                     />
-                    <p className="eyebrow text-glow-blue/50">{block.label}</p>
+                  <p className="eyebrow text-glow-blue/50">{block.label}</p>
                   </div>
                   <p className="text-white/45 text-[0.875rem] leading-[1.8]">{block.body}</p>
                 </div>
@@ -228,11 +228,11 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
             </FadeIn>
           </div>
 
-          {/* Results */}
+          {/* Continuation */}
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
               <div className="divider-glow flex-1 opacity-60" />
-              <p className="eyebrow shrink-0" style={{ color: `rgba(${accentRgb},0.52)` }}>Outcomes Delivered</p>
+              <p className="eyebrow shrink-0" style={{ color: `rgba(${accentRgb},0.52)` }}>Continuation Signals</p>
               <div className="divider-glow flex-1 opacity-60" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -268,17 +268,17 @@ export default function CaseStudyLayout({ data }: { data: CaseStudyData }) {
 
         <div className="container-tight relative text-center">
           <FadeIn>
-            <p className="eyebrow mb-5">Ready to build yours?</p>
+            <p className="eyebrow mb-5">Evolution Entry</p>
             <h2 className="text-[2.25rem] md:text-[3.25rem] font-bold text-white tracking-[-0.032em] mb-3 leading-[1.06]">
-              This level of execution
+              This level of synchronization
             </h2>
             <h2 className="text-[2.25rem] md:text-[3.25rem] font-bold tracking-[-0.032em] leading-[1.06] mb-8 text-white/25">
-              is available for your business.
+              can be mapped for your business.
             </h2>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Button href="/contact" variant="primary" size="lg">
-                Book a Strategy Call
+                Begin Your Evolution Briefing
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

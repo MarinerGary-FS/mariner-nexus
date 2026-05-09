@@ -36,7 +36,7 @@ const services: ServiceItem[] = [
     title: "Authority Systems",
     description:
       "Personal brand platforms and executive digital presence built to position you as the clear, credible choice in your market.",
-    deliverables: ["Brand narrative + positioning", "Premium web experience", "Booking integration"],
+    deliverables: ["Brand narrative + positioning", "Premium experience system", "Scheduling integration"],
     icon: (
       <svg width="15" height="15" viewBox="0 0 20 20" fill="none">
         <circle cx="10" cy="10" r="2" fill="currentColor" opacity="0.75"/>

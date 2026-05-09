@@ -20,8 +20,8 @@ export default function StaggerContainer({
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      initial={false}
+      animate={isInView ? "visible" : "visible"}
       variants={{
         visible: {
           transition: {
@@ -44,8 +44,9 @@ export const StaggerItem = ({
   className?: string;
 }) => (
   <motion.div
+    initial={false}
     variants={{
-      hidden: { opacity: 0, y: 20 },
+      hidden: { opacity: 1, y: 0 },
       visible: {
         opacity: 1,
         y: 0,

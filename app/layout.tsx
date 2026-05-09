@@ -11,28 +11,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Mariner Nexus — Where Intelligence Meets Execution",
+  title: "Mariner Nexus - Synchronized Operational Intelligence",
   description:
-    "Mariner Nexus builds AI-powered systems, premium web experiences, and automation infrastructure that help modern businesses operate smarter, convert better, and scale with clarity.",
+    "Mariner Nexus evolves fragmented businesses into synchronized digital environments where strategy, experience, automation, and operational trust move as one system.",
   keywords: [
-    "AI systems",
-    "business automation",
-    "premium web design",
+    "operational intelligence",
+    "business systems",
+    "digital experience",
     "CRM integration",
-    "digital infrastructure",
+    "conversion architecture",
   ],
   openGraph: {
-    title: "Mariner Nexus — Where Intelligence Meets Execution",
+    title: "Mariner Nexus - Synchronized Operational Intelligence",
     description:
-      "AI-powered systems and premium digital infrastructure for modern businesses.",
+      "Synchronized digital environments for businesses ready to operate at another level.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mariner Nexus — Where Intelligence Meets Execution",
+    title: "Mariner Nexus - Synchronized Operational Intelligence",
     description:
-      "AI-powered systems and premium digital infrastructure for modern businesses.",
+      "Synchronized digital environments for businesses ready to operate at another level.",
   },
   robots: {
     index: true,

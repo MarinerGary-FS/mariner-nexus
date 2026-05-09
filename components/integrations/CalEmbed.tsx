@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
  * ─────────────────────────────────────────────────────────────────────────────
  * Reads from environment variables (set in .env.local):
  *   NEXT_PUBLIC_CAL_USERNAME=your-cal-username
- *   NEXT_PUBLIC_CAL_EVENT_SLUG=strategy-call
+ *   NEXT_PUBLIC_CAL_EVENT_SLUG=evolution-briefing
  *
  * When both are present:
  *   Renders a real Cal.com inline embed via the official embed script.
@@ -20,7 +20,7 @@ import { useEffect, useRef, useState } from "react";
  */
 
 const CAL_USERNAME  = process.env.NEXT_PUBLIC_CAL_USERNAME  ?? "";
-const CAL_EVENT_SLUG = process.env.NEXT_PUBLIC_CAL_EVENT_SLUG ?? "strategy-call";
+const CAL_EVENT_SLUG = process.env.NEXT_PUBLIC_CAL_EVENT_SLUG ?? "evolution-briefing";
 
 const isConfigured = CAL_USERNAME !== "" && CAL_USERNAME !== "YOUR_CAL_USERNAME";
 
@@ -92,10 +92,10 @@ export default function CalEmbed() {
 
         <div>
           <p className="text-white/70 font-semibold text-base mb-2">
-            Schedule a Strategy Call
+            Schedule an Evolution Briefing
           </p>
           <p className="text-white/32 text-sm leading-relaxed max-w-[260px]">
-            Booking calendar connects once Cal.com credentials are added to{" "}
+            Briefing calendar connects once Cal.com credentials are added to{" "}
             <code className="text-glow-blue/60 text-[0.75rem]">.env.local</code>
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function CalEmbed() {
           rel="noopener noreferrer"
           className="mt-1 inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-sm font-semibold transition-colors duration-200"
         >
-          Book via Cal.com
+          Open Cal.com Briefing
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
             <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>

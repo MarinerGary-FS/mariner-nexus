@@ -7,10 +7,10 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Transformation Records", href: "/case-studies" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Evolution Entry", href: "/contact" },
 ];
 
 export default function Nav() {
@@ -101,7 +101,7 @@ export default function Nav() {
                   href="/contact"
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-[0.8125rem] font-semibold bg-nexus-blue hover:bg-[#1d4ed8] text-white transition-colors duration-200"
                 >
-                  Book a Call
+                  Begin Briefing
                 </Link>
               </motion.div>
 
@@ -178,7 +178,7 @@ export default function Nav() {
                   href="/contact"
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-base font-semibold transition-colors"
                 >
-                  Book a Strategy Call
+                  Begin Your Evolution Briefing
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import FadeIn from "@/components/motion/FadeIn";
 
 const trustSignals = [
-  { label: "30-Minute Call", note: "Focused, structured, high-signal" },
+  { label: "30-Minute Briefing", note: "Focused, structured, high-signal" },
   { label: "No Obligation", note: "Clarity before any commitment" },
   { label: "Limited Capacity", note: "A small number of new builds per quarter" },
 ];
@@ -20,18 +20,18 @@ export default function ConversionSection() {
 
       <div className="container-tight relative text-center">
         <FadeIn>
-          <p className="eyebrow mb-6">Currently Accepting New Clients</p>
+          <p className="eyebrow mb-6">Evolution Entry</p>
 
           <h2 className="text-[2.25rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold tracking-[-0.035em] text-white leading-[1.0] mb-3 max-w-2xl mx-auto">
-            If your business is outgrowing its systems —
+            If your business is outgrowing its current system —
           </h2>
           <h2 className="text-[2.25rem] sm:text-[3rem] md:text-[3.5rem] lg:text-[4rem] font-bold tracking-[-0.035em] leading-[1.0] mb-8 text-white/30 max-w-2xl mx-auto">
-            we build the infrastructure that matches.
+            we map the operating layer that comes next.
           </h2>
 
           <p className="text-white/38 text-[0.9375rem] max-w-md mx-auto leading-[1.7] mb-10">
-            Book a strategy call. We&apos;ll map the system, identify the gaps, and define
-            the right build — no pitch, no pressure.
+            Begin an evolution briefing. We&apos;ll map the system, identify the gaps, and define
+            the right path forward — no pitch, no pressure.
           </p>
 
           {/* CTA */}
@@ -41,7 +41,7 @@ export default function ConversionSection() {
                 href="/contact"
                 className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-sm font-semibold transition-colors duration-200 glow-ring"
               >
-                Claim Your Strategy Call
+                Begin Your Evolution Briefing
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                   <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -52,7 +52,7 @@ export default function ConversionSection() {
                 href="/case-studies"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white/45 hover:text-white/75 text-sm font-medium transition-colors duration-200"
               >
-                View the Work First
+                View Transformation Records
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

@@ -31,16 +31,16 @@ export default function CaseStudyHighlights() {
         {/* Header */}
         <FadeIn className="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-12">
           <div>
-            <p className="eyebrow mb-4">Proof of Work</p>
+            <p className="eyebrow mb-4">Proof of Transformation</p>
             <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.1]">
-              Six builds.
+              Six records.
               <br />
               <span className="text-white/28">One consistent principle.</span>
             </h2>
           </div>
           <div className="flex flex-col gap-3 items-start md:items-end shrink-0">
             <Link href="/case-studies" className="link-arrow">
-              View all case studies
+              View all transformation records
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -139,7 +139,7 @@ export default function CaseStudyHighlights() {
                         </p>
                       </div>
 
-                      {/* Outcome callout */}
+                      {/* Evolution callout */}
                       <div
                         className="rounded-lg px-4 py-3 border"
                         style={{
@@ -148,7 +148,7 @@ export default function CaseStudyHighlights() {
                         }}
                       >
                         <p className="text-[0.5625rem] text-white/20 uppercase tracking-[0.14em] font-semibold mb-1">
-                          Outcome
+                          Evolution
                         </p>
                         <p className="text-white/58 text-[0.8125rem] font-medium leading-snug">
                           {cs.outcome}
@@ -170,7 +170,7 @@ export default function CaseStudyHighlights() {
                       {/* Hover CTA — slides into view */}
                       <div className="pt-3 border-t border-white/[0.05] flex items-center justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                         <span className="text-[0.75rem] font-semibold" style={{ color: "rgba(77,163,255,0.7)" }}>
-                          Read the build
+                          Read the record
                         </span>
                         <svg width="10" height="10" viewBox="0 0 12 12" fill="none" style={{ color: "rgba(77,163,255,0.55)" }}>
                           <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

@@ -127,9 +127,9 @@ export default function QualificationSection() {
 
         {/* CTA */}
         <FadeIn delay={0.2} className="text-center">
-          <p className="text-white/22 text-[0.8125rem] mb-4">Not sure if you qualify? A 30-minute call will tell us both.</p>
+          <p className="text-white/22 text-[0.8125rem] mb-4">Not sure if the fit is clear? A 30-minute briefing will tell us both.</p>
           <Button href="/contact" variant="secondary" size="md">
-            Book a Strategy Call
+            Begin Your Evolution Briefing
           </Button>
         </FadeIn>
       </div>

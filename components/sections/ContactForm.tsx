@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 type FormState = "idle" | "submitting" | "success" | "error";
 
 const intentOptions = [
-  { value: "project",     label: "I have a project to scope" },
-  { value: "strategy",    label: "I want a strategy conversation" },
-  { value: "general",     label: "I have a question or inquiry" },
+  { value: "project",     label: "I have an ecosystem to scope" },
+  { value: "strategy",    label: "I want an evolution briefing" },
+  { value: "general",     label: "I have context to open" },
   { value: "partnership", label: "I have a partnership opportunity" },
 ];
 
@@ -71,7 +71,7 @@ export default function ContactForm() {
         </div>
         <h3 className="text-white font-bold text-lg">Message received.</h3>
         <p className="text-white/45 text-sm leading-relaxed max-w-xs">
-          We&apos;ll review your message and follow up within 1 business day.
+          We&apos;ll review your context and follow up within 1 business day.
         </p>
       </motion.div>
     );
@@ -153,7 +153,7 @@ export default function ContactForm() {
       {/* Service type */}
       <div>
         <label className="block text-xs text-white/40 font-medium mb-1.5" htmlFor="service">
-          What do you need to build?
+          What needs to evolve?
         </label>
         <select
           id="service"
@@ -162,7 +162,7 @@ export default function ContactForm() {
           onChange={handleChange}
           className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200 appearance-none"
         >
-          <option value="" className="bg-black text-white/40">Select a service type</option>
+          <option value="" className="bg-black text-white/40">Select an operating layer</option>
           {serviceOptions.map((opt) => (
             <option key={opt} value={opt} className="bg-black text-white">
               {opt}
@@ -174,7 +174,7 @@ export default function ContactForm() {
       {/* Message */}
       <div>
         <label className="block text-xs text-white/40 font-medium mb-1.5" htmlFor="message">
-          What are you trying to build or fix?
+          What are you trying to evolve?
         </label>
         <textarea
           id="message"
@@ -183,7 +183,7 @@ export default function ContactForm() {
           rows={5}
           value={formData.message}
           onChange={handleChange}
-          placeholder="Describe your current situation, what's not working, and what you want to achieve..."
+          placeholder="Describe your current reality, what feels fragmented, and what future state you want to reach..."
           className="w-full bg-white/[0.04] border border-white/[0.08] rounded-lg px-4 py-3 text-white text-sm placeholder:text-white/20 focus:outline-none focus:ring-1 focus:ring-glow-blue/30 focus:border-glow-blue/45 focus:bg-white/[0.06] transition-all duration-200 resize-none"
         />
       </div>
@@ -203,7 +203,7 @@ export default function ContactForm() {
         className="w-full bg-nexus-blue hover:bg-glow-blue disabled:opacity-50 text-white font-semibold text-sm py-3.5 rounded-lg transition-colors duration-200 relative overflow-hidden"
       >
         <span className="relative z-10">
-          {formState === "submitting" ? "Sending…" : "Send Message"}
+          {formState === "submitting" ? "Sending…" : "Send Context"}
         </span>
         {/* Subtle inner highlight */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.08] to-transparent pointer-events-none rounded-lg" />

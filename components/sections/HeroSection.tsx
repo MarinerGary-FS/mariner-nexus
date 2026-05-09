@@ -336,7 +336,7 @@ export default function HeroSection() {
               animate={!prefersReduced ? { opacity: [0.35, 1, 0.35], scale: [0.85, 1.2, 0.85] } : {}}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
-            AI-Powered Business Systems
+            Synchronized Operational Intelligence
           </span>
         </motion.div>
 
@@ -356,8 +356,8 @@ export default function HeroSection() {
           className="text-[0.9375rem] md:text-[1rem] text-white/38 max-w-[480px] leading-[1.78] mb-10 md:mb-11"
         >
           For businesses with real potential held back by infrastructure that
-          can&apos;t keep up. We build the systems — digital, automated, and
-          conversion-ready — that remove that ceiling.
+          can&apos;t keep up. We engineer the operating layer — digital, automated,
+          and conversion-ready — that removes that ceiling.
         </motion.p>
 
         {/* CTAs */}
@@ -376,7 +376,7 @@ export default function HeroSection() {
               href="/contact"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-[0.875rem] font-semibold transition-colors duration-200 glow-ring"
             >
-              Start Your Build
+              Begin Your Evolution Briefing
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                 <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -392,7 +392,7 @@ export default function HeroSection() {
               href="/case-studies"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-white/42 hover:text-white/78 text-[0.875rem] font-medium transition-colors duration-200"
             >
-              See the Work
+              View Transformation Records
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

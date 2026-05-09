@@ -8,7 +8,7 @@ import ConversionSection from "@/components/sections/ConversionSection";
 export const metadata: Metadata = {
   title: "Services — Mariner Nexus",
   description:
-    "Revenue Systems, Authority Systems, and System Builds. We don't sell websites — we deliver transformation, business impact, and execution.",
+    "Revenue systems, authority systems, and operational ecosystems for businesses ready to evolve beyond fragmented infrastructure.",
 };
 
 // Per-category visual accent
@@ -25,13 +25,13 @@ const services = [
     category: "Revenue Systems",
     tagline: "Built to convert. Designed to scale.",
     description:
-      "We build high-performance digital systems focused on one outcome: increasing qualified leads, conversions, and revenue. Every design decision, CTA, and flow is engineered around your business goal.",
+      "We engineer revenue environments where trust, clarity, lead movement, and follow-up operate as one connected system.",
     bestFor: ["Service businesses", "Product brands", "Growth-stage companies", "E-commerce operators"],
     includes: [
-      "Conversion-focused website design and architecture",
+      "Conversion-focused experience architecture",
       "E-commerce + Stripe subscription infrastructure",
       "Funnel design and lead capture integration",
-      "CTA hierarchy and friction-reduction engineering",
+      "Evolution-entry CTA hierarchy and friction-reduction engineering",
       "GoHighLevel CRM connection and lead segmentation",
     ],
     proofStudies: [
@@ -48,7 +48,7 @@ const services = [
       "We build personal brand platforms and executive digital presences that communicate credibility, expertise, and leadership at first glance. For founders and operators who know their reputation is a business asset.",
     bestFor: ["Founders", "Consultants", "Executives", "Speakers + thought leaders", "Creators + artists"],
     includes: [
-      "Premium personal brand or creator website design",
+      "Premium personal brand or creator experience system",
       "Messaging and narrative positioning system",
       "Booking integration (Cal.com) for frictionless engagement",
       "Content architecture for authority building over time",
@@ -65,10 +65,10 @@ const services = [
     category: "System Builds",
     tagline: "Infrastructure that actually scales.",
     description:
-      "For organizations that need more than a website. We design and build CRM-connected platforms, community systems, and operational infrastructure — the kind of digital architecture that supports real organizational growth.",
+      "For organizations that need more than a digital surface. We design CRM-connected platforms, community systems, and operational infrastructure that support real organizational growth.",
     bestFor: ["Nonprofits + foundations", "Community organizations", "Operational teams", "Multi-stakeholder platforms"],
     includes: [
-      "Full website architecture + community platform build",
+      "Full experience architecture + community platform build",
       "GoHighLevel CRM intake, tagging, and automation setup",
       "Member onboarding and engagement tracking systems",
       "Discord, Slack, or community platform integration",
@@ -85,15 +85,15 @@ const tiers = [
   {
     tier: "Foundation",
     range: "Starts at $3,500",
-    description: "Clean, fast, and professional. For businesses that need a strong digital presence without complexity.",
-    includes: ["Core website (5–8 pages)", "Mobile-optimized build", "Performance-first delivery", "Basic CTA structure"],
+    description: "Clean, fast, and controlled. For businesses that need a credible operating presence without unnecessary complexity.",
+    includes: ["Core experience system (5–8 pages)", "Mobile-optimized build", "Performance-first delivery", "Clear evolution-entry structure"],
     timeline: "2–3 weeks",
   },
   {
     tier: "Growth",
     range: "Starts at $7,500",
-    description: "Conversion-focused with strategic architecture. For brands ready to use their website as a real business tool.",
-    includes: ["Full strategy session", "Conversion-engineered design", "CRM or booking integration", "UX refinement + copy review"],
+    description: "Conversion-focused with strategic architecture. For brands ready to use their digital environment as a real business system.",
+    includes: ["Full evolution briefing", "Conversion-engineered experience", "CRM or scheduling integration", "UX refinement + copy review"],
     timeline: "3–5 weeks",
     featured: true,
   },
@@ -120,14 +120,14 @@ const creatorOffer = {
   description:
     "A focused, immersive authority platform built for music artists, creators, and personality-driven brands. Fast to launch. Built to last. Indistinguishable from brands with 10× the budget.",
   includes: [
-    "Immersive artist or creator site (3–5 pages)",
+    "Immersive artist or creator experience (3–5 pages)",
     "Strategic link architecture (replaces fragmented bio links)",
     "Mobile-first build for social traffic patterns",
     "Brand identity integration — typography, color, motion",
     "Stream, booking, and collaboration CTA flows",
   ],
   retainer: {
-    label: "Creator Growth Retainer",
+    label: "Creator Growth Continuity",
     range: "From $500 / month",
     includes: [
       "Monthly site updates and content refreshes",
@@ -148,16 +148,15 @@ export default function ServicesPage() {
         <div className="container-tight relative text-center">
           <FadeIn>
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-5">
-              Services
+              Evolution Systems
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-              We don&apos;t sell websites.
+              We don&apos;t sell services.
               <br />
-              <span className="text-white/35">We deliver systems.</span>
+              <span className="text-white/35">We engineer operating layers.</span>
             </h1>
             <p className="text-white/50 text-lg max-w-2xl mx-auto leading-relaxed">
-              Every engagement is defined by transformation, business impact, and execution
-              level — not page counts or feature lists.
+              Every engagement is defined by transformation, operational coherence, and future-state readiness — not page counts or feature lists.
             </p>
           </FadeIn>
           <FadeIn delay={0.12} className="mt-6">
@@ -221,7 +220,7 @@ export default function ServicesPage() {
                   <div className="p-8 lg:p-10 flex flex-col gap-6">
                     <div>
                       <p className="text-xs text-white/22 uppercase tracking-widest font-semibold mb-4">
-                        What&apos;s Included
+                        Operating Layer
                       </p>
                       <ul className="space-y-3">
                         {service.includes.map((item) => (
@@ -240,7 +239,7 @@ export default function ServicesPage() {
                     {/* Proof mapping — dual case studies */}
                     <div className="mt-auto pt-6 border-t border-white/[0.06]">
                       <p className="text-xs text-white/22 uppercase tracking-widest font-semibold mb-3">
-                        Proven In
+                        Transformation Records
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3">
                         {service.proofStudies.map((cs) => (
@@ -350,8 +349,8 @@ export default function ServicesPage() {
                   <p className="text-2xl font-bold text-gradient">{creatorOffer.retainer.range}</p>
                 </div>
                 <p className="text-white/42 text-sm leading-relaxed">
-                  Keep your platform fresh and your audience engaged — without managing it yourself.
-                  Built for artists who drop regularly and need fast execution.
+                  Keep the environment current and the audience journey coherent without managing it yourself.
+                  Built for artists who release regularly and need disciplined execution.
                 </p>
                 <ul className="space-y-3 flex-1">
                   {creatorOffer.retainer.includes.map((item) => (
@@ -366,7 +365,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
                 <Button href="/contact" variant="primary" size="md">
-                  Apply for Retainer
+                  Initiate Continuity
                 </Button>
               </div>
             </FadeIn>
@@ -379,16 +378,16 @@ export default function ServicesPage() {
         <div className="container-tight">
           <FadeIn className="text-center mb-16">
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-4">
-              Investment
+              Engagement Architecture
             </span>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
-              Scoped to your stage.
+              Scoped to your operating reality.
             </h2>
             <p className="text-white/45 text-base max-w-lg mx-auto">
-              Pricing is based on complexity, system depth, and business impact — not arbitrary package tiers.
+              Investment is based on complexity, system depth, and business impact — not arbitrary package tiers.
             </p>
             <p className="text-white/25 text-sm max-w-md mx-auto mt-3">
-              Final scope and investment are defined after a discovery session — not before.
+              Final scope and investment are defined through an evolution briefing — not before.
             </p>
           </FadeIn>
 
@@ -438,7 +437,7 @@ export default function ServicesPage() {
                         href="/contact"
                         className="inline-flex items-center gap-2 text-[0.8125rem] text-glow-blue/60 hover:text-glow-blue transition-colors duration-200 font-medium"
                       >
-                        Apply for Discovery
+                        Initiate Discovery
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                           <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -448,8 +447,8 @@ export default function ServicesPage() {
                   <div className="pt-4 border-t border-white/[0.06]">
                     {tier.isCustom ? (
                       <p className="text-xs text-white/28">
-                        Begins with a{" "}
-                        <span className="text-glow-blue/55">scoping conversation</span>
+                        Begins with an{" "}
+                        <span className="text-glow-blue/55">evolution briefing</span>
                       </p>
                     ) : (
                       <p className="text-xs text-white/28">
@@ -464,10 +463,10 @@ export default function ServicesPage() {
 
           <FadeIn delay={0.3} className="mt-10 text-center">
             <p className="text-white/32 text-sm mb-6">
-              Not sure where you fit? The strategy call maps that in 30 minutes.
+              Not sure where the system begins? The evolution briefing maps that with clarity.
             </p>
             <Button href="/contact" variant="primary" size="lg">
-              Claim Your Strategy Call
+              Begin Your Evolution Briefing
             </Button>
             <p className="text-white/17 text-xs mt-5">
               We take on a limited number of builds at a time — to maintain the standard every client deserves.

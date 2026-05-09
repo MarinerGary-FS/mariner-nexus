@@ -5,25 +5,25 @@ import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContai
 import ConversionSection from "@/components/sections/ConversionSection";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Mariner Nexus",
+  title: "Transformation Records — Mariner Nexus",
   description:
-    "Six builds across revenue systems, authority platforms, and operational infrastructure. One consistent principle: better systems create better outcomes.",
+    "Transformation records across revenue systems, authority platforms, and operational infrastructure. One consistent principle: synchronized systems create future-state clarity.",
 };
 
 const categoryGroups = [
   {
     group: "Revenue · Service Business",
     accentColor: "rgba(77,163,255,0.6)",
-    description: "Systems engineered to increase leads, conversions, and revenue.",
+    description: "Systems engineered to connect trust, lead movement, conversion, and follow-up.",
     studies: [
       {
         slug: "act-of-valor",
         category: "Revenue · Service Business",
         industry: "Emergency Services",
         title: "Act of Valor",
-        problem: "A high-stakes service business losing conversions at the most critical moment of consideration — when trust is required and time is short.",
-        system: "Credentials-forward homepage + urgent CTA architecture + GoHighLevel CRM intake + persistent call-to-action across all scroll depths.",
-        outcome: "A high-trust conversion platform where authority is communicated immediately and the path to contact is frictionless.",
+        problem: "A high-stakes service business facing conversion friction at the most critical moment of consideration — when trust is required and time is short.",
+        system: "Credentials-forward homepage + urgent evolution-entry architecture + GoHighLevel CRM intake + persistent action path across all scroll depths.",
+        outcome: "A high-trust conversion environment where authority is communicated immediately and the path to action is frictionless.",
         tags: ["Conversion Architecture", "GoHighLevel", "Local Authority", "Emergency UX"],
       },
       {
@@ -31,8 +31,8 @@ const categoryGroups = [
         category: "Revenue · Wellness",
         industry: "Digital Business",
         title: "Serene Origins",
-        problem: "A wellness brand with real potential but a digital experience that undermined trust and offered no clear path to subscription.",
-        system: "Premium brand redesign + conversion-focused web experience + Stripe subscription infrastructure + onboarding journey.",
+        problem: "A wellness brand with real potential but a digital environment that undermined trust and offered no clear path to subscription.",
+        system: "Premium brand redesign + conversion-focused experience + Stripe subscription infrastructure + onboarding journey.",
         outcome: "A structured digital wellness platform with clear monetization, stronger visual authority, and a defined revenue system.",
         tags: ["Brand Redesign", "Stripe", "Subscription System", "Conversion Design"],
       },
@@ -41,14 +41,14 @@ const categoryGroups = [
   {
     group: "Authority · Creator · Personal Brand",
     accentColor: "rgba(125,211,252,0.55)",
-    description: "Platforms built to position individuals and brands as the clear, credible choice.",
+    description: "Environments built to position individuals and brands as the clear, credible choice.",
     studies: [
       {
         slug: "eaziedagod",
         category: "Authority · Creator",
         industry: "Music / Artist",
         title: "EazieDaGod",
-        problem: "A distinct creative identity with a fragmented digital footprint — scattered links, no immersive entry point, and a presence that didn't match the caliber of the art.",
+        problem: "A distinct creative identity with a fragmented digital footprint — scattered links, no immersive entry point, and a presence that did not match the caliber of the art.",
         system: "Immersive full-experience entry design + premium artist presentation platform + strategic link architecture + creator-specific CTA flows.",
         outcome: "A unified digital identity that communicates brand authority within seconds and routes every visitor with intention.",
         tags: ["Creator Brand", "Immersive Design", "Link Architecture", "Artist Platform"],
@@ -68,7 +68,7 @@ const categoryGroups = [
   {
     group: "Systems · Community · Media",
     accentColor: "rgba(37,99,235,0.7)",
-    description: "Operational infrastructure and digital systems built for organizations that need to scale.",
+    description: "Operational infrastructure and digital systems built for organizations ready to scale coherently.",
     studies: [
       {
         slug: "undugu",
@@ -85,7 +85,7 @@ const categoryGroups = [
         category: "Systems · Media",
         industry: "Media Platform",
         title: "Amplify Voices",
-        problem: "A media platform with an important mission undermined by a visual presence and information architecture that didn't match its credibility.",
+        problem: "A media platform with an important mission undermined by a visual presence and information architecture that did not match its credibility.",
         system: "High-end website redesign + content hierarchy restructuring + storytelling-driven layout + brand system refinement.",
         outcome: "A modern, compelling media platform that communicates authority and purpose effectively — and looks like it belongs at the top of its category.",
         tags: ["Media Platform", "Storytelling Design", "Brand System", "Authority Positioning"],
@@ -102,14 +102,14 @@ export default function CaseStudiesPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_0%,rgba(37,99,235,0.1),transparent)]" />
         <div className="container-tight relative text-center">
           <FadeIn>
-            <p className="eyebrow mb-5">Case Studies</p>
+            <p className="eyebrow mb-5">Transformation Records</p>
             <h1 className="text-[3rem] md:text-[4rem] lg:text-[5rem] font-bold tracking-[-0.035em] text-white mb-5 leading-[1.0]">
-              Six builds.
+              Six records.
               <br />
               <span className="text-white/32">One consistent principle.</span>
             </h1>
             <p className="text-white/45 text-base md:text-lg max-w-lg mx-auto leading-[1.7]">
-              Better systems create better outcomes — across revenue, authority,
+              Synchronized systems create future-state clarity across revenue, authority,
               and operational infrastructure.
             </p>
           </FadeIn>
@@ -130,7 +130,7 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* Case Studies — grouped by category */}
+      {/* Transformation records — grouped by category */}
       <section className="pb-0 bg-black">
         <div className="container-tight space-y-20">
           {categoryGroups.map((group) => (
@@ -190,22 +190,22 @@ export default function CaseStudiesPage() {
                           {/* Right content */}
                           <div className="p-8 lg:p-9 grid grid-cols-1 md:grid-cols-3 gap-7">
                             {[
-                              { label: "Problem", body: cs.problem },
-                              { label: "System", body: cs.system },
-                              { label: "Outcome", body: cs.outcome },
+                              { label: "Fragmented State", body: cs.problem },
+                              { label: "Synchronization", body: cs.system },
+                              { label: "Evolution", body: cs.outcome },
                             ].map((block) => (
                               <div key={block.label}>
                                 <p className="text-[0.625rem] text-white/22 uppercase tracking-[0.14em] font-semibold mb-2">
                                   {block.label}
                                 </p>
                                 <p className={`text-[0.8125rem] leading-[1.65] ${
-                                  block.label === "Outcome" ? "text-white/55 font-medium" : "text-white/40"
+                                  block.label === "Evolution" ? "text-white/55 font-medium" : "text-white/40"
                                 }`}>
                                   {block.body}
                                 </p>
-                                {block.label === "Outcome" && (
+                                {block.label === "Evolution" && (
                                   <div className="mt-4 flex items-center gap-1.5 text-white/22 group-hover:text-glow-blue/60 transition-colors duration-200 text-[0.8125rem] font-medium">
-                                    View case study
+                                    View transformation record
                                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                                       <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>

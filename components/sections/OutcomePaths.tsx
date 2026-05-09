@@ -7,7 +7,7 @@ import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContai
 
 const paths = [
   {
-    outcome: "Make More Money",
+    outcome: "Evolve Revenue",
     index: "01",
     description:
       "Revenue systems built for conversion — from premium web experiences to emergency services UX and subscription infrastructure.",
@@ -23,7 +23,7 @@ const paths = [
     shadowAccent: "rgba(37,99,235,0.18)",
   },
   {
-    outcome: "Build Authority",
+    outcome: "Stabilize Authority",
     index: "02",
     description:
       "Position yourself or your brand as the clear, credible choice — from executive platforms to immersive creator identities.",
@@ -39,7 +39,7 @@ const paths = [
     shadowAccent: "rgba(125,211,252,0.1)",
   },
   {
-    outcome: "Build Systems",
+    outcome: "Synchronize Systems",
     index: "03",
     description:
       "Operational infrastructure that scales — CRM-connected platforms, community systems, and media architecture built for organizations.",
@@ -64,13 +64,13 @@ export default function OutcomePaths() {
 
       <div className="container-tight relative">
         <FadeIn className="mb-14">
-          <p className="eyebrow mb-4">Start With the Outcome</p>
+          <p className="eyebrow mb-4">Start With the Future State</p>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <h2 className="text-[2.25rem] md:text-[2.75rem] font-bold tracking-[-0.03em] text-white leading-[1.1]">
-              What do you need to build?
+              What needs to evolve?
             </h2>
             <p className="text-white/30 text-[0.8125rem] max-w-[280px] leading-relaxed hidden md:block">
-              Every engagement begins with clarity on the outcome — before strategy, before scope, before a single line of code.
+              Every engagement begins with clarity on the future operating state — before strategy, before scope, before a single line of code.
             </p>
           </div>
         </FadeIn>
@@ -128,7 +128,7 @@ export default function OutcomePaths() {
                     {/* Case study refs */}
                     <div className="mt-auto pt-5 border-t border-white/[0.05]">
                       <p className="text-[0.6875rem] text-white/20 uppercase tracking-[0.12em] font-semibold mb-2.5">
-                        Case Studies
+                        Transformation Records
                       </p>
                       <div className="flex flex-wrap gap-x-4 gap-y-1.5">
                         {path.caseStudies.map((cs) => (
@@ -145,7 +145,7 @@ export default function OutcomePaths() {
 
                     {/* Arrow */}
                     <div className="flex items-center gap-1.5 text-white/22 group-hover:text-white/55 transition-colors duration-200 text-[0.8125rem] font-medium">
-                      See the builds
+                      Map this layer
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-0.5 transition-transform duration-200">
                         <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>

@@ -8,7 +8,7 @@ import ConversionSection from "@/components/sections/ConversionSection";
 export const metadata: Metadata = {
   title: "About — Mariner Nexus",
   description:
-    "Mariner Nexus was built for businesses that need more than a nice-looking site — systems that bring clarity, automation, and execution together.",
+    "Mariner Nexus exists to evolve fragmented businesses into synchronized operational ecosystems where clarity, automation, experience, and execution move together.",
 };
 
 const values = [
@@ -17,19 +17,19 @@ const values = [
     body: "Every engagement starts with a systems map — understanding the full operational picture before designing or building anything.",
   },
   {
-    title: "Intelligence Over Busywork",
-    body: "AI and automation should remove friction, not add complexity. We implement what actually improves operations.",
+    title: "Human Intelligence Over Busywork",
+    body: "Automation should remove friction, not add complexity. We implement what actually improves human operations.",
   },
   {
     title: "Execution Over Theory",
     body: "Strategy without implementation is speculation. We ship production-ready systems that businesses can immediately operate.",
   },
   {
-    title: "Premium Design With Purpose",
-    body: "Visual quality is a trust signal. Every design decision serves clarity, conversion, or perception — not decoration.",
+    title: "Atmosphere With Purpose",
+    body: "Visual quality is a trust signal. Every design decision serves clarity, conversion, atmosphere, or perception — not decoration.",
   },
   {
-    title: "Outcomes Over Output",
+    title: "Evolution Over Output",
     body: "Everything is measured by business performance, not just deliverables. The system isn't done until the metrics move.",
   },
 ];
@@ -71,11 +71,11 @@ export default function AboutPage() {
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
               Built for businesses
               <br />
-              <span className="text-white/35">that need more than a site.</span>
+              <span className="text-white/35">ready for a coherent system.</span>
             </h1>
             <p className="text-white/50 text-xl leading-relaxed">
-              Mariner Nexus exists to create systems that bring clarity, automation, and
-              execution together in one modern operating layer.
+              Mariner Nexus exists to create synchronized operating environments where
+              clarity, automation, experience, and execution move together.
             </p>
           </FadeIn>
         </div>
@@ -148,12 +148,12 @@ export default function AboutPage() {
                   <div className="pt-4 border-t border-white/[0.06] space-y-3">
                     <p className="text-white/40 text-sm">
                       Operating at the intersection of AI automation, conversion strategy, and
-                      premium design — Gary brings first-principles thinking to every engagement
+                  premium experience design — Gary brings first-principles thinking to every engagement
                       and executes with the discipline of someone who cares about outcomes, not
                       just deliverables.
                     </p>
                     <Button href="/case-studies/gary-mariner" variant="ghost" size="sm">
-                      View personal brand case study →
+                      View personal brand record →
                     </Button>
                   </div>
                 </div>

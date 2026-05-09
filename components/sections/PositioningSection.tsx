@@ -43,7 +43,7 @@ const pillars = [
         <path d="M2 13l4-4 3 3 4-5 3 3" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: "Designed for Outcomes",
+    title: "Designed for Evolution",
     body: "Every visual decision, automation, and system is measured by one standard: does it move the business forward?",
   },
 ];
@@ -62,7 +62,7 @@ export default function PositioningSection() {
           <FadeIn direction="left">
             <p className="eyebrow mb-5">The Difference</p>
             <h2 className="text-[2.5rem] md:text-[3rem] font-bold tracking-[-0.03em] leading-[1.1] text-white mb-6">
-              This isn&apos;t a website agency.
+              This isn&apos;t a digital agency.
             </h2>
             <p className="text-white/48 text-[0.9375rem] leading-[1.78] mb-6 max-w-sm">
               Mariner Nexus turns disconnected tools, weak positioning, and
@@ -71,7 +71,7 @@ export default function PositioningSection() {
             <p className="text-white/30 text-[0.875rem] leading-[1.74] max-w-sm">
               Every engagement starts with a systems audit — not a scope of work.
               We map the full architecture before writing a line of code.
-              The result fits how your business works today and where it&apos;s going next.
+              The evolved system fits how your business works today and where it&apos;s going next.
             </p>
           </FadeIn>
 

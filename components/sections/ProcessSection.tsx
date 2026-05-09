@@ -7,34 +7,34 @@ import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContai
 const steps = [
   {
     number: "01",
-    phase: "Discover",
+    phase: "Expose",
     title: "Understand the system before building it.",
     description:
-      "A strategy call to map your current state, identify real constraints, and define what success looks like — before writing a line of code.",
+      "An evolution briefing to map your current state, identify real constraints, and define what future-state clarity looks like before writing a line of code.",
     accentRgb: "77,163,255",
   },
   {
     number: "02",
-    phase: "Architect",
+    phase: "Synchronize",
     title: "Design the system with purpose.",
     description:
-      "Every page, flow, and integration is planned before execution. Structure, narrative, and technical architecture defined — no surprises.",
+      "Every scene, flow, and integration is planned before execution. Structure, narrative, and technical architecture are defined as one coherent system.",
     accentRgb: "77,163,255",
   },
   {
     number: "03",
-    phase: "Build",
+    phase: "Engineer",
     title: "Execute with precision.",
     description:
-      "Clean, production-ready systems — premium design, CRM-connected infrastructure, performance-aware code — delivered with discipline.",
+      "Clean, production-ready systems — premium experience design, CRM-connected infrastructure, performance-aware code — delivered with discipline.",
     accentRgb: "125,211,252",
   },
   {
     number: "04",
-    phase: "Optimize",
+    phase: "Continue",
     title: "Improve based on signal.",
     description:
-      "After launch we monitor performance, conversion behavior, and operational efficiency. Continuous refinement built into the engagement.",
+      "After launch we monitor performance, conversion behavior, and operational efficiency. Continuity is built into the engagement.",
     accentRgb: "125,211,252",
   },
 ];

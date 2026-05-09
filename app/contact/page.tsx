@@ -4,9 +4,9 @@ import ContactForm from "@/components/sections/ContactForm";
 import CalEmbed from "@/components/integrations/CalEmbed";
 
 export const metadata: Metadata = {
-  title: "Start Your Build — Mariner Nexus",
+  title: "Evolution Entry — Mariner Nexus",
   description:
-    "Book a 30-minute strategy call to map your system, identify constraints, and define what the right build looks like for your business.",
+    "Begin an evolution briefing to map your current operating reality, identify constraints, and define the future-state ecosystem your business needs.",
 };
 
 export default function ContactPage() {
@@ -18,21 +18,21 @@ export default function ContactPage() {
         <div className="container-tight relative text-center">
           <FadeIn>
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-glow-blue/70 block mb-5">
-              Start Your Build
+              Evolution Entry
             </span>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-5 leading-tight">
-              The first step is a conversation.
+              Enter with clarity.
             </h1>
             <p className="text-white/50 text-lg max-w-xl mx-auto leading-relaxed">
-              A focused 30-minute call. We map your current system, identify the real
-              constraints, and define exactly what needs to be built — and what doesn&apos;t.
+              A focused evolution briefing. We map your current system, identify the real
+              constraints, and define what needs to evolve — and what does not.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.15} className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm">
             {[
               "No pitch. No pressure.",
-              "Proposal within 48 hrs if there's a fit.",
+              "Future-state map if there is a fit.",
               "Limited spots available each quarter.",
             ].map((item) => (
               <span key={item} className="flex items-center gap-2 text-white/40">
@@ -51,10 +51,10 @@ export default function ContactPage() {
             {/* Left: Cal.com embed */}
             <FadeIn direction="left">
               <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
-                Schedule your call
+                Schedule your briefing
               </h2>
               <p className="text-white/40 text-sm mb-6">
-                Pick a time that works. You&apos;ll receive a confirmation and prep questions by email.
+                Pick a time that works. You&apos;ll receive a confirmation and focused prep questions by email.
               </p>
               <CalEmbed />
             </FadeIn>
@@ -62,10 +62,10 @@ export default function ContactPage() {
             {/* Right: Contact form */}
             <FadeIn direction="right" delay={0.1}>
               <h2 className="text-2xl font-bold text-white tracking-tight mb-2">
-                Or send a message
+                Or open the context
               </h2>
               <p className="text-white/40 text-sm mb-6">
-                Prefer to start with context? Fill this out and we&apos;ll follow up directly.
+                Prefer to begin with context? Fill this out and we&apos;ll follow up directly.
               </p>
               <ContactForm />
             </FadeIn>
@@ -78,26 +78,26 @@ export default function ContactPage() {
         <div className="container-tight max-w-2xl mx-auto">
           <FadeIn className="text-center mb-12">
             <h2 className="text-3xl font-bold text-white tracking-tight">
-              What to expect on the call
+              What to expect in the briefing
             </h2>
           </FadeIn>
           <div className="space-y-4">
             {[
               {
                 q: "Is this a sales call?",
-                a: "No. It's a strategy call. We map your current situation, identify the gaps, and give you an honest read on what the right system looks like — whether you work with us or not.",
+                a: "No. It is a structured evolution briefing. We map your current situation, identify the gaps, and give you an honest read on what the right system looks like — whether you work with us or not.",
               },
               {
                 q: "How long is it?",
-                a: "30 minutes. Focused and structured. You'll leave with clarity on what needs to be built and why.",
+                a: "30 minutes. Focused and structured. You will leave with clarity on what needs to evolve and why.",
               },
               {
                 q: "Do I need to prepare anything?",
-                a: "Just bring a clear description of your business and what you're trying to change, improve, or build. We'll handle the rest.",
+                a: "Bring a clear description of your business and what you are trying to change, improve, or build. We will handle the rest.",
               },
               {
                 q: "What happens after the call?",
-                a: "If there's a clear fit, we send a scoped proposal within 48 hours — specific to your business, not a template. If it's not the right match, you'll leave with a clear picture of what you actually need and why.",
+                a: "If there is a clear fit, we send a scoped proposal within 48 hours — specific to your business, not a template. If it is not the right match, you will leave with a clear picture of what you actually need and why.",
               },
             ].map((item) => (
               <FadeIn key={item.q}>
