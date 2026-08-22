@@ -3,6 +3,7 @@ import { Grid } from "@/components/foundation/Grid";
 import { SectionLink } from "@/components/corporate/SectionLink";
 import { MarinerThread } from "@/components/foundation/MarinerThread";
 import { SystemsDeconstruction } from "@/components/systems/SystemsDeconstruction";
+import { NexusExperience } from "@/components/nexus/NexusExperience";
 
 const recognitionStates = [
   ["01", "Starting something new?", "We help determine what your digital presence should become."],
@@ -109,6 +110,26 @@ export default function CorporateHome() {
             </div>
           </Container>
         </div>
+      </section>
+
+      <section className="mn-home-nexus mn-environment-dark" data-navigation-context="Nexus">
+        <Container>
+          <Grid>
+            <div className="mn-nexus-heading">
+              <p className="mn-kicker">The Nexus</p>
+              <h2>Different objectives require different digital architectures.</h2>
+            </div>
+            <div className="mn-nexus-intro">
+              <p>What are you trying to create?</p>
+              <p>Choose an objective and watch the same capabilities reorganize around a different problem.</p>
+            </div>
+          </Grid>
+          <NexusExperience />
+          <div className="mn-nexus-release">
+            <p>There is no universal configuration.</p>
+            <p>The solution adapts to the organization—not the other way around.</p>
+          </div>
+        </Container>
       </section>
 
       <section className="mn-home-confidence" data-navigation-context="Approach">

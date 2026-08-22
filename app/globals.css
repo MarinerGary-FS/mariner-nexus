@@ -1070,6 +1070,375 @@ body[data-menu-open="true"] {
   line-height: 1.5;
 }
 
+/* Phase 06 — The Nexus */
+
+.mn-home-nexus {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(7rem, 12vw, 12rem) clamp(8rem, 14vw, 14rem);
+  background: linear-gradient(to bottom, var(--mn-env-depth) 0%, var(--mn-env-depth) 84%, #242b28 93%, #e9edeb 100%);
+}
+
+.mn-nexus-heading,
+.mn-nexus-intro {
+  grid-column: span 4;
+}
+
+.mn-nexus-heading h2 {
+  max-width: 14ch;
+  margin-top: var(--mn-space-4);
+  font-size: clamp(2.8rem, 1.7rem + 4vw, 6rem);
+  font-weight: 540;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.mn-nexus-intro {
+  margin-top: var(--mn-space-6);
+}
+
+.mn-nexus-intro p:first-child {
+  font-size: var(--mn-type-lead);
+  font-weight: 580;
+}
+
+.mn-nexus-intro p:last-child {
+  margin-top: var(--mn-space-3);
+  color: var(--mn-ink-inverse-muted);
+  line-height: 1.6;
+}
+
+.mn-nexus {
+  margin-top: clamp(5rem, 9vw, 9rem);
+  border-top: 1px solid var(--mn-line-inverse);
+  border-bottom: 1px solid var(--mn-line-inverse);
+}
+
+.mn-nexus-objectives {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 1px solid var(--mn-line-inverse);
+}
+
+.mn-nexus-objectives button {
+  position: relative;
+  display: grid;
+  min-height: 5rem;
+  padding: var(--mn-space-3);
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.6rem;
+  border-right: 1px solid var(--mn-line-inverse);
+  border-bottom: 1px solid var(--mn-line-inverse);
+  color: var(--mn-ink-inverse-muted);
+  text-align: left;
+  transition: color var(--mn-transition), background-color var(--mn-transition);
+}
+
+.mn-nexus-objectives button:nth-child(even) {
+  border-right: 0;
+}
+
+.mn-nexus-objectives button:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.mn-nexus-objectives button::after {
+  position: absolute;
+  right: var(--mn-space-3);
+  bottom: 0.7rem;
+  left: calc(var(--mn-space-3) + 2.1rem);
+  height: 1px;
+  background: var(--mn-signal-active);
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: opacity var(--mn-transition), transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mn-nexus-objectives button:hover {
+  color: var(--mn-ink-inverse);
+}
+
+.mn-nexus-objectives button:hover::after {
+  opacity: 0.65;
+  transform: scaleX(0.55);
+}
+
+.mn-nexus-objectives button[aria-pressed="true"] {
+  color: var(--mn-ink-inverse);
+  background: rgba(213, 228, 222, 0.055);
+}
+
+.mn-nexus-objectives button[aria-pressed="true"]::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.mn-nexus-objectives button > span {
+  color: var(--mn-signal-rest);
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+}
+
+.mn-nexus-objectives button[aria-pressed="true"] > span {
+  color: var(--mn-signal);
+}
+
+.mn-nexus-objectives strong {
+  font-size: 0.82rem;
+  font-weight: 580;
+  line-height: 1.3;
+}
+
+.mn-nexus-state-heading {
+  display: grid;
+  padding-block: var(--mn-space-5);
+  gap: var(--mn-space-4);
+  border-bottom: 1px solid var(--mn-line-inverse);
+}
+
+.mn-nexus-state-heading > div > p,
+.mn-nexus-selected-detail > span {
+  color: var(--mn-signal);
+  font-size: 0.64rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mn-nexus-state-heading h3 {
+  margin-top: 0.55rem;
+  font-size: clamp(1.7rem, 1.25rem + 1.5vw, 3rem);
+  font-weight: 550;
+  letter-spacing: -0.045em;
+}
+
+.mn-nexus-state-heading > p {
+  max-width: 48rem;
+  color: var(--mn-ink-inverse-muted);
+  line-height: 1.65;
+}
+
+.mn-nexus-canvas {
+  position: relative;
+  display: none;
+  height: 38rem;
+  border-bottom: 1px solid var(--mn-line-inverse);
+}
+
+.mn-nexus-connections {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mn-nexus-connections line {
+  stroke: var(--mn-line-inverse);
+  stroke-width: 0.22;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 240ms ease, stroke 240ms ease;
+}
+
+.mn-nexus-connections line[data-active="true"] {
+  stroke: var(--mn-signal-active);
+  opacity: 0.82;
+}
+
+.mn-nexus[data-nexus-phase="reorganizing"] .mn-nexus-connections line {
+  opacity: 0.22;
+}
+
+.mn-nexus-node {
+  position: absolute;
+  z-index: 2;
+  top: var(--nexus-y);
+  left: var(--nexus-x);
+  display: grid;
+  width: clamp(7.5rem, 13vw, 10.5rem);
+  min-height: 4.6rem;
+  padding: 0.8rem;
+  align-content: center;
+  gap: 0.35rem;
+  color: var(--mn-ink-inverse);
+  background: var(--mn-env-depth);
+  border: 1px solid var(--mn-line-inverse);
+  opacity: 0;
+  text-align: left;
+  transform: translate(-50%, -50%) scale(0.92);
+  transition: top 620ms cubic-bezier(0.16, 1, 0.3, 1), left 620ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease, border-color var(--mn-transition), transform 620ms cubic-bezier(0.16, 1, 0.3, 1), background-color var(--mn-transition);
+}
+
+.mn-nexus-node[data-visible="true"] {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.mn-nexus-node[data-core="true"] {
+  border-color: rgba(119, 226, 195, 0.42);
+}
+
+.mn-nexus-node[data-scoped="true"] {
+  border-style: dashed;
+}
+
+.mn-nexus-node[data-outcome="true"] {
+  border-color: var(--mn-signal-settle);
+  background: #131a17;
+}
+
+.mn-nexus-node:hover {
+  border-color: var(--mn-signal-active);
+}
+
+.mn-nexus-node[aria-pressed="true"] {
+  border-color: var(--mn-signal);
+  background: #17231f;
+}
+
+.mn-nexus-node[aria-pressed="true"]::after {
+  position: absolute;
+  top: -0.28rem;
+  right: -0.28rem;
+  width: 0.52rem;
+  height: 0.52rem;
+  background: var(--mn-signal);
+  content: "";
+  transform: rotate(45deg);
+}
+
+.mn-nexus-node > span,
+.mn-nexus-semantic-flow button > span {
+  color: var(--mn-ink-inverse-muted);
+  font-size: 0.58rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mn-nexus-node strong {
+  font-size: clamp(0.82rem, 0.76rem + 0.2vw, 0.95rem);
+  font-weight: 580;
+  line-height: 1.25;
+}
+
+.mn-nexus-explanation {
+  padding-block: var(--mn-space-5);
+}
+
+.mn-nexus-selected-detail {
+  display: grid;
+  min-height: 7rem;
+  gap: var(--mn-space-3);
+}
+
+.mn-nexus-selected-detail p {
+  max-width: 52rem;
+  font-size: var(--mn-type-lead);
+  line-height: 1.5;
+}
+
+.mn-nexus-semantic-flow {
+  display: grid;
+  margin-top: var(--mn-space-5);
+  border-top: 1px solid var(--mn-line-inverse);
+}
+
+.mn-nexus-semantic-flow li {
+  position: relative;
+  padding-left: 1.6rem;
+  border-bottom: 1px solid var(--mn-line-inverse);
+}
+
+.mn-nexus-semantic-flow li::before {
+  position: absolute;
+  top: 1.75rem;
+  bottom: -1.75rem;
+  left: 0.24rem;
+  width: 1px;
+  background: var(--mn-signal-active);
+  content: "";
+}
+
+.mn-nexus-semantic-flow li:last-child::before {
+  display: none;
+}
+
+.mn-nexus-semantic-flow button {
+  position: relative;
+  display: grid;
+  width: 100%;
+  min-height: 4.5rem;
+  padding-block: 0.8rem;
+  align-content: center;
+  gap: 0.25rem;
+  color: var(--mn-ink-inverse);
+  text-align: left;
+}
+
+.mn-nexus-semantic-flow button::before {
+  position: absolute;
+  top: 50%;
+  left: -1.6rem;
+  width: 0.52rem;
+  height: 0.52rem;
+  border: 1px solid var(--mn-signal-rest);
+  background: var(--mn-env-depth);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.mn-nexus-semantic-flow button[aria-pressed="true"]::before {
+  border-color: var(--mn-signal);
+  background: var(--mn-signal);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.mn-nexus-semantic-flow button strong {
+  font-size: 1rem;
+  font-weight: 580;
+}
+
+.mn-nexus-semantic-flow em {
+  display: inline-block;
+  padding-bottom: 0.65rem;
+  color: var(--mn-signal-rest);
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mn-nexus-release {
+  display: grid;
+  margin-top: clamp(7rem, 13vw, 13rem);
+  padding-top: var(--mn-space-5);
+  gap: var(--mn-space-3);
+  color: var(--mn-ink-inverse);
+  border-top: 1px solid rgba(238, 245, 241, 0.32);
+}
+
+.mn-nexus-release p:first-child {
+  color: var(--mn-ink-inverse-muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mn-nexus-release p:last-child {
+  max-width: 34rem;
+  font-size: clamp(1.4rem, 1.1rem + 1.25vw, 2.5rem);
+  font-weight: 550;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
 .mn-menu-start {
   display: flex;
   min-height: 3.5rem;
@@ -2511,6 +2880,13 @@ body[data-menu-open="true"] {
   .mn-systems-form-row { grid-template-columns: 8rem 1fr; align-items: baseline; gap: var(--mn-space-4); }
   .mn-systems-active-detail { grid-template-columns: 10rem minmax(0, 1fr); align-items: start; gap: var(--mn-space-5); }
   .mn-systems-continuation { flex-direction: row; align-items: flex-end; justify-content: space-between; }
+  .mn-nexus-heading { grid-column: 1 / span 6; }
+  .mn-nexus-intro { grid-column: 4 / span 5; margin-top: var(--mn-space-7); }
+  .mn-nexus-state-heading { grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.2fr); align-items: end; gap: var(--mn-space-6); }
+  .mn-nexus-canvas { display: block; }
+  .mn-nexus-semantic-flow { display: none; }
+  .mn-nexus-selected-detail { grid-template-columns: 10rem minmax(0, 1fr); align-items: start; gap: var(--mn-space-5); }
+  .mn-nexus-release { grid-template-columns: 1fr 2fr; align-items: start; }
   .mn-capability-systems-map ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mn-capability-systems-map li:nth-child(odd) { padding-right: var(--mn-space-4); border-right: 1px solid var(--mn-line-subtle); }
   .mn-capability-systems-map li:nth-child(even) { padding-left: var(--mn-space-4); }
@@ -2575,6 +2951,12 @@ body[data-menu-open="true"] {
   .mn-home-confidence .mn-grid > div, .mn-corporate-close .mn-grid > div { grid-column: 4 / span 7; }
   .mn-systems-descent-heading { grid-column: 1 / span 7; }
   .mn-systems-descent .mn-grid > p { grid-column: 9 / span 4; margin-top: 0; align-self: end; }
+  .mn-nexus-heading { grid-column: 1 / span 8; }
+  .mn-nexus-intro { grid-column: 9 / span 4; margin-top: 0; align-self: end; }
+  .mn-nexus-objectives { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .mn-nexus-objectives button, .mn-nexus-objectives button:nth-child(even) { border-right: 1px solid var(--mn-line-inverse); border-bottom: 0; }
+  .mn-nexus-objectives button:last-child { border-right: 0; }
+  .mn-nexus-canvas { height: 42rem; }
   .mn-systems-flow { grid-template-columns: repeat(5, minmax(0, 1fr)); border-bottom: 1px solid var(--mn-line-inverse); }
   .mn-systems-flow li { padding: var(--mn-space-4); border-right: 1px solid var(--mn-line-inverse); border-bottom: 0; }
   .mn-systems-flow li:last-child { border-right: 0; }
@@ -2670,6 +3052,10 @@ body:has(.foundation-preview) > footer {
   .mn-systems-interface-head span:last-child { text-align: left; }
   .mn-systems-flow li > p { padding-left: 2rem; }
   .mn-systems-signature { min-height: 32rem; }
+  .mn-home-nexus { padding-bottom: 10rem; background: linear-gradient(to bottom, var(--mn-env-depth) 0%, var(--mn-env-depth) 90%, #242b28 96%, #e9edeb 100%); }
+  .mn-nexus-objectives strong { font-size: 0.76rem; }
+  .mn-nexus-state-heading > p { font-size: 0.9rem; }
+  .mn-nexus-release { margin-top: 8rem; }
 
   .mn-display {
     letter-spacing: -0.052em;
@@ -2795,6 +3181,14 @@ body:has(.foundation-preview) > footer {
   .mn-systems-flow li::after,
   .mn-systems-flow button::before,
   .mn-capability-systems-map summary span:last-child {
+    transition: none;
+  }
+
+  .mn-nexus-objectives button,
+  .mn-nexus-objectives button::after,
+  .mn-nexus-connections line,
+  .mn-nexus-node,
+  .mn-nexus-semantic-flow button::before {
     transition: none;
   }
 }
