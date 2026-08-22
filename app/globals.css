@@ -53,6 +53,100 @@
   --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Phase 07 — Reassurance, conversion, and inquiry */
+.mn-home-reassurance { padding-block: clamp(6rem, 11vw, 10rem); background: var(--mn-env-canvas); }
+.mn-home-reassurance .mn-reassurance-heading { grid-column: span 4; }
+.mn-home-reassurance h2, .mn-home-possibility h2, .mn-home-final-conversion h2, .mn-inquiry-step h2, .mn-inquiry-confirmation h2 { font-size: clamp(2.4rem, 1.5rem + 4vw, 5.8rem); font-weight: 560; letter-spacing: -0.06em; line-height: .96; text-wrap: balance; }
+.mn-home-reassurance .mn-reassurance-heading > p:last-child { margin-top: var(--mn-space-5); color: var(--mn-ink-secondary); font-size: var(--mn-type-lead); }
+.mn-home-reassurance ol { grid-column: span 4; margin-top: var(--mn-space-7); border-top: 1px solid var(--mn-line-strong); }
+.mn-home-reassurance li { display: grid; min-height: 3.8rem; grid-template-columns: 2.5rem 1fr; align-items: center; border-bottom: 1px solid var(--mn-line-subtle); font-size: 1rem; font-weight: 600; }
+.mn-home-reassurance li span { color: var(--mn-ink-muted); font-size: .66rem; letter-spacing: .12em; }
+.mn-reassurance-close { display: flex; margin-top: var(--mn-space-7); padding-top: var(--mn-space-5); flex-direction: column; align-items: flex-start; gap: var(--mn-space-4); border-top: 1px solid var(--mn-line-subtle); }
+.mn-reassurance-close p { max-width: 34rem; color: var(--mn-ink-secondary); line-height: 1.6; }
+.mn-home-possibility { display: grid; min-height: min(76vh, 52rem); place-items: center; padding-block: 10rem; text-align: center; background: var(--mn-env-subtle); }
+.mn-home-possibility p { color: var(--mn-ink-muted); font-size: var(--mn-type-lead); }
+.mn-home-possibility h2 { margin: var(--mn-space-5) auto 0; max-width: 13ch; }
+.mn-home-final-conversion { padding-block: clamp(7rem, 13vw, 12rem); background: var(--mn-env-canvas); }
+.mn-home-final-conversion .mn-grid > .mn-kicker { grid-column: span 4; }
+.mn-home-final-conversion .mn-grid > div { grid-column: span 4; margin-top: var(--mn-space-6); }
+.mn-home-final-conversion .mn-mariner-thread { margin-bottom: var(--mn-space-7); }
+.mn-home-final-conversion h2 { max-width: 10ch; }
+.mn-home-final-conversion h2 + p { margin-top: var(--mn-space-5); max-width: 32rem; color: var(--mn-ink-secondary); font-size: var(--mn-type-lead); line-height: 1.55; }
+.mn-home-final-conversion a { display: inline-flex; min-height: 3.25rem; margin-top: var(--mn-space-6); align-items: center; gap: 2rem; border-bottom: 1px solid var(--mn-signal-active); font-weight: 680; }
+
+.mn-inquiry-section .mn-guided-inquiry { grid-column: span 4; margin-top: var(--mn-space-7); }
+.mn-inquiry-progress { margin-bottom: var(--mn-space-7); }
+.mn-inquiry-progress p { display: flex; justify-content: space-between; color: var(--mn-ink-secondary); font-size: .76rem; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; }
+.mn-inquiry-progress p span { color: var(--mn-ink-muted); }
+.mn-inquiry-progress > div { display: grid; margin-top: .8rem; grid-template-columns: repeat(5, 1fr); gap: .35rem; }
+.mn-inquiry-progress > div span { height: 2px; background: var(--mn-line-strong); }
+.mn-inquiry-progress > div span.is-reached { background: var(--mn-signal-active); }
+.mn-inquiry-step { min-height: 31rem; }
+.mn-inquiry-step .mn-kicker + h2 { margin-top: var(--mn-space-4); }
+.mn-inquiry-step h2 { max-width: 13ch; font-size: clamp(2.2rem, 1.5rem + 2.8vw, 4.5rem); }
+.mn-inquiry-step h2 + .mn-field, .mn-inquiry-step h2 + fieldset { margin-top: var(--mn-space-7); }
+.mn-guided-inquiry .mn-field { margin-top: var(--mn-space-5); gap: .7rem; }
+.mn-guided-inquiry .mn-field > span { font-size: .86rem; font-weight: 650; }
+.mn-guided-inquiry .mn-field small { color: var(--mn-ink-muted); font-size: .72rem; font-weight: 450; }
+.mn-guided-inquiry input:not([type="radio"]), .mn-guided-inquiry textarea { width: 100%; border: 0; border-bottom: 1px solid var(--mn-line-strong); border-radius: 0; padding: 1rem 0; color: var(--mn-ink-primary); background: transparent; font: inherit; line-height: 1.55; }
+.mn-guided-inquiry textarea { resize: vertical; }
+.mn-guided-inquiry input::placeholder, .mn-guided-inquiry textarea::placeholder { color: var(--mn-ink-muted); opacity: .78; }
+.mn-guided-inquiry [aria-invalid="true"] { border-color: var(--mn-error, #9e3328); }
+.mn-inquiry-step > .mn-field + p:not(.mn-field-error) { margin-top: var(--mn-space-3); color: var(--mn-ink-muted); font-size: .78rem; line-height: 1.55; }
+.mn-field-error, .mn-inquiry-message.is-error { margin-top: .6rem; color: var(--mn-error, #9e3328); font-size: .8rem; font-weight: 620; }
+.mn-situation-options { display: grid; gap: .65rem; }
+.mn-situation-options label { position: relative; }
+.mn-situation-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.mn-situation-options span { display: flex; min-height: 3.8rem; align-items: center; padding: .9rem 1rem; border: 1px solid var(--mn-line-strong); background: var(--mn-env-canvas); font-size: .9rem; font-weight: 580; }
+.mn-situation-options input:checked + span { border-color: var(--mn-signal-active); box-shadow: inset 3px 0 0 var(--mn-signal-active); background: var(--mn-signal-settle); }
+.mn-situation-options input:focus-visible + span { outline: 2px solid var(--mn-signal); outline-offset: 4px; }
+.mn-guided-inquiry .mn-contact-fields { margin-top: var(--mn-space-6); }
+.mn-inquiry-review { margin-top: var(--mn-space-7); border-top: 1px solid var(--mn-line-strong); }
+.mn-inquiry-review div { padding-block: var(--mn-space-4); border-bottom: 1px solid var(--mn-line-subtle); }
+.mn-inquiry-review dt { color: var(--mn-ink-muted); font-size: .68rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
+.mn-inquiry-review dd { margin-top: .5rem; white-space: pre-wrap; line-height: 1.55; }
+.mn-inquiry-review + p { margin-top: var(--mn-space-5); color: var(--mn-ink-muted); font-size: .78rem; line-height: 1.55; }
+.mn-inquiry-actions { display: flex; margin-top: var(--mn-space-6); justify-content: flex-end; gap: var(--mn-space-3); border-top: 1px solid var(--mn-line-strong); padding-top: var(--mn-space-5); }
+.mn-inquiry-actions button { min-height: 3.25rem; padding-inline: 1.25rem; border: 1px solid var(--mn-ink-primary); color: var(--mn-env-canvas); background: var(--mn-ink-primary); font: inherit; font-size: .86rem; font-weight: 680; cursor: pointer; }
+.mn-inquiry-actions .mn-button-secondary { margin-right: auto; border-color: var(--mn-line-strong); color: var(--mn-ink-primary); background: transparent; }
+.mn-inquiry-actions button:disabled { opacity: .58; cursor: wait; }
+.mn-inquiry-message { min-height: 1.5rem; margin-top: var(--mn-space-3); font-size: .8rem; }
+.mn-inquiry-fallback, .mn-inquiry-privacy { margin-top: var(--mn-space-3); color: var(--mn-ink-muted); font-size: .76rem; line-height: 1.55; }
+.mn-inquiry-fallback a, .mn-inquiry-privacy a { text-decoration: underline; text-underline-offset: .2em; }
+.mn-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.mn-inquiry-confirmation { grid-column: span 4; min-height: 34rem; margin-top: var(--mn-space-7); padding-top: var(--mn-space-6); border-top: 2px solid var(--mn-signal-active); }
+.mn-inquiry-confirmation h2 { margin-top: var(--mn-space-4); }
+.mn-inquiry-confirmation h2 + p { margin-top: var(--mn-space-5); max-width: 32rem; color: var(--mn-ink-secondary); font-size: var(--mn-type-lead); line-height: 1.55; }
+.mn-inquiry-id { margin-top: var(--mn-space-5); color: var(--mn-ink-muted); font-family: ui-monospace, monospace; font-size: .76rem; }
+.mn-inquiry-confirmation a { display: inline-flex; margin-top: var(--mn-space-7); gap: 1.5rem; border-bottom: 1px solid var(--mn-signal-active); font-weight: 650; }
+.mn-sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+
+@media (min-width: 768px) {
+  .mn-home-reassurance .mn-reassurance-heading { grid-column: 1 / span 4; }
+  .mn-home-reassurance ol { grid-column: 5 / span 4; margin-top: 0; }
+  .mn-reassurance-close { flex-direction: row; justify-content: space-between; align-items: end; }
+  .mn-home-final-conversion .mn-grid > .mn-kicker { grid-column: 1 / span 2; }
+  .mn-home-final-conversion .mn-grid > div { grid-column: 3 / span 6; margin-top: 0; }
+  .mn-inquiry-section .mn-guided-inquiry, .mn-inquiry-confirmation { grid-column: 3 / span 6; }
+  .mn-guided-inquiry .mn-contact-fields { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1100px) {
+  .mn-home-reassurance .mn-reassurance-heading { grid-column: 1 / span 5; }
+  .mn-home-reassurance ol { grid-column: 7 / span 6; }
+  .mn-home-final-conversion .mn-grid > .mn-kicker { grid-column: 1 / span 3; }
+  .mn-home-final-conversion .mn-grid > div { grid-column: 5 / span 7; }
+  .mn-inquiry-section .mn-guided-inquiry, .mn-inquiry-confirmation { grid-column: 5 / span 7; margin-top: 0; }
+}
+@media (max-width: 767px) {
+  .mn-home-possibility { min-height: 70svh; padding-block: 7rem; }
+  .mn-inquiry-step { min-height: 29rem; }
+  .mn-inquiry-actions { position: sticky; bottom: 0; z-index: 2; margin-inline: calc(var(--mn-gutter) * -1); padding: 1rem var(--mn-gutter); background: color-mix(in srgb, var(--mn-env-subtle) 94%, transparent); backdrop-filter: blur(10px); }
+  .mn-inquiry-actions button { flex: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mn-inquiry-progress > div span { transition: none; }
+}
+
 @layer base {
   html {
     background-color: #0A0A0A;
@@ -3428,3 +3522,22 @@ body:has(.foundation-preview) > footer {
     animation: shimmer 2.2s linear infinite;
   }
 }
+
+/* Phase 07 cascade guard: the legacy presentation-form declarations above are
+   intentionally retained for archived components, while the guided inquiry owns
+   its native control geometry. */
+.mn-inquiry-section .mn-guided-inquiry .mn-field input,
+.mn-inquiry-section .mn-guided-inquiry .mn-field textarea {
+  border: 0;
+  border-bottom: 1px solid var(--mn-line-strong);
+  padding: 1rem 0;
+  background: transparent;
+}
+.mn-inquiry-section .mn-guided-inquiry .mn-situation-options label {
+  display: block;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+}
+.mn-inquiry-section .mn-guided-inquiry .mn-situation-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.mn-inquiry-section .mn-guided-inquiry [aria-invalid="true"] { border-color: var(--mn-error, #9e3328); }
