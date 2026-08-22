@@ -57,7 +57,7 @@ Phase 07’s 2026-08-22 live verification remains authoritative: isolated Previe
 
 `docs/exec-plans/review-assets/phase-08/` contains final full-page desktop/mobile captures for Home, Work, Undugu, Capabilities, Approach, Company, and Start; a tablet Home capture; and the mobile menu. Systems and Nexus appear in the homepage captures. The unchanged controlled Start success state remains covered by Phase 07 evidence.
 
-Previous release candidate `be491b1` / `dpl_CC8XihfCejMJQmtDU2VRaiyd9LeN` is superseded. Corrected release candidate: **pending final pushed commit deployment**.
+Previous release candidate `be491b1` / `dpl_CC8XihfCejMJQmtDU2VRaiyd9LeN` is superseded. Corrected release candidate: commit `038513054e0fb5bac6aee3842aee8d270784186f`, deployment `dpl_JBiMR4gA7c3upJwUsxAphrnJUVHb`, READY at `https://mariner-nexus-1joly114s-garymariner-7562s-projects.vercel.app`.
 
 ## Deferred post-launch items
 

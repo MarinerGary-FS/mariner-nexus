@@ -2,7 +2,7 @@
 
 ## Status
 
-Final correction validated locally; corrected release candidate pending deployment. The original Phase 08 candidate is superseded. Production has not been promoted.
+Final correction validated. Corrected release commit `038513054e0fb5bac6aee3842aee8d270784186f` produced READY Preview deployment `dpl_JBiMR4gA7c3upJwUsxAphrnJUVHb`. The original Phase 08 candidate is superseded. Production has not been promoted.
 
 ## Objective
 
