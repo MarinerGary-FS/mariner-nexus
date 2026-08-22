@@ -2,11 +2,11 @@
 
 ## Status and outcome
 
-Implementation and repository-controlled validation are complete. Uncommitted pending Gary’s review. Final hardening has not begun.
+**LIVE VERIFIED — 2026-08-22.** Implementation, repository-controlled validation, and the Preview and Production operational integration gates are complete. Final hardening has not begun.
 
 The journey now resolves as Nexus → Reassurance → Possibility → One Decision → Structured Inquiry. Complexity drops after the Nexus; a restrained eight-step method proves discipline, a quiet possibility moment creates self-projection, and one light-environment decision leads into a serious human-reviewed inquiry.
 
-Live Google Workspace persistence and Resend delivery remain an explicit operational gate because no credentials or environment targets are present in this workspace. The production adapters, ordering, and failure paths passed controlled HTTP tests; this report does not misrepresent them as a live external submission.
+The existing protected Google Workspace, Resend, and Vercel infrastructure was configured and manually verified end to end. Preview inquiry `MN-20260822-41801F29` produced one correctly mapped 17-cell row with status `NEW` and source `preview / website`; the Production Sheet remained untouched and the Preview notification reached `gary.mariner@gmail.com`. Production inquiry `MN-20260822-C2B11A4B` produced one correctly mapped 17-cell row with status `NEW` and source `production / website`; the Preview Sheet remained unchanged and the Production notification reached `info@marinernexus.com` from the verified sender `inquiries@marinernexus.com`.
 
 ## Homepage implementation
 
@@ -82,21 +82,14 @@ Production-server checks passed every canonical route, the five 308 legacy redir
 
 `docs/exec-plans/review-assets/phase-07/` contains 25 screenshots: post-Nexus, Approach, possibility, and final conversion at all three widths; `/start` opening/contact at all widths; desktop situation/submitting/success/error; mobile success/error; and a redacted controlled test representation of the 17-column row plus notification.
 
-The operational image is test evidence from adapter fixtures, not a live Google-account or delivered-email capture. It contains no secrets or real inquiry data.
+The operational image is test evidence from adapter fixtures, not a live Google-account or delivered-email capture. The separate redacted live-verification record documents the manually verified operational results without credentials or real inquiry data.
 
-## Deviations and follow-up
+## Operational closeout
 
-Live Google append and live Resend delivery could not run because the workspace has none of the required variables. Acceptance gate 7 and live notification evidence therefore remain credential-bound. The browser-verification skill’s `agent-browser` executable was unavailable; the established Playwright/Chromium runtime supplied equivalent, broader exact-width evidence.
+All Phase 07 operational gates passed on 2026-08-22: Preview and Production persistence, strict environment isolation, exact 17-column mapping, generated inquiry IDs, `NEW` initialization, source designation, and notification delivery. Google Sheets remains the acquisition source of truth; email remains a secondary notification. The configured service account is limited to the two approved Sheets, and the existing Vercel environment separation is authoritative.
 
-Recommended next actions after review:
+The controlled records are fake system tests, not leads. They may be marked and archived or removed according to the operations runbook. No infrastructure was recreated, rotated, or changed during closeout, and no credential was added to documentation or review evidence.
 
-1. Configure the isolated Preview Sheet/service account, run one non-personal end-to-end Preview inquiry, and capture actual redacted Sheet/email evidence.
-2. Configure Production separately and run one authorized operational smoke test before public activation.
-3. Observe real abuse before considering Turnstile or distributed rate limiting.
-
-## Decisions requiring Gary approval
-
-1. Approve Resend direct HTTPS as the V1 notification provider retained from the existing repository mechanism, including verified sender and Preview/Production inboxes.
-2. Authorize/configure Preview and Production Google Sheets and service-account secrets so the live operational gates can be completed.
+The browser-verification skill’s `agent-browser` executable was unavailable during implementation; the established Playwright/Chromium runtime supplied equivalent, broader exact-width evidence. This did not affect the live operational gate.
 
 No final-hardening phase has begun.

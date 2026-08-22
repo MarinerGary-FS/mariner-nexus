@@ -38,6 +38,19 @@ The service-account email/private key and Resend API key are server secrets. Nev
 
 Preview notifications are off unless `INQUIRY_NOTIFICATIONS_PREVIEW=true`. This prevents QA email from reaching the production inbox. Development has environment label `development` and resolves only the Preview target when explicitly configured.
 
+## Live operational configuration
+
+Verified on 2026-08-22:
+
+- Preview and Production use separate approved Google Sheets with the `Inquiries` tab and the canonical 17-column schema.
+- The dedicated service account has Editor access only to those approved inquiry Sheets.
+- Preview records identify their source as `preview / website`; Preview test notifications route to `gary.mariner@gmail.com` unless intentionally reconfigured.
+- Production records identify their source as `production / website`; Production operational notifications route to `info@marinernexus.com`.
+- The verified Production sender is `inquiries@marinernexus.com`.
+- Vercel Preview and Production environment variables are separately configured under the repository's existing environment-variable contract.
+
+These are non-secret operational identifiers. Sheet IDs, service-account credentials, private keys, and API keys must remain outside repository files, logs, screenshots, and commits. The existing infrastructure is authoritative and must not be recreated or rotated merely for verification.
+
 ## Failure behavior
 
 - Missing/invalid Google configuration or a Sheets failure returns `503`; the browser retains every response and offers retry/email fallback.
@@ -47,4 +60,4 @@ Preview notifications are off unless `INQUIRY_NOTIFICATIONS_PREVIEW=true`. This 
 
 ## Operational verification
 
-Before production activation, submit one non-personal test record to Preview, verify its 17 cells/status/environment, test Preview notification behavior, then repeat with an authorized test in Production. Remove or archive test rows according to operational preference. Never use a real prospect for configuration testing.
+Before production activation, submit one non-personal test record to Preview, verify its 17 cells/status/environment, test Preview notification behavior, then repeat with an authorized test in Production. This gate passed on 2026-08-22 with controlled fake records `MN-20260822-41801F29` (Preview) and `MN-20260822-C2B11A4B` (Production). Each persisted only in its intended Sheet, initialized to `NEW`, carried the correct environment/source, and generated the intended notification. Mark these records as system tests and archive or remove them according to operational preference. Never use a real prospect for configuration testing, and do not automate test-record cleanup for V1.
