@@ -51,7 +51,7 @@ Phase 07’s 2026-08-22 live verification remains authoritative: isolated Previe
 
 `docs/exec-plans/review-assets/phase-08/` contains final full-page desktop/mobile captures for Home, Work, Undugu, Capabilities, Approach, Company, and Start; a tablet Home capture; and the mobile menu. Systems and Nexus appear in the homepage captures. The unchanged controlled Start success state remains covered by Phase 07 evidence.
 
-Release candidate URL: **pending final pushed commit deployment**.
+Release candidate: commit `be491b1829aa5d2671e68ad6ec59edad6fd0356f`, deployment `dpl_CC8XihfCejMJQmtDU2VRaiyd9LeN`, READY at `https://mariner-nexus-eouwfkaom-garymariner-7562s-projects.vercel.app`. Vercel Deployment Protection is active; the authenticated fetch confirmed the release homepage and deployment identity. The complete route/status matrix was verified against the identical local production build because isolated protected-path fetches require a retained SSO session.
 
 ## Deferred post-launch items
 
