@@ -7,6 +7,7 @@ import { Grid } from "@/components/foundation/Grid";
 import { ExternalProjectLink } from "@/components/work/ExternalProjectLink";
 import { ProjectFrame } from "@/components/work/ProjectFrame";
 import { ProjectIdentityBoundary } from "@/components/work/ProjectIdentityBoundary";
+import { ResponsiveTransformation } from "@/components/work/ResponsiveTransformation";
 import { getPublishedProject, publishedProjects } from "@/content/projects";
 import { createMetadata } from "@/lib/seo";
 
@@ -36,7 +37,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <section className="mn-project-strategy"><Container><Grid><div><p className="mn-kicker">Strategy</p><h2>Understand the organization before designing pages.</h2></div><ol>{project.strategy.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></li>)}</ol></Grid></Container></section>
 
-      <section className="mn-project-experience"><Container><div className="mn-project-section-heading"><p className="mn-kicker">Experience</p><h2>The organization becomes visible.</h2><p>Undugu’s identity, message, real gatherings, and ways to participate come together as one clear public experience.</p></div><div className="mn-project-media-pair"><figure><Image alt={project.media.desktop.alt} height={project.media.desktop.height} sizes="(max-width: 768px) calc(100vw - 40px), 72vw" src={project.media.desktop.src} width={project.media.desktop.width} /><figcaption>Desktop composition</figcaption></figure><figure><Image alt={project.media.mobile.alt} height={project.media.mobile.height} sizes="(max-width: 768px) 68vw, 24vw" src={project.media.mobile.src} width={project.media.mobile.width} /><figcaption>Mobile composition</figcaption></figure></div><ul>{project.experience.map((item) => <li key={item}>{item}</li>)}</ul></Container></section>
+      <section className="mn-project-experience"><Container><div className="mn-project-section-heading"><p className="mn-kicker">Experience</p><h2>The organization becomes visible.</h2><p>Undugu’s identity, message, real gatherings, and ways to participate come together as one clear public experience.</p></div><ResponsiveTransformation clientName={project.clientName} media={project.media} /><ul>{project.experience.map((item) => <li key={item}>{item}</li>)}</ul></Container></section>
 
       <section className="mn-project-systems"><Container><Grid><div><p className="mn-kicker">Systems</p><h2>The experience leads somewhere useful.</h2><p>The website organizes public information and connects attention to real participation pathways.</p></div><ol>{project.systems.map((item, index) => <li key={item}><span>0{index + 1}</span><p>{item}</p></li>)}</ol></Grid></Container></section>
 

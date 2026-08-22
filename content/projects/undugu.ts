@@ -41,6 +41,7 @@ export const unduguProject: ProjectRecord = {
   media: {
     card: { src: "/case-studies/undugu/card.webp", alt: "Undugu website opening showing its identity, brotherhood gathering, and movement message.", width: 1200, height: 750 },
     desktop: { src: "/case-studies/undugu/live-desktop.webp", alt: "Undugu desktop website experience with movement navigation, a brotherhood gathering, and the message You have been carrying too much alone.", width: 1600, height: 1000 },
+    tablet: { src: "/case-studies/undugu/responsive-tablet.webp", alt: "Undugu tablet experience with full movement navigation, an intermediate hero composition, stacked actions, and a brotherhood gathering.", width: 1018, height: 895 },
     mobile: { src: "/case-studies/undugu/live-mobile.webp", alt: "Undugu mobile website experience with movement introduction, participation actions, and a brotherhood gathering.", width: 900, height: 1400 },
   },
   metadata: {

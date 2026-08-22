@@ -42,6 +42,7 @@ export type ProjectRecord = {
   media: {
     card: ProjectMedia;
     desktop: ProjectMedia;
+    tablet: ProjectMedia;
     mobile: ProjectMedia;
   };
   metadata: ProjectMetadata;
