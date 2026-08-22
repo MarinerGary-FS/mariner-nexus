@@ -2,7 +2,7 @@
 
 ## Status
 
-ACTIVE — Phase 01C complete; awaiting review
+COMPLETE — approved 2026-08-21
 
 ## Governing rule
 
