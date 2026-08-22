@@ -60,6 +60,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/brand/micro-logo.png",
+    apple: "/brand/micro-logo.png",
+  },
 };
 
 const jsonLd = {
