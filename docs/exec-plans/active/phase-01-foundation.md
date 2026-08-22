@@ -2,7 +2,7 @@
 
 ## Status
 
-ACTIVE — Phase 01B complete; awaiting review before Phase 01C
+ACTIVE — Phase 01C complete; awaiting review
 
 ## Governing rule
 
@@ -149,7 +149,7 @@ Requires review and approval of the Phase 01A completion report before execution
 
 ## Status
 
-PLANNED — NOT AUTHORIZED FOR EXECUTION
+COMPLETED — awaiting review
 
 ## Phase objective
 

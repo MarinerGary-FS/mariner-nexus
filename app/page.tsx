@@ -3,9 +3,8 @@ import NexusHomeExperience from "@/components/sections/NexusHomeExperience";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Mariner Nexus | AI-Native Digital Ecosystems for Business Evolution",
-  description:
-    "Mariner Nexus creates human-centered digital ecosystems that evolve brand perception, customer experience, communication systems, AI adoption, and operational scalability.",
+  title: "Mariner Nexus | Strategy, Experience, and Technology",
+  description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
   path: "/",
 });
 

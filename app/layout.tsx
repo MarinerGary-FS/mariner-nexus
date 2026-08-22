@@ -23,36 +23,20 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Mariner Nexus | AI-Native Digital Ecosystems for Business Evolution",
+    default: "Mariner Nexus | Strategy, Experience, and Technology",
     template: "%s | Mariner Nexus",
   },
-  description:
-    "Mariner Nexus creates human-centered digital ecosystems that evolve brand perception, customer experience, communication systems, AI adoption, and operational scalability.",
-  keywords: [
-    "AI-powered digital ecosystem architecture",
-    "business operations website systems",
-    "AI-native business transformation",
-    "premium web design and operational systems",
-    "digital authority systems",
-    "customer experience website architecture",
-    "business automation and communication systems",
-    "human-centered AI implementation",
-    "operational evolution consulting",
-    "Atlanta digital systems architect",
-    "Mariner Nexus",
-    "Gary Mariner",
-  ],
+  description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
   authors: [{ name: "Gary Mariner" }],
   creator: "Gary Mariner",
   publisher: siteName,
-  category: "Digital ecosystem architecture",
+  category: "Digital systems studio",
   alternates: {
     canonical: absoluteUrl("/"),
   },
   openGraph: {
-    title: "Mariner Nexus | AI-Native Digital Ecosystems for Business Evolution",
-    description:
-      "Human-centered digital ecosystems for operational evolution, customer experience, AI adoption, communication systems, and scalable business infrastructure.",
+    title: "Mariner Nexus | Strategy, Experience, and Technology",
+    description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
     url: absoluteUrl("/"),
     siteName,
     type: "website",
@@ -62,15 +46,14 @@ export const metadata: Metadata = {
         url: absoluteUrl(defaultOgImage),
         width: 1200,
         height: 630,
-        alt: "Mariner Nexus digital ecosystem preview",
+        alt: "Mariner Nexus",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mariner Nexus | AI-Native Digital Ecosystems for Business Evolution",
-    description:
-      "Human-centered digital ecosystems for operational evolution, customer experience, AI adoption, and scalable business infrastructure.",
+    title: "Mariner Nexus | Strategy, Experience, and Technology",
+    description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
     images: [absoluteUrl(defaultOgImage)],
   },
   robots: {
@@ -90,8 +73,7 @@ const jsonLd = {
       logo: absoluteUrl("/brand/logo.png"),
       founder: { "@id": `${siteUrl}/#gary-mariner` },
       areaServed: ["Atlanta, GA", "United States"],
-      description:
-        "Mariner Nexus architects human-centered digital ecosystems for operational evolution, customer experience, communication systems, AI adoption, and scalable business infrastructure.",
+      description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
     },
     {
       "@type": "Person",
@@ -115,13 +97,7 @@ const jsonLd = {
       url: siteUrl,
       areaServed: ["Atlanta, GA", "United States"],
       provider: { "@id": `${siteUrl}/#organization` },
-      serviceType: [
-        "Digital ecosystem architecture",
-        "Operational evolution consulting",
-        "Customer experience website architecture",
-        "Business automation and communication systems",
-        "Human-centered AI implementation",
-      ],
+      serviceType: ["Digital strategy", "Digital experience design", "Connected digital systems"],
     },
   ],
 };
@@ -138,13 +114,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${sourceSerif.variable}`}>
-      <body className="bg-black text-white antialiased">
+      <body className="antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Nav />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>
