@@ -32,8 +32,11 @@ export const unduguProject: ProjectRecord = {
     primary: "#563372",
     secondary: "#281b34",
     surface: "#f6f2f8",
+    surfaceStrong: "#e8deed",
     text: "#211827",
+    textMuted: "#665c6b",
     signal: "#765392",
+    border: "#c8b8d0",
   },
   media: {
     card: { src: "/case-studies/undugu/card.webp", alt: "Undugu website opening showing its identity, brotherhood gathering, and movement message.", width: 1200, height: 750 },

@@ -8,9 +8,12 @@ export function ProjectFrame({ children, identity }: ProjectFrameProps) {
     "--project-primary": identity.primary,
     "--project-secondary": identity.secondary,
     "--project-surface": identity.surface,
+    "--project-surface-strong": identity.surfaceStrong,
     "--project-text": identity.text,
+    "--project-text-muted": identity.textMuted,
     "--project-signal": identity.signal,
+    "--project-border": identity.border,
   } as CSSProperties;
 
-  return <div className="mn-project-frame" data-client-theme="undugu" style={style}>{children}</div>;
+  return <div className="mn-project-frame" data-project-identity="configured" style={style}>{children}</div>;
 }

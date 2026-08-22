@@ -5,8 +5,11 @@ export type ProjectVisualIdentity = {
   primary: string;
   secondary: string;
   surface: string;
+  surfaceStrong: string;
   text: string;
+  textMuted: string;
   signal: string;
+  border: string;
 };
 
 export type ProjectMedia = {
