@@ -1,91 +1,24 @@
 # Mariner Nexus
 
-Mariner Nexus is a premium AI-powered business systems company focused on building intelligent digital infrastructure for modern businesses.
+Mariner Nexus is a Next.js App Router project for the Mariner Nexus corporate digital experience.
 
-## Overview
+## Canonical documentation
 
-Mariner Nexus designs and implements:
+Read [`docs/mariner-nexus-redesign/README.md`](docs/mariner-nexus-redesign/README.md) before making product, architecture, visual, positioning, route, or acquisition changes.
 
-* AI-powered workflows
-* automation systems
-* high-performance websites
-* CRM and operational infrastructure
+- Repository operating rules: [`AGENTS.md`](AGENTS.md)
+- Approved redesign specification: [`docs/mariner-nexus-redesign/`](docs/mariner-nexus-redesign/)
+- Active execution plans: [`docs/exec-plans/active/`](docs/exec-plans/active/)
+- Completed execution plans: [`docs/exec-plans/completed/`](docs/exec-plans/completed/)
+- Superseded doctrine archive: [`docs/archive/superseded/`](docs/archive/superseded/)
 
-The goal is to transform fragmented processes into scalable, efficient systems.
+Archived doctrine is retained for history only and has no canonical precedence.
 
----
+## Development
 
-## Core Philosophy
-
-* Systems over chaos
-* Execution over theory
-* Clarity over complexity
-* Premium experience with real function
-
----
-
-## Tech Stack
-
-* Next.js (App Router)
-* TypeScript
-* Tailwind CSS
-* Framer Motion
-* Vercel
-
----
-
-## Business Stack
-
-* CRM: GoHighLevel
-* Scheduling: Cal.com
-* Payments: Stripe (future integration)
-
----
-
-## Project Structure
-
-```id="b0o9kq"
-/docs
-  brand.md
-  case-studies.md
-  copy.md
-  design-system.md
-  experience-model.md
-  services.md
-  site-structure.md
-
-CLAUDE.md
-README.md
+```bash
+npm install
+npm run dev
 ```
 
----
-
-## Purpose of Docs
-
-Each file inside `/docs` is designed to guide AI-assisted development:
-
-* **brand.md** → positioning and identity
-* **design-system.md** → visual rules and UI behavior
-* **experience-model.md** → interaction philosophy
-* **site-structure.md** → layout and page flow
-* **services.md** → offer structure
-* **case-studies.md** → proof and portfolio
-* **copy.md** → messaging and content
-
----
-
-## Goal
-
-Build a website and system that:
-
-* communicates authority instantly
-* delivers a premium, memorable experience
-* converts visitors into qualified leads
-* supports scalable business operations
-
----
-
-## Status
-
-🚧 In active development
-
+Use the validation commands defined by the active execution plan before reporting completion.

@@ -2,7 +2,7 @@
 
 ## Status
 
-ACTIVE
+COMPLETED — approved 2026-08-21
 
 ## Objective
 
