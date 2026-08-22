@@ -25,10 +25,6 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
@@ -159,6 +155,7 @@ export default function Nav() {
                   >
                     <Link
                       href={link.href}
+                      onClick={() => setMenuOpen(false)}
                       className={`block text-3xl font-bold py-2 tracking-tight transition-colors ${
                         pathname === link.href ? "text-white" : "text-white/40 hover:text-white/80"
                       }`}
@@ -176,6 +173,7 @@ export default function Nav() {
               >
                 <Link
                   href="/contact"
+                  onClick={() => setMenuOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-xl bg-nexus-blue hover:bg-[#1d4ed8] text-white text-base font-semibold transition-colors"
                 >
                   Begin Your Evolution Briefing

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { caseStudies } from "@/lib/case-studies";
 
@@ -137,11 +138,18 @@ function RevealBlock({
 }
 
 function ThresholdScene() {
+  const [mounted, setMounted] = useState(false);
   const prefersReduced = useReducedMotion();
+  const reduceMotion = mounted && prefersReduced;
+
+  useEffect(() => {
+    const mountFrame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(mountFrame);
+  }, []);
 
   return (
     <section id="threshold" className="relative flex min-h-screen items-center overflow-hidden bg-[#050608] pt-24">
-      {!prefersReduced && (
+      {mounted && !reduceMotion && (
         <video
           src="/video/hero-loop.mp4"
           autoPlay
@@ -161,7 +169,7 @@ function ThresholdScene() {
       <div className="container-tight relative z-10">
         <motion.div
           initial={false}
-          animate={prefersReduced ? undefined : { opacity: 1, scale: 1 }}
+          animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: sceneEase }}
           className="mx-auto mb-10 flex h-28 w-28 items-center justify-center md:h-36 md:w-36"
         >
@@ -178,7 +186,7 @@ function ThresholdScene() {
 
         <motion.div
           initial={false}
-          animate={prefersReduced ? undefined : { opacity: 1, y: 0 }}
+          animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.95, delay: 0.25, ease: sceneEase }}
           className="mx-auto max-w-5xl text-center"
         >
@@ -199,7 +207,7 @@ function ThresholdScene() {
 
         <motion.div
           initial={false}
-          animate={prefersReduced ? undefined : { opacity: 1 }}
+          animate={reduceMotion ? undefined : { opacity: 1 }}
           transition={{ duration: 1.1, delay: 1.05 }}
           className="mx-auto mt-16 grid max-w-[18rem] grid-cols-1 gap-px overflow-hidden rounded-lg border border-white/[0.06] bg-white/[0.06] sm:max-w-3xl sm:grid-cols-3"
         >

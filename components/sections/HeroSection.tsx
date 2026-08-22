@@ -203,14 +203,17 @@ export default function HeroSection() {
   const contentScrollY   = useTransform(scrollY, [0, 500], [0, -28]);
 
   useEffect(() => {
-    setMounted(true);
+    const mountFrame = window.requestAnimationFrame(() => setMounted(true));
     if (prefersReduced) return;
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX / window.innerWidth);
       mouseY.set(e.clientY / window.innerHeight);
     };
     window.addEventListener("mousemove", handleMouseMove, { passive: true });
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.cancelAnimationFrame(mountFrame);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, [mouseX, mouseY, prefersReduced]);
 
   return (

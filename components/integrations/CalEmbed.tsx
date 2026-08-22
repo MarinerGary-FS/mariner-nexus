@@ -34,7 +34,7 @@ export default function CalEmbed() {
     // Load Cal.com embed script once
     const existingScript = document.querySelector('script[src="https://app.cal.com/embed/embed.js"]');
     if (existingScript) {
-      setScriptLoaded(true);
+      queueMicrotask(() => setScriptLoaded(true));
       return;
     }
 

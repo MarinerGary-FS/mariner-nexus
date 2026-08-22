@@ -90,3 +90,8 @@ This file prevents settled architecture and strategy from being repeatedly reope
 
 ## DEC-022 — V1 legal routes
 **Decision:** Include restrained `/privacy` and `/terms` pages appropriate to website and inquiry use. Client contractual terms remain separate.
+
+## DEC-023 — Phase 01A framework baseline
+**Decision:** Pin the Phase 01A baseline to Next.js 16.3.2, React 19.2.8, React DOM 19.2.8, and `eslint-config-next` 16.3.2. Use the ESLint flat configuration and direct CLI because `next lint` is removed in Next.js 16.
+**Deferred:** Cache Components and React Compiler remain disabled until a later approved need justifies them.
+**Repository guidance:** Set `agentRules: false` in `next.config.mjs` so Next.js does not append generated instructions to the approved concise root `AGENTS.md`. Next.js version-specific implementation guidance remains available under `node_modules/next/dist/docs/` and official documentation.
