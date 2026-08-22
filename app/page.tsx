@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import NexusHomeExperience from "@/components/sections/NexusHomeExperience";
+import CorporateHome from "@/components/corporate/CorporateHome";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -9,5 +9,5 @@ export const metadata: Metadata = createMetadata({
 });
 
 export default function HomePage() {
-  return <NexusHomeExperience />;
+  return <CorporateHome />;
 }
