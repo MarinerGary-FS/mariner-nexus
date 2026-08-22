@@ -120,3 +120,10 @@ This file prevents settled architecture and strategy from being repeatedly reope
 **Responsive composition:** Desktop uses strong cross-grid relationships; tablet uses intentional offsets on the eight-column system; mobile changes reading order and action geometry to preserve rhythm rather than merely stacking reduced desktop blocks.
 **Inquiry presentation:** Phase 02 `/start` uses native labeled controls outside a submitting form so Enter or browser behavior cannot leak inquiry content into a URL or endpoint. The online submission action remains visibly unavailable until secure Google Workspace persistence is authorized and implemented; email is the current active path.
 **Typography:** Source Serif 4 appears only once as a selective company-philosophy counterpoint. Geist Sans carries all primary corporate communication.
+
+## DEC-027 — Phase 03 public-work architecture
+**Decision:** Public transformation records use a typed repository model with an explicit authorization allowlist and a separate publication status. A record is routable only when both controls approve it; Phase 03 authorizes Undugu only.
+**Narrative:** Work follows See it → Understand it → Experience it live. Finished media leads, followed by Client, Situation, Objective, Strategy, Experience, Systems, Transformation, and a secure external live-project action.
+**Content integrity:** Public claims must be supported by approved project facts or observable production evidence. Unverified legacy claims, metrics, platform details, attribution, and operational outcomes remain unpublished until Gary supplies or authorizes evidence.
+**Client identity:** Project colors are scoped through record-level custom properties. They may identify the client inside its transformation record but may not replace the global Mariner Nexus environment.
+**Media and runtime:** Use controlled local media with `next/image`, known dimensions, responsive sizes, and deliberate alternatives. Transformation records remain static and complete without an iframe, live-site dependency, new client JavaScript, or a new package.
