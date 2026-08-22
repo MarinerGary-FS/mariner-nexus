@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/foundation/Container";
 import { Grid } from "@/components/foundation/Grid";
 import { SectionLink } from "@/components/corporate/SectionLink";
+import { MarinerThread } from "@/components/foundation/MarinerThread";
 import { createMetadata } from "@/lib/seo";
 
 const steps = [
@@ -19,8 +20,8 @@ export const metadata: Metadata = createMetadata({ title: "Approach", descriptio
 
 export default function ApproachPage() {
   return <div className="mn-corporate-page mn-environment-light">
-    <section className="mn-page-intro"><Container><Grid><div><div className="mn-signal-line" /><p className="mn-kicker">Approach</p><h1>There is a method behind the ambition.</h1></div><div><p>Mariner Nexus meets clients at the level of the business problem—not the level of their technical knowledge.</p><p>You bring the objective. We help determine what needs to exist around it.</p></div></Grid></Container></section>
-    <section className="mn-approach-sequence"><Container><ol>{steps.map(([number, title, description]) => <li key={number}><span>{number}</span><h2>{title}</h2><p>{description}</p></li>)}</ol></Container></section>
-    <section className="mn-corporate-close mn-environment-silver"><Container><Grid><p className="mn-kicker">What stays constant</p><div><h2>Clear decisions. Appropriate complexity. No technical theater.</h2><p>The solution adapts to the organization. The organization does not adapt to a template.</p><div><SectionLink href="/company">About Mariner Nexus</SectionLink><SectionLink href="/start">Start a Project</SectionLink></div></div></Grid></Container></section>
+    <section className="mn-page-intro" data-navigation-context="Approach"><Container><Grid><div><div className="mn-signal-line" /><p className="mn-kicker">Approach</p><h1>There is a method behind the ambition.</h1></div><div><p>Mariner Nexus meets clients at the level of the business problem—not the level of their technical knowledge.</p><p>You bring the objective. We help determine what needs to exist around it.</p></div></Grid></Container></section>
+    <section className="mn-approach-sequence" data-navigation-context="Approach"><Container><MarinerThread label="Understand through Evolve is one continuous method" nodes={8} /><ol>{steps.map(([number, title, description]) => <li key={number}><span>{number}</span><h2>{title}</h2><p>{description}</p></li>)}</ol></Container></section>
+    <section className="mn-corporate-close mn-environment-silver" data-navigation-context="Begin"><Container><Grid><p className="mn-kicker">What stays constant</p><div><h2>Clear decisions. Appropriate complexity. No technical theater.</h2><p>The solution adapts to the organization. The organization does not adapt to a template.</p><div><SectionLink href="/company">About Mariner Nexus</SectionLink><SectionLink href="/start">Start a Project</SectionLink></div></div></Grid></Container></section>
   </div>;
 }

@@ -1,6 +1,7 @@
 import { Container } from "@/components/foundation/Container";
 import { Grid } from "@/components/foundation/Grid";
 import { SectionLink } from "@/components/corporate/SectionLink";
+import { MarinerThread } from "@/components/foundation/MarinerThread";
 
 const recognitionStates = [
   ["01", "Starting something new?", "We help determine what your digital presence should become."],
@@ -17,7 +18,7 @@ const disciplines = [
 export default function CorporateHome() {
   return (
     <div className="mn-corporate-home mn-environment-light">
-      <section className="mn-home-arrival">
+      <section className="mn-home-arrival" data-navigation-context="Corporate">
         <Container>
           <Grid>
             <div className="mn-home-arrival-title">
@@ -36,7 +37,7 @@ export default function CorporateHome() {
         </Container>
       </section>
 
-      <section className="mn-recognition" id="explore">
+      <section className="mn-recognition" data-navigation-context="Experience" id="explore">
         <Container>
           <Grid>
             <div className="mn-recognition-heading">
@@ -57,7 +58,7 @@ export default function CorporateHome() {
         </Container>
       </section>
 
-      <section className="mn-discipline-model mn-environment-dark">
+      <section className="mn-discipline-model mn-environment-dark" data-navigation-context="Systems">
         <Container>
           <Grid>
             <div className="mn-discipline-heading">
@@ -75,6 +76,7 @@ export default function CorporateHome() {
               </article>
             ))}
           </div>
+          <MarinerThread label="Strategy connects Experience and Systems" />
           <div className="mn-discipline-footer">
             <p>Technology should simplify the business—not become another problem to manage.</p>
             <SectionLink href="/capabilities">Explore capabilities</SectionLink>
@@ -82,13 +84,14 @@ export default function CorporateHome() {
         </Container>
       </section>
 
-      <section className="mn-home-confidence">
+      <section className="mn-home-confidence" data-navigation-context="Approach">
         <Container>
           <Grid>
             <p className="mn-kicker">A stronger digital operation</p>
             <div>
               <h2>Built around the business it is meant to serve.</h2>
               <p>Experience-based. Strategy-led. Solution-specific.</p>
+              <MarinerThread label="The connected model continues into the Mariner Nexus approach" nodes={2} />
               <div><SectionLink href="/approach">See how Mariner Nexus works</SectionLink><SectionLink href="/start">Start a Project</SectionLink></div>
             </div>
           </Grid>

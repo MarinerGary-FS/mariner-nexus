@@ -11,6 +11,22 @@ const primaryLinks = [
   { label: "Company", href: "/company" },
 ];
 
+const routeContexts: Record<string, string> = {
+  "/": "Corporate",
+  "/approach": "Approach",
+  "/capabilities": "Experience",
+  "/company": "Corporate",
+  "/start": "Begin",
+  "/work": "Work",
+};
+
+function getRouteContext(pathname: string) {
+  const route = Object.keys(routeContexts)
+    .filter((href) => href === "/" ? pathname === href : pathname === href || pathname.startsWith(`${href}/`))
+    .sort((a, b) => b.length - a.length)[0];
+  return routeContexts[route ?? "/"];
+}
+
 function Arrow() {
   return (
     <svg aria-hidden="true" fill="none" height="14" viewBox="0 0 14 14" width="14">
@@ -22,6 +38,7 @@ function Arrow() {
 export default function Nav() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [observedContext, setObservedContext] = useState<{ pathname: string; label: string } | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstMenuLinkRef = useRef<HTMLAnchorElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
@@ -58,7 +75,30 @@ export default function Nav() {
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-navigation-context]"));
+    if (!sections.length) return;
+
+    const visible = new Map<Element, number>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visible.set(entry.target, entry.intersectionRatio);
+        else visible.delete(entry.target);
+      }
+
+      const winner = sections
+        .filter((section) => visible.has(section))
+        .sort((a, b) => (visible.get(b) ?? 0) - (visible.get(a) ?? 0) || sections.indexOf(a) - sections.indexOf(b))[0];
+      const next = winner?.dataset.navigationContext;
+      if (next) setObservedContext((current) => current?.pathname === pathname && current.label === next ? current : { pathname, label: next });
+    }, { rootMargin: "-36% 0px -54% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [pathname]);
+
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const context = observedContext?.pathname === pathname ? observedContext.label : getRouteContext(pathname);
 
   return (
     <header className="mn-site-header">
@@ -68,6 +108,8 @@ export default function Nav() {
           <span aria-hidden="true" className="mn-brand-mark">MN</span>
           <span>Mariner Nexus</span>
         </Link>
+
+        <div aria-hidden="true" className="mn-nav-context"><span>{context}</span><i /></div>
 
         <nav aria-label="Primary navigation" className="mn-nav-desktop">
           {primaryLinks.map((link) => (
@@ -107,7 +149,8 @@ export default function Nav() {
                   ref={index === 0 ? firstMenuLinkRef : undefined}
                 >
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  {link.label}
+                  <strong>{link.label}</strong>
+                  {isActive(link.href) && <em>Current</em>}
                 </Link>
               ))}
             </nav>

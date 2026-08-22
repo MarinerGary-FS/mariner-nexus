@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/foundation/Container";
 import { Grid } from "@/components/foundation/Grid";
 import { SectionLink } from "@/components/corporate/SectionLink";
+import { MarinerThread } from "@/components/foundation/MarinerThread";
 import { createMetadata } from "@/lib/seo";
 
 const disciplines = [
@@ -14,8 +15,8 @@ export const metadata: Metadata = createMetadata({ title: "Capabilities", descri
 
 export default function CapabilitiesPage() {
   return <div className="mn-corporate-page mn-environment-light">
-    <section className="mn-page-intro"><Container><Grid><div><div className="mn-signal-line" /><p className="mn-kicker">Capabilities</p><h1>Strategy. Experience. Systems.</h1></div><div><p>Mariner Nexus combines three disciplines to create digital experiences that strengthen how organizations present themselves, engage people, and operate.</p><p>A new website is not always the answer. The work begins by determining what needs to exist.</p></div></Grid></Container></section>
-    <section className="mn-capability-sequence"><Container>{disciplines.map((discipline) => <article key={discipline.name}><Grid><div className="mn-capability-label"><span>{discipline.number}</span><h2>{discipline.name}</h2></div><p className="mn-capability-statement">{discipline.statement}</p><ul>{discipline.items.map((item) => <li key={item}>{item}</li>)}</ul></Grid></article>)}</Container></section>
-    <section className="mn-corporate-close mn-environment-dark"><Container><Grid><p className="mn-kicker">The relationship</p><div><h2>The disciplines move together.</h2><p>Strategy informs Experience and Systems. Experience and Systems influence one another. The result is a digital operation designed as one connected response.</p><div><SectionLink href="/approach">Understand the approach</SectionLink><SectionLink href="/start">Bring us the objective</SectionLink></div></div></Grid></Container></section>
+    <section className="mn-page-intro" data-navigation-context="Experience"><Container><Grid><div><div className="mn-signal-line" /><p className="mn-kicker">Capabilities</p><h1>Strategy. Experience. Systems.</h1></div><div><p>Mariner Nexus combines three disciplines to create digital experiences that strengthen how organizations present themselves, engage people, and operate.</p><p>A new website is not always the answer. The work begins by determining what needs to exist.</p></div></Grid></Container></section>
+    <section className="mn-capability-sequence" data-navigation-context="Systems"><Container>{disciplines.map((discipline) => <article key={discipline.name}><Grid><div className="mn-capability-label"><span>{discipline.number}</span><h2>{discipline.name}</h2></div><p className="mn-capability-statement">{discipline.statement}</p><ul>{discipline.items.map((item) => <li key={item}>{item}</li>)}</ul></Grid></article>)}<MarinerThread label="Strategy, Experience, and Systems operate as one connected response" /></Container></section>
+    <section className="mn-corporate-close mn-environment-dark" data-navigation-context="Approach"><Container><Grid><p className="mn-kicker">The relationship</p><div><h2>The disciplines move together.</h2><p>Strategy informs Experience and Systems. Experience and Systems influence one another. The result is a digital operation designed as one connected response.</p><div><SectionLink href="/approach">Understand the approach</SectionLink><SectionLink href="/start">Bring us the objective</SectionLink></div></div></Grid></Container></section>
   </div>;
 }

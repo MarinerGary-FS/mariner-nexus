@@ -401,11 +401,44 @@ body[data-menu-open="true"] {
 }
 
 .mn-nav-bar {
+  position: relative;
   display: flex;
   min-height: 4.5rem;
   align-items: center;
   justify-content: space-between;
   gap: var(--mn-space-4);
+}
+
+.mn-nav-context {
+  display: grid;
+  min-width: 3.75rem;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--mn-ink-muted);
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mn-nav-context i {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  background: var(--mn-signal-settle);
+}
+
+.mn-nav-context i::after {
+  position: absolute;
+  inset: 0;
+  background: var(--mn-signal-active);
+  content: "";
+  transform: translateX(-68%);
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mn-brand {
@@ -447,23 +480,41 @@ body[data-menu-open="true"] {
 .mn-nav-desktop a::after,
 .mn-nav-start::after {
   position: absolute;
-  right: 0;
+  right: auto;
   bottom: 0.25rem;
-  left: 0;
+  left: 0.55rem;
+  width: calc(100% - 0.55rem);
   height: 1px;
   background: var(--mn-signal-active);
   content: "";
   opacity: 0;
-  transform: scaleX(0.4);
+  transform: scaleX(0.35);
+  transform-origin: left;
   transition: opacity var(--mn-transition), transform var(--mn-transition);
 }
 
 .mn-nav-desktop a:hover::after,
+.mn-nav-start:hover::after {
+  opacity: 0.72;
+  transform: scaleX(0.62);
+}
+
 .mn-nav-desktop a[aria-current="page"]::after,
-.mn-nav-start:hover::after,
 .mn-nav-start[aria-current="page"]::after {
   opacity: 1;
   transform: scaleX(1);
+}
+
+.mn-nav-desktop a[aria-current="page"]::before,
+.mn-nav-start[aria-current="page"]::before {
+  position: absolute;
+  bottom: 0.08rem;
+  left: 0;
+  width: 0.3rem;
+  height: 0.3rem;
+  border: 1px solid var(--mn-signal-active);
+  background: var(--mn-env-canvas);
+  content: "";
 }
 
 .mn-nav-actions {
@@ -552,8 +603,117 @@ body[data-menu-open="true"] {
   letter-spacing: 0.12em;
 }
 
+.mn-navigation-panel-links a strong {
+  font: inherit;
+}
+
+.mn-navigation-panel-links a em {
+  margin-left: auto;
+  color: var(--mn-ink-muted);
+  font-size: 0.6rem;
+  font-style: normal;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .mn-navigation-panel-links a[aria-current="page"] {
   color: var(--mn-signal-active);
+}
+
+.mn-navigation-panel-links a[aria-current="page"]::after {
+  width: 1.75rem;
+  height: 1px;
+  margin-left: 0.25rem;
+  background: var(--mn-signal-active);
+  content: "";
+}
+
+/* Phase 04C — Signal System and semantic Mariner Thread */
+
+.mn-mariner-thread {
+  --mn-thread-rest: var(--mn-line-strong);
+  --mn-thread-active: var(--mn-signal-active);
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: var(--mn-space-5);
+  color: var(--mn-thread-active);
+}
+
+.mn-thread-line {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--mn-thread-rest);
+}
+
+.mn-thread-line::after {
+  position: absolute;
+  inset: 0;
+  background: var(--mn-thread-active);
+  content: "";
+  transform: scaleX(0.22);
+  transform-origin: left;
+  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-navigation-context]:hover > .mn-container > .mn-mariner-thread .mn-thread-line::after,
+[data-navigation-context]:focus-within > .mn-container > .mn-mariner-thread .mn-thread-line::after,
+.mn-discipline-model:hover .mn-mariner-thread .mn-thread-line::after,
+.mn-discipline-model:focus-within .mn-mariner-thread .mn-thread-line::after {
+  transform: scaleX(0.68);
+}
+
+.mn-thread-node {
+  position: relative;
+  z-index: 1;
+  width: 0.42rem;
+  height: 0.42rem;
+  border: 1px solid var(--mn-thread-rest);
+  background: var(--mn-env-canvas);
+}
+
+.mn-thread-line + .mn-thread-node {
+  border-color: var(--mn-signal-rest);
+}
+
+.mn-thread-node:last-child {
+  border-color: var(--mn-thread-active);
+  background: var(--mn-thread-active);
+}
+
+.mn-environment-dark .mn-thread-node {
+  background: var(--mn-env-depth);
+}
+
+.mn-mariner-thread[data-thread-tone="project"] {
+  --mn-thread-active: var(--project-primary, var(--mn-signal-active));
+  --mn-thread-rest: var(--takeover-line, var(--mn-line-strong));
+}
+
+.mn-project-identity-boundary[data-takeover-state="active"] .mn-mariner-thread[data-thread-tone="project"] .mn-thread-line::after {
+  transform: scaleX(1);
+}
+
+.mn-work-portal > .mn-mariner-thread {
+  margin-block: 0 var(--mn-space-4);
+}
+
+.mn-project-opening .mn-mariner-thread {
+  margin-block: var(--mn-space-5);
+}
+
+.mn-capability-sequence > .mn-container > .mn-mariner-thread {
+  margin-block: var(--mn-space-6);
+}
+
+.mn-approach-sequence .mn-mariner-thread {
+  margin-block: 0 var(--mn-space-4);
 }
 
 .mn-menu-start {
@@ -1960,6 +2120,7 @@ body[data-menu-open="true"] {
 }
 
 @media (min-width: 48rem) {
+  .mn-nav-context { min-width: 5.5rem; }
   .mn-nav-bar { min-height: 5rem; }
   .mn-nav-start { display: inline-flex; }
   .mn-menu-label { display: inline; }
@@ -2031,6 +2192,7 @@ body[data-menu-open="true"] {
 }
 
 @media (min-width: 68.75rem) {
+  .mn-nav-context { position: absolute; top: 50%; left: 50%; width: 6.5rem; transform: translate(-50%, -50%); }
   .mn-nav-desktop { display: flex; }
   .mn-menu-button { display: none; }
   .mn-route-title { grid-column: 1 / span 8; }
@@ -2115,6 +2277,8 @@ body:has(.foundation-preview) > footer {
 }
 
 @media (max-width: 47.99rem) {
+  .mn-brand > span:last-child { display: none; }
+  .mn-nav-context { margin-inline: auto; }
   .mn-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
@@ -2233,6 +2397,13 @@ body:has(.foundation-preview) > footer {
   .mn-work-portal .mn-work-media,
   .mn-work-portal .mn-work-entry-meta,
   .mn-responsive-view {
+    transition: none;
+  }
+
+  .mn-nav-context i::after,
+  .mn-nav-desktop a::after,
+  .mn-nav-start::after,
+  .mn-thread-line::after {
     transition: none;
   }
 }
