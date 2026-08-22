@@ -2,7 +2,7 @@
 
 ## Status
 
-COMPLETED — awaiting review
+COMPLETE — approved 2026-08-21
 
 ## Phase objective
 
