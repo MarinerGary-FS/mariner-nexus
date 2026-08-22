@@ -2,6 +2,7 @@ import { Container } from "@/components/foundation/Container";
 import { Grid } from "@/components/foundation/Grid";
 import { SectionLink } from "@/components/corporate/SectionLink";
 import { MarinerThread } from "@/components/foundation/MarinerThread";
+import { SystemsDeconstruction } from "@/components/systems/SystemsDeconstruction";
 
 const recognitionStates = [
   ["01", "Starting something new?", "We help determine what your digital presence should become."],
@@ -82,6 +83,32 @@ export default function CorporateHome() {
             <SectionLink href="/capabilities">Explore capabilities</SectionLink>
           </div>
         </Container>
+      </section>
+
+      <section className="mn-home-systems" data-navigation-context="Systems">
+        <div className="mn-systems-descent">
+          <Container>
+            <Grid>
+              <div className="mn-systems-descent-heading">
+                <p className="mn-kicker">Experience → Systems</p>
+                <h2>What happens after the interface?</h2>
+              </div>
+              <p>A polished interaction creates attention. A connected operation determines what that attention can become.</p>
+            </Grid>
+          </Container>
+        </div>
+        <div className="mn-systems-depth mn-environment-dark">
+          <Container>
+            <SystemsDeconstruction />
+            <div className="mn-systems-signature">
+              <p>The experience shouldn’t stop when someone clicks Submit.</p>
+            </div>
+            <div className="mn-systems-continuation">
+              <p>This representative workflow reflects the approved Mariner Nexus delivery scope. The public inquiry system itself remains a separately gated implementation.</p>
+              <SectionLink href="/capabilities">Explore connected systems</SectionLink>
+            </div>
+          </Container>
+        </div>
       </section>
 
       <section className="mn-home-confidence" data-navigation-context="Approach">
