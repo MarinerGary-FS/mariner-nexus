@@ -2,7 +2,7 @@
 
 ## Status
 
-ACTIVE — Phase 01A approved; Phase 01B authorized
+ACTIVE — Phase 01B complete; awaiting review before Phase 01C
 
 ## Governing rule
 
@@ -117,7 +117,7 @@ Create `docs/exec-plans/active/phase-01a-completion-report.md` using the install
 
 ## Status
 
-APPROVED FOR EXECUTION
+COMPLETED — approved after responsive refinement 2026-08-21
 
 ## Phase objective
 

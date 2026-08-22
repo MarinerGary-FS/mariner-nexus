@@ -1,14 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/navigation/Nav";
 import Footer from "@/components/footer/Footer";
 import { absoluteUrl, defaultOgImage, siteName, siteUrl } from "@/lib/seo";
 
-const inter = Inter({
+const geistSans = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-geist-sans",
   display: "swap",
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-source-serif",
+  weight: ["400", "600"],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -129,7 +137,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${geistSans.variable} ${sourceSerif.variable}`}>
       <body className="bg-black text-white antialiased">
         <script
           type="application/ld+json"

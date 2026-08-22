@@ -59,6 +59,8 @@ Narrative behavior:
 
 Generous architectural whitespace.
 
+> Whitespace is an active design element—not unused space.
+
 Density changes intentionally across the journey and follows the musical experience curve.
 
 ## Materiality
