@@ -190,3 +190,7 @@ This file prevents settled architecture and strategy from being repeatedly reope
 **Public route safety:** Remove the obsolete `/foundation-preview` implementation and unauthorized legacy case-study detail implementations before launch. Preserve the five approved direct permanent redirects, including `/case-studies/undugu` → `/work/undugu`; all other unauthorized project details return 404.
 **Security headers:** Enforce nosniff, frame denial, strict-origin referrer handling, camera/microphone/geolocation denial, and HSTS. Defer CSP enforcement until a Report-Only policy can be observed against the release candidate and Vercel services without launch risk.
 **Release:** A Vercel Preview tied to the final release commit is the release candidate. Production promotion and DNS changes require explicit final approval; rollback preserves the inquiry infrastructure.
+
+## DEC-036 — Contextual-navigation collision correction
+**Decision:** At desktop widths, assign Brand, Context, Primary Navigation, and Actions independent grid tracks. Context owns a fixed 6.5rem secondary region before primary navigation rather than absolute viewport centering. Tablet/mobile retain the existing three-region composition.
+**Constraint:** Context changes may update text and signal state but may not change track geometry, overlap primary labels, add a header row, or shift the primary navigation. The measured context-to-navigation separation is 24px at the 1440, 1280, and 1100 launch widths.

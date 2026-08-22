@@ -2,7 +2,7 @@
 
 ## Status
 
-Release candidate ready for final review. Phase 07 is fully implemented, live verified, independently documented, archived, pushed, and synchronized. Phase 08 release commit `be491b1829aa5d2671e68ad6ec59edad6fd0356f` produced READY Preview deployment `dpl_CC8XihfCejMJQmtDU2VRaiyd9LeN`. Production has not been promoted.
+Final correction validated locally; corrected release candidate pending deployment. The original Phase 08 candidate is superseded. Production has not been promoted.
 
 ## Objective
 

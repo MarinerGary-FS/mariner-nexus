@@ -2,9 +2,15 @@
 
 ## Status and recommendation
 
-**GO WITH DOCUMENTED NON-BLOCKER.** The repository-controlled launch gates pass. Production has not been launched or promoted.
+**GO WITH DOCUMENTED NON-BLOCKER.** The repository-controlled launch gates pass, the contextual-navigation collision is corrected, and native Safari passes. Production has not been launched or promoted.
 
-The non-blocker is environmental: current Chrome and Safari are installed on the QA Mac, while Firefox and Edge are not installed. Chromium received full interactive and exact-width review; Safari received platform/version and standards-risk review, but the complete native four-engine pass cannot be reproduced from this workspace. No compatibility-specific defect was found. A final human Safari/Firefox/Edge smoke pass on the release candidate remains recommended before promotion.
+The remaining non-blocker is environmental: Firefox and Edge are not installed on the QA Mac. Chromium received full interactive and exact-width review; native Safari 26.5 passed the required homepage, navigation/context, Work, Undugu, Systems, Nexus, Start, focus, reduced-motion, overflow, and semantic/runtime smoke checks. No compatibility-specific defect was found.
+
+## Final launch-blocking correction
+
+The former desktop context label used absolute centering and could occupy the same visual region as Work/Approach. The header now uses a dedicated four-column desktop grid: brand, fixed-width context, primary navigation, and actions. Context remains secondary, retains a stable 6.5rem region, and has a measured 24px minimum separation from primary navigation at 1440, 1280, and 1100. Tablet/mobile retain the existing centered three-region composition.
+
+Measured browser geometry passed at 1440, 1280, 1100, 1024, and 390 with zero horizontal overflow. Corporate, Work, Approach, and mobile Corporate states were verified; context changes do not alter the grid tracks or shift primary navigation. Rapid Nexus/state interaction and navigation remained free of stale state, collision, warning, or error.
 
 ## Defects discovered and fixed
 
@@ -51,11 +57,11 @@ Phase 07’s 2026-08-22 live verification remains authoritative: isolated Previe
 
 `docs/exec-plans/review-assets/phase-08/` contains final full-page desktop/mobile captures for Home, Work, Undugu, Capabilities, Approach, Company, and Start; a tablet Home capture; and the mobile menu. Systems and Nexus appear in the homepage captures. The unchanged controlled Start success state remains covered by Phase 07 evidence.
 
-Release candidate: commit `be491b1829aa5d2671e68ad6ec59edad6fd0356f`, deployment `dpl_CC8XihfCejMJQmtDU2VRaiyd9LeN`, READY at `https://mariner-nexus-eouwfkaom-garymariner-7562s-projects.vercel.app`. Vercel Deployment Protection is active; the authenticated fetch confirmed the release homepage and deployment identity. The complete route/status matrix was verified against the identical local production build because isolated protected-path fetches require a retained SSO session.
+Previous release candidate `be491b1` / `dpl_CC8XihfCejMJQmtDU2VRaiyd9LeN` is superseded. Corrected release candidate: **pending final pushed commit deployment**.
 
 ## Deferred post-launch items
 
-- Run a final native Firefox/Edge and hands-on Safari smoke pass on the release candidate when those browser environments are available.
+- Run a final native Firefox/Edge smoke pass when those browser environments are available.
 - Evaluate CSP in Report-Only mode using observed Vercel, font, image, and API traffic before enforcement.
 - Compare real-user LCP/INP/CLS in Vercel Speed Insights after meaningful traffic exists.
 - Remove additional unreachable legacy components/assets only in a separately approved repository-hygiene phase; they do not enter current canonical route bundles.
