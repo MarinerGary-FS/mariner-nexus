@@ -2,18 +2,19 @@
 
 import type { CSSProperties, ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
-import type { ProjectVisualIdentity } from "@/content/projects/types";
+import type { ProjectExperienceProfile, ProjectVisualIdentity } from "@/content/projects/types";
 
-type TakeoverState = "mariner" | "entering" | "active" | "releasing";
+type TakeoverState = "mariner" | "introduction" | "influence" | "takeover" | "release" | "return";
 
 type ProjectIdentityBoundaryProps = {
   children: ReactNode;
+  experience: ProjectExperienceProfile;
   identity: ProjectVisualIdentity;
   project: string;
   variant: "index" | "record";
 };
 
-export function ProjectIdentityBoundary({ children, identity, project, variant }: ProjectIdentityBoundaryProps) {
+export function ProjectIdentityBoundary({ children, experience, identity, project, variant }: ProjectIdentityBoundaryProps) {
   const boundaryRef = useRef<HTMLDivElement>(null);
   const [state, setState] = useState<TakeoverState>("mariner");
 
@@ -30,10 +31,15 @@ export function ProjectIdentityBoundary({ children, identity, project, variant }
 
       const rect = boundary.getBoundingClientRect();
       const viewport = window.innerHeight;
-      let nextState: TakeoverState = "active";
+      const travel = Math.max(rect.height + viewport, 1);
+      const progress = Math.min(1, Math.max(0, (viewport - rect.top) / travel));
+      let nextState: TakeoverState = "takeover";
 
-      if (rect.top > viewport * 0.58) nextState = "entering";
-      else if (rect.bottom < viewport * 0.42) nextState = "releasing";
+      if (progress < 0.12) nextState = "introduction";
+      else if (progress < 0.28) nextState = "influence";
+      else if (progress < 0.68) nextState = "takeover";
+      else if (progress < 0.76) nextState = "release";
+      else nextState = "return";
 
       setState((current) => current === nextState ? current : nextState);
     };
@@ -69,7 +75,13 @@ export function ProjectIdentityBoundary({ children, identity, project, variant }
     "--project-text-muted": identity.textMuted,
     "--project-signal": identity.signal,
     "--project-border": identity.border,
+    "--project-display-weight": experience.displayWeight,
+    "--project-display-tracking": experience.displayTracking,
+    "--project-section-spacing": experience.sectionSpacing,
+    "--project-surface-radius": experience.surfaceRadius,
+    "--project-transition-duration": experience.transitionDuration,
+    "--project-takeover-intensity": experience.takeoverIntensity,
   } as CSSProperties;
 
-  return <div className="mn-project-identity-boundary" data-project={project} data-takeover-state={state} data-takeover-variant={variant} ref={boundaryRef} style={style}>{children}</div>;
+  return <div className="mn-project-identity-boundary" data-experience-profile={experience.id} data-image-scale={experience.imageScale} data-project={project} data-takeover-state={state} data-takeover-variant={variant} ref={boundaryRef} style={style}>{children}</div>;
 }

@@ -29,8 +29,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return <ProjectFrame identity={project.visualIdentity}>
     <div className="mn-project-context" data-navigation-context="Work"><Container><Link href="/work">← Return to Work</Link><p>Mariner Nexus / Transformation Record 01</p></Container></div>
-    <ProjectIdentityBoundary identity={project.visualIdentity} project={project.slug} variant="record"><article>
-      <header className="mn-project-opening" data-navigation-context="Work"><Container><div className="mn-project-opening-meta"><p>{project.clientName}</p><h1>{project.shortTransformation}</h1></div><MarinerThread label={`The ${project.clientName} identity leads into finished project proof`} nodes={2} tone="project" /><figure><Image alt={project.media.desktop.alt} height={project.media.desktop.height} priority sizes="(max-width: 768px) calc(100vw - 40px), calc(100vw - 116px)" src={project.media.desktop.src} width={project.media.desktop.width} /><figcaption>The finished Undugu digital experience.</figcaption></figure></Container></header>
+    <ProjectIdentityBoundary experience={project.experienceProfile} identity={project.visualIdentity} project={project.slug} variant="record"><article>
+      <header className="mn-project-opening" data-navigation-context="Work"><Container><div className="mn-project-opening-meta"><p>{project.clientName}</p><h1>{project.shortTransformation}</h1></div><MarinerThread label={`The ${project.clientName} identity leads into finished project proof`} nodes={2} tone="project" /><figure><Image alt={project.media.desktop.alt} height={project.media.desktop.height} loading="eager" priority sizes="(max-width: 768px) calc(100vw - 40px), calc(100vw - 116px)" src={project.media.desktop.src} width={project.media.desktop.width} /><figcaption>The finished Undugu digital experience.</figcaption></figure></Container></header>
 
       <section className="mn-project-client"><Container><Grid><p className="mn-kicker">Client</p><div><h2>{project.clientName}</h2><p>{project.client}</p></div></Grid></Container></section>
 

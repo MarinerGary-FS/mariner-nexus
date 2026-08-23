@@ -38,6 +38,18 @@ export const unduguProject: ProjectRecord = {
     signal: "#765392",
     border: "#c8b8d0",
   },
+  experienceProfile: {
+    id: "undugu-community-expression",
+    displayFamily: "serif",
+    displayWeight: 600,
+    displayTracking: "-0.035em",
+    sectionSpacing: "clamp(6rem, 12vw, 12rem)",
+    surfaceRadius: "clamp(1.5rem, 4vw, 4rem)",
+    ctaShape: "pill",
+    imageScale: "dominant",
+    transitionDuration: "700ms",
+    takeoverIntensity: 1,
+  },
   media: {
     card: { src: "/case-studies/undugu/card.webp", alt: "Undugu website opening showing its identity, brotherhood gathering, and movement message.", width: 1200, height: 750 },
     desktop: { src: "/case-studies/undugu/live-desktop.webp", alt: "Undugu desktop website experience with movement navigation, a brotherhood gathering, and the message You have been carrying too much alone.", width: 1600, height: 1000 },

@@ -2938,6 +2938,294 @@ body[data-menu-open="true"] {
   gap: 0.4rem;
 }
 
+/* EA-01 — Client Takeover Engine: Undugu community expression */
+
+[data-experience-profile="undugu-community-expression"] {
+  --takeover-surface: var(--project-surface);
+  --takeover-line: var(--project-border);
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+[data-experience-profile="undugu-community-expression"]::before {
+  opacity: 1;
+  transition-duration: var(--project-transition-duration);
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="introduction"] {
+  --takeover-surface: color-mix(in srgb, var(--project-surface) 44%, var(--mn-env-canvas));
+  --takeover-line: color-mix(in srgb, var(--project-border) 48%, var(--mn-line-strong));
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="influence"] {
+  --takeover-surface: color-mix(in srgb, var(--project-surface) 76%, var(--mn-env-canvas));
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="release"] {
+  --takeover-surface: color-mix(in srgb, var(--project-surface) 62%, var(--mn-env-canvas));
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="return"] {
+  --takeover-surface: color-mix(in srgb, var(--project-surface) 24%, var(--mn-env-canvas));
+  --takeover-line: color-mix(in srgb, var(--project-border) 35%, var(--mn-line-strong));
+}
+
+[data-experience-profile="undugu-community-expression"] :is(h1, h2, blockquote) {
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-weight: var(--project-display-weight);
+  letter-spacing: var(--project-display-tracking);
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-variant="index"] {
+  padding-block: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-variant="index"]::after {
+  inset: clamp(2rem, 5vw, 5rem) auto clamp(2rem, 5vw, 5rem) 0;
+  width: 0.35rem;
+  background: var(--project-primary);
+  border-radius: 99rem;
+  opacity: 0.35;
+  transform: scaleY(0.5);
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="influence"][data-takeover-variant="index"]::after,
+[data-experience-profile="undugu-community-expression"][data-takeover-state="takeover"][data-takeover-variant="index"]::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-work-entry {
+  padding: clamp(1.25rem, 3vw, 2.75rem);
+  overflow: hidden;
+  color: var(--project-text);
+  background: var(--project-surface-strong);
+  border: 0;
+  border-radius: var(--project-surface-radius);
+  box-shadow: 0 2.5rem 7rem color-mix(in srgb, var(--project-secondary) 12%, transparent);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-thread {
+  color: var(--project-primary);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-work-media {
+  overflow: hidden;
+  background: var(--project-secondary);
+  border-radius: calc(var(--project-surface-radius) * 0.72);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-work-media img {
+  min-height: clamp(24rem, 55vw, 48rem);
+  object-fit: cover;
+  transform: scale(1.025);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-work-entry-meta {
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  align-items: end;
+  padding: clamp(2rem, 5vw, 5rem) clamp(0.25rem, 1vw, 1rem) clamp(1rem, 2vw, 2rem);
+  border: 0;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-work-entry-meta h2 {
+  color: var(--project-primary);
+  font-size: clamp(4rem, 10vw, 9rem);
+  line-height: 0.78;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-work-entry-meta > div:last-child > p {
+  color: var(--project-text-muted);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-work-entry-meta a,
+[data-experience-profile="undugu-community-expression"] .mn-external-project-link {
+  min-height: 3.25rem;
+  padding-inline: 1.4rem;
+  color: white;
+  background: var(--project-primary);
+  border: 0;
+  border-radius: 99rem;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening,
+[data-experience-profile="undugu-community-expression"] .mn-project-client,
+[data-experience-profile="undugu-community-expression"] .mn-project-context-story,
+[data-experience-profile="undugu-community-expression"] .mn-project-strategy,
+[data-experience-profile="undugu-community-expression"] .mn-project-experience,
+[data-experience-profile="undugu-community-expression"] .mn-project-systems,
+[data-experience-profile="undugu-community-expression"] .mn-project-transformation,
+[data-experience-profile="undugu-community-expression"] .mn-project-live {
+  padding-block: var(--project-section-spacing);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening {
+  overflow: hidden;
+  color: white;
+  background: var(--project-secondary);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening-meta {
+  grid-template-columns: 0.35fr 1.65fr;
+  align-items: start;
+  margin-bottom: clamp(3rem, 7vw, 7rem);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening-meta > p {
+  padding-top: 0.8rem;
+  color: var(--project-surface-strong);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening h1 {
+  max-width: 12ch;
+  font-size: clamp(3.4rem, 8vw, 8.5rem);
+  line-height: 0.84;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening figure {
+  margin-inline: calc(var(--mn-gutter) * -0.5);
+  background: var(--project-primary);
+  border-radius: var(--project-surface-radius);
+  box-shadow: 0 3rem 8rem rgb(0 0 0 / 28%);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening figure img {
+  min-height: clamp(28rem, 58vw, 54rem);
+  object-fit: cover;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-opening figcaption {
+  padding: 0.8rem 1.25rem 1rem;
+  color: color-mix(in srgb, white 72%, transparent);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-client {
+  color: var(--project-text);
+  background: var(--project-surface-strong);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-client .mn-grid > div {
+  grid-column: 3 / span 6;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-client h2 {
+  color: var(--project-primary);
+  font-size: clamp(5rem, 13vw, 12rem);
+  line-height: 0.75;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-context-story {
+  background: #fffdf7;
+  border: 0;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-context-story article:first-child {
+  grid-column: 1 / span 5;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-context-story article:last-child {
+  grid-column: 5 / span 4;
+  margin-top: clamp(8rem, 18vw, 16rem);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-strategy {
+  color: var(--project-text);
+  background: var(--project-surface);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-strategy .mn-grid > div {
+  grid-column: 1 / span 3;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-strategy ol {
+  grid-column: 4 / span 5;
+  margin-top: 0;
+  border: 0;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-strategy li {
+  margin-bottom: 0.75rem;
+  padding: 1.5rem;
+  background: white;
+  border: 0;
+  border-radius: 1.25rem;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-experience {
+  color: var(--project-text);
+  background: var(--project-surface-strong);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-responsive-stage {
+  padding-inline: clamp(1rem, 4vw, 4rem);
+  background: var(--project-secondary);
+  border-radius: var(--project-surface-radius);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-responsive-view img {
+  border-radius: 0.5rem;
+  box-shadow: 0 2rem 6rem rgb(0 0 0 / 24%);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-systems {
+  color: var(--project-surface);
+  background: var(--project-secondary);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-systems li span,
+[data-experience-profile="undugu-community-expression"] .mn-project-systems .mn-kicker {
+  color: var(--project-surface-strong);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-transformation {
+  color: white;
+  background: var(--project-primary);
+  text-align: center;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-transformation blockquote {
+  max-width: 16ch;
+  margin-inline: auto;
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  line-height: 0.86;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-transformation > .mn-container > p:last-child {
+  color: color-mix(in srgb, white 70%, transparent);
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-live {
+  color: var(--project-text);
+  background: #fffdf7;
+  border: 0;
+  text-align: center;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-live h2 {
+  margin-inline: auto;
+}
+
+[data-experience-profile="undugu-community-expression"] .mn-project-live > .mn-container > p:last-child {
+  margin-inline: auto;
+}
+
+[data-experience-profile="undugu-community-expression"] :is(.mn-project-opening figure, .mn-responsive-stage, .mn-project-strategy li, .mn-external-project-link) {
+  transition: transform var(--project-transition-duration) cubic-bezier(0.16, 1, 0.3, 1), box-shadow var(--project-transition-duration) ease;
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="introduction"] :is(.mn-project-opening figure, .mn-work-media) {
+  transform: scale(0.985);
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="influence"] :is(.mn-project-opening figure, .mn-work-media),
+[data-experience-profile="undugu-community-expression"][data-takeover-state="takeover"] :is(.mn-project-opening figure, .mn-work-media) {
+  transform: scale(1);
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-state="release"] .mn-project-live,
+[data-experience-profile="undugu-community-expression"][data-takeover-state="return"] .mn-project-live {
+  background: color-mix(in srgb, #fffdf7 70%, var(--mn-env-canvas));
+}
+
 @media (min-width: 48rem) {
   .mn-nav-context { min-width: 5.5rem; }
   .mn-nav-bar { min-height: 5rem; }
@@ -3546,3 +3834,96 @@ body:has(.foundation-preview) > footer {
 }
 .mn-inquiry-section .mn-guided-inquiry .mn-situation-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
 .mn-inquiry-section .mn-guided-inquiry [aria-invalid="true"] { border-color: var(--mn-error, #9e3328); }
+
+@media (max-width: 63.99rem) {
+  [data-experience-profile="undugu-community-expression"] .mn-work-entry-meta {
+    grid-template-columns: 1fr;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-opening-meta {
+    grid-template-columns: 1fr;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-client .mn-grid > div,
+  [data-experience-profile="undugu-community-expression"] .mn-project-context-story article:first-child,
+  [data-experience-profile="undugu-community-expression"] .mn-project-context-story article:last-child,
+  [data-experience-profile="undugu-community-expression"] .mn-project-strategy .mn-grid > div,
+  [data-experience-profile="undugu-community-expression"] .mn-project-strategy ol {
+    grid-column: 1 / -1;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-context-story article:last-child {
+    margin-top: clamp(5rem, 12vw, 9rem);
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-strategy ol {
+    margin-top: var(--mn-space-6);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  [data-experience-profile="undugu-community-expression"] {
+    --project-section-spacing: clamp(4.75rem, 20vw, 7rem) !important;
+    --project-surface-radius: 1.5rem !important;
+  }
+
+  [data-experience-profile="undugu-community-expression"][data-takeover-variant="index"] {
+    margin-inline: calc(var(--mn-gutter) * -0.55);
+    padding-inline: calc(var(--mn-gutter) * 0.55);
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-work-entry {
+    padding: 0.75rem;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-work-media img {
+    min-height: 27rem;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-work-entry-meta {
+    padding: 2.5rem 0.65rem 1.25rem;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-work-entry-meta h2 {
+    font-size: clamp(4rem, 24vw, 6rem);
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-opening h1 {
+    font-size: clamp(2.8rem, 12vw, 4.4rem);
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-opening figure {
+    margin-inline: calc(var(--mn-gutter) * -0.35);
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-opening figure img {
+    min-height: 30rem;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-client h2 {
+    font-size: clamp(4.5rem, 28vw, 7rem);
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-responsive-stage {
+    min-height: 32rem;
+    padding-inline: 0.75rem;
+  }
+
+  [data-experience-profile="undugu-community-expression"] .mn-project-transformation blockquote {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-experience-profile="undugu-community-expression"],
+  [data-experience-profile="undugu-community-expression"]::before,
+  [data-experience-profile="undugu-community-expression"]::after,
+  [data-experience-profile="undugu-community-expression"] * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-experience-profile="undugu-community-expression"] :is(.mn-project-opening figure, .mn-work-media) {
+    transform: none !important;
+  }
+}

@@ -12,6 +12,19 @@ export type ProjectVisualIdentity = {
   border: string;
 };
 
+export type ProjectExperienceProfile = {
+  id: string;
+  displayFamily: "serif" | "sans";
+  displayWeight: number;
+  displayTracking: string;
+  sectionSpacing: string;
+  surfaceRadius: string;
+  ctaShape: "pill" | "square";
+  imageScale: "contained" | "dominant";
+  transitionDuration: string;
+  takeoverIntensity: number;
+};
+
 export type ProjectMedia = {
   src: string;
   alt: string;
@@ -39,6 +52,7 @@ export type ProjectRecord = {
   transformation: string;
   liveUrl: string;
   visualIdentity: ProjectVisualIdentity;
+  experienceProfile: ProjectExperienceProfile;
   media: {
     card: ProjectMedia;
     desktop: ProjectMedia;
