@@ -29,7 +29,7 @@ export const awakeningProject: ProjectRecord = {
   transformation: "Awakening evolved from presenting information about an immersive gathering to creating a digital environment intended to let prospective participants begin experiencing its possibility before they arrive.",
   liveUrl: "https://www.awakening.fyi/",
   visualIdentity: {
-    primary: "#5a3a55", secondary: "#2e1d31", surface: "#faf7f5", surfaceStrong: "#f1e7ed", text: "#2e1d31", textMuted: "#6e5969", signal: "#9a6b91", border: "#d8c5d1",
+    primary: "#5a3a55", secondary: "#2e1d31", surface: "#faf7f5", surfaceStrong: "#f1e7ed", text: "#2e1d31", textMuted: "#6e5969", signal: "#84577d", border: "#d8c5d1",
   },
   experienceProfile: {
     id: "awakening-atmospheric-invitation", displayFamily: "serif", displayWeight: 430, displayTracking: "-0.035em", sectionSpacing: "clamp(7rem, 14vw, 14rem)", surfaceRadius: "clamp(1.5rem, 4vw, 4rem)", ctaShape: "pill", imageScale: "dominant", transitionDuration: "1000ms", takeoverIntensity: 1,

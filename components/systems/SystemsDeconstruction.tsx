@@ -43,7 +43,7 @@ export function SystemsDeconstruction() {
           {stages.map((stage, index) => (
             <li data-active={activeIndex === index} data-complete={index < activeIndex} key={stage.name}>
               <button
-                aria-label={`${stage.name}: ${stage.entity}. ${stage.purpose}`}
+                aria-describedby={`mn-systems-stage-${index}-purpose`}
                 aria-pressed={activeIndex === index}
                 onClick={() => setActiveIndex(index)}
                 type="button"
@@ -52,7 +52,7 @@ export function SystemsDeconstruction() {
                 <strong>{stage.entity}</strong>
                 <em>{stage.name}</em>
               </button>
-              <p>{stage.purpose}</p>
+              <p id={`mn-systems-stage-${index}-purpose`}>{stage.purpose}</p>
             </li>
           ))}
         </ol>

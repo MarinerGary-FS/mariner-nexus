@@ -3803,6 +3803,29 @@ body[data-menu-open="true"] {
   background: var(--project-surface);
 }
 
+[data-experience-profile="serene-private-structure"] .mn-project-opening-meta > p,
+[data-experience-profile="gary-individual-command-surface"] .mn-project-opening-meta > p {
+  color: var(--project-secondary);
+}
+
+[data-experience-profile="serene-private-structure"] .mn-project-opening figcaption,
+[data-experience-profile="sovereign-structured-authority"] .mn-project-opening figcaption,
+[data-experience-profile="gary-individual-command-surface"] .mn-project-opening figcaption {
+  color: var(--project-text-muted);
+}
+
+[data-experience-profile="serene-private-structure"] :is(.mn-project-client, .mn-project-journey, .mn-project-live) .mn-kicker,
+[data-experience-profile="sovereign-structured-authority"] :is(.mn-project-client, .mn-project-journey, .mn-project-live) .mn-kicker,
+[data-experience-profile="gary-individual-command-surface"] :is(.mn-project-client, .mn-project-journey, .mn-project-live) .mn-kicker {
+  color: var(--project-signal);
+}
+
+[data-experience-profile="serene-private-structure"] .mn-project-strategy li span,
+[data-experience-profile="sovereign-structured-authority"] .mn-project-strategy li span,
+[data-experience-profile="gary-individual-command-surface"] .mn-project-strategy li span {
+  color: var(--project-secondary);
+}
+
 [data-experience-profile="serene-private-structure"] .mn-project-authentic-fragment {
   max-width: 62rem;
   margin-inline: auto;
@@ -3816,6 +3839,22 @@ body[data-menu-open="true"] {
 [data-experience-profile="sovereign-structured-authority"] :is(.mn-project-opening, .mn-project-journey, .mn-project-experience, .mn-project-live) {
   color: var(--project-text);
   background: var(--project-surface);
+}
+
+[data-experience-profile="serene-private-structure"] .mn-project-client .mn-grid > div > p,
+[data-experience-profile="sovereign-structured-authority"] .mn-project-client .mn-grid > div > p,
+[data-experience-profile="gary-individual-command-surface"] .mn-project-client .mn-grid > div > p {
+  color: var(--project-text-muted);
+}
+
+[data-experience-profile="sovereign-structured-authority"] .mn-project-client,
+[data-experience-profile="gary-individual-command-surface"] .mn-project-client {
+  color: var(--project-text);
+  background: var(--project-surface);
+}
+
+[data-experience-profile="gary-individual-command-surface"] .mn-external-project-link {
+  color: var(--project-secondary);
 }
 
 [data-experience-profile="sovereign-structured-authority"] :is(.mn-project-opening h1, .mn-project-client h2, .mn-project-context-story h2, .mn-project-strategy h2, .mn-project-section-heading h2, .mn-project-transformation blockquote) {

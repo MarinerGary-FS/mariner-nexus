@@ -104,7 +104,7 @@ export default function Nav() {
     <header className="mn-site-header">
       <a className="mn-skip-link" href="#main-content">Skip to content</a>
       <div className="mn-container mn-nav-bar">
-        <Link aria-label="Mariner Nexus home" className="mn-brand" href="/" onClick={() => closeMenu()}>
+        <Link aria-label="MN — Mariner Nexus home" className="mn-brand" href="/" onClick={() => closeMenu()}>
           <span aria-hidden="true" className="mn-brand-mark">MN</span>
           <span>Mariner Nexus</span>
         </Link>
