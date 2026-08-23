@@ -7,7 +7,7 @@ async function openTarget(url) {
   return fetch(`${cdp}/json/new?${encodeURIComponent(url)}`, { method: "PUT" }).then((response) => response.json());
 }
 
-async function audit(target, width) {
+async function audit(target, width, setupExpression) {
   const socket = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((resolve, reject) => { socket.onopen = resolve; socket.onerror = reject; });
   let id = 0;
@@ -29,6 +29,11 @@ async function audit(target, width) {
   await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 });
   await send("Page.navigate", { url: target.url });
   await new Promise((resolve) => setTimeout(resolve, 650));
+  await send("Runtime.evaluate", { expression: "document.fonts.ready", awaitPromise: true });
+  if (setupExpression) {
+    await send("Runtime.evaluate", { expression: setupExpression });
+    await new Promise((resolve) => setTimeout(resolve, 800));
+  }
   const expression = `(() => {
     const selector = 'h1,h2,h3,p,a,button,label,legend,li,dt,dd,.mn-kicker';
     const elements = [...document.querySelectorAll(selector)].filter((element) => {
@@ -101,6 +106,27 @@ for (const route of routes) {
     const result = await audit(target, width);
     results.push({ route, width, ...result });
   }
+}
+
+const performanceStates = [
+  { width: 1440, state: "wide" },
+  { width: 1440, state: "compressing" },
+  { width: 1440, state: "intermediate" },
+  { width: 1440, state: "reorganizing" },
+  { width: 1440, state: "narrow" },
+  { width: 1440, state: "settled" },
+  { width: 1024, state: "wide" },
+  { width: 1024, state: "intermediate" },
+  { width: 1024, state: "settled" },
+  { width: 390, state: "wide" },
+  { width: 390, state: "intermediate" },
+  { width: 390, state: "settled" },
+];
+
+for (const { width, state } of performanceStates) {
+  const target = await openTarget(`${origin}/work/undugu`);
+  const result = await audit(target, width, `document.querySelector('.mn-responsive-performance').dataset.performanceState = '${state}'`);
+  results.push({ route: "/work/undugu", width, state: `ea-03:${state}`, ...result });
 }
 
 const failures = results.filter((result) => result.overflow > 1 || result.clipped.length || result.collisions.length);

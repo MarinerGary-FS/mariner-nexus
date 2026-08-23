@@ -181,6 +181,8 @@ No production route may allow text-to-text overlap, viewport or container clippi
 
 Major phase QA must combine responsive visual review with lightweight bounding-box checks for critical text and adjacent content. Captures must show enough of the section above, body, and transition below to expose boundary defects. Typography/content integrity is an explicit PASS/FAIL gate in Chromium and representative Safari review; absence of a horizontal scrollbar is not sufficient evidence.
 
+Responsive QA must validate both settled breakpoints and transitional compositions whenever an experience changes layout dynamically. No horizontal overflow is necessary but not sufficient: every visible word and control must remain readable throughout the transformation.
+
 - semantic HTML,
 - keyboard,
 - focus,

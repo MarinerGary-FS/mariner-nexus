@@ -28,7 +28,7 @@ The full matrix exposed additional project-scoped defects at narrow widths: the 
 
 ## Automated rendered-layout audit
 
-`scripts/content-integrity-audit.mjs` uses Chrome DevTools Protocol directly and adds no package. It visits all nine canonical routes at 1600, 1440, 1366, 1280, 1100, 1024, 834, 768, 430, 390, 375, 360, and 320 pixels: 117 route/width combinations.
+`scripts/content-integrity-audit.mjs` uses Chrome DevTools Protocol directly and adds no package. It visits all nine canonical routes at 1600, 1440, 1366, 1280, 1100, 1024, 834, 768, 430, 390, 375, 360, and 320 pixels: the canonical 117 route/width baseline. EA-03 extends the same suite with 12 Wide through Settled transformation-state compositions, bringing the current total to 129 checks.
 
 For visible headings, paragraphs, labels, list terms, links, buttons, and kickers it records rendered rectangles and checks:
 
@@ -107,7 +107,7 @@ npm test                              12/12
 npm run build                         19 pages
 npm audit --audit-level=high          0 vulnerabilities
 node scripts/content-integrity-audit.mjs
-                                       117 audited / 0 failures
+                                       129 audited / 0 failures
 git diff --check
 ```
 
@@ -115,4 +115,4 @@ Chromium produced no page console/runtime errors during the visual review. All 1
 
 ## Deployment boundary
 
-No Production deployment is authorized. This correction and EA-02 remain local pending explicit approval. EA-03 has not begun.
+No Production deployment was part of this correction. EA-02 and the integrity correction were approved and committed independently; EA-03 subsequently extended this canonical audit to 129 cases.
