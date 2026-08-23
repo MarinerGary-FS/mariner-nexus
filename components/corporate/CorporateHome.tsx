@@ -108,8 +108,8 @@ export default function CorporateHome() {
               <p>The experience shouldn’t stop when someone clicks Submit.</p>
             </div>
             <div className="mn-systems-continuation">
-              <p>This representative workflow reflects the approved Mariner Nexus delivery scope. The public inquiry system itself remains a separately gated implementation.</p>
-              <SectionLink href="/capabilities">Explore connected systems</SectionLink>
+              <p>A connected flow solves one operational need. Change the objective, and the architecture must change with it.</p>
+              <span aria-hidden="true">Experience → System → Outcome</span>
             </div>
           </Container>
         </div>
@@ -124,14 +124,10 @@ export default function CorporateHome() {
             </div>
             <div className="mn-nexus-intro">
               <p>What are you trying to create?</p>
-              <p>Choose an objective and watch the same capabilities reorganize around a different problem.</p>
+              <p>Choose an objective. The same core intelligence will reorganize around a different human and organizational need.</p>
             </div>
           </Grid>
           <NexusExperience />
-          <div className="mn-nexus-release">
-            <p>There is no universal configuration.</p>
-            <p>The solution adapts to the organization—not the other way around.</p>
-          </div>
         </Container>
       </section>
 

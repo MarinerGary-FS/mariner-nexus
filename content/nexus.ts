@@ -63,7 +63,7 @@ export const nexusObjectives: NexusObjectiveDefinition[] = [
     label: "Build something new",
     invitation: "Give a new idea the right foundation.",
     summary: "A new initiative needs clarity before production: audience and strategy shape the experience, platform, and supporting systems.",
-    nodes: [node("objective", "New initiative", "Objective", 9, 18), node("audience", "Audience", "Context", 27, 12), node("strategy", "Strategy", "Core", 30, 47), node("content", "Content", "Expression", 49, 20), node("experience", "Experience", "Core", 53, 53), node("platform", "Platform", "Foundation", 72, 24), node("systems", "Systems", "Core", 76, 59), node("outcome", "Confident launch", "Outcome", 91, 82)],
+    nodes: [node("objective", "New initiative", "Objective", 7, 78), node("audience", "Audience", "Context", 20, 55), node("strategy", "Strategy", "Core", 35, 65), node("content", "Content", "Expression", 43, 38), node("experience", "Experience", "Core", 54, 53), node("platform", "Platform", "Foundation", 66, 27), node("systems", "Systems", "Core", 74, 42), node("outcome", "Confident launch", "Outcome", 88, 15)],
     connections: [
       { from: "objective", relation: "informs", to: "audience" }, { from: "audience", relation: "informs", to: "strategy" }, { from: "strategy", relation: "informs", to: "content" }, { from: "strategy", relation: "informs", to: "experience" },
       { from: "content", relation: "supports", to: "experience" }, { from: "experience", relation: "informs", to: "platform" }, { from: "platform", relation: "supports", to: "systems" }, { from: "experience", relation: "connects with", to: "systems" }, { from: "systems", relation: "enables", to: "outcome" },
@@ -76,7 +76,7 @@ export const nexusObjectives: NexusObjectiveDefinition[] = [
     label: "Transform what exists",
     invitation: "Evolve an experience that no longer reflects the organization.",
     summary: "Transformation begins with the existing state. Strategy determines what should be preserved, rethought, modernized, or connected.",
-    nodes: [node("objective", "Existing state", "Objective", 10, 62), node("audience", "Audience reality", "Context", 26, 82), node("strategy", "Audit + strategy", "Core", 29, 42), node("content", "Content structure", "Expression", 48, 77), node("experience", "Experience", "Core", 52, 35), node("platform", "Modern platform", "Foundation", 72, 18), node("systems", "Systems", "Core", 75, 55), node("outcome", "Transformation", "Outcome", 91, 38)],
+    nodes: [node("objective", "Existing state", "Objective", 7, 25), node("audience", "Audience reality", "Context", 12, 76), node("strategy", "Audit + strategy", "Core", 40, 43), node("content", "Content structure", "Expression", 27, 12), node("experience", "Experience", "Core", 57, 53), node("platform", "Modern platform", "Foundation", 29, 86), node("systems", "Systems", "Core", 74, 43), node("outcome", "Aligned organization", "Outcome", 88, 50)],
     connections: [
       { from: "objective", relation: "informs", to: "strategy" }, { from: "audience", relation: "informs", to: "strategy" }, { from: "strategy", relation: "informs", to: "content" }, { from: "strategy", relation: "informs", to: "experience" },
       { from: "content", relation: "supports", to: "experience" }, { from: "experience", relation: "informs", to: "platform" }, { from: "experience", relation: "connects with", to: "systems" }, { from: "platform", relation: "supports", to: "systems" }, { from: "systems", relation: "enables", to: "outcome" },
@@ -89,7 +89,7 @@ export const nexusObjectives: NexusObjectiveDefinition[] = [
     label: "Connect the experience",
     invitation: "Make interaction useful after someone acts.",
     summary: "The visible experience becomes more valuable when interaction, structured data, systems, and human operation form one deliberate path.",
-    nodes: [node("objective", "Disconnected action", "Objective", 9, 18), node("strategy", "Strategy", "Core", 27, 24), node("experience", "Experience", "Core", 35, 61), node("data", "Structured data", "Data", 55, 27, true), node("systems", "Systems", "Core", 60, 67), node("operation", "Human operation", "Operation", 79, 43, true), node("outcome", "Useful response", "Outcome", 92, 76)],
+    nodes: [node("objective", "Disconnected action", "Objective", 6, 22), node("strategy", "Strategy", "Core", 23, 28), node("experience", "Experience", "Core", 39, 39), node("data", "Structured data", "Data", 54, 39, true), node("systems", "Systems", "Core", 68, 55), node("operation", "Human operation", "Operation", 80, 55, true), node("outcome", "Responsive follow-through", "Outcome", 88, 76)],
     connections: [
       { from: "objective", relation: "informs", to: "strategy" }, { from: "strategy", relation: "informs", to: "experience" }, { from: "experience", relation: "feeds", to: "data" }, { from: "data", relation: "feeds", to: "systems" },
       { from: "systems", relation: "supports", to: "operation" }, { from: "operation", relation: "results in", to: "outcome" }, { from: "experience", relation: "connects with", to: "systems" },
@@ -102,7 +102,7 @@ export const nexusObjectives: NexusObjectiveDefinition[] = [
     label: "Explore what’s possible",
     invitation: "Discover an appropriate future-state architecture.",
     summary: "Possibility is grounded in the objective: strategy combines expressive experience, responsive foundations, useful visibility, and practical integration only where they add value.",
-    nodes: [node("objective", "Future state", "Objective", 10, 48), node("audience", "Audience", "Context", 24, 16), node("strategy", "Strategy", "Core", 31, 52), node("content", "Content", "Expression", 46, 16), node("experience", "Interactive experience", "Core", 51, 55), node("platform", "Responsive platform", "Foundation", 68, 19), node("data", "Data visibility", "Visibility", 70, 73, true), node("systems", "Practical systems", "Core", 83, 49), node("outcome", "New possibility", "Outcome", 94, 20)],
+    nodes: [node("objective", "Future state", "Objective", 50, 90), node("audience", "Audience", "Context", 7, 24), node("strategy", "Strategy", "Core", 35, 61), node("content", "Content", "Expression", 27, 10), node("experience", "Interactive experience", "Core", 50, 48), node("platform", "Responsive platform", "Foundation", 73, 10), node("data", "Data visibility", "Visibility", 93, 24, true), node("systems", "Practical systems", "Core", 65, 61), node("outcome", "New capability", "Outcome", 50, 8)],
     connections: [
       { from: "objective", relation: "informs", to: "strategy" }, { from: "audience", relation: "informs", to: "strategy" }, { from: "strategy", relation: "informs", to: "content" }, { from: "strategy", relation: "informs", to: "experience" },
       { from: "content", relation: "supports", to: "experience" }, { from: "experience", relation: "informs", to: "platform" }, { from: "experience", relation: "feeds", to: "data" }, { from: "data", relation: "supports", to: "systems" }, { from: "platform", relation: "connects with", to: "systems" }, { from: "systems", relation: "enables", to: "outcome" },

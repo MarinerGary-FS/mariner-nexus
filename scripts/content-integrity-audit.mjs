@@ -7,7 +7,7 @@ async function openTarget(url) {
   return fetch(`${cdp}/json/new?${encodeURIComponent(url)}`, { method: "PUT" }).then((response) => response.json());
 }
 
-async function audit(target, width, setupExpression) {
+async function audit(target, width, setupExpression, setupWait = 800) {
   const socket = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((resolve, reject) => { socket.onopen = resolve; socket.onerror = reject; });
   let id = 0;
@@ -32,7 +32,7 @@ async function audit(target, width, setupExpression) {
   await send("Runtime.evaluate", { expression: "document.fonts.ready", awaitPromise: true });
   if (setupExpression) {
     await send("Runtime.evaluate", { expression: setupExpression });
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    await new Promise((resolve) => setTimeout(resolve, setupWait));
   }
   const expression = `(() => {
     const selector = 'h1,h2,h3,p,a,button,label,legend,li,dt,dd,.mn-kicker';
@@ -150,6 +150,38 @@ for (const { width, state } of deconstructionStates) {
   const setup = `(() => { const root = document.querySelector('.mn-responsive-performance'); root.dataset.deconstructionActive = 'true'; root.dataset.deconstructionState = '${state}'; if (${JSON.stringify(["relationship", "system", "handoff", "mariner"].includes(state))}) root.querySelector('.mn-responsive-canvas-shell').setAttribute('aria-hidden', 'true'); })()`;
   const result = await audit(target, width, setup);
   results.push({ route: "/work/undugu", width, state: `ea-04:${state}`, ...result });
+}
+
+const nexusStates = [
+  ...["Build something new", "Transform what exists", "Connect the experience", "Explore what’s possible"].flatMap((objective) => [
+    { width: 1440, objective, mode: "settled" },
+    { width: 1440, objective, mode: "selected" },
+  ]),
+  { width: 1440, objective: "Transform what exists", mode: "transition" },
+  { width: 1440, objective: "Connect the experience", mode: "transition" },
+  { width: 1024, objective: "Build something new", mode: "settled" },
+  { width: 1024, objective: "Transform what exists", mode: "settled" },
+  { width: 1024, objective: "Connect the experience", mode: "selected" },
+  { width: 1024, objective: "Explore what’s possible", mode: "settled" },
+  { width: 390, objective: "Build something new", mode: "settled" },
+  { width: 390, objective: "Transform what exists", mode: "settled" },
+  { width: 390, objective: "Connect the experience", mode: "selected" },
+  { width: 390, objective: "Explore what’s possible", mode: "settled" },
+  { width: 320, objective: "Build something new", mode: "settled" },
+  { width: 320, objective: "Explore what’s possible", mode: "selected" },
+];
+
+for (const { width, objective, mode } of nexusStates) {
+  const target = await openTarget(`${origin}/`);
+  const setup = `(() => {
+    const root = document.querySelector('.mn-nexus');
+    const objectiveButton = [...root.querySelectorAll('.mn-nexus-objectives button')].find((button) => button.textContent.includes(${JSON.stringify(objective)}));
+    objectiveButton?.click();
+    if (${JSON.stringify(mode === "selected")}) setTimeout(() => root.querySelector('.mn-nexus-node[data-core="true"][data-visible="true"], .mn-nexus-semantic-flow li[data-core="true"] button')?.click(), 30);
+    if (${JSON.stringify(mode === "transition")}) setTimeout(() => { root.dataset.nexusPhase = 'reorganizing'; }, 30);
+  })()`;
+  const result = await audit(target, width, setup, mode === "transition" ? 120 : 800);
+  results.push({ route: "/", width, state: `ea-05:${objective}:${mode}`, ...result });
 }
 
 const failures = results.filter((result) => result.overflow > 1 || result.clipped.length || result.collisions.length);

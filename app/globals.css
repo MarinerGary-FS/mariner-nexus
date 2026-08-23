@@ -4456,6 +4456,226 @@ body:has(.foundation-preview) > footer {
   }
 }
 
+/* EA-05 — The Nexus Crescendo */
+
+.mn-systems-continuation > span {
+  color: var(--mn-signal-rest);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mn-home-nexus {
+  overflow: clip;
+  padding-block: clamp(5rem, 9vw, 9rem) clamp(10rem, 18vw, 18rem);
+  background:
+    radial-gradient(ellipse 65% 42% at 50% 64%, rgba(0, 164, 131, 0.08), transparent 72%),
+    linear-gradient(to bottom, #0b100e 0%, #07100d 46%, #030806 100%);
+}
+
+.mn-home-nexus::before {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(213, 228, 222, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(213, 228, 222, 0.025) 1px, transparent 1px);
+  background-size: clamp(3rem, 6vw, 6rem) clamp(3rem, 6vw, 6rem);
+  content: "";
+  mask-image: linear-gradient(to bottom, transparent, black 22%, black 82%, transparent);
+  pointer-events: none;
+}
+
+.mn-nexus {
+  position: relative;
+  width: 100vw;
+  margin-top: clamp(4rem, 7vw, 7rem);
+  margin-left: calc(50% - 50vw);
+  border-block: 1px solid rgba(213, 228, 222, 0.16);
+}
+
+.mn-nexus-entry {
+  display: flex;
+  min-height: 4rem;
+  padding-inline: var(--mn-space-4);
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  color: var(--mn-ink-inverse-muted);
+  border-bottom: 1px solid var(--mn-line-inverse);
+  font-size: 0.62rem;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mn-nexus-entry i { width: clamp(1.5rem, 4vw, 4rem); height: 1px; background: linear-gradient(90deg, var(--mn-signal-rest), var(--mn-signal)); }
+.mn-nexus-entry strong { color: var(--mn-signal-settle); font-weight: 650; }
+
+.mn-nexus-control-deck { width: min(calc(100% - (var(--mn-gutter) * 2)), var(--mn-container)); margin-inline: auto; border-inline: 1px solid var(--mn-line-inverse); border-bottom: 1px solid var(--mn-line-inverse); }
+.mn-nexus-control-deck > div:first-child { display: none; }
+.mn-nexus-objectives { border-bottom: 0; }
+.mn-nexus-objectives button { min-height: 7rem; align-content: center; }
+.mn-nexus-objectives button small { display: none; grid-column: 2; color: var(--mn-ink-inverse-muted); font-size: 0.68rem; font-weight: 440; line-height: 1.4; }
+
+.mn-nexus-state-heading { width: min(calc(100% - (var(--mn-gutter) * 2)), var(--mn-container)); margin-inline: auto; padding-inline: 0; border-bottom: 0; }
+.mn-nexus-state-heading h3 { font-size: clamp(2rem, 1.1rem + 3vw, 4.5rem); }
+.mn-nexus-state-heading > div > p { min-height: 1em; }
+
+.mn-nexus-canvas {
+  height: clamp(44rem, 68vw, 62rem);
+  overflow: clip;
+  perspective: 1100px;
+  transform-style: preserve-3d;
+}
+
+.mn-nexus-canvas::before,
+.mn-nexus-canvas::after {
+  position: absolute;
+  z-index: 0;
+  inset: 50% 0 auto;
+  height: 1px;
+  border: 0;
+  background: rgba(213, 228, 222, 0.07);
+  content: "";
+  transform: rotate(-5deg);
+}
+.mn-nexus-canvas::after { transform: rotate(5deg); }
+.mn-nexus[data-nexus-objective="transform"] .mn-nexus-canvas::before { transform: rotate(16deg); }
+.mn-nexus[data-nexus-objective="transform"] .mn-nexus-canvas::after { transform: rotate(-16deg); }
+.mn-nexus[data-nexus-objective="connect"] .mn-nexus-canvas::before { top: 39%; transform: none; }
+.mn-nexus[data-nexus-objective="connect"] .mn-nexus-canvas::after { top: 55%; transform: none; }
+.mn-nexus[data-nexus-objective="explore"] .mn-nexus-canvas::before { top: 28%; transform: rotate(24deg); }
+.mn-nexus[data-nexus-objective="explore"] .mn-nexus-canvas::after { top: 28%; transform: rotate(-24deg); }
+
+.mn-nexus-connections path:not(.mn-nexus-axis) {
+  fill: none;
+  stroke: rgba(213, 228, 222, 0.18);
+  stroke-width: 0.22;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 240ms ease, stroke 240ms ease, d 720ms cubic-bezier(0.16, 1, 0.3, 1), stroke-dashoffset 720ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mn-nexus-connections path[data-active="true"] { stroke: url(#nexus-active-path); stroke-width: 0.3; opacity: 0.9; }
+.mn-nexus[data-nexus-phase="reorganizing"] .mn-nexus-connections path:not(.mn-nexus-axis) { opacity: 0.12; stroke-dasharray: 0.03 0.04; }
+.mn-nexus-field-ring, .mn-nexus-axis { fill: none; stroke: rgba(213, 228, 222, 0.07); stroke-width: 0.16; vector-effect: non-scaling-stroke; }
+.mn-nexus-field-ring--outer { stroke-dasharray: 0.6 1.2; }
+.mn-nexus-axis { stroke: rgba(0, 164, 131, 0.17); stroke-dasharray: 1 1.8; }
+
+.mn-nexus-identity {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: clamp(11rem, 18vw, 18rem);
+  height: clamp(11rem, 18vw, 18rem);
+  color: rgba(213, 228, 222, 0.16);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: transform 720ms cubic-bezier(0.16, 1, 0.3, 1), opacity 240ms ease;
+}
+.mn-nexus-identity i { position: absolute; inset: 0; border: 1px solid currentColor; }
+.mn-nexus-identity i:nth-child(2) { inset: 21%; color: rgba(0, 164, 131, 0.28); }
+.mn-nexus-identity i:nth-child(3) { inset: 43%; background: var(--mn-signal); border: 0; }
+.mn-nexus-identity span { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(213, 228, 222, 0.34); font-size: 0.52rem; font-weight: 700; letter-spacing: 0.12em; transform: rotate(-45deg); }
+.mn-nexus[data-nexus-objective="build"] .mn-nexus-identity { top: 55%; left: 54%; transform: translate(-50%, -50%) rotate(45deg) scale(0.72); }
+.mn-nexus[data-nexus-objective="transform"] .mn-nexus-identity { top: 50%; left: 57%; transform: translate(-50%, -50%) rotate(135deg) scale(1); }
+.mn-nexus[data-nexus-objective="connect"] .mn-nexus-identity { top: 46%; left: 54%; transform: translate(-50%, -50%) rotate(90deg) scaleX(1.65) scaleY(0.58); }
+.mn-nexus[data-nexus-objective="explore"] .mn-nexus-identity { top: 48%; left: 50%; transform: translate(-50%, -50%) rotate(225deg) scale(1.42); }
+
+.mn-nexus-node {
+  width: clamp(7rem, 12vw, 11rem);
+  min-height: 5.3rem;
+  background: rgba(7, 16, 13, 0.72);
+  transform: translate3d(-50%, -50%, var(--nexus-z)) scale(0.88);
+  transition: top 720ms cubic-bezier(0.16, 1, 0.3, 1), left 720ms cubic-bezier(0.16, 1, 0.3, 1), opacity 260ms ease, border-color var(--mn-transition), transform 720ms cubic-bezier(0.16, 1, 0.3, 1), background-color var(--mn-transition);
+}
+.mn-nexus-node[data-visible="true"] { transform: translate3d(-50%, -50%, var(--nexus-z)) scale(1); }
+.mn-nexus-node[data-core="true"] { width: clamp(9rem, 15vw, 14rem); min-height: 7rem; border-color: rgba(119, 226, 195, 0.62); background: rgba(7, 19, 15, 0.9); }
+.mn-nexus-node[data-core="true"] strong { font-size: clamp(1rem, 0.85rem + 0.65vw, 1.5rem); }
+.mn-nexus-node[data-outcome="true"] { width: clamp(10rem, 17vw, 16rem); min-height: 8rem; border-color: var(--mn-signal); background: #0c231c; }
+.mn-nexus-node[data-outcome="true"] strong { font-size: clamp(1rem, 0.8rem + 0.9vw, 1.65rem); }
+.mn-nexus[data-nexus-objective="transform"] .mn-nexus-node:not([data-core="true"]):not([data-outcome="true"]) { border-style: dashed; }
+.mn-nexus[data-nexus-objective="connect"] .mn-nexus-node { border-radius: 999px; }
+.mn-nexus[data-nexus-objective="explore"] .mn-nexus-node:not([data-core="true"]):not([data-outcome="true"]) { border-color: rgba(213, 228, 222, 0.28); background: rgba(3, 8, 6, 0.66); }
+.mn-nexus[data-nexus-phase="reorganizing"] .mn-nexus-node[data-visible="true"] { transform: translate3d(-50%, -50%, 0) scale(0.94); }
+
+.mn-nexus-explanation { width: min(calc(100% - (var(--mn-gutter) * 2)), var(--mn-container)); margin-inline: auto; padding-inline: 0; background: transparent; border-block: 1px solid var(--mn-line-inverse); }
+.mn-nexus-selected-detail p { max-width: 62rem; }
+
+.mn-nexus-peak {
+  position: relative;
+  width: 100%;
+  min-height: clamp(48rem, 82vw, 72rem);
+  overflow: clip;
+}
+.mn-nexus-peak-thread { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mn-nexus-peak-thread path { fill: none; stroke: var(--mn-signal-rest); stroke-width: 0.12; vector-effect: non-scaling-stroke; }
+.mn-nexus-peak-thread path:nth-child(2) { stroke: rgba(213, 228, 222, 0.28); }
+.mn-nexus-peak-thread path:nth-child(3) { stroke: var(--mn-signal); stroke-width: 0.2; }
+.mn-nexus-peak-thread circle { fill: var(--mn-signal); }
+.mn-nexus-peak-mark { position: absolute; top: 50%; left: 50%; width: clamp(20rem, 42vw, 42rem); aspect-ratio: 1; transform: translate(-50%, -50%); }
+.mn-nexus-peak-mark img { width: 100%; height: 100%; object-fit: contain; opacity: 0.52; filter: grayscale(1) contrast(1.18) brightness(0.72); }
+.mn-nexus-peak-mark i { position: absolute; top: 49%; left: 50%; width: clamp(1.2rem, 2.5vw, 2.5rem); aspect-ratio: 1; background: var(--mn-signal); transform: translate(-50%, -50%) rotate(45deg); }
+.mn-nexus-peak-objective { position: absolute; z-index: 3; top: 68%; left: 50%; color: var(--mn-signal); font-size: 0.68rem; font-weight: 650; letter-spacing: 0.14em; text-align: center; text-transform: uppercase; transform: translateX(-50%); }
+.mn-nexus-peak-core { position: absolute; display: grid; gap: 0.5rem; color: var(--mn-ink-inverse); }
+.mn-nexus-peak-core span, .mn-nexus-peak-outcome span { color: var(--mn-signal-rest); font-size: 0.6rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; }
+.mn-nexus-peak-core strong { font-size: clamp(1.5rem, 1rem + 2.2vw, 3.4rem); font-weight: 520; letter-spacing: -0.045em; }
+.mn-nexus-peak-core--strategy { top: 18%; left: 6%; }
+.mn-nexus-peak-core--experience { top: 18%; right: 6%; text-align: right; }
+.mn-nexus-peak-core--systems { right: 7%; bottom: 19%; text-align: right; }
+.mn-nexus-peak-outcome { position: absolute; bottom: 17%; left: 6%; display: grid; max-width: 18rem; gap: 0.7rem; }
+.mn-nexus-peak-outcome strong { color: var(--mn-ink-inverse); font-size: clamp(1.5rem, 1rem + 2vw, 3rem); font-weight: 520; letter-spacing: -0.045em; line-height: 1; }
+.mn-nexus-peak-statement { position: absolute; top: 50%; left: 50%; z-index: 2; display: grid; width: min(76vw, 68rem); gap: 1rem; text-align: center; transform: translate(-50%, -50%); }
+.mn-nexus-peak-statement p { color: var(--mn-signal-settle); font-size: 0.66rem; font-weight: 650; letter-spacing: 0.14em; text-transform: uppercase; }
+.mn-nexus-peak-statement strong { color: var(--mn-ink-inverse); font-size: clamp(3rem, 1.3rem + 6vw, 8.5rem); font-weight: 500; letter-spacing: -0.07em; line-height: 0.88; text-wrap: balance; }
+.mn-nexus-static { display: grid; gap: 2rem; padding: 2rem; color: var(--mn-ink-inverse); }
+
+@media (min-width: 48rem) {
+  .mn-nexus-control-deck { display: grid; grid-template-columns: minmax(12rem, 0.75fr) minmax(0, 3.25fr); }
+  .mn-nexus-control-deck > div:first-child { display: grid; padding: var(--mn-space-4); align-content: center; border-right: 1px solid var(--mn-line-inverse); }
+  .mn-nexus-control-deck > div:first-child p { color: var(--mn-signal); font-size: 0.64rem; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; }
+  .mn-nexus-control-deck > div:first-child span { margin-top: 0.65rem; color: var(--mn-ink-inverse-muted); font-size: 0.74rem; line-height: 1.5; }
+  .mn-nexus-objectives button { padding: var(--mn-space-3); }
+  .mn-nexus-state-heading { padding-inline: 0; }
+  .mn-nexus-explanation { padding-inline: 0; }
+}
+
+@media (min-width: 68.75rem) {
+  .mn-nexus-objectives button small { display: block; }
+  .mn-nexus-state-heading { min-height: 14rem; }
+}
+
+@media (max-width: 47.99rem) {
+  .mn-home-nexus { padding-bottom: 12rem; background: linear-gradient(to bottom, #0b100e, #030806); }
+  .mn-nexus { margin-left: calc(50% - 50vw); }
+  .mn-nexus-control-deck, .mn-nexus-state-heading, .mn-nexus-explanation { width: calc(100% - (var(--mn-gutter) * 1.25)); }
+  .mn-nexus-entry { justify-content: flex-start; overflow: hidden; white-space: nowrap; }
+  .mn-nexus-objectives button { min-height: 5.7rem; }
+  .mn-nexus-state-heading { padding-block: 2rem; }
+  .mn-nexus-semantic-flow { margin-top: 2rem; }
+  .mn-nexus-semantic-flow li { padding-left: 2.2rem; }
+  .mn-nexus-semantic-flow li::before { left: 0.46rem; width: 2px; background: linear-gradient(var(--mn-signal-rest), var(--mn-signal)); }
+  .mn-nexus-semantic-flow li[data-core="true"] { margin-block: 0.35rem; border: 1px solid rgba(119, 226, 195, 0.22); border-left: 0; background: rgba(0, 164, 131, 0.035); }
+  .mn-nexus-semantic-flow li[data-outcome="true"] { margin-top: 1rem; border: 1px solid rgba(0, 164, 131, 0.45); border-left: 0; background: rgba(0, 164, 131, 0.08); }
+  .mn-nexus-semantic-flow button::before { left: -2rem; width: 0.7rem; height: 0.7rem; }
+  .mn-nexus-semantic-flow button { min-height: 5.25rem; }
+  .mn-nexus-selected-detail { min-height: 8.5rem; }
+  .mn-nexus-peak { min-height: 42rem; }
+  .mn-nexus-peak-mark { width: 24rem; opacity: 0.72; }
+  .mn-nexus-peak-objective { top: 6%; left: var(--mn-gutter); text-align: left; transform: none; }
+  .mn-nexus-peak-core--strategy { top: 15%; left: var(--mn-gutter); }
+  .mn-nexus-peak-core--experience { top: 15%; right: var(--mn-gutter); }
+  .mn-nexus-peak-core--systems { right: var(--mn-gutter); bottom: 12%; }
+  .mn-nexus-peak-outcome { bottom: 11%; left: var(--mn-gutter); max-width: 9rem; }
+  .mn-nexus-peak-core strong { font-size: 1.25rem; }
+  .mn-nexus-peak-outcome strong { font-size: 1.25rem; }
+  .mn-nexus-peak-statement { width: calc(100% - (var(--mn-gutter) * 2)); }
+  .mn-nexus-peak-statement strong { font-size: clamp(2.8rem, 13vw, 4.2rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mn-nexus-connections path,
+  .mn-nexus-identity,
+  .mn-nexus-node { transition: none !important; }
+}
+
 @layer utilities {
 
   /* ─── Layout ────────────────────────────────────────────── */
