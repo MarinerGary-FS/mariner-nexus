@@ -28,7 +28,7 @@ The full matrix exposed additional project-scoped defects at narrow widths: the 
 
 ## Automated rendered-layout audit
 
-`scripts/content-integrity-audit.mjs` uses Chrome DevTools Protocol directly and adds no package. It visits all nine canonical routes at 1600, 1440, 1366, 1280, 1100, 1024, 834, 768, 430, 390, 375, 360, and 320 pixels: the canonical 117 route/width baseline. EA-03 extends the same suite with 12 Wide through Settled transformation-state compositions, bringing the current total to 129 checks.
+`scripts/content-integrity-audit.mjs` uses Chrome DevTools Protocol directly and adds no package. It visits all nine canonical routes at 1600, 1440, 1366, 1280, 1100, 1024, 834, 768, 430, 390, 375, 360, and 320 pixels: the canonical 117 route/width baseline. EA-03 extends the same suite with 12 Wide through Settled transformation-state compositions. EA-04 adds 13 representative Intact through Mariner Systems deconstruction compositions across desktop, tablet, and mobile, bringing the current total to 142 checks. The audit waits for `document.fonts.ready` before geometry inspection so fallback-font timing cannot produce nondeterministic containment results.
 
 For visible headings, paragraphs, labels, list terms, links, buttons, and kickers it records rendered rectangles and checks:
 

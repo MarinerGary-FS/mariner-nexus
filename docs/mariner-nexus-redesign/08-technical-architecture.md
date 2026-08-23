@@ -224,3 +224,9 @@ Codex → GitHub feature branch/worktree → Vercel preview → review → merge
 > Could Gary and Codex confidently understand and modify this architecture six months from now?
 
 If not, simplify it.
+
+## Interface-deconstruction continuity
+
+Any visual deconstruction must preserve semantic continuity between its source interface and the revealed system. The source remains one mounted semantic interface; staged visual positioning may recede it, but the operational model must remain complete in DOM order and understandable without motion or JavaScript.
+
+Dynamic identity transitions require typography containment and color-contrast review at intermediate states, not only their client and Mariner endpoints. Operational models terminate in human or organizational outcomes rather than technology for its own sake.

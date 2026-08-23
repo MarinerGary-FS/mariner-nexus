@@ -39,7 +39,13 @@ async function audit(target, width, setupExpression) {
     const elements = [...document.querySelectorAll(selector)].filter((element) => {
       const style = getComputedStyle(element);
       const rect = element.getBoundingClientRect();
-      return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0 && !element.closest('[aria-hidden="true"],.mn-honeypot,details:not([open])');
+      let ancestor = element;
+      let transparent = false;
+      while (ancestor) {
+        if (getComputedStyle(ancestor).opacity === '0') { transparent = true; break; }
+        ancestor = ancestor.parentElement;
+      }
+      return style.display !== 'none' && style.visibility !== 'hidden' && !transparent && rect.width > 0 && rect.height > 0 && !element.closest('[aria-hidden="true"],.mn-honeypot,details:not([open])');
     });
     const textRect = (element) => {
       const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
@@ -127,6 +133,23 @@ for (const { width, state } of performanceStates) {
   const target = await openTarget(`${origin}/work/undugu`);
   const result = await audit(target, width, `document.querySelector('.mn-responsive-performance').dataset.performanceState = '${state}'`);
   results.push({ route: "/work/undugu", width, state: `ea-03:${state}`, ...result });
+}
+
+const deconstructionStates = [
+  ...["intact", "signal", "separation", "relationship", "system", "handoff", "mariner"].map((state) => ({ width: 1440, state })),
+  { width: 1024, state: "separation" },
+  { width: 1024, state: "system" },
+  { width: 390, state: "intact" },
+  { width: 390, state: "signal" },
+  { width: 390, state: "system" },
+  { width: 390, state: "mariner" },
+];
+
+for (const { width, state } of deconstructionStates) {
+  const target = await openTarget(`${origin}/work/undugu`);
+  const setup = `(() => { const root = document.querySelector('.mn-responsive-performance'); root.dataset.deconstructionActive = 'true'; root.dataset.deconstructionState = '${state}'; if (${JSON.stringify(["relationship", "system", "handoff", "mariner"].includes(state))}) root.querySelector('.mn-responsive-canvas-shell').setAttribute('aria-hidden', 'true'); })()`;
+  const result = await audit(target, width, setup);
+  results.push({ route: "/work/undugu", width, state: `ea-04:${state}`, ...result });
 }
 
 const failures = results.filter((result) => result.overflow > 1 || result.clipped.length || result.collisions.length);

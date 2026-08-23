@@ -2,13 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import { UnduguExperienceHeader } from "@/components/work/UnduguExperienceHeader";
+import { InterfaceDeconstructionModel } from "@/components/work/InterfaceDeconstructionModel";
 import { ResponsivePerformance } from "@/components/work/ResponsivePerformance";
 
 const unduguSans = DM_Sans({ subsets: ["latin"], variable: "--font-undugu-sans", display: "swap" });
 const unduguDisplay = Playfair_Display({ subsets: ["latin"], weight: ["700", "900"], style: ["normal", "italic"], variable: "--font-undugu-display", display: "swap" });
 
 export function UnduguLivingExperience() {
-  return <ResponsivePerformance><section aria-labelledby="undugu-living-title" className={`mn-undugu-living ${unduguSans.variable} ${unduguDisplay.variable}`}>
+  return <ResponsivePerformance deconstruction={<InterfaceDeconstructionModel />}><section aria-labelledby="undugu-living-title" className={`mn-undugu-living ${unduguSans.variable} ${unduguDisplay.variable}`}>
     <UnduguExperienceHeader />
     <div className="mn-undugu-live-hero">
       <div className="mn-undugu-live-copy">
