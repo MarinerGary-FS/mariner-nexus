@@ -22,7 +22,7 @@ export default function Footer() {
           ))}
           <div>
             <p className="mn-footer-label">Connect</p>
-            <a href="mailto:hello@marinernexus.com">hello@marinernexus.com</a>
+            <a href="mailto:info@marinernexus.com">info@marinernexus.com</a>
           </div>
         </div>
         <div className="mn-footer-bottom">

@@ -53,7 +53,7 @@ export function InquiryExperience() {
     </section>
     <div className="mn-inquiry-actions">{step > 0 && <button className="mn-button-secondary" disabled={status === "submitting"} onClick={() => go(step - 1)} type="button">Back</button>}{step < steps.length - 1 ? <button onClick={next} type="button">Continue <span aria-hidden="true">→</span></button> : <button disabled={status === "submitting"} type="submit">{status === "submitting" ? "Submitting…" : "Start a Project →"}</button>}</div>
     <div aria-live="assertive" className={status === "error" ? "mn-inquiry-message is-error" : "mn-inquiry-message"} role="status">{status === "submitting" ? "Submitting your inquiry securely." : message}</div>
-    {status === "error" && <p className="mn-inquiry-fallback">Your responses remain above. Retry when ready or <a href="mailto:hello@marinernexus.com">email Mariner Nexus</a>.</p>}
+    {status === "error" && <p className="mn-inquiry-fallback">Your responses remain above. Retry when ready or <a href="mailto:info@marinernexus.com">email Mariner Nexus</a>.</p>}
     <p className="mn-inquiry-privacy">By submitting, you agree that Mariner Nexus may use this information to evaluate and respond to your inquiry. <a href="/privacy">Read Privacy</a>.</p>
   </form>;
 }

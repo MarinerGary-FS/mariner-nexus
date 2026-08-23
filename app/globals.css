@@ -3537,7 +3537,7 @@ body[data-menu-open="true"] {
   .mn-page-intro .mn-grid > div:first-child { grid-column: 1 / span 6; }
   .mn-page-intro .mn-grid > div:last-child { grid-column: 4 / span 5; margin-top: var(--mn-space-7); }
   .mn-capability-label { grid-column: 1 / span 4; }
-  .mn-capability-statement { grid-column: 4 / span 5; margin-top: var(--mn-space-6); }
+  .mn-capability-statement { grid-column: 5 / span 4; margin-top: var(--mn-space-6); }
   .mn-capability-sequence ul { grid-column: 3 / span 6; margin-top: var(--mn-space-6); columns: 2; column-gap: var(--mn-space-6); }
   .mn-capability-sequence li { break-inside: avoid; }
   .mn-approach-sequence li { grid-template-columns: 3rem 2fr 3fr; gap: var(--mn-space-4); }
@@ -3619,8 +3619,8 @@ body[data-menu-open="true"] {
   .mn-capability-systems-map li:last-child { padding-right: 0; border-right: 0; }
   .mn-page-intro .mn-grid > div:first-child { grid-column: 1 / span 8; }
   .mn-page-intro .mn-grid > div:last-child { grid-column: 9 / span 4; margin-top: 0; align-self: end; }
-  .mn-capability-label { grid-column: 1 / span 4; }
-  .mn-capability-statement { grid-column: 5 / span 3; margin-top: 0; }
+  .mn-capability-label { grid-column: 1 / span 5; }
+  .mn-capability-statement { grid-column: 6 / span 3; margin-top: 0; }
   .mn-capability-sequence ul { grid-column: 9 / span 4; margin-top: 0; columns: 1; }
   .mn-company-principles .mn-grid > div:first-child, .mn-company-context .mn-grid > div:first-child { grid-column: 1 / span 5; }
   .mn-company-principles .mn-grid > div:last-child, .mn-company-context .mn-grid > div:last-child { grid-column: 7 / span 6; }
@@ -4352,7 +4352,7 @@ body:has(.foundation-preview) > footer {
   }
 
   [data-experience-profile="undugu-community-expression"] .mn-project-client h2 {
-    font-size: clamp(4.5rem, 28vw, 7rem);
+    font-size: clamp(3.5rem, 18vw, 7rem);
   }
 
   [data-experience-profile="undugu-community-expression"] .mn-responsive-stage {
@@ -4362,6 +4362,12 @@ body:has(.foundation-preview) > footer {
 
   [data-experience-profile="undugu-community-expression"] .mn-project-transformation blockquote {
     font-size: clamp(3rem, 15vw, 5rem);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  [data-experience-profile="undugu-community-expression"] .mn-work-entry-meta h2 {
+    font-size: clamp(2.85rem, 14vw, 4rem);
   }
 }
 

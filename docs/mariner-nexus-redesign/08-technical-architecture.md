@@ -173,6 +173,14 @@ Introduce bot protection only when necessary.
 
 ## Accessibility
 
+### Typography and content integrity
+
+> Every visible word must remain fully readable at every supported viewport.
+
+No production route may allow text-to-text overlap, viewport or container clipping, hidden characters, sticky/fixed obstruction, unsafe negative-margin collision, unreadable line-height compression, CTA-label clipping, decorative-layer obstruction, or project typography escaping its owned canvas.
+
+Major phase QA must combine responsive visual review with lightweight bounding-box checks for critical text and adjacent content. Captures must show enough of the section above, body, and transition below to expose boundary defects. Typography/content integrity is an explicit PASS/FAIL gate in Chromium and representative Safari review; absence of a horizontal scrollbar is not sufficient evidence.
+
 - semantic HTML,
 - keyboard,
 - focus,
