@@ -2,7 +2,7 @@
 
 ## Status
 
-Final corrected five-world state approved on 2026-08-23 and awaiting documentation archive. Undugu, Serene Origins, Sovereign Blueprint Consulting, Awakening, and GaryMariner.com are `PUBLISHED`. Undugu's confirmed 501(c)(3) nonprofit status is canonical.
+Archived after final approval on 2026-08-23. Implementation commit: `8097a6a`. Undugu, Serene Origins, Sovereign Blueprint Consulting, Awakening, and GaryMariner.com are `PUBLISHED`. Undugu's confirmed 501(c)(3) nonprofit status is canonical.
 
 ## Phase objective
 

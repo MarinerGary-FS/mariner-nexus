@@ -2,7 +2,7 @@
 
 ## Status
 
-Final corrected five-world implementation approved on 2026-08-23. Controlled closeout is in progress. No deployment was made.
+Final corrected five-world implementation approved and archived on 2026-08-23. Implementation commit: `8097a6a`. No deployment was made.
 
 EA-06 closed independently as commit `233ae08`, was pushed to `phase-00-repository-adoption`, and was confirmed at remote divergence `0/0` before EA-07 began. Its approved Nexus peak, release lifecycle, silence, “What could yours become?”, singular Start a Project decision, and 176/176 Content Integrity baseline remain intact.
 
