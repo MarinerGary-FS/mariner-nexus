@@ -13,7 +13,9 @@
     "wds:validate": "node tools/wds/cli.mjs validate",
     "wds:generate": "node tools/wds/cli.mjs generate",
     "wds:check-generated": "node tools/wds/cli.mjs check-generated",
-    "wds:test": "vitest run --config tools/wds/vitest.config.mts"
+    "wds:test": "vitest run --config tools/wds/vitest.config.mts",
+    "wds:bootstrap": "node tools/wds/bootstrap-cli.mjs bootstrap",
+    "wds:check-bootstrap": "node tools/wds/bootstrap-cli.mjs check"
   },
   "dependencies": {
     "clsx": "^2.1.1",

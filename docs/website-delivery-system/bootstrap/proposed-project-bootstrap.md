@@ -1,6 +1,6 @@
-# Proposed Project Bootstrap
+# Historical WDS-01 Project Bootstrap Proposal
 
-WDS-01 defines a future bootstrap; it does not implement one.
+WDS-01 defined this proposal before executable Kernel evidence existed. The approved WDS-03 contract and implementation are now documented in [Bootstrap README](./README.md); where they differ, the validated WDS-03 architecture is canonical.
 
 ## Inputs before generation
 

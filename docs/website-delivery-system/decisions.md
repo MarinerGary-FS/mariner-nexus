@@ -95,3 +95,27 @@
 ## WDS-024 — Validated Project Kernel accepted
 
 **Decision:** WDS-02 is owner-approved with YAML as canonical input, JSON Schema 2020-12, deterministic normalized JSON and TypeScript, 20 semantic invariants, 22 focused tests including 17 negative tests, three portable fixtures, zero synthetic reference leakage, and complete Production runtime isolation. Schema migration, live-repository adoption, and CI enforcement remain downstream decisions.
+
+## WDS-025 — Bootstrap governs projects; it does not design them
+
+**Decision:** WDS-03 generates neutral operating rules, register views, current-stage plans, QA/operations obligations, evidence structure, and manifests. It generates no application shell, visual identity, layouts, client copy, pricing, adapters, credentials, or deployment aliases.
+
+## WDS-026 — Bootstrap output is proportional
+
+**Decision:** Core governance is universal; experiential research, advanced QA, payment readiness, elevated-risk review, release gates, and approval depth appear only when tier, risk, amplification, integrations, or manifest requirements justify them.
+
+## WDS-027 — File ownership is executable policy
+
+**Decision:** `GENERATED` files may regenerate only when unmodified, `HUMAN-AUTHORED` files are create-once, and `GENERATED-THEN-HUMAN` files transfer ownership after seeding. The compiler never silently overwrites human decisions.
+
+## WDS-028 — One current-stage plan
+
+**Decision:** Bootstrap generates one active execution plan and its stop condition. Later plans emerge after approval; the system does not manufacture a complete future roadmap.
+
+## WDS-029 — Bootstrap version and drift remain simple
+
+**Decision:** Bootstrap output starts at version `1.0.0`, records Kernel schema and WDS versions, source hashes, artifacts, ownership, timestamp, and lifecycle stage. A bounded check command detects source/manifest/generated drift; full migrations and file watching remain deferred.
+
+## WDS-030 — Kernel-driven bootstrap accepted
+
+**Decision:** WDS-03 is owner-approved with mandatory Kernel validation, proportional project output, one current-stage plan, consolidated Required Input, lifecycle and approval protection, three ownership classes, hash-based overwrite protection, drift detection, derived QA/operations, Vercel Preview review protocol, 41 focused tests, 10 bootstrap protection tests, zero synthetic leakage, and Production runtime isolation.

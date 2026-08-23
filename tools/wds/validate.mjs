@@ -69,7 +69,7 @@ export function validateSemantics(kernel) {
     if (!area.owner || area.owner === "UNASSIGNED") errors.push(error("OPERATIONS_OWNER_REQUIRED", `${area.area} requires an operational owner.`));
   }
 
-  if (kernel.project.delivery.lifecycleStage === "PRODUCTION_READY") {
+  if (["PRODUCTION_READY", "LAUNCHED", "HANDOFF"].includes(kernel.project.delivery.lifecycleStage)) {
     for (const id of kernel.project.delivery.requiredApprovalIds) if (!approved(approvals.get(id))) errors.push(error("PRODUCTION_APPROVAL_MISSING", `Production readiness requires approval ${id}.`));
     for (const id of kernel.qa.requiredGateIds) if (gates.get(id)?.state !== "PASS") errors.push(error("PRODUCTION_GATE_INCOMPLETE", `Production readiness requires passing gate ${id}.`));
   }

@@ -12,6 +12,8 @@ The Kernel is the machine-readable contract for project identity, truth, authori
 
 Executable tooling is isolated under `tools/wds/` and is not imported by `app/**` or production bundles.
 
+WDS-03 consumes a successfully validated Kernel to generate proportional governance and current-stage planning. It does not change Kernel authority or permit bootstrap to bypass semantic failures.
+
 ## Commands
 
 ```sh
