@@ -1,0 +1,49 @@
+schemaVersion: 1.0.0
+identity:
+  projectId: mariner-nexus-reference
+  projectName: Mariner Nexus
+  organization: Mariner Nexus
+  projectType: Reference corporate digital experience
+  publicUrl: https://www.marinernexus.com/
+  repositoryContext: WDS reference fixture; not live migration
+delivery:
+  tier: SIGNATURE_SYSTEM
+  lifecycleStage: LAUNCHED
+  targetLaunchDate: null
+  requiredApprovalIds: [public-content, case-study-publication, production-approval]
+objectives:
+  primary: Demonstrate solution-specific digital capability through the website itself.
+  supporting: [Make the offer understandable, Provide authorized transformation evidence]
+  successCriteria: [Corporate meaning survives without interaction, Inquiry operations remain healthy]
+audiences:
+  primary: Leaders creating, evolving, or transforming a digital presence
+  secondary: [Founders, Internal champions]
+experience:
+  principles: [Serious before spectacular, Complexity is discovered]
+  emotionalGoals: [Confidence, curiosity]
+  amplification: A4
+  responsiveExpectations: [Independent mobile choreography, Semantic meaning survives reduced motion]
+  requiredRenderingTechnology: null
+routes:
+  public:
+    - { path: /, kind: STANDARD, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [business-position] }
+    - { path: /work/undugu, kind: CASE_STUDY, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [undugu-status], authorizationRef: undugu-case-study }
+  protected: []
+  redirects:
+    - { from: /contact, to: /start, status: 308 }
+actions:
+  - { id: production-promotion, type: PRODUCTION_PROMOTION, approvalClass: D }
+operations:
+  hosting: Vercel
+  responsibilities:
+    - { area: DEPLOYMENT, owner: MARINER_NEXUS }
+    - { area: DOMAIN_DNS, owner: MARINER_NEXUS }
+    - { area: CONTENT, owner: MARINER_NEXUS }
+    - { area: INTEGRATIONS, owner: MARINER_NEXUS }
+    - { area: MONITORING, owner: MARINER_NEXUS }
+    - { area: MAINTENANCE, owner: MARINER_NEXUS }
+    - { area: ONGOING_DEVELOPMENT, owner: MARINER_NEXUS }
+risk:
+  level: MODERATE
+  flags: [PII, ANALYTICS_COOKIES, ACCESSIBILITY_SENSITIVITY]
+  requiredReviews: [Inquiry privacy, Accessibility, Production release]

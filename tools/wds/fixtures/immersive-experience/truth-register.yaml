@@ -1,0 +1,9 @@
+records:
+  - id: experience-purpose
+    subject: Experience purpose
+    statement: The fictional experience invites public participation in a cultural exhibition.
+    state: CLIENT-PROVIDED
+    sourceRef: docs/project-brief.md
+    publicEligible: true
+    approver: Synthetic experience owner
+    notes: Fictional fixture statement

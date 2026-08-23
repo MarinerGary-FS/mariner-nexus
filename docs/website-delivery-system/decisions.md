@@ -75,3 +75,23 @@
 ## WDS-019 — Initial integration contracts remain narrow
 
 **Decision:** First-class contracts are Google Workspace/Sheets, Resend, Stripe, Calendly, generic webhook/HTTP, and Vercel. Other providers remain project-supported until repeated evidence justifies promotion.
+
+## WDS-020 — Kernel execution remains outside the website runtime
+
+**Decision:** Place validation, schema, fixtures, tests, and generation under `tools/wds/`. Nothing in `app/**` imports it, and WDS validation does not yet block the Mariner Production build.
+
+## WDS-021 — YAML is canonical; output is deterministic
+
+**Decision:** Human-authored YAML and Markdown evidence are authoritative. JSON Schema and semantic validation precede reproducible normalized JSON and TypeScript generation.
+
+## WDS-022 — Shape and meaning are separate validator layers
+
+**Decision:** JSON Schema rejects malformed structure and enumerations. Explicit semantic invariants reject structurally valid but unsafe states. Creative quality remains human judgment.
+
+## WDS-023 — Two small development dependencies are justified
+
+**Decision:** Use `yaml` for canonical YAML parsing and `ajv` for standards-based JSON Schema validation. Do not add a CLI framework, database, CMS, or runtime adapter.
+
+## WDS-024 — Validated Project Kernel accepted
+
+**Decision:** WDS-02 is owner-approved with YAML as canonical input, JSON Schema 2020-12, deterministic normalized JSON and TypeScript, 20 semantic invariants, 22 focused tests including 17 negative tests, three portable fixtures, zero synthetic reference leakage, and complete Production runtime isolation. Schema migration, live-repository adoption, and CI enforcement remain downstream decisions.

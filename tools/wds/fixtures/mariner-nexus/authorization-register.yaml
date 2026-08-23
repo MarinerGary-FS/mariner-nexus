@@ -1,0 +1,13 @@
+records:
+  - id: undugu-case-study
+    category: CASE_STUDY_PUBLICATION
+    scope: /work/undugu
+    state: APPROVED
+    approver: Owner
+    dateRef: EA-07
+  - id: production-promotion-auth
+    category: PRODUCTION_PROMOTION
+    scope: Approved release candidate
+    state: APPROVED
+    approver: Owner
+    dateRef: ARC-01

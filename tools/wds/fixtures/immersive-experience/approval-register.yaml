@@ -1,0 +1,22 @@
+records:
+  - id: experience-approval
+    subject: Experience direction
+    class: C
+    minimumClass: C
+    state: APPROVED
+    approver: Synthetic experience owner
+    dependsOnTruth: [experience-purpose]
+  - id: payment-approval
+    subject: Recurring payment provider cost
+    class: D
+    minimumClass: D
+    state: APPROVED
+    approver: Synthetic owner
+    dependsOnTruth: []
+  - id: production-owner-approval
+    subject: Production promotion
+    class: D
+    minimumClass: D
+    state: PENDING
+    approver: null
+    dependsOnTruth: []

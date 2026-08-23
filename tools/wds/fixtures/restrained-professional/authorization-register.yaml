@@ -1,0 +1,7 @@
+records:
+  - id: public-site
+    category: PUBLIC_DISPLAY
+    scope: Synthetic public website
+    state: APPROVED
+    approver: Synthetic client owner
+    dateRef: fixture-approval

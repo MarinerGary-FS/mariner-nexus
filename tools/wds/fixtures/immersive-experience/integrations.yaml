@@ -1,0 +1,18 @@
+records:
+  - id: registration-payment
+    category: Payment registration
+    provider: STRIPE
+    supportLevel: FIRST_CLASS_CONTRACT
+    purpose: Process optional event registration payment.
+    environments: [PREVIEW, PRODUCTION]
+    owner: Shared operations
+    requiresSecrets: true
+    environmentHandling: Distinct restricted keys per environment
+    collectsData: true
+    dataClassification: Contact and payment-provider reference data
+    failureBehavior: Keep registration recoverable and report payment failure.
+    fallback: Allow the visitor to retry or contact the organizer.
+    operationalContact: Synthetic experience operations
+    verificationState: PASS
+    recurringCost: true
+    ownerApprovalRef: payment-approval

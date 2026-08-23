@@ -1,0 +1,9 @@
+records:
+  - id: motion-fallback
+    classification: DESIGN_REVISION
+    requestedBy: Accessibility reviewer
+    description: Strengthen the non-motion narrative state.
+    scopeImpact: Approved experience refinement
+    approvalRequirement: B
+    affectedMilestone: Experience QA
+    status: VERIFIED

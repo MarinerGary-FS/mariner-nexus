@@ -1,0 +1,7 @@
+records:
+  - id: public-site
+    category: PUBLIC_DISPLAY
+    scope: Synthetic experience website
+    state: APPROVED
+    approver: Synthetic experience owner
+    dateRef: fixture-approval

@@ -1,0 +1,35 @@
+records:
+  - id: inquiry-persistence
+    category: Structured inquiry persistence
+    provider: GOOGLE_WORKSPACE
+    supportLevel: FIRST_CLASS_CONTRACT
+    purpose: Persist structured project inquiries.
+    environments: [PREVIEW, PRODUCTION]
+    owner: Mariner Nexus
+    requiresSecrets: true
+    environmentHandling: Separate scoped credentials and destinations by environment
+    collectsData: true
+    dataClassification: Inquiry PII
+    failureBehavior: Do not send success when persistence fails.
+    fallback: Show a recoverable error without clearing input.
+    operationalContact: Mariner Nexus owner
+    verificationState: PASS
+    recurringCost: false
+    ownerApprovalRef: null
+  - id: inquiry-notification
+    category: Transactional notification
+    provider: RESEND
+    supportLevel: FIRST_CLASS_CONTRACT
+    purpose: Notify the owner after successful persistence.
+    environments: [PREVIEW, PRODUCTION]
+    owner: Mariner Nexus
+    requiresSecrets: true
+    environmentHandling: Separate scoped API keys and recipients by environment
+    collectsData: true
+    dataClassification: Inquiry PII
+    failureBehavior: Preserve successful persistence and report notification failure operationally.
+    fallback: Review the structured persistence destination.
+    operationalContact: Mariner Nexus owner
+    verificationState: PASS
+    recurringCost: false
+    ownerApprovalRef: null

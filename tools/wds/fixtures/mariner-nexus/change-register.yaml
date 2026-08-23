@@ -1,0 +1,9 @@
+records:
+  - id: arc-closeout
+    classification: POST_APPROVAL_CHANGE
+    requestedBy: Owner
+    description: Record release certification closeout.
+    scopeImpact: Documentation only
+    approvalRequirement: D
+    affectedMilestone: Production launch
+    status: VERIFIED

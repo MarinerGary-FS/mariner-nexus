@@ -1,0 +1,31 @@
+requiredGateIds: [typecheck, lint, build, dependency-audit, responsive, content-integrity, accessibility, broken-links, metadata, security, javascript-fallback, interaction-torture, integration-failure, release-certification, rollback-rehearsal]
+gates:
+  - { id: typecheck, category: TYPECHECK, state: PASS }
+  - { id: lint, category: LINT, state: PASS }
+  - { id: build, category: BUILD, state: PASS }
+  - { id: dependency-audit, category: DEPENDENCY_AUDIT, state: PASS }
+  - { id: responsive, category: RESPONSIVE, state: PASS }
+  - { id: content-integrity, category: CONTENT_INTEGRITY, state: PASS }
+  - { id: accessibility, category: ACCESSIBILITY, state: PASS }
+  - { id: broken-links, category: BROKEN_LINKS, state: PASS }
+  - { id: metadata, category: METADATA, state: PASS }
+  - { id: security, category: SECURITY, state: PASS }
+  - { id: javascript-fallback, category: JAVASCRIPT_FALLBACK, state: PASS }
+  - { id: interaction-torture, category: INTERACTION_TORTURE, state: PASS }
+  - { id: integration-failure, category: INTEGRATION_FAILURE, state: PASS }
+  - { id: release-certification, category: RELEASE_CERTIFICATION, state: PASS }
+  - { id: rollback-rehearsal, category: ROLLBACK_REHEARSAL, state: PASS }
+requiredBrowserIds: [chromium-desktop, chromium-responsive, safari-desktop, firefox-desktop, edge-desktop, physical-mobile]
+browsers:
+  - { id: chromium-desktop, browser: CHROMIUM, mode: desktop, state: PASS, reason: null }
+  - { id: chromium-responsive, browser: CHROMIUM, mode: responsive, state: PASS, reason: null }
+  - { id: safari-desktop, browser: SAFARI, mode: desktop, state: PASS, reason: null }
+  - { id: firefox-desktop, browser: FIREFOX, mode: desktop, state: PASS, reason: null }
+  - { id: edge-desktop, browser: EDGE, mode: desktop, state: PASS, reason: null }
+  - { id: physical-mobile, browser: PHYSICAL_DEVICE, mode: representative mobile, state: PASS, reason: null }
+allowDocumentedNonBlockers: false
+responsiveMatrix: [320, 390, 768, 1024, 1440]
+accessibilityRequirements: [Keyboard operability, Semantic fallback, Reduced motion, Contrast, Touch targets]
+contentIntegrity: true
+releaseCertificationRequired: true
+criticalRiskOverrideApprovalRef: null

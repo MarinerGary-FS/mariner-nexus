@@ -1,0 +1,23 @@
+requiredGateIds: [typecheck, lint, build, dependency-audit, responsive, content-integrity, accessibility, broken-links, metadata, security]
+gates:
+  - { id: typecheck, category: TYPECHECK, state: PASS }
+  - { id: lint, category: LINT, state: PASS }
+  - { id: build, category: BUILD, state: PASS }
+  - { id: dependency-audit, category: DEPENDENCY_AUDIT, state: PASS }
+  - { id: responsive, category: RESPONSIVE, state: PASS }
+  - { id: content-integrity, category: CONTENT_INTEGRITY, state: PASS }
+  - { id: accessibility, category: ACCESSIBILITY, state: PASS }
+  - { id: broken-links, category: BROKEN_LINKS, state: PASS }
+  - { id: metadata, category: METADATA, state: PASS }
+  - { id: security, category: SECURITY, state: PASS }
+requiredBrowserIds: [chromium-desktop, chromium-responsive, safari-desktop]
+browsers:
+  - { id: chromium-desktop, browser: CHROMIUM, mode: desktop, state: PASS, reason: null }
+  - { id: chromium-responsive, browser: CHROMIUM, mode: responsive, state: PASS, reason: null }
+  - { id: safari-desktop, browser: SAFARI, mode: desktop, state: PASS, reason: null }
+allowDocumentedNonBlockers: true
+responsiveMatrix: [360, 768, 1280]
+accessibilityRequirements: [Keyboard operability, Visible focus, Reduced motion]
+contentIntegrity: true
+releaseCertificationRequired: false
+criticalRiskOverrideApprovalRef: null

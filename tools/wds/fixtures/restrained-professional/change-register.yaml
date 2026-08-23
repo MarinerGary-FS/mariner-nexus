@@ -1,0 +1,9 @@
+records:
+  - id: initial-copy
+    classification: CONTENT_REVISION
+    requestedBy: Synthetic client owner
+    description: Clarify the service summary.
+    scopeImpact: No scope impact
+    approvalRequirement: B
+    affectedMilestone: Content review
+    status: VERIFIED

@@ -1,0 +1,416 @@
+{
+  "approvals": {
+    "records": [
+      {
+        "approver": "Owner",
+        "class": "C",
+        "dependsOnTruth": [
+          "business-position"
+        ],
+        "id": "public-content",
+        "minimumClass": "C",
+        "state": "APPROVED",
+        "subject": "Public corporate content"
+      },
+      {
+        "approver": "Owner",
+        "class": "D",
+        "dependsOnTruth": [
+          "undugu-status"
+        ],
+        "id": "case-study-publication",
+        "minimumClass": "D",
+        "state": "APPROVED",
+        "subject": "Authorized Work publication"
+      },
+      {
+        "approver": "Owner",
+        "class": "D",
+        "dependsOnTruth": [],
+        "id": "production-approval",
+        "minimumClass": "D",
+        "state": "APPROVED",
+        "subject": "Production promotion"
+      }
+    ]
+  },
+  "authorizations": {
+    "records": [
+      {
+        "approver": "Owner",
+        "category": "CASE_STUDY_PUBLICATION",
+        "dateRef": "EA-07",
+        "id": "undugu-case-study",
+        "scope": "/work/undugu",
+        "state": "APPROVED"
+      },
+      {
+        "approver": "Owner",
+        "category": "PRODUCTION_PROMOTION",
+        "dateRef": "ARC-01",
+        "id": "production-promotion-auth",
+        "scope": "Approved release candidate",
+        "state": "APPROVED"
+      }
+    ]
+  },
+  "changes": {
+    "records": [
+      {
+        "affectedMilestone": "Production launch",
+        "approvalRequirement": "D",
+        "classification": "POST_APPROVAL_CHANGE",
+        "description": "Record release certification closeout.",
+        "id": "arc-closeout",
+        "requestedBy": "Owner",
+        "scopeImpact": "Documentation only",
+        "status": "VERIFIED"
+      }
+    ]
+  },
+  "integrations": {
+    "records": [
+      {
+        "category": "Structured inquiry persistence",
+        "collectsData": true,
+        "dataClassification": "Inquiry PII",
+        "environmentHandling": "Separate scoped credentials and destinations by environment",
+        "environments": [
+          "PREVIEW",
+          "PRODUCTION"
+        ],
+        "failureBehavior": "Do not send success when persistence fails.",
+        "fallback": "Show a recoverable error without clearing input.",
+        "id": "inquiry-persistence",
+        "operationalContact": "Mariner Nexus owner",
+        "owner": "Mariner Nexus",
+        "ownerApprovalRef": null,
+        "provider": "GOOGLE_WORKSPACE",
+        "purpose": "Persist structured project inquiries.",
+        "recurringCost": false,
+        "requiresSecrets": true,
+        "supportLevel": "FIRST_CLASS_CONTRACT",
+        "verificationState": "PASS"
+      },
+      {
+        "category": "Transactional notification",
+        "collectsData": true,
+        "dataClassification": "Inquiry PII",
+        "environmentHandling": "Separate scoped API keys and recipients by environment",
+        "environments": [
+          "PREVIEW",
+          "PRODUCTION"
+        ],
+        "failureBehavior": "Preserve successful persistence and report notification failure operationally.",
+        "fallback": "Review the structured persistence destination.",
+        "id": "inquiry-notification",
+        "operationalContact": "Mariner Nexus owner",
+        "owner": "Mariner Nexus",
+        "ownerApprovalRef": null,
+        "provider": "RESEND",
+        "purpose": "Notify the owner after successful persistence.",
+        "recurringCost": false,
+        "requiresSecrets": true,
+        "supportLevel": "FIRST_CLASS_CONTRACT",
+        "verificationState": "PASS"
+      }
+    ]
+  },
+  "project": {
+    "actions": [
+      {
+        "approvalClass": "D",
+        "id": "production-promotion",
+        "type": "PRODUCTION_PROMOTION"
+      }
+    ],
+    "audiences": {
+      "primary": "Leaders creating, evolving, or transforming a digital presence",
+      "secondary": [
+        "Founders",
+        "Internal champions"
+      ]
+    },
+    "delivery": {
+      "lifecycleStage": "LAUNCHED",
+      "requiredApprovalIds": [
+        "public-content",
+        "case-study-publication",
+        "production-approval"
+      ],
+      "targetLaunchDate": null,
+      "tier": "SIGNATURE_SYSTEM"
+    },
+    "experience": {
+      "amplification": "A4",
+      "emotionalGoals": [
+        "Confidence",
+        "curiosity"
+      ],
+      "principles": [
+        "Serious before spectacular",
+        "Complexity is discovered"
+      ],
+      "requiredRenderingTechnology": null,
+      "responsiveExpectations": [
+        "Independent mobile choreography",
+        "Semantic meaning survives reduced motion"
+      ]
+    },
+    "identity": {
+      "organization": "Mariner Nexus",
+      "projectId": "mariner-nexus-reference",
+      "projectName": "Mariner Nexus",
+      "projectType": "Reference corporate digital experience",
+      "publicUrl": "https://www.marinernexus.com/",
+      "repositoryContext": "WDS reference fixture; not live migration"
+    },
+    "objectives": {
+      "primary": "Demonstrate solution-specific digital capability through the website itself.",
+      "successCriteria": [
+        "Corporate meaning survives without interaction",
+        "Inquiry operations remain healthy"
+      ],
+      "supporting": [
+        "Make the offer understandable",
+        "Provide authorized transformation evidence"
+      ]
+    },
+    "operations": {
+      "hosting": "Vercel",
+      "responsibilities": [
+        {
+          "area": "DEPLOYMENT",
+          "owner": "MARINER_NEXUS"
+        },
+        {
+          "area": "DOMAIN_DNS",
+          "owner": "MARINER_NEXUS"
+        },
+        {
+          "area": "CONTENT",
+          "owner": "MARINER_NEXUS"
+        },
+        {
+          "area": "INTEGRATIONS",
+          "owner": "MARINER_NEXUS"
+        },
+        {
+          "area": "MONITORING",
+          "owner": "MARINER_NEXUS"
+        },
+        {
+          "area": "MAINTENANCE",
+          "owner": "MARINER_NEXUS"
+        },
+        {
+          "area": "ONGOING_DEVELOPMENT",
+          "owner": "MARINER_NEXUS"
+        }
+      ]
+    },
+    "risk": {
+      "flags": [
+        "PII",
+        "ANALYTICS_COOKIES",
+        "ACCESSIBILITY_SENSITIVITY"
+      ],
+      "level": "MODERATE",
+      "requiredReviews": [
+        "Inquiry privacy",
+        "Accessibility",
+        "Production release"
+      ]
+    },
+    "routes": {
+      "protected": [],
+      "public": [
+        {
+          "kind": "STANDARD",
+          "path": "/",
+          "publicationState": "PUBLISHED",
+          "sitemapEligible": true,
+          "truthRefs": [
+            "business-position"
+          ]
+        },
+        {
+          "authorizationRef": "undugu-case-study",
+          "kind": "CASE_STUDY",
+          "path": "/work/undugu",
+          "publicationState": "PUBLISHED",
+          "sitemapEligible": true,
+          "truthRefs": [
+            "undugu-status"
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "from": "/contact",
+          "status": 308,
+          "to": "/start"
+        }
+      ]
+    },
+    "schemaVersion": "1.0.0"
+  },
+  "qa": {
+    "accessibilityRequirements": [
+      "Keyboard operability",
+      "Visible focus",
+      "Reduced motion",
+      "Accessible names",
+      "Contrast"
+    ],
+    "allowDocumentedNonBlockers": true,
+    "browsers": [
+      {
+        "browser": "CHROMIUM",
+        "id": "chromium-desktop",
+        "mode": "desktop",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "CHROMIUM",
+        "id": "chromium-responsive",
+        "mode": "responsive",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "SAFARI",
+        "id": "safari-desktop",
+        "mode": "desktop",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "SAFARI",
+        "id": "safari-responsive",
+        "mode": "representative responsive",
+        "reason": null,
+        "state": "PASS"
+      }
+    ],
+    "contentIntegrity": true,
+    "criticalRiskOverrideApprovalRef": null,
+    "gates": [
+      {
+        "category": "TYPECHECK",
+        "id": "typecheck",
+        "state": "PASS"
+      },
+      {
+        "category": "LINT",
+        "id": "lint",
+        "state": "PASS"
+      },
+      {
+        "category": "BUILD",
+        "id": "build",
+        "state": "PASS"
+      },
+      {
+        "category": "DEPENDENCY_AUDIT",
+        "id": "dependency-audit",
+        "state": "PASS"
+      },
+      {
+        "category": "RESPONSIVE",
+        "id": "responsive",
+        "state": "PASS"
+      },
+      {
+        "category": "CONTENT_INTEGRITY",
+        "id": "content-integrity",
+        "state": "PASS"
+      },
+      {
+        "category": "ACCESSIBILITY",
+        "id": "accessibility",
+        "state": "PASS"
+      },
+      {
+        "category": "BROKEN_LINKS",
+        "id": "broken-links",
+        "state": "PASS"
+      },
+      {
+        "category": "METADATA",
+        "id": "metadata",
+        "state": "PASS"
+      },
+      {
+        "category": "SECURITY",
+        "id": "security",
+        "state": "PASS"
+      },
+      {
+        "category": "INTEGRATION_FAILURE",
+        "id": "integration-failure",
+        "state": "PASS"
+      },
+      {
+        "category": "RELEASE_CERTIFICATION",
+        "id": "release-certification",
+        "state": "PASS"
+      }
+    ],
+    "releaseCertificationRequired": true,
+    "requiredBrowserIds": [
+      "chromium-desktop",
+      "chromium-responsive",
+      "safari-desktop",
+      "safari-responsive"
+    ],
+    "requiredGateIds": [
+      "typecheck",
+      "lint",
+      "build",
+      "dependency-audit",
+      "responsive",
+      "content-integrity",
+      "accessibility",
+      "broken-links",
+      "metadata",
+      "security",
+      "integration-failure",
+      "release-certification"
+    ],
+    "responsiveMatrix": [
+      320,
+      360,
+      390,
+      768,
+      1024,
+      1280,
+      1440
+    ]
+  },
+  "truth": {
+    "records": [
+      {
+        "approver": "Owner",
+        "id": "business-position",
+        "notes": "Reference-fixture summary",
+        "publicEligible": true,
+        "sourceRef": "docs/mariner-nexus-redesign/README.md",
+        "state": "VERIFIED",
+        "statement": "Mariner Nexus delivers strategy-led, solution-specific digital experiences.",
+        "subject": "Mariner Nexus positioning"
+      },
+      {
+        "approver": "Owner",
+        "id": "undugu-status",
+        "notes": "Approved public fact",
+        "publicEligible": true,
+        "sourceRef": "EA-07 authorization record",
+        "state": "CLIENT-PROVIDED",
+        "statement": "Undugu is a 501(c)(3) nonprofit organization.",
+        "subject": "Undugu organizational status"
+      }
+    ]
+  }
+}

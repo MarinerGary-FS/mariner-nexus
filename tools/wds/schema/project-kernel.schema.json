@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://marinernexus.com/wds/project-kernel.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project", "truth", "authorizations", "approvals", "changes", "qa", "integrations"],
+  "properties": {
+    "project": { "$ref": "#/$defs/project" },
+    "truth": { "$ref": "#/$defs/truthRegister" },
+    "authorizations": { "$ref": "#/$defs/authorizationRegister" },
+    "approvals": { "$ref": "#/$defs/approvalRegister" },
+    "changes": { "$ref": "#/$defs/changeRegister" },
+    "qa": { "$ref": "#/$defs/qa" },
+    "integrations": { "$ref": "#/$defs/integrationRegister" }
+  },
+  "$defs": {
+    "nonEmpty": { "type": "string", "minLength": 1 },
+    "identifier": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "approvalClass": { "enum": ["A", "B", "C", "D"] },
+    "recordState": { "enum": ["PENDING", "APPROVED", "REJECTED", "SUPERSEDED"] },
+    "gateState": { "enum": ["PASS", "FAIL", "PENDING", "NOT_APPLICABLE", "DOCUMENTED_NON_BLOCKER"] },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schemaVersion", "identity", "delivery", "objectives", "audiences", "experience", "routes", "actions", "operations", "risk"],
+      "properties": {
+        "schemaVersion": { "const": "1.0.0" },
+        "identity": {
+          "type": "object", "additionalProperties": false,
+          "required": ["projectId", "projectName", "organization", "projectType", "publicUrl", "repositoryContext"],
+          "properties": {
+            "projectId": { "$ref": "#/$defs/identifier" }, "projectName": { "$ref": "#/$defs/nonEmpty" },
+            "organization": { "$ref": "#/$defs/nonEmpty" }, "projectType": { "$ref": "#/$defs/nonEmpty" },
+            "publicUrl": { "type": ["string", "null"] }, "repositoryContext": { "$ref": "#/$defs/nonEmpty" }
+          }
+        },
+        "delivery": {
+          "type": "object", "additionalProperties": false,
+          "required": ["tier", "lifecycleStage", "targetLaunchDate", "requiredApprovalIds"],
+          "properties": {
+            "tier": { "enum": ["ESSENTIAL_PRESENCE", "STRATEGIC_EXPERIENCE", "CONNECTED_EXPERIENCE", "SIGNATURE_SYSTEM"] },
+            "lifecycleStage": { "enum": ["INTAKE", "DISCOVERY", "STRATEGY", "ARCHITECTURE", "IMPLEMENTATION", "QA", "REVIEW", "RELEASE_CERTIFICATION", "PRODUCTION_READY", "LAUNCHED", "HANDOFF"] },
+            "targetLaunchDate": { "type": ["string", "null"] },
+            "requiredApprovalIds": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true }
+          }
+        },
+        "objectives": {
+          "type": "object", "additionalProperties": false, "required": ["primary", "supporting", "successCriteria"],
+          "properties": { "primary": { "$ref": "#/$defs/nonEmpty" }, "supporting": { "type": "array", "items": { "$ref": "#/$defs/nonEmpty" } }, "successCriteria": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmpty" } } }
+        },
+        "audiences": {
+          "type": "object", "additionalProperties": false, "required": ["primary", "secondary"],
+          "properties": { "primary": { "$ref": "#/$defs/nonEmpty" }, "secondary": { "type": "array", "items": { "$ref": "#/$defs/nonEmpty" } } }
+        },
+        "experience": {
+          "type": "object", "additionalProperties": false, "required": ["principles", "emotionalGoals", "amplification", "responsiveExpectations", "requiredRenderingTechnology"],
+          "properties": {
+            "principles": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmpty" } },
+            "emotionalGoals": { "type": "array", "items": { "$ref": "#/$defs/nonEmpty" } },
+            "amplification": { "enum": ["A0", "A1", "A2", "A3", "A4"] },
+            "responsiveExpectations": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmpty" } },
+            "requiredRenderingTechnology": { "type": ["string", "null"] }
+          }
+        },
+        "routes": {
+          "type": "object", "additionalProperties": false, "required": ["public", "protected", "redirects"],
+          "properties": {
+            "public": { "type": "array", "items": { "$ref": "#/$defs/route" } },
+            "protected": { "type": "array", "items": { "$ref": "#/$defs/protectedRoute" } },
+            "redirects": { "type": "array", "items": { "$ref": "#/$defs/redirect" } }
+          }
+        },
+        "actions": { "type": "array", "items": { "$ref": "#/$defs/action" } },
+        "operations": {
+          "type": "object", "additionalProperties": false, "required": ["hosting", "responsibilities"],
+          "properties": {
+            "hosting": { "$ref": "#/$defs/nonEmpty" },
+            "responsibilities": { "type": "array", "minItems": 7, "items": { "$ref": "#/$defs/responsibility" } }
+          }
+        },
+        "risk": {
+          "type": "object", "additionalProperties": false, "required": ["level", "flags", "requiredReviews"],
+          "properties": {
+            "level": { "enum": ["LOW", "MODERATE", "HIGH", "CRITICAL"] },
+            "flags": { "type": "array", "items": { "enum": ["PII", "PAYMENTS", "HEALTH_WELLNESS", "FINANCIAL_CREDIT", "MINORS", "AUTHENTICATION", "PRIVATE_AREAS", "LOCATION", "USER_GENERATED_CONTENT", "REGULATED_SERVICES", "ANALYTICS_COOKIES", "INTERNATIONAL_AUDIENCE", "ACCESSIBILITY_SENSITIVITY", "LEGAL_REGULATED_CLAIMS"] }, "uniqueItems": true },
+            "requiredReviews": { "type": "array", "items": { "$ref": "#/$defs/nonEmpty" }, "uniqueItems": true }
+          }
+        }
+      }
+    },
+    "route": {
+      "type": "object", "additionalProperties": false, "required": ["path", "kind", "publicationState", "sitemapEligible", "truthRefs"],
+      "properties": {
+        "path": { "type": "string", "pattern": "^/" }, "kind": { "enum": ["STANDARD", "CASE_STUDY"] },
+        "publicationState": { "enum": ["DRAFT", "HELD", "PUBLISHED"] }, "sitemapEligible": { "type": "boolean" },
+        "truthRefs": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "authorizationRef": { "$ref": "#/$defs/identifier" }
+      }
+    },
+    "protectedRoute": { "type": "object", "additionalProperties": false, "required": ["path", "access"], "properties": { "path": { "type": "string", "pattern": "^/" }, "access": { "$ref": "#/$defs/nonEmpty" } } },
+    "redirect": { "type": "object", "additionalProperties": false, "required": ["from", "to", "status"], "properties": { "from": { "type": "string", "pattern": "^/" }, "to": { "type": "string", "pattern": "^/" }, "status": { "enum": [301, 302, 307, 308] } } },
+    "action": { "type": "object", "additionalProperties": false, "required": ["id", "type", "approvalClass"], "properties": { "id": { "$ref": "#/$defs/identifier" }, "type": { "$ref": "#/$defs/nonEmpty" }, "approvalClass": { "$ref": "#/$defs/approvalClass" } } },
+    "responsibility": { "type": "object", "additionalProperties": false, "required": ["area", "owner"], "properties": { "area": { "enum": ["DEPLOYMENT", "DOMAIN_DNS", "CONTENT", "INTEGRATIONS", "MONITORING", "MAINTENANCE", "ONGOING_DEVELOPMENT"] }, "owner": { "enum": ["CLIENT", "MARINER_NEXUS", "SHARED", "EXTERNAL_PROVIDER", "UNASSIGNED"] } } },
+    "truthRegister": {
+      "type": "object", "additionalProperties": false, "required": ["records"],
+      "properties": { "records": { "type": "array", "items": { "$ref": "#/$defs/truth" } } }
+    },
+    "truth": {
+      "type": "object", "additionalProperties": false, "required": ["id", "subject", "statement", "state", "sourceRef", "publicEligible", "approver", "notes"],
+      "properties": { "id": { "$ref": "#/$defs/identifier" }, "subject": { "$ref": "#/$defs/nonEmpty" }, "statement": { "$ref": "#/$defs/nonEmpty" }, "state": { "enum": ["VERIFIED", "CLIENT-PROVIDED", "INFERRED", "RECOMMENDED", "REQUIRED INPUT", "PROHIBITED CLAIM"] }, "sourceRef": { "type": ["string", "null"] }, "publicEligible": { "type": "boolean" }, "approver": { "type": ["string", "null"] }, "notes": { "type": ["string", "null"] } }
+    },
+    "authorizationRegister": { "type": "object", "additionalProperties": false, "required": ["records"], "properties": { "records": { "type": "array", "items": { "$ref": "#/$defs/authorization" } } } },
+    "authorization": {
+      "type": "object", "additionalProperties": false, "required": ["id", "category", "scope", "state", "approver", "dateRef"],
+      "properties": { "id": { "$ref": "#/$defs/identifier" }, "category": { "enum": ["PUBLIC_DISPLAY", "CASE_STUDY_PUBLICATION", "LOGO_USAGE", "TESTIMONIAL_USAGE", "METRIC_USAGE", "ASSET_USAGE", "PRODUCTION_PROMOTION"] }, "scope": { "$ref": "#/$defs/nonEmpty" }, "state": { "$ref": "#/$defs/recordState" }, "approver": { "type": ["string", "null"] }, "dateRef": { "type": ["string", "null"] } }
+    },
+    "approvalRegister": { "type": "object", "additionalProperties": false, "required": ["records"], "properties": { "records": { "type": "array", "items": { "$ref": "#/$defs/approval" } } } },
+    "approval": {
+      "type": "object", "additionalProperties": false, "required": ["id", "subject", "class", "minimumClass", "state", "approver", "dependsOnTruth"],
+      "properties": { "id": { "$ref": "#/$defs/identifier" }, "subject": { "$ref": "#/$defs/nonEmpty" }, "class": { "$ref": "#/$defs/approvalClass" }, "minimumClass": { "$ref": "#/$defs/approvalClass" }, "state": { "$ref": "#/$defs/recordState" }, "approver": { "type": ["string", "null"] }, "dependsOnTruth": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true } }
+    },
+    "changeRegister": { "type": "object", "additionalProperties": false, "required": ["records"], "properties": { "records": { "type": "array", "items": { "$ref": "#/$defs/change" } } } },
+    "change": {
+      "type": "object", "additionalProperties": false, "required": ["id", "classification", "requestedBy", "description", "scopeImpact", "approvalRequirement", "affectedMilestone", "status"],
+      "properties": { "id": { "$ref": "#/$defs/identifier" }, "classification": { "enum": ["CORRECTION", "CONTENT_REVISION", "DESIGN_REVISION", "SCOPE_EXPANSION", "ARCHITECTURE_CHANGE", "POST_APPROVAL_CHANGE"] }, "requestedBy": { "$ref": "#/$defs/nonEmpty" }, "description": { "$ref": "#/$defs/nonEmpty" }, "scopeImpact": { "$ref": "#/$defs/nonEmpty" }, "approvalRequirement": { "$ref": "#/$defs/approvalClass" }, "affectedMilestone": { "$ref": "#/$defs/nonEmpty" }, "status": { "enum": ["PROPOSED", "APPROVED", "REJECTED", "IMPLEMENTED", "VERIFIED"] } }
+    },
+    "qa": {
+      "type": "object", "additionalProperties": false, "required": ["requiredGateIds", "gates", "requiredBrowserIds", "browsers", "allowDocumentedNonBlockers", "responsiveMatrix", "accessibilityRequirements", "contentIntegrity", "releaseCertificationRequired", "criticalRiskOverrideApprovalRef"],
+      "properties": {
+        "requiredGateIds": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "gates": { "type": "array", "items": { "$ref": "#/$defs/gate" } },
+        "requiredBrowserIds": { "type": "array", "items": { "$ref": "#/$defs/identifier" }, "uniqueItems": true },
+        "browsers": { "type": "array", "items": { "$ref": "#/$defs/browser" } },
+        "allowDocumentedNonBlockers": { "type": "boolean" },
+        "responsiveMatrix": { "type": "array", "minItems": 3, "items": { "type": "integer", "minimum": 240 } },
+        "accessibilityRequirements": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/nonEmpty" } },
+        "contentIntegrity": { "type": "boolean" },
+        "releaseCertificationRequired": { "type": "boolean" },
+        "criticalRiskOverrideApprovalRef": { "type": ["string", "null"] }
+      }
+    },
+    "gate": { "type": "object", "additionalProperties": false, "required": ["id", "category", "state"], "properties": { "id": { "$ref": "#/$defs/identifier" }, "category": { "enum": ["TYPECHECK", "LINT", "BUILD", "DEPENDENCY_AUDIT", "RESPONSIVE", "CONTENT_INTEGRITY", "ACCESSIBILITY", "BROKEN_LINKS", "METADATA", "SECURITY", "JAVASCRIPT_FALLBACK", "INTERACTION_TORTURE", "IDENTITY_LEAKAGE", "INTEGRATION_FAILURE", "LOAD", "RELEASE_CERTIFICATION", "ROLLBACK_REHEARSAL"] }, "state": { "$ref": "#/$defs/gateState" } } },
+    "browser": { "type": "object", "additionalProperties": false, "required": ["id", "browser", "mode", "state", "reason"], "properties": { "id": { "$ref": "#/$defs/identifier" }, "browser": { "enum": ["CHROMIUM", "SAFARI", "FIREFOX", "EDGE", "PHYSICAL_DEVICE"] }, "mode": { "$ref": "#/$defs/nonEmpty" }, "state": { "$ref": "#/$defs/gateState" }, "reason": { "type": ["string", "null"] } } },
+    "integrationRegister": { "type": "object", "additionalProperties": false, "required": ["records"], "properties": { "records": { "type": "array", "items": { "$ref": "#/$defs/integration" } } } },
+    "integration": {
+      "type": "object", "additionalProperties": false, "required": ["id", "category", "provider", "supportLevel", "purpose", "environments", "owner", "requiresSecrets", "environmentHandling", "collectsData", "dataClassification", "failureBehavior", "fallback", "operationalContact", "verificationState", "recurringCost", "ownerApprovalRef"],
+      "properties": {
+        "id": { "$ref": "#/$defs/identifier" }, "category": { "$ref": "#/$defs/nonEmpty" },
+        "provider": { "enum": ["GOOGLE_WORKSPACE", "RESEND", "STRIPE", "CALENDLY", "GENERIC_HTTP", "VERCEL", "OTHER"] },
+        "supportLevel": { "enum": ["FIRST_CLASS_CONTRACT", "PROJECT_SUPPORTED"] }, "purpose": { "$ref": "#/$defs/nonEmpty" },
+        "environments": { "type": "array", "items": { "enum": ["LOCAL", "PREVIEW", "PRODUCTION"] }, "uniqueItems": true },
+        "owner": { "type": ["string", "null"] }, "requiresSecrets": { "type": "boolean" }, "environmentHandling": { "type": ["string", "null"] },
+        "collectsData": { "type": "boolean" }, "dataClassification": { "type": ["string", "null"] }, "failureBehavior": { "$ref": "#/$defs/nonEmpty" },
+        "fallback": { "$ref": "#/$defs/nonEmpty" }, "operationalContact": { "$ref": "#/$defs/nonEmpty" }, "verificationState": { "$ref": "#/$defs/gateState" },
+        "recurringCost": { "type": "boolean" }, "ownerApprovalRef": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

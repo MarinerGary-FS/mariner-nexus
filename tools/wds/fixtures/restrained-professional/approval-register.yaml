@@ -1,0 +1,15 @@
+records:
+  - id: content-approval
+    subject: Public website content
+    class: C
+    minimumClass: C
+    state: APPROVED
+    approver: Synthetic client owner
+    dependsOnTruth: [business-purpose]
+  - id: production-owner-approval
+    subject: Production promotion
+    class: D
+    minimumClass: D
+    state: PENDING
+    approver: null
+    dependsOnTruth: []

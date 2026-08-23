@@ -1,0 +1,22 @@
+records:
+  - id: public-content
+    subject: Public corporate content
+    class: C
+    minimumClass: C
+    state: APPROVED
+    approver: Owner
+    dependsOnTruth: [business-position]
+  - id: case-study-publication
+    subject: Authorized Work publication
+    class: D
+    minimumClass: D
+    state: APPROVED
+    approver: Owner
+    dependsOnTruth: [undugu-status]
+  - id: production-approval
+    subject: Production promotion
+    class: D
+    minimumClass: D
+    state: APPROVED
+    approver: Owner
+    dependsOnTruth: []

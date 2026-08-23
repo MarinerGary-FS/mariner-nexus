@@ -2,7 +2,7 @@
 
 ## Status
 
-Architecture extraction complete in review state. No generator, template, package, installed Skill, application code, Vercel configuration, or Production deployment is changed by WDS-01.
+WDS-01 architecture extraction is owner-approved and archived. WDS-02 implements the separately controlled Validated Project Kernel. No generator, visual template, installed Skill, application runtime, Vercel configuration, or Production deployment is changed.
 
 ## Reference baseline
 
@@ -46,6 +46,7 @@ Every extracted pattern has exactly one primary classification in the [reusable 
 - [Proposed project bootstrap](./bootstrap/proposed-project-bootstrap.md)
 - [Reference implementation observations](./reference-implementation-observations.md)
 - [WDS decision log](./decisions.md)
+- [Validated Project Kernel](./kernel/README.md)
 
 ## WDS-01 boundary
 
@@ -54,6 +55,8 @@ The existing `mariner-nexus-delivery-system/` directory is historical extraction
 ## Recommendation for WDS-02
 
 Build the **Validated Project Kernel** first: a small machine-readable project profile, truth and approval registers, a QA manifest, schema validation, and a lightweight repository bootstrap. Prove it by representing Mariner Nexus and two deliberately different synthetic client profiles without importing any Mariner visual token or signature interaction. Do not begin a broad generator, component library, integration catalog, or installed-Skill rewrite until that kernel passes the portability test.
+
+WDS-02 implements this approved kernel under `tools/wds/`; it remains isolated from the Production application runtime.
 
 ### Why this is highest leverage
 

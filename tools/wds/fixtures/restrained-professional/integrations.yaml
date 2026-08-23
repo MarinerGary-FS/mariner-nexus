@@ -1,0 +1,18 @@
+records:
+  - id: contact-webhook
+    category: Inquiry transport
+    provider: GENERIC_HTTP
+    supportLevel: FIRST_CLASS_CONTRACT
+    purpose: Deliver inquiry data to the client workflow.
+    environments: [PREVIEW, PRODUCTION]
+    owner: Shared operations
+    requiresSecrets: true
+    environmentHandling: Separate scoped variables for Preview and Production
+    collectsData: true
+    dataClassification: Basic contact PII
+    failureBehavior: Preserve the submitted state and show a useful error.
+    fallback: Provide a client-approved alternate contact path.
+    operationalContact: Synthetic client operations
+    verificationState: PASS
+    recurringCost: false
+    ownerApprovalRef: null

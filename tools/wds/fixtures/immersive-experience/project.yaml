@@ -1,0 +1,49 @@
+schemaVersion: 1.0.0
+identity:
+  projectId: ember-atlas
+  projectName: Ember Atlas
+  organization: Ember Atlas Studio
+  projectType: Fictional immersive cultural experience
+  publicUrl: https://example.invalid
+  repositoryContext: Synthetic WDS fixture only
+delivery:
+  tier: SIGNATURE_SYSTEM
+  lifecycleStage: QA
+  targetLaunchDate: null
+  requiredApprovalIds: [experience-approval, payment-approval]
+objectives:
+  primary: Invite visitors into an atmospheric participatory exhibition.
+  supporting: [Explain the program, Support optional registration]
+  successCriteria: [The story remains understandable without motion, Registration is resilient]
+audiences:
+  primary: Curious cultural participants
+  secondary: [Artists, Educators]
+experience:
+  principles: [Atmospheric, exploratory, comprehensible]
+  emotionalGoals: [Wonder, agency]
+  amplification: A4
+  responsiveExpectations: [Small screens receive authored linear choreography, Meaning survives reduced motion]
+  requiredRenderingTechnology: null
+routes:
+  public:
+    - { path: /, kind: STANDARD, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [experience-purpose] }
+    - { path: /explore, kind: STANDARD, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [experience-purpose] }
+    - { path: /register, kind: STANDARD, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [] }
+  protected: []
+  redirects: []
+actions:
+  - { id: production-promotion, type: PRODUCTION_PROMOTION, approvalClass: D }
+operations:
+  hosting: Managed platform hosting
+  responsibilities:
+    - { area: DEPLOYMENT, owner: EXTERNAL_PROVIDER }
+    - { area: DOMAIN_DNS, owner: CLIENT }
+    - { area: CONTENT, owner: SHARED }
+    - { area: INTEGRATIONS, owner: SHARED }
+    - { area: MONITORING, owner: SHARED }
+    - { area: MAINTENANCE, owner: SHARED }
+    - { area: ONGOING_DEVELOPMENT, owner: SHARED }
+risk:
+  level: HIGH
+  flags: [PII, PAYMENTS, ACCESSIBILITY_SENSITIVITY]
+  requiredReviews: [Payment architecture, Privacy review, Advanced accessibility review]

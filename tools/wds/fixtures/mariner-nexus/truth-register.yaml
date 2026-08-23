@@ -1,0 +1,17 @@
+records:
+  - id: business-position
+    subject: Mariner Nexus positioning
+    statement: Mariner Nexus delivers strategy-led, solution-specific digital experiences.
+    state: VERIFIED
+    sourceRef: docs/mariner-nexus-redesign/README.md
+    publicEligible: true
+    approver: Owner
+    notes: Reference-fixture summary
+  - id: undugu-status
+    subject: Undugu organizational status
+    statement: Undugu is a 501(c)(3) nonprofit organization.
+    state: CLIENT-PROVIDED
+    sourceRef: EA-07 authorization record
+    publicEligible: true
+    approver: Owner
+    notes: Approved public fact

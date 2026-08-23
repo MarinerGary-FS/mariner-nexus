@@ -9,7 +9,11 @@
     "typegen": "next typegen",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "test": "vitest run"
+    "test": "vitest run",
+    "wds:validate": "node tools/wds/cli.mjs validate",
+    "wds:generate": "node tools/wds/cli.mjs generate",
+    "wds:check-generated": "node tools/wds/cli.mjs check-generated",
+    "wds:test": "vitest run --config tools/wds/vitest.config.mts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -25,11 +29,13 @@
     "@types/node": "^20",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "ajv": "^8.20.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.2",
     "postcss": "^8",
     "tailwindcss": "^4.0.0",
     "typescript": "^5",
-    "vitest": "^4.1.11"
+    "vitest": "^4.1.11",
+    "yaml": "^2.9.0"
   }
 }

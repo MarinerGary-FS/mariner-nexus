@@ -1,0 +1,9 @@
+records:
+  - id: business-purpose
+    subject: Organization purpose
+    statement: The fictional firm provides operational advisory services.
+    state: CLIENT-PROVIDED
+    sourceRef: docs/project-brief.md
+    publicEligible: true
+    approver: Synthetic client owner
+    notes: Fictional fixture statement

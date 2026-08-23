@@ -1,0 +1,49 @@
+schemaVersion: 1.0.0
+identity:
+  projectId: northstar-advisory
+  projectName: Northstar Advisory
+  organization: Northstar Advisory LLC
+  projectType: Professional services website
+  publicUrl: https://example.invalid
+  repositoryContext: Synthetic WDS fixture only
+delivery:
+  tier: ESSENTIAL_PRESENCE
+  lifecycleStage: QA
+  targetLaunchDate: null
+  requiredApprovalIds: [content-approval]
+objectives:
+  primary: Establish a clear and credible professional presence.
+  supporting: [Explain the advisory process, Provide a direct inquiry path]
+  successCriteria: [Visitors understand the offer, Qualified visitors can inquire]
+audiences:
+  primary: Owners seeking focused operational advice
+  secondary: [Referral partners]
+experience:
+  principles: [Restrained, direct, evidence-led]
+  emotionalGoals: [Confidence, clarity]
+  amplification: A1
+  responsiveExpectations: [Editorial hierarchy remains clear at every width]
+  requiredRenderingTechnology: null
+routes:
+  public:
+    - { path: /, kind: STANDARD, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [business-purpose] }
+    - { path: /services, kind: STANDARD, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [business-purpose] }
+    - { path: /contact, kind: STANDARD, publicationState: PUBLISHED, sitemapEligible: true, truthRefs: [] }
+  protected: []
+  redirects: []
+actions:
+  - { id: production-promotion, type: PRODUCTION_PROMOTION, approvalClass: D }
+operations:
+  hosting: Managed platform hosting
+  responsibilities:
+    - { area: DEPLOYMENT, owner: EXTERNAL_PROVIDER }
+    - { area: DOMAIN_DNS, owner: CLIENT }
+    - { area: CONTENT, owner: CLIENT }
+    - { area: INTEGRATIONS, owner: SHARED }
+    - { area: MONITORING, owner: CLIENT }
+    - { area: MAINTENANCE, owner: CLIENT }
+    - { area: ONGOING_DEVELOPMENT, owner: SHARED }
+risk:
+  level: LOW
+  flags: [PII]
+  requiredReviews: [privacy review]

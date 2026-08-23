@@ -1,0 +1,406 @@
+{
+  "approvals": {
+    "records": [
+      {
+        "approver": "Synthetic experience owner",
+        "class": "C",
+        "dependsOnTruth": [
+          "experience-purpose"
+        ],
+        "id": "experience-approval",
+        "minimumClass": "C",
+        "state": "APPROVED",
+        "subject": "Experience direction"
+      },
+      {
+        "approver": "Synthetic owner",
+        "class": "D",
+        "dependsOnTruth": [],
+        "id": "payment-approval",
+        "minimumClass": "D",
+        "state": "APPROVED",
+        "subject": "Recurring payment provider cost"
+      },
+      {
+        "approver": null,
+        "class": "D",
+        "dependsOnTruth": [],
+        "id": "production-owner-approval",
+        "minimumClass": "D",
+        "state": "PENDING",
+        "subject": "Production promotion"
+      }
+    ]
+  },
+  "authorizations": {
+    "records": [
+      {
+        "approver": "Synthetic experience owner",
+        "category": "PUBLIC_DISPLAY",
+        "dateRef": "fixture-approval",
+        "id": "public-site",
+        "scope": "Synthetic experience website",
+        "state": "APPROVED"
+      }
+    ]
+  },
+  "changes": {
+    "records": [
+      {
+        "affectedMilestone": "Experience QA",
+        "approvalRequirement": "B",
+        "classification": "DESIGN_REVISION",
+        "description": "Strengthen the non-motion narrative state.",
+        "id": "motion-fallback",
+        "requestedBy": "Accessibility reviewer",
+        "scopeImpact": "Approved experience refinement",
+        "status": "VERIFIED"
+      }
+    ]
+  },
+  "integrations": {
+    "records": [
+      {
+        "category": "Payment registration",
+        "collectsData": true,
+        "dataClassification": "Contact and payment-provider reference data",
+        "environmentHandling": "Distinct restricted keys per environment",
+        "environments": [
+          "PREVIEW",
+          "PRODUCTION"
+        ],
+        "failureBehavior": "Keep registration recoverable and report payment failure.",
+        "fallback": "Allow the visitor to retry or contact the organizer.",
+        "id": "registration-payment",
+        "operationalContact": "Synthetic experience operations",
+        "owner": "Shared operations",
+        "ownerApprovalRef": "payment-approval",
+        "provider": "STRIPE",
+        "purpose": "Process optional event registration payment.",
+        "recurringCost": true,
+        "requiresSecrets": true,
+        "supportLevel": "FIRST_CLASS_CONTRACT",
+        "verificationState": "PASS"
+      }
+    ]
+  },
+  "project": {
+    "actions": [
+      {
+        "approvalClass": "D",
+        "id": "production-promotion",
+        "type": "PRODUCTION_PROMOTION"
+      }
+    ],
+    "audiences": {
+      "primary": "Curious cultural participants",
+      "secondary": [
+        "Artists",
+        "Educators"
+      ]
+    },
+    "delivery": {
+      "lifecycleStage": "QA",
+      "requiredApprovalIds": [
+        "experience-approval",
+        "payment-approval"
+      ],
+      "targetLaunchDate": null,
+      "tier": "SIGNATURE_SYSTEM"
+    },
+    "experience": {
+      "amplification": "A4",
+      "emotionalGoals": [
+        "Wonder",
+        "agency"
+      ],
+      "principles": [
+        "Atmospheric",
+        "exploratory",
+        "comprehensible"
+      ],
+      "requiredRenderingTechnology": null,
+      "responsiveExpectations": [
+        "Small screens receive authored linear choreography",
+        "Meaning survives reduced motion"
+      ]
+    },
+    "identity": {
+      "organization": "Ember Atlas Studio",
+      "projectId": "ember-atlas",
+      "projectName": "Ember Atlas",
+      "projectType": "Fictional immersive cultural experience",
+      "publicUrl": "https://example.invalid",
+      "repositoryContext": "Synthetic WDS fixture only"
+    },
+    "objectives": {
+      "primary": "Invite visitors into an atmospheric participatory exhibition.",
+      "successCriteria": [
+        "The story remains understandable without motion",
+        "Registration is resilient"
+      ],
+      "supporting": [
+        "Explain the program",
+        "Support optional registration"
+      ]
+    },
+    "operations": {
+      "hosting": "Managed platform hosting",
+      "responsibilities": [
+        {
+          "area": "DEPLOYMENT",
+          "owner": "EXTERNAL_PROVIDER"
+        },
+        {
+          "area": "DOMAIN_DNS",
+          "owner": "CLIENT"
+        },
+        {
+          "area": "CONTENT",
+          "owner": "SHARED"
+        },
+        {
+          "area": "INTEGRATIONS",
+          "owner": "SHARED"
+        },
+        {
+          "area": "MONITORING",
+          "owner": "SHARED"
+        },
+        {
+          "area": "MAINTENANCE",
+          "owner": "SHARED"
+        },
+        {
+          "area": "ONGOING_DEVELOPMENT",
+          "owner": "SHARED"
+        }
+      ]
+    },
+    "risk": {
+      "flags": [
+        "PII",
+        "PAYMENTS",
+        "ACCESSIBILITY_SENSITIVITY"
+      ],
+      "level": "HIGH",
+      "requiredReviews": [
+        "Payment architecture",
+        "Privacy review",
+        "Advanced accessibility review"
+      ]
+    },
+    "routes": {
+      "protected": [],
+      "public": [
+        {
+          "kind": "STANDARD",
+          "path": "/",
+          "publicationState": "PUBLISHED",
+          "sitemapEligible": true,
+          "truthRefs": [
+            "experience-purpose"
+          ]
+        },
+        {
+          "kind": "STANDARD",
+          "path": "/explore",
+          "publicationState": "PUBLISHED",
+          "sitemapEligible": true,
+          "truthRefs": [
+            "experience-purpose"
+          ]
+        },
+        {
+          "kind": "STANDARD",
+          "path": "/register",
+          "publicationState": "PUBLISHED",
+          "sitemapEligible": true,
+          "truthRefs": []
+        }
+      ],
+      "redirects": []
+    },
+    "schemaVersion": "1.0.0"
+  },
+  "qa": {
+    "accessibilityRequirements": [
+      "Keyboard operability",
+      "Semantic fallback",
+      "Reduced motion",
+      "Contrast",
+      "Touch targets"
+    ],
+    "allowDocumentedNonBlockers": false,
+    "browsers": [
+      {
+        "browser": "CHROMIUM",
+        "id": "chromium-desktop",
+        "mode": "desktop",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "CHROMIUM",
+        "id": "chromium-responsive",
+        "mode": "responsive",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "SAFARI",
+        "id": "safari-desktop",
+        "mode": "desktop",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "FIREFOX",
+        "id": "firefox-desktop",
+        "mode": "desktop",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "EDGE",
+        "id": "edge-desktop",
+        "mode": "desktop",
+        "reason": null,
+        "state": "PASS"
+      },
+      {
+        "browser": "PHYSICAL_DEVICE",
+        "id": "physical-mobile",
+        "mode": "representative mobile",
+        "reason": null,
+        "state": "PASS"
+      }
+    ],
+    "contentIntegrity": true,
+    "criticalRiskOverrideApprovalRef": null,
+    "gates": [
+      {
+        "category": "TYPECHECK",
+        "id": "typecheck",
+        "state": "PASS"
+      },
+      {
+        "category": "LINT",
+        "id": "lint",
+        "state": "PASS"
+      },
+      {
+        "category": "BUILD",
+        "id": "build",
+        "state": "PASS"
+      },
+      {
+        "category": "DEPENDENCY_AUDIT",
+        "id": "dependency-audit",
+        "state": "PASS"
+      },
+      {
+        "category": "RESPONSIVE",
+        "id": "responsive",
+        "state": "PASS"
+      },
+      {
+        "category": "CONTENT_INTEGRITY",
+        "id": "content-integrity",
+        "state": "PASS"
+      },
+      {
+        "category": "ACCESSIBILITY",
+        "id": "accessibility",
+        "state": "PASS"
+      },
+      {
+        "category": "BROKEN_LINKS",
+        "id": "broken-links",
+        "state": "PASS"
+      },
+      {
+        "category": "METADATA",
+        "id": "metadata",
+        "state": "PASS"
+      },
+      {
+        "category": "SECURITY",
+        "id": "security",
+        "state": "PASS"
+      },
+      {
+        "category": "JAVASCRIPT_FALLBACK",
+        "id": "javascript-fallback",
+        "state": "PASS"
+      },
+      {
+        "category": "INTERACTION_TORTURE",
+        "id": "interaction-torture",
+        "state": "PASS"
+      },
+      {
+        "category": "INTEGRATION_FAILURE",
+        "id": "integration-failure",
+        "state": "PASS"
+      },
+      {
+        "category": "RELEASE_CERTIFICATION",
+        "id": "release-certification",
+        "state": "PASS"
+      },
+      {
+        "category": "ROLLBACK_REHEARSAL",
+        "id": "rollback-rehearsal",
+        "state": "PASS"
+      }
+    ],
+    "releaseCertificationRequired": true,
+    "requiredBrowserIds": [
+      "chromium-desktop",
+      "chromium-responsive",
+      "safari-desktop",
+      "firefox-desktop",
+      "edge-desktop",
+      "physical-mobile"
+    ],
+    "requiredGateIds": [
+      "typecheck",
+      "lint",
+      "build",
+      "dependency-audit",
+      "responsive",
+      "content-integrity",
+      "accessibility",
+      "broken-links",
+      "metadata",
+      "security",
+      "javascript-fallback",
+      "interaction-torture",
+      "integration-failure",
+      "release-certification",
+      "rollback-rehearsal"
+    ],
+    "responsiveMatrix": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ]
+  },
+  "truth": {
+    "records": [
+      {
+        "approver": "Synthetic experience owner",
+        "id": "experience-purpose",
+        "notes": "Fictional fixture statement",
+        "publicEligible": true,
+        "sourceRef": "docs/project-brief.md",
+        "state": "CLIENT-PROVIDED",
+        "statement": "The fictional experience invites public participation in a cultural exhibition.",
+        "subject": "Experience purpose"
+      }
+    ]
+  }
+}
