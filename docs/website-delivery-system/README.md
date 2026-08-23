@@ -2,7 +2,7 @@
 
 ## Status
 
-WDS-01 extraction, WDS-02 Kernel, WDS-03 bootstrap, and WDS-04 Kernel-aware Skill orchestration are owner-approved and archived. WDS-05 installs the approved Skills, verifies reversible fresh-session operation, and proves one bounded synthetic adoption pilot. No website generator, client repository, application runtime, paid service, Vercel configuration, or Production deployment is changed.
+WDS-01 extraction, WDS-02 Kernel, WDS-03 bootstrap, WDS-04 Kernel-aware Skill orchestration, and WDS-05 controlled Skill adoption are owner-approved and archived. WDS-05 installed the approved Skills, verified reversible fresh-session operation, and proved one bounded synthetic adoption pilot. Real-client adoption remains separately gated by WDS-06 project-selection authorization. No website generator, client repository, application runtime, paid service, Vercel configuration, or Production deployment was changed.
 
 ## Reference baseline
 
