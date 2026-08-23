@@ -2,7 +2,7 @@
 
 ## Status
 
-In progress. Certification only; Production promotion and Website Delivery System implementation are prohibited.
+Complete — `GO WITH DOCUMENTED NON-BLOCKERS`. Preview certification only; Production promotion and Website Delivery System implementation remain prohibited pending separate authorization.
 
 ## Mission
 
@@ -56,3 +56,5 @@ Engineering, Content Integrity, Accessibility, Responsive, Browser, Performance,
 ## Completion boundary
 
 Return exactly one release classification: `GO`, `GO WITH DOCUMENTED NON-BLOCKERS`, or `HOLD`. Even a `GO` stops at the Preview release candidate and requires Gary's separate explicit authorization before Production promotion.
+
+Completion evidence and the gate-by-gate decision are recorded in `arc-01-completion-report.md`. Release candidate: `dpl_4xyL3TPoarFfDn38CzPWHc6mZRws`, implementation source `106768f`.

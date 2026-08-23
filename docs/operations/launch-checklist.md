@@ -1,5 +1,16 @@
 # Mariner Nexus Launch Checklist
 
+## ARC-01 release-candidate certification — 2026-08-23
+
+- [x] Certify branch `codex/arc-01-release-certification` and implementation source `106768f`.
+- [x] Confirm Preview `dpl_4xyL3TPoarFfDn38CzPWHc6mZRws` is READY; no Production alias moved.
+- [x] Pass 13 canonical routes, 13 sitemap URLs, five published Work records, unauthorized-route 404s, and five direct 308 redirects.
+- [x] Pass type generation, typecheck, lint, 12/12 tests, 23-page production build, dependency audit, secrets/history review, and 250/250 Content Integrity.
+- [x] Pass Chromium, native Safari, keyboard/focus, actual reduced motion, representative no-JavaScript, responsive matrix, inquiry regression, and runtime-log review.
+- [x] Preserve Production `dpl_2ALje9XWviQKUWzTmdpJWcJw9tqo` and rollback `dpl_3f14kF1yWzYcM79LrLrFmQJt8tFq`.
+- [ ] Obtain Gary's separate explicit authorization before Production promotion.
+- [ ] After authorization, promote the immutable approved candidate and perform the recorded production smoke test. Do not rebuild or improvise a new candidate.
+
 ## Release candidate
 
 - [x] Confirm Phase 08 release commit is pushed and remote divergence is `0/0`.
