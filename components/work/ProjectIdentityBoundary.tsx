@@ -10,13 +10,14 @@ type ProjectIdentityBoundaryProps = {
   children: ReactNode;
   experience: ProjectExperienceProfile;
   identity: ProjectVisualIdentity;
+  initialState?: "mariner" | "introduction";
   project: string;
   variant: "index" | "record";
 };
 
-export function ProjectIdentityBoundary({ children, experience, identity, project, variant }: ProjectIdentityBoundaryProps) {
+export function ProjectIdentityBoundary({ children, experience, identity, initialState, project, variant }: ProjectIdentityBoundaryProps) {
   const boundaryRef = useRef<HTMLDivElement>(null);
-  const [state, setState] = useState<TakeoverState>("mariner");
+  const [state, setState] = useState<TakeoverState>(initialState ?? (variant === "record" ? "introduction" : "mariner"));
 
   useEffect(() => {
     const boundary = boundaryRef.current;

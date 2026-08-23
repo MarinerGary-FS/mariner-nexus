@@ -3328,6 +3328,11 @@ body[data-menu-open="true"] {
   object-position: center;
 }
 
+[data-project="awakening"][data-takeover-variant="index"]::before,
+[data-project="awakening"][data-takeover-variant="index"] .mn-world-preview__proof > img {
+  transition: none;
+}
+
 [data-experience-profile="awakening-atmospheric-invitation"] .mn-world-preview__copy {
   width: min(52rem, 68%);
   padding-left: clamp(2rem, 8vw, 9rem);
@@ -4382,6 +4387,11 @@ body[data-menu-open="true"] {
 
 [data-experience-profile="undugu-community-expression"][data-takeover-state="introduction"] :is(.mn-project-opening figure, .mn-work-media) {
   transform: scale(0.985);
+}
+
+[data-experience-profile="undugu-community-expression"][data-takeover-variant="record"] .mn-project-opening figure {
+  transform: none;
+  transition: none;
 }
 
 [data-experience-profile="undugu-community-expression"][data-takeover-state="influence"] :is(.mn-project-opening figure, .mn-work-media),
