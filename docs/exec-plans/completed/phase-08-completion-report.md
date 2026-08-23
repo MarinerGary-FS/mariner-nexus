@@ -2,7 +2,7 @@
 
 ## Status and recommendation
 
-**GO WITH DOCUMENTED NON-BLOCKER.** The repository-controlled launch gates pass, the contextual-navigation collision is corrected, and native Safari passes. Production has not been launched or promoted.
+**LIVE — 2026-08-22. GO WITH DOCUMENTED NON-BLOCKER.** The approved release candidate was promoted to Production, the launch smoke gates pass, the contextual-navigation collision remains corrected, and native Safari and Chromium pass.
 
 The remaining non-blocker is environmental: Firefox and Edge are not installed on the QA Mac. Chromium received full interactive and exact-width review; native Safari 26.5 passed the required homepage, navigation/context, Work, Undugu, Systems, Nexus, Start, focus, reduced-motion, overflow, and semantic/runtime smoke checks. No compatibility-specific defect was found.
 
@@ -53,6 +53,16 @@ Public canonical copy contains no unsupported metric or fabricated scale claim. 
 
 Phase 07’s 2026-08-22 live verification remains authoritative: isolated Preview and Production Sheets, 17-column records, `NEW` status, correct environment/source, Production notification to `info@marinernexus.com`, sender `inquiries@marinernexus.com`, and notification secondary to persistence. Phase 08 made no protected infrastructure change and generated no additional Production lead.
 
+## Production launch verification
+
+Approved commit `038513054e0fb5bac6aee3842aee8d270784186f` and candidate `dpl_JBiMR4gA7c3upJwUsxAphrnJUVHb` were promoted without a different commit. Vercel recorded Production deployment `dpl_2ALje9XWviQKUWzTmdpJWcJw9tqo` with `action: promote`, `originalDeploymentId: dpl_JBiMR4gA7c3upJwUsxAphrnJUVHb`, and READY status. Production URL is `https://www.marinernexus.com/`; apex redirects to www.
+
+All nine canonical routes return 200 over HTTPS. `/foundation-preview` and unauthorized Work return 404. All five approved legacy routes return direct 308 responses with query preservation and no chain. OpenGraph, canonical metadata, sitemap, robots, favicon/app icon, and Undugu’s outbound destination resolve correctly without Preview URLs in canonical metadata.
+
+Chromium production smoke passed primary/contextual navigation, mobile menu lock/Escape/focus restoration, all four Nexus objectives, all five Systems states, zero overflow, and zero console warnings/errors. Native Safari production smoke confirmed the canonical homepage, primary navigation, Nexus update, and no horizontal scrollbar; its complete candidate smoke and reduced-motion test remain applicable because Production is the exact approved commit.
+
+Vercel reports no runtime errors after launch; inspected Production runtime logs contain only 200 and 304 responses. Vercel Analytics and Speed Insights initialization were not detectable in the production HTML. The repository’s enum-only analytics bridge remains PII-free and safely no-ops when no provider is present. No monitoring product or dependency was added during launch.
+
 ## Review evidence and release candidate
 
 `docs/exec-plans/review-assets/phase-08/` contains final full-page desktop/mobile captures for Home, Work, Undugu, Capabilities, Approach, Company, and Start; a tablet Home capture; and the mobile menu. Systems and Nexus appear in the homepage captures. The unchanged controlled Start success state remains covered by Phase 07 evidence.
@@ -68,4 +78,4 @@ Previous release candidate `be491b1` / `dpl_CC8XihfCejMJQmtDU2VRaiyd9LeN` is sup
 
 ## Decisions required
 
-Final approval to promote the verified release candidate to Production. No DNS change is proposed.
+None. Production launch was explicitly approved and completed. Firefox/Edge native QA, optional Vercel Analytics/Speed Insights enablement, CSP Report-Only evaluation, and real-user Web Vitals review remain documented post-launch non-blockers.
