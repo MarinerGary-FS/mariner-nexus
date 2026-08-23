@@ -1,9 +1,10 @@
 ---
 name: mariner-nexus-codex-web-engineering
-version: 1.0.0
-compatible-kernel-schema: 1.0.0
-compatible-bootstrap: 1.0.0
 description: WDS engineering executor for approved technical work, QA, integrations, deployment preparation, and operational verification.
+metadata:
+  version: 1.0.0
+  compatible-kernel-schema: 1.0.0
+  compatible-bootstrap: 1.0.0
 ---
 
 # Codex Web Engineering — Engineering Executor

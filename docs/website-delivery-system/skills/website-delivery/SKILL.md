@@ -1,9 +1,10 @@
 ---
 name: mariner-nexus-website-delivery
-version: 1.0.0
-compatible-kernel-schema: 1.0.0
-compatible-bootstrap: 1.0.0
 description: WDS delivery orchestrator for project state, truth, authority, lifecycle, review, and controlled assignments.
+metadata:
+  version: 1.0.0
+  compatible-kernel-schema: 1.0.0
+  compatible-bootstrap: 1.0.0
 ---
 
 # Website Delivery — Delivery Orchestrator

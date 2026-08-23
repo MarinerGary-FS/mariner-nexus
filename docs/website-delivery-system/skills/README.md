@@ -1,6 +1,6 @@
 # Kernel-Aware Skill Orchestration
 
-These are repository-controlled proposals. Globally installed Skills remain unchanged pending explicit owner approval.
+These repository-controlled Skills are owner-approved and installed globally at version `1.0.0`. Their sources remain canonical here; installed copies must not be edited ad hoc. See [installed version](./installed-version.md) and the [adoption procedure](../adoption/README.md).
 
 ## Architecture
 

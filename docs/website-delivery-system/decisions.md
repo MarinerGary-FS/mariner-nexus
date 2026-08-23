@@ -139,3 +139,15 @@
 ## WDS-035 — Kernel-aware Skill orchestration accepted
 
 **Decision:** WDS-04 is owner-approved with 45-line Delivery and Engineering entry files, explicit authority and four-state detection, compatibility `1.0.0`, deterministic project-local helpers, human/cost/Production/browser protections, proportional assignments, 63 focused tests, 16 policy scenarios, three-fixture evidence, zero synthetic leakage, and no installed-Skill mutation during development.
+
+## WDS-036 — Installed Skills use project-local helpers and state
+
+**Decision:** Install the approved orchestrators globally but keep deterministic helpers, Kernel sources, bootstrap state, and project facts in each project repository. Global duplication would create unsafe version drift.
+
+## WDS-037 — Skill installation is reversible infrastructure change
+
+**Decision:** Every approved update requires an integrity-recorded private snapshot, exact-source installation, fresh-session discovery/scenario tests, and a demonstrated rollback/reinstall cycle. Installed copies are never edited ad hoc.
+
+## WDS-038 — WDS is ready only for a bounded client pilot
+
+**Decision:** Six scenario classes, governance protections, rollback, and the isolated Emberline Pottery end-to-end pilot pass. This supports **READY FOR BOUNDED CLIENT PILOT**, not a claim of broad client or Production proof. The next valuable evidence should come from one explicitly authorized real client pilot.

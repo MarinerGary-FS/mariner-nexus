@@ -2,7 +2,7 @@
 
 ## Status
 
-WDS-01 extraction, WDS-02 Kernel, and WDS-03 bootstrap are owner-approved and archived. WDS-04 proposes repository-controlled Kernel-aware Skill orchestration. No globally installed Skill, website generator, visual template, application runtime, Vercel configuration, or Production deployment is changed.
+WDS-01 extraction, WDS-02 Kernel, WDS-03 bootstrap, and WDS-04 Kernel-aware Skill orchestration are owner-approved and archived. WDS-05 installs the approved Skills, verifies reversible fresh-session operation, and proves one bounded synthetic adoption pilot. No website generator, client repository, application runtime, paid service, Vercel configuration, or Production deployment is changed.
 
 ## Reference baseline
 
@@ -49,6 +49,7 @@ Every extracted pattern has exactly one primary classification in the [reusable 
 - [Validated Project Kernel](./kernel/README.md)
 - [Kernel-driven project bootstrap](./bootstrap/README.md)
 - [Kernel-aware Skill proposals](./skills/README.md)
+- [Controlled Skill adoption](./adoption/README.md)
 
 ## WDS-01 boundary
 
