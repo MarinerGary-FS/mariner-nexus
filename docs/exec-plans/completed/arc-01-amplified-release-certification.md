@@ -2,7 +2,7 @@
 
 ## Status
 
-Complete — `GO WITH DOCUMENTED NON-BLOCKERS`. Preview certification only; Production promotion and Website Delivery System implementation remain prohibited pending separate authorization.
+Complete and archived — `GO WITH DOCUMENTED NON-BLOCKERS`. The approved release candidate was promoted to Production on 2026-08-23 and passed post-promotion smoke certification. Website Delivery System implementation remains prohibited pending separate authorization.
 
 ## Mission
 
@@ -58,3 +58,5 @@ Engineering, Content Integrity, Accessibility, Responsive, Browser, Performance,
 Return exactly one release classification: `GO`, `GO WITH DOCUMENTED NON-BLOCKERS`, or `HOLD`. Even a `GO` stops at the Preview release candidate and requires Gary's separate explicit authorization before Production promotion.
 
 Completion evidence and the gate-by-gate decision are recorded in `arc-01-completion-report.md`. Release candidate: `dpl_4xyL3TPoarFfDn38CzPWHc6mZRws`, implementation source `106768f`.
+
+Production closeout: `dpl_EGjSRmSBdDyTPLzwFfxA1pdDJfpe` is READY at `https://www.marinernexus.com`; rollback remains `dpl_3f14kF1yWzYcM79LrLrFmQJt8tFq`. Vercel Speed Insights was deferred by owner as optional post-launch observability pending cost/benefit review.

@@ -3,8 +3,9 @@
 ## Known stable state
 
 - Stable Production before Phase 08: deployment `dpl_3f14kF1yWzYcM79LrLrFmQJt8tFq`, commit `eef8aa6573884ff511a37ba7de8bf2fb3c76fbf8`.
-- Current Production reference: deployment `dpl_2ALje9XWviQKUWzTmdpJWcJw9tqo`, commit `0385130`.
-- ARC-01 release candidate: deployment `dpl_4xyL3TPoarFfDn38CzPWHc6mZRws`, implementation source `106768f`. It is Preview-only until separately authorized.
+- Current Production: deployment `dpl_EGjSRmSBdDyTPLzwFfxA1pdDJfpe`, promoted implementation source `106768f7318932a879bb8c6bc04378d621b9a4ab`.
+- Superseded Production reference: deployment `dpl_2ALje9XWviQKUWzTmdpJWcJw9tqo`, commit `0385130`.
+- ARC-01 source release candidate: deployment `dpl_4xyL3TPoarFfDn38CzPWHc6mZRws`.
 
 ## Vercel rollback
 

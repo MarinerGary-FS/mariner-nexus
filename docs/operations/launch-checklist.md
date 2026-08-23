@@ -8,8 +8,12 @@
 - [x] Pass type generation, typecheck, lint, 12/12 tests, 23-page production build, dependency audit, secrets/history review, and 250/250 Content Integrity.
 - [x] Pass Chromium, native Safari, keyboard/focus, actual reduced motion, representative no-JavaScript, responsive matrix, inquiry regression, and runtime-log review.
 - [x] Preserve Production `dpl_2ALje9XWviQKUWzTmdpJWcJw9tqo` and rollback `dpl_3f14kF1yWzYcM79LrLrFmQJt8tFq`.
-- [ ] Obtain Gary's separate explicit authorization before Production promotion.
-- [ ] After authorization, promote the immutable approved candidate and perform the recorded production smoke test. Do not rebuild or improvise a new candidate.
+- [x] Gary explicitly authorized Production promotion of candidate `dpl_4xyL3TPoarFfDn38CzPWHc6mZRws` at source `106768f`.
+- [x] Promote the approved candidate; record READY Production deployment `dpl_EGjSRmSBdDyTPLzwFfxA1pdDJfpe` at `https://www.marinernexus.com`.
+- [x] Pass post-promotion HTTPS, 13-route, metadata/canonical, sitemap, five direct 308, unauthorized 404, mobile/context navigation, homepage journey, five-world Work, overflow, console, and runtime-log smoke certification.
+- [x] Confirm Production inquiry variables remain present and inquiry architecture is unchanged; do not create a duplicate Production record.
+- [x] Preserve launch performance baseline: mobile 0.98 / LCP 2.42 s; desktop 0.98 / LCP 1.10 s; CLS 0; TBT 0 ms.
+- [x] Vercel Speed Insights: **deferred by owner pending cost/benefit review**. No paid observability service or dependency added.
 
 ## Release candidate
 

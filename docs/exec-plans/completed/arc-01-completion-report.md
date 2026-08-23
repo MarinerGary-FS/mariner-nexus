@@ -4,7 +4,7 @@
 
 **GO WITH DOCUMENTED NON-BLOCKERS**
 
-No launch-blocking defect remains. Production was not promoted. Website Delivery System implementation did not begin.
+No launch-blocking defect remains. Gary authorized Production promotion on 2026-08-23, the approved release candidate was promoted and passed post-promotion smoke certification. Website Delivery System implementation did not begin.
 
 ## Release identity
 
@@ -14,11 +14,28 @@ No launch-blocking defect remains. Production was not promoted. Website Delivery
 - Release-candidate deployment: `dpl_4xyL3TPoarFfDn38CzPWHc6mZRws`
 - Release-candidate URL: `https://mariner-nexus-moujdd7bz-garymariner-7562s-projects.vercel.app`
 - Vercel state: `READY`
-- Current Production deployment: `dpl_2ALje9XWviQKUWzTmdpJWcJw9tqo`
-- Current Production source: `0385130`
+- Production deployment: `dpl_EGjSRmSBdDyTPLzwFfxA1pdDJfpe`
+- Promoted source: `106768f7318932a879bb8c6bc04378d621b9a4ab`
+- Production URL: `https://www.marinernexus.com`
+- Superseded Production deployment: `dpl_2ALje9XWviQKUWzTmdpJWcJw9tqo`
+- Superseded Production source: `0385130`
 - Known-good rollback deployment: `dpl_3f14kF1yWzYcM79LrLrFmQJt8tFq`
 - Known-good rollback source: `eef8aa6573884ff511a37ba7de8bf2fb3c76fbf8`
-- Production alias movement: none
+- Production alias movement: approved release candidate promoted; aliases verified on the new READY deployment
+
+## Production promotion closeout
+
+Production smoke certification passed immediately after promotion:
+
+- All thirteen canonical routes returned HTTPS 200 with the expected titles and canonical URLs.
+- Sitemap and robots returned 200; sitemap contains thirteen canonical URLs and all five published Work records.
+- All five legacy redirects returned direct 308 responses with query preservation and no chain.
+- `/work/not-authorized`, `/work/act-of-valor`, and `/foundation-preview` remained 404.
+- Mobile navigation opened, exposed the complete menu, closed with Escape, and preserved contextual navigation. Desktop contextual navigation tracked the active homepage environment.
+- Range, Systems, all four distinct Nexus objectives, EA-06 Release, final conversion, and Work identity entry/release remained intact with no horizontal overflow.
+- All four Nexus objective controls became selected and exposed their correct distinct outcomes: Confident launch, Aligned organization, Responsive follow-through, and New capability.
+- Browser console inspection found no errors or warnings. Vercel runtime logs showed expected Production GET traffic with no new runtime errors or function failures.
+- Production inquiry variables remain present. No launch change touched inquiry architecture, so the previously live-verified pipeline was preserved without creating a duplicate Production inquiry.
 
 ## Acceptance gates
 
@@ -94,7 +111,7 @@ HSTS, frame denial, MIME-sniffing protection, strict-origin referrer policy, and
 Recommendations:
 
 - Vercel Analytics — **DEFER**. Existing acquisition instrumentation is intentionally PII-free and bounded; certification found no release question that justifies adding a runtime package now.
-- Speed Insights — **ENABLE NOW** after explicit launch authorization. Real-user Core Web Vitals are the appropriate way to resolve synthetic Work LCP variance; enabling it must be a separately reviewed observability change, not an ARC code mutation.
+- Vercel Speed Insights — **DEFER — optional post-launch observability**. Deferred by owner pending cost/benefit review. Production promotion and smoke certification passed, and variable mobile Work LCP remains a non-blocking observation rather than a release defect. No recurring monitoring purchase or dependency was added. Reconsider only if real traffic, performance concerns, or business/client requirements justify the expense.
 - CSP Report-Only — **DEFER** until a reporting endpoint, ownership, and observation window are defined. Enforcing or emitting an unobserved policy during certification adds risk without evidence.
 
 ## Evidence package
@@ -105,7 +122,7 @@ Recommendations:
 
 1. Native Firefox and Edge were not installed; no questionable browser packages were added. Chromium and native Safari passed, matching the Phase 08 exception rule.
 2. Protected Preview could not be opened anonymously in the visual browser. Authenticated Vercel CLI checks certified the immutable Preview; visual evidence was captured from the identical committed production build.
-3. Mobile-throttled Work LCP is variable and occasionally exceeds 2.5 s, but shows negligible blocking time, stable layout, explicit LCP priority, and performance comparable to or better than current Production. Post-launch RUM through Speed Insights is recommended.
+3. Mobile-throttled Work LCP is variable and occasionally exceeds 2.5 s, but shows negligible blocking time, stable layout, explicit LCP priority, and performance comparable to or better than the pre-promotion Production reference. It remains a post-launch observation item; paid RUM is deferred pending cost/benefit review.
 
 ## ARC defect corrections
 
@@ -122,8 +139,8 @@ Recommendations:
 - `components/systems/SystemsField.tsx`
 - `components/work/ProjectIdentityBoundary.tsx`
 - `lib/content/projects.ts`
-- `docs/exec-plans/active/arc-01-amplified-release-certification.md`
-- `docs/exec-plans/active/arc-01-completion-report.md`
+- `docs/exec-plans/completed/arc-01-amplified-release-certification.md`
+- `docs/exec-plans/completed/arc-01-completion-report.md`
 - `docs/exec-plans/review-assets/arc-01/*`
 - `docs/operations/launch-checklist.md`
 - `docs/operations/rollback-plan.md`
@@ -137,4 +154,13 @@ Recommendations:
 - `106768f` — stabilize Work release candidate and add evidence
 - Documentation closeout commit: this documentation commit (exact hash reported at handoff)
 
-ARC-01 stops at this Preview. Production promotion requires Gary's separate explicit authorization.
+## Preserved launch performance baseline
+
+- Homepage mobile performance: **0.98**
+- Homepage mobile LCP: **2.42 s**
+- Homepage desktop performance: **0.98**
+- Homepage desktop LCP: **1.10 s**
+- Homepage CLS: **0**
+- Homepage TBT: **0 ms**
+
+ARC-01 is closed after approved Production promotion and successful smoke certification. Further observability purchases and Website Delivery System work require separate explicit authorization.
