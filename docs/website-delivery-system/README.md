@@ -2,7 +2,7 @@
 
 ## Status
 
-WDS-01 architecture extraction and WDS-02 Validated Project Kernel are owner-approved and archived. WDS-03 implements the separately controlled Kernel-driven governance/planning bootstrap. No website generator, visual template, installed Skill, application runtime, Vercel configuration, or Production deployment is changed.
+WDS-01 extraction, WDS-02 Kernel, and WDS-03 bootstrap are owner-approved and archived. WDS-04 proposes repository-controlled Kernel-aware Skill orchestration. No globally installed Skill, website generator, visual template, application runtime, Vercel configuration, or Production deployment is changed.
 
 ## Reference baseline
 
@@ -48,6 +48,7 @@ Every extracted pattern has exactly one primary classification in the [reusable 
 - [WDS decision log](./decisions.md)
 - [Validated Project Kernel](./kernel/README.md)
 - [Kernel-driven project bootstrap](./bootstrap/README.md)
+- [Kernel-aware Skill proposals](./skills/README.md)
 
 ## WDS-01 boundary
 

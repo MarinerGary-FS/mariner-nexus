@@ -119,3 +119,23 @@
 ## WDS-030 — Kernel-driven bootstrap accepted
 
 **Decision:** WDS-03 is owner-approved with mandatory Kernel validation, proportional project output, one current-stage plan, consolidated Required Input, lifecycle and approval protection, three ownership classes, hash-based overwrite protection, drift detection, derived QA/operations, Vercel Preview review protocol, 41 focused tests, 10 bootstrap protection tests, zero synthetic leakage, and Production runtime isolation.
+
+## WDS-031 — Skills become concise orchestrators
+
+**Decision:** Repository-controlled Skill proposals consume validated state and route to canonical references. Delivery owns process; Engineering owns approved implementation. Globally installed Skills remain unchanged pending review.
+
+## WDS-032 — Invalid WDS never degrades to Legacy
+
+**Decision:** WDS, Pre-Kernel, Legacy, and Invalid states are explicit. Partial, incompatible, or blocking-drifted adoption reports `WDS STATE INVALID` and blocks dependent work.
+
+## WDS-033 — Evidence cannot self-approve
+
+**Decision:** Automated results may support but never create human Meaning, Impact, Identity, publication, or Production approval. Skills emit `HUMAN REVIEW REQUIRED` until authorized evidence exists.
+
+## WDS-034 — Deterministic policy stays outside prose
+
+**Decision:** State, compatibility, blocking-input, approval/protection, change, gate, and assignment decisions use isolated tested helpers. Creative judgment remains human and unencoded.
+
+## WDS-035 — Kernel-aware Skill orchestration accepted
+
+**Decision:** WDS-04 is owner-approved with 45-line Delivery and Engineering entry files, explicit authority and four-state detection, compatibility `1.0.0`, deterministic project-local helpers, human/cost/Production/browser protections, proportional assignments, 63 focused tests, 16 policy scenarios, three-fixture evidence, zero synthetic leakage, and no installed-Skill mutation during development.
