@@ -1,13 +1,13 @@
 const origin = process.env.QA_ORIGIN ?? "http://localhost:3000";
 const cdp = process.env.QA_CDP ?? "http://127.0.0.1:9223";
 const widths = [1600, 1440, 1366, 1280, 1100, 1024, 834, 768, 430, 390, 375, 360, 320];
-const routes = ["/", "/capabilities", "/work", "/work/undugu", "/approach", "/company", "/start", "/privacy", "/terms"];
+const routes = ["/", "/capabilities", "/work", "/work/undugu", "/work/serene-origins", "/work/sovereign-blueprint-consulting", "/work/awakening", "/work/gary-mariner", "/approach", "/company", "/start", "/privacy", "/terms"];
 
 async function openTarget(url) {
   return fetch(`${cdp}/json/new?${encodeURIComponent(url)}`, { method: "PUT" }).then((response) => response.json());
 }
 
-async function audit(target, width, setupExpression, setupWait = 800, reducedMotion = false) {
+async function audit(target, width, setupExpression, setupWait = 800, reducedMotion = false, javascriptDisabled = false) {
   const socket = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((resolve, reject) => { socket.onopen = resolve; socket.onerror = reject; });
   let id = 0;
@@ -28,6 +28,7 @@ async function audit(target, width, setupExpression, setupWait = 800, reducedMot
   await send("Page.enable");
   await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 });
   if (reducedMotion) await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
+  if (javascriptDisabled) await send("Emulation.setScriptExecutionDisabled", { value: true });
   await send("Page.navigate", { url: target.url });
   await new Promise((resolve) => setTimeout(resolve, 650));
   await send("Runtime.evaluate", { expression: "document.fonts.ready", awaitPromise: true });
@@ -207,6 +208,32 @@ for (const { width, state, phase, reducedMotion = false } of releaseStates) {
   const setup = `document.querySelector('.mn-nexus-resolution').dataset.releasePhase = '${phase}'`;
   const result = await audit(target, width, setup, 300, reducedMotion);
   results.push({ route: "/", width, state: `ea-06:${state}${reducedMotion ? ":reduced" : ""}`, ...result });
+}
+
+const rangeStates = [
+  ...["serene-origins", "sovereign-blueprint-consulting", "awakening", "gary-mariner"].flatMap((project) => [
+    { width: 1440, project, state: "influence" },
+    { width: 1440, project, state: "takeover" },
+    { width: 834, project, state: "takeover" },
+    { width: 390, project, state: "takeover" },
+    { width: 390, project, state: "return", reducedMotion: true },
+  ]),
+];
+
+for (const { width, project, state, reducedMotion = false } of rangeStates) {
+  const target = await openTarget(`${origin}/work`);
+  const setup = `(() => {
+    const boundaries = [...document.querySelectorAll('.mn-project-identity-boundary')];
+    boundaries.forEach((boundary) => { boundary.dataset.takeoverState = boundary.dataset.project === '${project}' ? '${state}' : 'mariner'; });
+  })()`;
+  const result = await audit(target, width, setup, 150, reducedMotion);
+  results.push({ route: "/work", width, state: `ea-07:${project}:${state}${reducedMotion ? ":reduced" : ""}`, ...result });
+}
+
+for (const width of [1440, 390]) {
+  const target = await openTarget(`${origin}/work/gary-mariner`);
+  const result = await audit(target, width, undefined, 150, false, true);
+  results.push({ route: "/work/gary-mariner", width, state: "ea-07:gary-mariner:javascript-free", ...result });
 }
 
 const failures = results.filter((result) => result.overflow > 1 || result.clipped.length || result.collisions.length);

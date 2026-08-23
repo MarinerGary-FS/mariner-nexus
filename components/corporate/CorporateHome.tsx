@@ -5,6 +5,7 @@ import { MarinerThread } from "@/components/foundation/MarinerThread";
 import { SystemsDeconstruction } from "@/components/systems/SystemsDeconstruction";
 import { NexusExperience } from "@/components/nexus/NexusExperience";
 import { TrackedStartLink } from "@/components/inquiry/TrackedStartLink";
+import { RangeMoment } from "@/components/work/RangeMoment";
 
 const recognitionStates = [
   ["01", "Starting something new?", "We help determine what your digital presence should become."],
@@ -86,6 +87,8 @@ export default function CorporateHome() {
           </div>
         </Container>
       </section>
+
+      <RangeMoment />
 
       <section className="mn-home-systems" data-navigation-context="Systems">
         <div className="mn-systems-descent">

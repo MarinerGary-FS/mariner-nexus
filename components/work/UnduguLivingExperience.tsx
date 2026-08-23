@@ -14,7 +14,7 @@ export function UnduguLivingExperience() {
     <div className="mn-undugu-live-hero">
       <div className="mn-undugu-live-copy">
         <h3 id="undugu-living-title">You have been carrying too much alone. <em>Step into the room.</em></h3>
-        <p>Undugu Foundation is a brotherhood movement creating spaces for men to heal, grow, and rise together.</p>
+        <p>Undugu is a 501(c)(3) nonprofit organization focused on brotherhood, community, movement and participation.</p>
         <div className="mn-undugu-live-actions">
           <Link href="https://www.undugu.org/#enter-the-room" rel="noreferrer" target="_blank">Experience the Movement <span aria-hidden="true">→</span><span className="sr-only"> — opens the live Undugu website in a new tab</span></Link>
           <Link href="https://www.undugu.org/donate" rel="noreferrer" target="_blank">Support the Movement<span className="sr-only"> — opens the live Undugu website in a new tab</span></Link>
