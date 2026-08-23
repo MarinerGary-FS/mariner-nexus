@@ -18,8 +18,6 @@ const disciplines = [
   ["Systems", "Connect what happens behind the experience."],
 ];
 
-const approachSteps = ["Understand", "Define", "Architect", "Create", "Connect", "Refine", "Launch", "Evolve"];
-
 export default function CorporateHome() {
   return (
     <div className="mn-corporate-home mn-environment-light">
@@ -131,19 +129,22 @@ export default function CorporateHome() {
         </Container>
       </section>
 
-      <section className="mn-home-reassurance" data-navigation-context="Approach">
+      <section className="mn-home-release-conversion" data-navigation-context="Corporate">
         <Container>
+          <div className="mn-release-silence" aria-hidden="true"><span /><i /></div>
           <Grid>
-            <div className="mn-reassurance-heading"><p className="mn-kicker">A disciplined process</p><h2>Ambition needs structure.</h2><p>Vision without execution is decoration.</p></div>
-            <ol>{approachSteps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span>{step}</li>)}</ol>
+            <p className="mn-kicker">Possibility</p>
+            <div className="mn-release-question">
+              <h2>What could yours become?</h2>
+            </div>
+            <div className="mn-release-decision">
+              <p>Bring us the objective. We’ll help determine what needs to exist around it.</p>
+              <TrackedStartLink source="final_conversion">Start a Project <span aria-hidden="true">→</span></TrackedStartLink>
+              <small>You do not need to have the solution figured out.</small>
+            </div>
           </Grid>
-          <div className="mn-reassurance-close"><p>One connected method—from understanding the objective to evolving what is live.</p><SectionLink href="/approach">See the complete approach</SectionLink></div>
         </Container>
       </section>
-
-      <section className="mn-home-possibility" data-navigation-context="Begin"><Container><p>You’ve seen what we’ve built.</p><h2>What could yours become?</h2></Container></section>
-
-      <section className="mn-home-final-conversion" data-navigation-context="Begin"><Container><Grid><p className="mn-kicker">Begin</p><div><MarinerThread label="The connected journey resolves into one clear next step" nodes={2} /><h2>What are you trying to create?</h2><p>You don’t need to arrive with the solution figured out.</p><TrackedStartLink source="final_conversion">Start a Project <span aria-hidden="true">→</span></TrackedStartLink></div></Grid></Container></section>
     </div>
   );
 }

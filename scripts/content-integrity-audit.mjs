@@ -7,7 +7,7 @@ async function openTarget(url) {
   return fetch(`${cdp}/json/new?${encodeURIComponent(url)}`, { method: "PUT" }).then((response) => response.json());
 }
 
-async function audit(target, width, setupExpression, setupWait = 800) {
+async function audit(target, width, setupExpression, setupWait = 800, reducedMotion = false) {
   const socket = new WebSocket(target.webSocketDebuggerUrl);
   await new Promise((resolve, reject) => { socket.onopen = resolve; socket.onerror = reject; });
   let id = 0;
@@ -27,6 +27,7 @@ async function audit(target, width, setupExpression, setupWait = 800) {
   });
   await send("Page.enable");
   await send("Emulation.setDeviceMetricsOverride", { width, height: 900, deviceScaleFactor: 1, mobile: width < 600 });
+  if (reducedMotion) await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-reduced-motion", value: "reduce" }] });
   await send("Page.navigate", { url: target.url });
   await new Promise((resolve) => setTimeout(resolve, 650));
   await send("Runtime.evaluate", { expression: "document.fonts.ready", awaitPromise: true });
@@ -182,6 +183,30 @@ for (const { width, objective, mode } of nexusStates) {
   })()`;
   const result = await audit(target, width, setup, mode === "transition" ? 120 : 800);
   results.push({ route: "/", width, state: `ea-05:${objective}:${mode}`, ...result });
+}
+
+const releaseStates = [
+  { width: 1440, state: "peak", phase: "peak" },
+  { width: 1440, state: "release", phase: "resolving" },
+  { width: 1440, state: "light", phase: "released" },
+  { width: 1440, state: "possibility", phase: "released" },
+  { width: 1440, state: "conversion", phase: "released" },
+  { width: 1024, state: "release", phase: "resolving" },
+  { width: 1024, state: "conversion", phase: "released" },
+  { width: 390, state: "peak", phase: "peak" },
+  { width: 390, state: "release", phase: "resolving" },
+  { width: 390, state: "possibility", phase: "released" },
+  { width: 390, state: "cta", phase: "released" },
+  { width: 1440, state: "nexus", phase: "peak", reducedMotion: true },
+  { width: 1440, state: "light", phase: "released", reducedMotion: true },
+  { width: 390, state: "conversion", phase: "released", reducedMotion: true },
+];
+
+for (const { width, state, phase, reducedMotion = false } of releaseStates) {
+  const target = await openTarget(`${origin}/`);
+  const setup = `document.querySelector('.mn-nexus-resolution').dataset.releasePhase = '${phase}'`;
+  const result = await audit(target, width, setup, 300, reducedMotion);
+  results.push({ route: "/", width, state: `ea-06:${state}${reducedMotion ? ":reduced" : ""}`, ...result });
 }
 
 const failures = results.filter((result) => result.overflow > 1 || result.clipped.length || result.collisions.length);

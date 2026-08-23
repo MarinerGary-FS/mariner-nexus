@@ -6,6 +6,7 @@ import { nexusChoices, nexusCore, nexusNodeIds, nexusObjectives } from "@/conten
 import type { NexusNodeDefinition, NexusNodeId, NexusObjectiveId } from "@/content/nexus";
 
 type NexusPhase = "settled" | "reorganizing";
+type ReleasePhase = "peak" | "resolving" | "released";
 const fallbackPosition = { x: 50, y: 50 };
 const coreIds: NexusNodeId[] = ["strategy", "experience", "systems"];
 
@@ -18,11 +19,13 @@ function connectionPath(from: NexusNodeDefinition, to: NexusNodeDefinition) {
 
 export function NexusExperience() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const releaseRef = useRef<HTMLDivElement>(null);
   const [objectiveId, setObjectiveId] = useState<NexusObjectiveId>("build");
   const [selectedNodeId, setSelectedNodeId] = useState<NexusNodeId | null>(null);
   const [phase, setPhase] = useState<NexusPhase>("settled");
   const [entered, setEntered] = useState(false);
   const [announcement, setAnnouncement] = useState("");
+  const [releasePhase, setReleasePhase] = useState<ReleasePhase>("peak");
   const settleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -40,6 +43,24 @@ export function NexusExperience() {
 
   useEffect(() => () => {
     if (settleTimer.current) clearTimeout(settleTimer.current);
+  }, []);
+
+  useEffect(() => {
+    const release = releaseRef.current;
+    if (!release) return;
+    const markers = Array.from(release.querySelectorAll<HTMLElement>("[data-release-marker]"));
+    const observer = new IntersectionObserver(() => {
+      const center = window.innerHeight / 2;
+      const closest = markers.reduce((winner, marker) => {
+        const rect = marker.getBoundingClientRect();
+        const distance = Math.abs(rect.top + rect.height / 2 - center);
+        return distance < winner.distance ? { marker, distance } : winner;
+      }, { marker: markers[0], distance: Number.POSITIVE_INFINITY });
+      const next = closest.marker?.getAttribute("data-release-marker") as ReleasePhase | null;
+      if (next) setReleasePhase(next);
+    }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+    markers.forEach((marker) => observer.observe(marker));
+    return () => observer.disconnect();
   }, []);
 
   const objective = nexusObjectives.find((item) => item.id === objectiveId) ?? nexusCore;
@@ -125,6 +146,8 @@ export function NexusExperience() {
         </ol>
       </div>
 
+      <div className="mn-nexus-resolution" data-release-phase={releasePhase} ref={releaseRef}>
+      <div className="mn-nexus-resolution-stage">
       <div className="mn-nexus-peak" aria-hidden="true">
         <svg className="mn-nexus-peak-thread" preserveAspectRatio="none" viewBox="0 0 100 100">
           <path d="M3 22 C24 22 29 48 50 50 C71 52 76 78 97 78" />
@@ -144,6 +167,17 @@ export function NexusExperience() {
         <div className="mn-nexus-peak-core mn-nexus-peak-core--systems"><span>03</span><strong>Systems</strong></div>
         <div className="mn-nexus-peak-outcome"><span>Outcome</span><strong>{objective.nodes.find((node) => node.id === "outcome")?.label}</strong></div>
         <div className="mn-nexus-peak-statement"><p>Strategy · Experience · Systems</p><strong>One architecture. Shaped by the objective.</strong></div>
+      </div>
+      <div className="mn-nexus-release" aria-hidden="true">
+        <svg preserveAspectRatio="none" viewBox="0 0 100 100"><path d="M4 50 C30 50 39 50 50 50 C61 50 70 50 96 50" /><circle cx="50" cy="50" r="0.8" /></svg>
+        <div className="mn-nexus-release-core"><span>Strategy</span><span>Experience</span><span>Systems</span></div>
+        <div className="mn-nexus-release-mark"><span>MN</span></div>
+        <p>Complexity, resolved.</p>
+      </div>
+      </div>
+      <span data-release-marker="peak" />
+      <span data-release-marker="resolving" />
+      <span data-release-marker="released" />
       </div>
       <noscript><div className="mn-nexus-static">{nexusChoices.map((item) => <section key={item.id}><h3>{item.label}</h3><p>{item.summary}</p><ol>{item.mobileOrder.map((id) => { const itemNode = item.nodes.find((candidate) => candidate.id === id); return itemNode ? <li key={id}>{itemNode.label}</li> : null; })}</ol><strong>{item.outcome}</strong></section>)}</div></noscript>
       <p aria-live="polite" className="sr-only">{announcement}</p>
