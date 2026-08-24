@@ -1251,14 +1251,10 @@ body[data-menu-open="true"] {
   letter-spacing: -0.015em;
 }
 
-.mn-brand-mark {
-  display: grid;
+.mn-brand-logo {
   width: 2.25rem;
   height: 2.25rem;
-  place-items: center;
-  border: 1px solid var(--mn-line-strong);
-  font-size: 0.7rem;
-  letter-spacing: -0.03em;
+  object-fit: contain;
 }
 
 .mn-nav-desktop {
@@ -2350,9 +2346,18 @@ body[data-menu-open="true"] {
   gap: var(--mn-space-6);
 }
 
-.mn-footer-brand > a {
+.mn-footer-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
   font-size: 1rem;
   font-weight: 650;
+}
+
+.mn-footer-logo {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
 }
 
 .mn-footer-brand p {

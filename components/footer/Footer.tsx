@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerGroups = [
@@ -11,7 +12,10 @@ export default function Footer() {
       <div className="mn-container">
         <div className="mn-footer-grid">
           <div className="mn-footer-brand">
-            <Link href="/">Mariner Nexus</Link>
+            <Link className="mn-footer-home" href="/">
+              <Image alt="" className="mn-footer-logo" height={56} src="/brand/micro-logo.png" width={56} />
+              <span>Mariner Nexus</span>
+            </Link>
             <p>Where strategy, experience, and technology converge.</p>
           </div>
           {footerGroups.map((group) => (

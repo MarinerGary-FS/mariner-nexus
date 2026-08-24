@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -104,8 +105,8 @@ export default function Nav() {
     <header className="mn-site-header">
       <a className="mn-skip-link" href="#main-content">Skip to content</a>
       <div className="mn-container mn-nav-bar">
-        <Link aria-label="MN — Mariner Nexus home" className="mn-brand" href="/" onClick={() => closeMenu()}>
-          <span aria-hidden="true" className="mn-brand-mark">MN</span>
+        <Link aria-label="Mariner Nexus home" className="mn-brand" href="/" onClick={() => closeMenu()}>
+          <Image alt="" className="mn-brand-logo" height={44} priority src="/brand/micro-logo.png" width={44} />
           <span>Mariner Nexus</span>
         </Link>
 
