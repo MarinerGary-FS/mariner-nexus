@@ -1,4 +1,4 @@
-export type NexusNodeId = "objective" | "audience" | "strategy" | "content" | "experience" | "platform" | "systems" | "data" | "operation" | "outcome";
+export type NexusNodeId = "objective" | "audience" | "strategy" | "content" | "experience" | "platform" | "systems" | "data" | "intelligence" | "operation" | "outcome";
 export type NexusObjectiveId = "core" | "build" | "transform" | "connect" | "explore";
 
 export type NexusNodeDefinition = {
@@ -37,6 +37,7 @@ const descriptions: Record<NexusNodeId, string> = {
   platform: "Provides an appropriate production foundation for the experience.",
   systems: "Connects the visible experience to the tools and operations it needs.",
   data: "Makes interaction useful through structured capture and visibility where required.",
+  intelligence: "Preserves context, organizes evidence, and surfaces what matters when the objective calls for it.",
   operation: "Supports the human action or workflow that follows the interface.",
   outcome: "The practical result the architecture is designed to make possible.",
 };
@@ -47,15 +48,14 @@ export const nexusObjectives: NexusObjectiveDefinition[] = [
   {
     id: "core",
     label: "Core architecture",
-    invitation: "Strategy, Experience, and Systems work together.",
-    summary: "Mariner Nexus begins with the objective, then shapes the relationship among strategy, the visible experience, and the operation behind it.",
-    nodes: [node("objective", "Objective", "Direction", 50, 10), node("strategy", "Strategy", "Core", 23, 42), node("experience", "Experience", "Core", 50, 50), node("systems", "Systems", "Core", 77, 42), node("outcome", "Useful outcome", "Result", 50, 86)],
+    invitation: "Strategy shapes Experience, Systems, and Intelligence.",
+    summary: "Mariner Nexus begins with the objective. Strategy shapes the visible experience, the operation beneath it, and—when useful—the intelligence that preserves context and evidence.",
+    nodes: [node("objective", "Objective", "Direction", 50, 8), node("strategy", "Strategy", "Shaping discipline", 50, 27), node("experience", "Experience", "Core", 18, 54), node("systems", "Systems", "Core", 50, 58), node("intelligence", "Intelligence", "Conditional layer", 82, 54, true), node("outcome", "Useful outcome", "Result", 50, 88)],
     connections: [
-      { from: "objective", relation: "informs", to: "strategy" }, { from: "objective", relation: "informs", to: "experience" }, { from: "objective", relation: "informs", to: "systems" },
-      { from: "strategy", relation: "supports", to: "experience" }, { from: "strategy", relation: "supports", to: "systems" }, { from: "experience", relation: "connects with", to: "systems" },
-      { from: "experience", relation: "results in", to: "outcome" }, { from: "systems", relation: "enables", to: "outcome" },
+      { from: "objective", relation: "informs", to: "strategy" }, { from: "strategy", relation: "supports", to: "experience" }, { from: "strategy", relation: "supports", to: "systems" }, { from: "strategy", relation: "supports", to: "intelligence" },
+      { from: "experience", relation: "connects with", to: "systems" }, { from: "systems", relation: "feeds", to: "intelligence" }, { from: "experience", relation: "results in", to: "outcome" }, { from: "systems", relation: "enables", to: "outcome" }, { from: "intelligence", relation: "supports", to: "outcome" },
     ],
-    mobileOrder: ["objective", "strategy", "experience", "systems", "outcome"],
+    mobileOrder: ["objective", "strategy", "experience", "systems", "intelligence", "outcome"],
     outcome: "A coherent digital response built around the organization rather than a template.",
   },
   {
@@ -88,26 +88,26 @@ export const nexusObjectives: NexusObjectiveDefinition[] = [
     id: "connect",
     label: "Connect the experience",
     invitation: "Make interaction useful after someone acts.",
-    summary: "The visible experience becomes more valuable when interaction, structured data, systems, and human operation form one deliberate path.",
-    nodes: [node("objective", "Disconnected action", "Objective", 6, 22), node("strategy", "Strategy", "Core", 23, 28), node("experience", "Experience", "Core", 39, 39), node("data", "Structured data", "Data", 54, 39, true), node("systems", "Systems", "Core", 68, 55), node("operation", "Human operation", "Operation", 80, 55, true), node("outcome", "Responsive follow-through", "Outcome", 88, 76)],
+    summary: "The visible experience becomes more valuable when interaction, structured data, systems, useful intelligence, and human operation form one deliberate path.",
+    nodes: [node("objective", "Disconnected action", "Objective", 6, 20), node("strategy", "Strategy", "Core", 20, 27), node("experience", "Experience", "Core", 35, 41), node("data", "Structured data", "Data", 49, 30, true), node("systems", "Systems", "Core", 57, 58), node("intelligence", "Useful intelligence", "Conditional layer", 72, 39, true), node("operation", "Human operation", "Operation", 82, 58, true), node("outcome", "Responsive follow-through", "Outcome", 91, 78)],
     connections: [
       { from: "objective", relation: "informs", to: "strategy" }, { from: "strategy", relation: "informs", to: "experience" }, { from: "experience", relation: "feeds", to: "data" }, { from: "data", relation: "feeds", to: "systems" },
-      { from: "systems", relation: "supports", to: "operation" }, { from: "operation", relation: "results in", to: "outcome" }, { from: "experience", relation: "connects with", to: "systems" },
+      { from: "data", relation: "feeds", to: "intelligence" }, { from: "systems", relation: "supports", to: "intelligence" }, { from: "intelligence", relation: "supports", to: "operation" }, { from: "systems", relation: "supports", to: "operation" }, { from: "operation", relation: "results in", to: "outcome" }, { from: "experience", relation: "connects with", to: "systems" },
     ],
-    mobileOrder: ["objective", "strategy", "experience", "data", "systems", "operation", "outcome"],
+    mobileOrder: ["objective", "strategy", "experience", "data", "systems", "intelligence", "operation", "outcome"],
     outcome: "A connected response where the interface supports structured follow-through instead of ending at submission.",
   },
   {
     id: "explore",
     label: "Explore what’s possible",
     invitation: "Discover an appropriate future-state architecture.",
-    summary: "Possibility is grounded in the objective: strategy combines expressive experience, responsive foundations, useful visibility, and practical integration only where they add value.",
-    nodes: [node("objective", "Future state", "Objective", 50, 90), node("audience", "Audience", "Context", 7, 24), node("strategy", "Strategy", "Core", 35, 61), node("content", "Content", "Expression", 27, 10), node("experience", "Interactive experience", "Core", 50, 48), node("platform", "Responsive platform", "Foundation", 73, 10), node("data", "Data visibility", "Visibility", 93, 24, true), node("systems", "Practical systems", "Core", 65, 61), node("outcome", "New capability", "Outcome", 50, 8)],
+    summary: "Possibility is grounded in the objective: strategy combines expressive experience, responsive foundations, useful visibility, practical integration, and intelligence only where they add value.",
+    nodes: [node("objective", "Future state", "Objective", 50, 92), node("audience", "Audience", "Context", 6, 24), node("strategy", "Strategy", "Core", 30, 65), node("content", "Content", "Expression", 24, 11), node("experience", "Interactive experience", "Core", 46, 48), node("platform", "Responsive platform", "Foundation", 69, 10), node("data", "Data visibility", "Visibility", 92, 24, true), node("systems", "Practical systems", "Core", 62, 67), node("intelligence", "Intelligence layer", "Conditional layer", 82, 49, true), node("outcome", "New capability", "Outcome", 50, 6)],
     connections: [
       { from: "objective", relation: "informs", to: "strategy" }, { from: "audience", relation: "informs", to: "strategy" }, { from: "strategy", relation: "informs", to: "content" }, { from: "strategy", relation: "informs", to: "experience" },
-      { from: "content", relation: "supports", to: "experience" }, { from: "experience", relation: "informs", to: "platform" }, { from: "experience", relation: "feeds", to: "data" }, { from: "data", relation: "supports", to: "systems" }, { from: "platform", relation: "connects with", to: "systems" }, { from: "systems", relation: "enables", to: "outcome" },
+      { from: "content", relation: "supports", to: "experience" }, { from: "experience", relation: "informs", to: "platform" }, { from: "experience", relation: "feeds", to: "data" }, { from: "data", relation: "supports", to: "systems" }, { from: "data", relation: "feeds", to: "intelligence" }, { from: "platform", relation: "connects with", to: "systems" }, { from: "systems", relation: "supports", to: "intelligence" }, { from: "intelligence", relation: "enables", to: "outcome" }, { from: "systems", relation: "enables", to: "outcome" },
     ],
-    mobileOrder: ["objective", "audience", "strategy", "content", "experience", "platform", "data", "systems", "outcome"],
+    mobileOrder: ["objective", "audience", "strategy", "content", "experience", "platform", "data", "systems", "intelligence", "outcome"],
     outcome: "A credible future state that expands what the organization can express and operate without unsupported complexity.",
   },
 ];

@@ -85,6 +85,50 @@ export type ProjectPresentation = {
   liveCta: string;
   roles: string[];
   journey: string[];
+  taxonomy?: string;
+  heroSummary?: string;
+  heroCta?: string;
+};
+
+export type IntelligenceArchitectureLayer = {
+  name: string;
+  state: "operating" | "future";
+  summary: string;
+  items: string[];
+};
+
+export type IntelligenceEvidence = {
+  label: string;
+  value: string;
+  sourceClass: string;
+  sourceDate: {
+    label: string;
+    dateTime: string;
+  };
+  sourceLabel: string;
+  sourceUrl: string;
+};
+
+export type ProjectIntelligenceRecord = {
+  challengeHeading: string;
+  challenge: string;
+  fragmentedSources: string[];
+  verificationClasses: string[];
+  architectureHeading: string;
+  architectureIntro: string;
+  architectureLayers: IntelligenceArchitectureLayer[];
+  provenanceHeading: string;
+  provenanceIntro: string;
+  evidence: IntelligenceEvidence[];
+  traditionalWebsite: string[];
+  intelligencePlatform: string[];
+  operatingNow: string[];
+  futureState: string[];
+  media: {
+    film: ProjectMedia;
+    provenance: ProjectMedia;
+    performance: ProjectMedia;
+  };
 };
 
 export type ProjectRecord = {
@@ -111,4 +155,5 @@ export type ProjectRecord = {
   metadata: ProjectMetadata;
   presentation: ProjectPresentation;
   publicationStatus: PublicationStatus;
+  intelligenceRecord?: ProjectIntelligenceRecord;
 };

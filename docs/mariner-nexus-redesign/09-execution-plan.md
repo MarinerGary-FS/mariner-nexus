@@ -82,10 +82,13 @@ Adaptability is experienced rather than claimed.
 Reaction:
 > They're not just a design studio.
 
-### Gate F — Nexus
+### Gate F — Intelligence
+The visitor can distinguish verified evidence, context, decision support, and future-state possibility without mistaking the experience for autonomous judgment or a generic AI offer.
+
+### Gate G — Nexus
 The flagship interaction explains solution-specific adaptability and produces the intended surprise.
 
-### Gate G — Final
+### Gate H — Final
 The visitor should leave asking:
 > What could Mariner Nexus do with mine?
 
@@ -103,3 +106,5 @@ The visitor should leave asking:
 ## Definition of done
 
 Functional + intentional + responsive + accessible + performant + maintainable + validated + materially documented.
+
+For an Intelligence-bearing transformation record, validated also means source-aware, provenance-preserving, explicit about current versus future capability, represented in route metadata and social preview, and exercised within the complete canonical-route QA matrix.

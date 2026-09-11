@@ -6,17 +6,12 @@ import { SystemsDeconstruction } from "@/components/systems/SystemsDeconstructio
 import { NexusExperience } from "@/components/nexus/NexusExperience";
 import { TrackedStartLink } from "@/components/inquiry/TrackedStartLink";
 import { RangeMoment } from "@/components/work/RangeMoment";
+import { disciplines } from "@/content/disciplines";
 
 const recognitionStates = [
   ["01", "Starting something new?", "We help determine what your digital presence should become."],
   ["02", "Ready for something better?", "We transform digital experiences that no longer reflect where you are going."],
   ["03", "Need everything to work together?", "We connect the experience with the systems behind it."],
-];
-
-const disciplines = [
-  ["Strategy", "Determine what should exist and why."],
-  ["Experience", "Create how people interact with it."],
-  ["Systems", "Connect what happens behind the experience."],
 ];
 
 export default function CorporateHome() {
@@ -28,10 +23,10 @@ export default function CorporateHome() {
             <div className="mn-home-arrival-title">
               <div className="mn-signal-line" />
               <p className="mn-kicker">Mariner Nexus</p>
-              <h1>Where strategy, experience, and technology converge.</h1>
+              <h1>We build intelligent digital systems.</h1>
             </div>
             <div className="mn-home-arrival-intro">
-              <p>Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.</p>
+              <p>We design connected digital environments where experience, operation, information, and intelligence work as one architecture.</p>
               <div className="mn-home-actions">
                 <a href="#explore">Explore Mariner Nexus</a>
                 <TrackedStartLink source="hero">Start a Project</TrackedStartLink>
@@ -69,20 +64,20 @@ export default function CorporateHome() {
               <p className="mn-kicker">One connected model</p>
               <h2>We think beyond the website.</h2>
             </div>
-            <p className="mn-discipline-intro">Strategy informs the experience. The experience reveals what the systems must support. Each discipline strengthens the others.</p>
+            <p className="mn-discipline-intro">Strategy shapes the objective. Experience defines the human encounter. Systems connect the operation. Intelligence organizes information, context, and evidence when the work requires it.</p>
           </Grid>
           <div className="mn-discipline-flow">
-            {disciplines.map(([title, description], index) => (
-              <article key={title}>
-                <span>0{index + 1}</span>
-                <h3>{title}</h3>
-                <p>{description}</p>
+            {disciplines.map((discipline) => (
+              <article data-discipline={discipline.id} key={discipline.id}>
+                <span>{discipline.number}</span>
+                <h3>{discipline.name}</h3>
+                <p>{discipline.homeStatement}</p>
               </article>
             ))}
           </div>
-          <MarinerThread label="Strategy connects Experience and Systems" />
+          <MarinerThread label="Strategy shapes Experience, Systems, and Intelligence" nodes={4} />
           <div className="mn-discipline-footer">
-            <p>Technology should simplify the business—not become another problem to manage.</p>
+            <p>The architecture follows the objective. Intelligence belongs only where it can make the operation more useful to the humans inside it.</p>
             <SectionLink href="/capabilities">Explore capabilities</SectionLink>
           </div>
         </Container>
@@ -95,8 +90,8 @@ export default function CorporateHome() {
           <Container>
             <Grid>
               <div className="mn-systems-descent-heading">
-                <p className="mn-kicker">Experience → Systems</p>
-                <h2>What happens after the interface?</h2>
+                <p className="mn-kicker">Experience → Systems → Intelligence</p>
+                <h2>What becomes possible after the interface?</h2>
               </div>
               <p>A polished interaction creates attention. A connected operation determines what that attention can become.</p>
             </Grid>
@@ -109,8 +104,8 @@ export default function CorporateHome() {
               <p>The experience shouldn’t stop when someone clicks Submit.</p>
             </div>
             <div className="mn-systems-continuation">
-              <p>A connected flow solves one operational need. Change the objective, and the architecture must change with it.</p>
-              <span aria-hidden="true">Experience → System → Outcome</span>
+              <p>A connected flow solves one operational need. Where information and evidence must remain useful over time, an intelligence layer can preserve context and support the next human action.</p>
+              <span aria-hidden="true">Experience → Systems → Intelligence when useful → Human action</span>
             </div>
           </Container>
         </div>
@@ -125,7 +120,7 @@ export default function CorporateHome() {
             </div>
             <div className="mn-nexus-intro">
               <p>What are you trying to create?</p>
-              <p>Choose an objective. The same core intelligence will reorganize around a different human and organizational need.</p>
+              <p>Choose an objective. The same core disciplines will reorganize around a different human and organizational need.</p>
             </div>
           </Grid>
           <NexusExperience />

@@ -1,11 +1,40 @@
 import { awakeningProject } from "@/content/projects/awakening";
 import { garyMarinerProject } from "@/content/projects/gary-mariner";
+import { jacobMarinerProject } from "@/content/projects/jacob-mariner";
 import { sereneOriginsProject } from "@/content/projects/serene-origins";
 import { sovereignBlueprintProject } from "@/content/projects/sovereign-blueprint-consulting";
 import { unduguProject } from "@/content/projects/undugu";
 import type { ProjectRecord, ProjectRegistryEntry } from "@/content/projects/types";
 
 export const projectRegistry = [
+  {
+    slug: "jacob-mariner",
+    name: "Jacob Mariner",
+    liveUrl: "https://www.jacobmariner.com/",
+    liveStatus: "live",
+    classification: "PUBLISHED",
+    publicDisplayAuthorization: "authorized",
+    caseStudyAuthorization: "authorized",
+    currentImplementationCredit: "verified",
+    experienceProfileId: jacobMarinerProject.experienceProfile.id,
+    narrativeAvailable: true,
+    metadataAvailable: true,
+    preview: {
+      eyebrow: "Athlete Intelligence · Recruiting · Evidence",
+      headline: "A recruiting website became a living athlete intelligence system.",
+      summary: "An evolving digital athlete profile that organizes film, performance evidence, academics, athletic history, provenance, and recruiting pathways into one connected experience.",
+      identity: jacobMarinerProject.visualIdentity,
+      experience: jacobMarinerProject.experienceProfile,
+    },
+    media: {
+      card: "/case-studies/jacob-mariner/card.jpg",
+      desktop: "/case-studies/jacob-mariner/live-desktop.jpg",
+      tablet: "/case-studies/jacob-mariner/live-tablet.jpg",
+      mobile: "/case-studies/jacob-mariner/live-mobile.jpg",
+      og: "/og/jacob-mariner",
+    },
+    project: jacobMarinerProject,
+  },
   {
     slug: "undugu",
     name: "Undugu",
@@ -154,7 +183,7 @@ export const publishedProjects: ProjectRecord[] = projectRegistry.flatMap((entry
 
 export const workIndexProjects = projectRegistry.filter(
   (entry) => entry.publicDisplayAuthorization === "authorized" && entry.project,
-).sort((a, b) => ["awakening", "gary-mariner", "sovereign-blueprint-consulting", "serene-origins", "undugu"].indexOf(a.slug) - ["awakening", "gary-mariner", "sovereign-blueprint-consulting", "serene-origins", "undugu"].indexOf(b.slug));
+).sort((a, b) => ["jacob-mariner", "awakening", "gary-mariner", "sovereign-blueprint-consulting", "serene-origins", "undugu"].indexOf(a.slug) - ["jacob-mariner", "awakening", "gary-mariner", "sovereign-blueprint-consulting", "serene-origins", "undugu"].indexOf(b.slug));
 
 export function getPublishedProject(slug: string) {
   return publishedProjects.find((project) => project.slug === slug);

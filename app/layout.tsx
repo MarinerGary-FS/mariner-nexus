@@ -23,10 +23,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: siteName,
   title: {
-    default: "Mariner Nexus | Strategy, Experience, and Technology",
+    default: "Mariner Nexus | Intelligent Digital Systems",
     template: "%s | Mariner Nexus",
   },
-  description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
+  description: "Mariner Nexus designs connected digital environments where strategy, experience, systems, and intelligence operate as one architecture.",
   authors: [{ name: "Gary Mariner" }],
   creator: "Gary Mariner",
   publisher: siteName,
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     canonical: absoluteUrl("/"),
   },
   openGraph: {
-    title: "Mariner Nexus | Strategy, Experience, and Technology",
-    description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
+    title: "Mariner Nexus | Intelligent Digital Systems",
+    description: "Strategy. Experience. Systems. Intelligence.",
     url: absoluteUrl("/"),
     siteName,
     type: "website",
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
         url: absoluteUrl(defaultOgImage),
         width: 1200,
         height: 630,
-        alt: "Mariner Nexus",
+        alt: "Mariner Nexus — We build intelligent digital systems.",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mariner Nexus | Strategy, Experience, and Technology",
-    description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
+    title: "Mariner Nexus | Intelligent Digital Systems",
+    description: "Strategy. Experience. Systems. Intelligence.",
     images: [absoluteUrl(defaultOgImage)],
   },
   robots: {
@@ -61,8 +61,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/brand/micro-logo.png",
-    apple: "/brand/micro-logo.png",
+    icon: [{ url: "/brand/favicon-48.png", sizes: "48x48", type: "image/png" }],
+    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
@@ -77,7 +77,7 @@ const jsonLd = {
       logo: absoluteUrl("/brand/logo.png"),
       founder: { "@id": `${siteUrl}/#gary-mariner` },
       areaServed: ["Atlanta, GA", "United States"],
-      description: "Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.",
+      description: "Mariner Nexus designs connected digital environments where strategy, experience, systems, and intelligence operate as one architecture.",
     },
     {
       "@type": "Person",
@@ -95,13 +95,14 @@ const jsonLd = {
       publisher: { "@id": `${siteUrl}/#organization` },
     },
     {
-      "@type": "ProfessionalService",
-      "@id": `${siteUrl}/#professional-service`,
+      "@type": "Service",
+      "@id": `${siteUrl}/#service`,
       name: siteName,
       url: siteUrl,
       areaServed: ["Atlanta, GA", "United States"],
       provider: { "@id": `${siteUrl}/#organization` },
-      serviceType: ["Digital strategy", "Digital experience design", "Connected digital systems"],
+      serviceType: ["Digital strategy", "Digital experience design", "Connected digital systems", "Evidence and intelligence architecture"],
+      description: "Strategy-led digital environments that connect human experience, operational systems, structured information, provenance, and useful decision support.",
     },
   ],
 };

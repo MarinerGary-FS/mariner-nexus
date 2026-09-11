@@ -1,7 +1,7 @@
 const origin = process.env.QA_ORIGIN ?? "http://localhost:3000";
 const cdp = process.env.QA_CDP ?? "http://127.0.0.1:9223";
 const widths = [1600, 1440, 1366, 1280, 1100, 1024, 834, 768, 430, 390, 375, 360, 320];
-const routes = ["/", "/capabilities", "/work", "/work/undugu", "/work/serene-origins", "/work/sovereign-blueprint-consulting", "/work/awakening", "/work/gary-mariner", "/approach", "/company", "/start", "/privacy", "/terms"];
+const routes = ["/", "/capabilities", "/work", "/work/undugu", "/work/serene-origins", "/work/sovereign-blueprint-consulting", "/work/awakening", "/work/gary-mariner", "/work/jacob-mariner", "/approach", "/company", "/start", "/privacy", "/terms"];
 
 async function openTarget(url) {
   return fetch(`${cdp}/json/new?${encodeURIComponent(url)}`, { method: "PUT" }).then((response) => response.json());
@@ -186,6 +186,18 @@ for (const { width, objective, mode } of nexusStates) {
   results.push({ route: "/", width, state: `ea-05:${objective}:${mode}`, ...result });
 }
 
+for (const width of [1440, 1024, 390, 320]) {
+  const target = await openTarget(`${origin}/`);
+  const setup = `(() => {
+    const root = document.querySelector('.mn-nexus');
+    const objectiveButton = [...root.querySelectorAll('.mn-nexus-objectives button')].find((button) => button.textContent.includes('Connect the experience'));
+    objectiveButton?.click();
+    setTimeout(() => [...root.querySelectorAll('.mn-nexus-node[data-visible="true"], .mn-nexus-semantic-flow button')].find((button) => button.textContent.includes('Intelligence'))?.click(), 30);
+  })()`;
+  const result = await audit(target, width, setup, 800);
+  results.push({ route: "/", width, state: "ea-05:intelligence:selected", ...result });
+}
+
 const releaseStates = [
   { width: 1440, state: "peak", phase: "peak" },
   { width: 1440, state: "release", phase: "resolving" },
@@ -211,7 +223,7 @@ for (const { width, state, phase, reducedMotion = false } of releaseStates) {
 }
 
 const rangeStates = [
-  ...["serene-origins", "sovereign-blueprint-consulting", "awakening", "gary-mariner"].flatMap((project) => [
+  ...["jacob-mariner", "serene-origins", "sovereign-blueprint-consulting", "awakening", "gary-mariner"].flatMap((project) => [
     { width: 1440, project, state: "influence" },
     { width: 1440, project, state: "takeover" },
     { width: 834, project, state: "takeover" },
@@ -234,6 +246,18 @@ for (const width of [1440, 390]) {
   const target = await openTarget(`${origin}/work/gary-mariner`);
   const result = await audit(target, width, undefined, 150, false, true);
   results.push({ route: "/work/gary-mariner", width, state: "ea-07:gary-mariner:javascript-free", ...result });
+}
+
+for (const width of [1440, 390]) {
+  const target = await openTarget(`${origin}/work/jacob-mariner`);
+  const result = await audit(target, width, undefined, 150, false, true);
+  results.push({ route: "/work/jacob-mariner", width, state: "record-06:javascript-free", ...result });
+}
+
+for (const width of [1440, 768, 390, 320]) {
+  const target = await openTarget(`${origin}/capabilities`);
+  const result = await audit(target, width, `document.querySelector('.mn-capability-systems-map').open = true`, 150);
+  results.push({ route: "/capabilities", width, state: "intelligence-model:open", ...result });
 }
 
 const failures = results.filter((result) => result.overflow > 1 || result.clipped.length || result.collisions.length);

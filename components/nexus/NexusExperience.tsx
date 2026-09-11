@@ -8,7 +8,7 @@ import type { NexusNodeDefinition, NexusNodeId, NexusObjectiveId } from "@/conte
 type NexusPhase = "settled" | "reorganizing";
 type ReleasePhase = "peak" | "resolving" | "released";
 const fallbackPosition = { x: 50, y: 50 };
-const coreIds: NexusNodeId[] = ["strategy", "experience", "systems"];
+const disciplineIds: NexusNodeId[] = ["strategy", "experience", "systems", "intelligence"];
 
 function connectionPath(from: NexusNodeDefinition, to: NexusNodeDefinition) {
   const distance = Math.abs(to.x - from.x);
@@ -87,7 +87,7 @@ export function NexusExperience() {
 
   return (
     <div className="mn-nexus" data-entered={entered} data-nexus-objective={objective.id} data-nexus-phase={phase} ref={rootRef}>
-      <div className="mn-nexus-entry" aria-hidden="true"><span>Experience</span><i /><span>System</span><i /><strong>Useful outcome</strong></div>
+      <div className="mn-nexus-entry" aria-hidden="true"><span>Experience</span><i /><span>Systems</span><i /><span>Intelligence when useful</span><i /><strong>Human action</strong></div>
 
       <div className="mn-nexus-control-deck">
         <div><p>Set the objective</p><span>The architecture responds to the problem.</span></div>
@@ -125,10 +125,10 @@ export function NexusExperience() {
           const node = visibleNodes.get(nodeId);
           const fallback = nexusCore.nodes.find((item) => item.id === nodeId) ?? fallbackPosition;
           const position = node ?? fallback;
-          const depth = node?.id === "outcome" ? 34 : coreIds.includes(node?.id as NexusNodeId) ? 22 : 8;
+          const depth = node?.id === "outcome" ? 34 : disciplineIds.includes(node?.id as NexusNodeId) ? 22 : 8;
           const style = { "--nexus-x": `${position.x}%`, "--nexus-y": `${position.y}%`, "--nexus-z": `${depth}px` } as CSSProperties;
           return (
-            <button aria-label={node ? `${node.label}, ${node.category}. ${node.description}${node.scoped ? " Scoped capability." : ""}` : undefined} aria-pressed={node ? selectedNodeId === node.id : undefined} aria-hidden={!node} className="mn-nexus-node" data-core={node ? coreIds.includes(node.id) : false} data-outcome={node?.id === "outcome"} data-scoped={node?.scoped ?? false} data-visible={Boolean(node)} disabled={!node} key={nodeId} onClick={() => node && setSelectedNodeId((current) => current === node.id ? null : node.id)} style={style} tabIndex={node ? 0 : -1} type="button">
+            <button aria-label={node ? `${node.label}, ${node.category}. ${node.description}${node.scoped ? " Scoped capability." : ""}` : undefined} aria-pressed={node ? selectedNodeId === node.id : undefined} aria-hidden={!node} className="mn-nexus-node" data-core={node ? disciplineIds.includes(node.id) : false} data-outcome={node?.id === "outcome"} data-scoped={node?.scoped ?? false} data-visible={Boolean(node)} disabled={!node} key={nodeId} onClick={() => node && setSelectedNodeId((current) => current === node.id ? null : node.id)} style={style} tabIndex={node ? 0 : -1} type="button">
               {node && <><span>{node.category}{node.scoped ? " · Scoped" : ""}</span><strong>{node.label}</strong></>}
             </button>
           );
@@ -141,7 +141,7 @@ export function NexusExperience() {
           {objective.mobileOrder.map((nodeId, index) => {
             const node = visibleNodes.get(nodeId) as NexusNodeDefinition;
             const connection = objective.connections.find((item) => item.from === nodeId && objective.mobileOrder[index + 1] === item.to);
-            return <li data-core={coreIds.includes(node.id)} data-outcome={node.id === "outcome"} key={nodeId}><button aria-pressed={selectedNodeId === node.id} onClick={() => setSelectedNodeId((current) => current === node.id ? null : node.id)} type="button"><span>{node.category}</span><strong>{node.label}</strong></button>{connection && <em>{connection.relation}</em>}</li>;
+            return <li data-core={disciplineIds.includes(node.id)} data-outcome={node.id === "outcome"} key={nodeId}><button aria-pressed={selectedNodeId === node.id} onClick={() => setSelectedNodeId((current) => current === node.id ? null : node.id)} type="button"><span>{node.category}</span><strong>{node.label}</strong></button>{connection && <em>{connection.relation}</em>}</li>;
           })}
         </ol>
       </div>
@@ -165,12 +165,13 @@ export function NexusExperience() {
         <div className="mn-nexus-peak-core mn-nexus-peak-core--strategy"><span>01</span><strong>Strategy</strong></div>
         <div className="mn-nexus-peak-core mn-nexus-peak-core--experience"><span>02</span><strong>Experience</strong></div>
         <div className="mn-nexus-peak-core mn-nexus-peak-core--systems"><span>03</span><strong>Systems</strong></div>
+        <div className="mn-nexus-peak-core mn-nexus-peak-core--intelligence"><span>04 · When useful</span><strong>Intelligence</strong></div>
         <div className="mn-nexus-peak-outcome"><span>Outcome</span><strong>{objective.nodes.find((node) => node.id === "outcome")?.label}</strong></div>
-        <div className="mn-nexus-peak-statement"><p>Strategy · Experience · Systems</p><strong>One architecture. Shaped by the objective.</strong></div>
+        <div className="mn-nexus-peak-statement"><p>Strategy · Experience · Systems · Intelligence when useful</p><strong>One architecture. Shaped by the objective.</strong></div>
       </div>
       <div className="mn-nexus-release" aria-hidden="true">
         <svg preserveAspectRatio="none" viewBox="0 0 100 100"><path d="M4 50 C30 50 39 50 50 50 C61 50 70 50 96 50" /><circle cx="50" cy="50" r="0.8" /></svg>
-        <div className="mn-nexus-release-core"><span>Strategy</span><span>Experience</span><span>Systems</span></div>
+        <div className="mn-nexus-release-core"><span>Strategy</span><span>Experience</span><span>Systems</span><span>Intelligence</span></div>
         <div className="mn-nexus-release-mark"><span>MN</span></div>
         <p>Complexity, resolved.</p>
       </div>

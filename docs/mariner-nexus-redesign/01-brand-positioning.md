@@ -8,15 +8,21 @@ Keep this primarily internal. Mariner Nexus itself is the brand visitors should 
 
 ## Internal definition
 
-Mariner Nexus is a digital systems studio that combines strategy, experience design, and modern technology to create digital platforms that strengthen how organizations and individuals present themselves, engage their audiences, and operate.
+Mariner Nexus is a digital systems studio that combines strategy, experience design, connected systems, and intelligence to create digital platforms that strengthen how organizations and individuals present themselves, engage their audiences, operate, and make decisions.
 
 ## Brand idea
 
-> Where strategy, experience, and technology converge.
+> We build intelligent digital systems.
+
+## Public architecture
+
+> Strategy → Experience → Systems → Intelligence.
+
+Strategy establishes the objective. Experience makes it usable. Systems connect the required structure and operations. Intelligence organizes verified evidence and context into decision support.
 
 ## Business explanation
 
-Mariner Nexus creates sophisticated digital experiences and connected systems designed around how organizations and individuals actually operate.
+Mariner Nexus designs connected digital environments where strategy, experience, systems, and intelligence operate as one architecture.
 
 ## Operating model
 
@@ -64,7 +70,9 @@ Mariner Nexus is not positioned as:
 - a template website factory,
 - primarily a branding agency.
 
-AI capability remains internal and is not a public service pillar.
+Intelligence is a public discipline, but it is not a synonym for autonomous AI. It means source-aware evidence, structured context, provenance, and decision support.
+
+Mariner Nexus is not positioned as an autonomous-AI agency or an open-ended custom-AI consultancy. AI-enabled runtime features require separately approved scope; the public Intelligence position does not imply that every engagement contains AI or automation.
 
 No 24/7 infrastructure responsibility.
 

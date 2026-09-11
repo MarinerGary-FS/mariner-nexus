@@ -26,6 +26,22 @@ Exploration should reveal increasingly sophisticated Mariner Nexus capabilities.
 - `/privacy`
 - `/terms`
 
+Current canonical public route inventory (14):
+- `/`
+- `/capabilities`
+- `/work`
+- `/work/jacob-mariner`
+- `/work/awakening`
+- `/work/gary-mariner`
+- `/work/sovereign-blueprint-consulting`
+- `/work/serene-origins`
+- `/work/undugu`
+- `/approach`
+- `/company`
+- `/start`
+- `/privacy`
+- `/terms`
+
 No generic `/contact`.
 No pricing page.
 No industries page.
@@ -36,10 +52,10 @@ No Lab at launch.
 
 1. Corporate arrival.
 2. Problem recognition.
-3. Strategy × Experience × Systems model.
+3. Strategy → Experience → Systems → Intelligence model.
 4. Experience.
 5. Selected Work.
-6. Systems.
+6. Systems and Intelligence.
 7. Vision / Nexus.
 8. Reassurance / Approach.
 9. Possibility.
@@ -57,8 +73,11 @@ Finished work dominates.
 - Strategy.
 - Experience.
 - Systems.
+- Intelligence and evidence provenance where material.
 - Transformation.
 - Live experience.
+
+Transformation Record 06, `/work/jacob-mariner`, is the approved Athlete Intelligence Platform record. It must distinguish source classes, preserve provenance for published facts, and label future-state automation separately from capabilities operating now.
 
 Credibility chain:
 > See it → Understand it → Experience it live.

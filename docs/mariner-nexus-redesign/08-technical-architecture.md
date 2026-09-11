@@ -32,8 +32,10 @@ The site may look technically sophisticated while remaining operationally discip
 - internal admin dashboard,
 - WebSockets,
 - microservices,
-- AI features,
+- autonomous or generative AI runtime features,
 - required 3D.
+
+The public Intelligence discipline is a content, evidence, provenance, and decision-support architecture. It does not introduce an AI runtime into V1.
 
 ## Content
 
@@ -49,12 +51,19 @@ Common schema:
 - strategy,
 - experience,
 - systems,
+- optional intelligence record with challenge, source classes, architecture layers, evidence, provenance, current-state capability, and clearly labeled future state,
 - transformation,
 - live URL,
 - visual identity,
 - media.
 
 Common content schema does not imply identical visual presentation.
+
+Published evidence must retain its source class and provenance. A future-state capability may be shown only when it is labeled as future and cannot be mistaken for an operating feature.
+
+## Intelligence boundary
+
+V1 Intelligence surfaces remain static or cached, server-rendered where practical, and grounded in approved structured content. The interface may organize, compare, and explain verified facts; it may not fabricate evidence, make autonomous decisions, or imply a model, agent, prediction, or automation is operating when it is not.
 
 ## Client identity takeover
 
@@ -203,6 +212,16 @@ Responsive QA must validate both settled breakpoints and transitional compositio
 - robots,
 - canonical URLs,
 - semantic content.
+
+OpenGraph identity uses a reusable, route-aware 1200×630 system with stable direct image URLs. Home, Capabilities, Work, and the Jacob Mariner transformation record receive purpose-specific hierarchy and copy while retaining one Mariner Nexus visual grammar. Social images must not use generic AI imagery, device mockups, dashboard screenshots, or decorative SaaS motifs.
+
+## Release quality gates
+
+- Exercise all 14 canonical public routes across the supported responsive matrix; the established 250/250 Content Integrity result remains a non-regression minimum rather than the ceiling for the expanded route set.
+- Verify Jacob Mariner source links, source labels, provenance language, and the distinction between operating-now and future-state capability.
+- Verify route metadata, canonical URLs, structured data, sitemap membership, robots behavior, and direct 200 image responses for each route-aware OpenGraph endpoint.
+- Review desktop, tablet, and mobile composition, keyboard and focus behavior, reduced motion, JavaScript-free semantic fallback, representative Safari font metrics, and Chromium runtime health.
+- Record image/runtime weight and interaction implications; Intelligence positioning alone may not add client runtime or a new dependency.
 
 ## Deployment
 

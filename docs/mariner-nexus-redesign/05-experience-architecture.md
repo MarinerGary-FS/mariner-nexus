@@ -25,13 +25,15 @@ Arrival → Trust.
 
 Recognition → Relevance.
 
-Strategy/Nexus model → Intelligence.
+Connected discipline model → Comprehension.
 
 Experience → Desire.
 
 Work → Credibility.
 
 Systems → Capability.
+
+Intelligence → Decision confidence.
 
 Nexus → Surprise.
 
@@ -66,8 +68,8 @@ Creative range increases. Client/project identity may temporarily take over.
 ### Proof
 Final product dominates. Minimal explanatory text.
 
-### Experience → Systems
-A signature transition. The visible interface deconstructs into what happens behind it.
+### Experience → Systems → Intelligence
+A signature transition. The visible interface deconstructs into the sources, structure, and operations behind it, then reveals how verified context can support a decision.
 
 Culminating line:
 > The experience shouldn't stop when someone clicks Submit.
@@ -75,8 +77,11 @@ Culminating line:
 ### Systems
 Graphite/dark, architectural, operational, not cyberpunk.
 
+### Intelligence
+Source-aware, contextual, and useful. Evidence, provenance, current operating capability, and future-state possibilities remain visibly distinct. Intelligence should increase decision confidence without implying autonomous judgment or generic AI agency services.
+
 ### Nexus
-Peak creative/technical expression after trust is earned.
+Peak creative/technical expression after trust is earned. Objective, evidence, context, and architecture visibly relate without making technology the subject.
 
 ### Reassurance
 Motion and density reduce. Corporate discipline returns.

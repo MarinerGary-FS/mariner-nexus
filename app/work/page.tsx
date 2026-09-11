@@ -5,12 +5,26 @@ import { Container } from "@/components/foundation/Container";
 import { MarinerThread } from "@/components/foundation/MarinerThread";
 import { ProjectIdentityBoundary } from "@/components/work/ProjectIdentityBoundary";
 import { workIndexProjects } from "@/content/projects";
-import { createMetadata } from "@/lib/seo";
+import { absoluteUrl, createMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = createMetadata({ title: "Work", description: "See selected Mariner Nexus work, understand the transformation behind it, and experience the finished project live.", path: "/work" });
+export const metadata: Metadata = createMetadata({ title: "Work", description: "See selected Mariner Nexus work, understand the transformation behind it, and experience the finished project live.", path: "/work", image: "/og/work", imageAlt: "Mariner Nexus selected work: transformation made visible." });
+
+const workListJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Mariner Nexus Transformation Records",
+  numberOfItems: workIndexProjects.length,
+  itemListElement: workIndexProjects.flatMap((entry, index) => entry.project ? [{
+    "@type": "ListItem",
+    position: index + 1,
+    name: `${entry.name} — Transformation Record ${entry.project.presentation.recordNumber}`,
+    url: absoluteUrl(`/work/${entry.slug}`),
+  }] : []),
+};
 
 export default function WorkPage() {
   return <div className="mn-work-index mn-environment-light">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workListJsonLd) }} />
     <section className="mn-work-intro" data-navigation-context="Work"><Container><p className="mn-kicker">Selected Work</p><h1>The finished work gets the first word.</h1><p>Same rigor. Different worlds.</p></Container></section>
     <section className="mn-work-projects" data-navigation-context="Work"><Container>
       {workIndexProjects.map((entry, index) => {

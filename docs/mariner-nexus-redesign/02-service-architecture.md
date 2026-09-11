@@ -1,6 +1,6 @@
 # 02 — Service Architecture
 
-Mariner Nexus approaches engagements through three interconnected disciplines.
+Mariner Nexus approaches engagements through four interconnected disciplines.
 
 ## Strategy
 
@@ -61,12 +61,30 @@ Signature statement:
 
 > The experience shouldn't stop when someone clicks Submit.
 
+## Intelligence
+
+Purpose:
+
+> Turn verified evidence and context into useful decision support.
+
+Includes:
+- source-aware evidence architecture,
+- provenance and source classification,
+- structured performance and operational signals,
+- context layers that make information interpretable,
+- decision-support interfaces,
+- explicit separation between what operates now and what remains a future state.
+
+Boundary:
+Intelligence does not mean unsourced inference, autonomous decision-making, generic AI products, or an autonomous-AI agency offer. Predictive, model-assisted, or automated runtime features require specific evidence, risk review, and separately approved scope.
+
 ## Scope classification
 
 CORE:
 - custom web experiences,
 - responsive UX,
 - information architecture,
+- source-aware evidence architecture,
 - forms/data collection,
 - content systems,
 - standard scheduling/payment integration,
@@ -77,6 +95,8 @@ SCOPED:
 - APIs,
 - dashboards,
 - portals,
+- decision-support models,
+- model-assisted or automated runtime features,
 - advanced 3D,
 - complex authentication,
 - database requirements.
@@ -86,8 +106,9 @@ OUT:
 - enterprise IT,
 - 24/7 managed infrastructure,
 - enterprise ERP/CRM transformation,
+- autonomous AI operation,
 - generic staff augmentation.
 
 ## Relationship
 
-Strategy informs Experience and Systems. Experience and Systems influence one another. Together they create impact.
+Strategy establishes the objective and evidence standard. Experience makes the architecture understandable and usable. Systems connect the required sources, structure, and operations. Intelligence turns verified evidence and context into decision support. Together they create impact.

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const siteUrl = "https://www.marinernexus.com";
 export const siteName = "Mariner Nexus";
-export const defaultOgImage = "/og/mariner-nexus-og.webp";
+export const defaultOgImage = "/og/home";
 
 export function absoluteUrl(path = "/") {
   return new URL(path, siteUrl).toString();
@@ -13,6 +13,8 @@ type SeoConfig = {
   description: string;
   path: string;
   image?: string;
+  imageAlt?: string;
+  socialDescription?: string;
   type?: "website" | "article";
 };
 
@@ -21,10 +23,14 @@ export function createMetadata({
   description,
   path,
   image = defaultOgImage,
+  imageAlt,
+  socialDescription,
   type = "website",
 }: SeoConfig): Metadata {
   const url = absoluteUrl(path);
   const imageUrl = absoluteUrl(image);
+  const socialCopy = socialDescription ?? description;
+  const socialImageAlt = imageAlt ?? `${siteName} digital ecosystem preview`;
 
   return {
     title: title.includes(siteName) ? { absolute: title } : title,
@@ -34,7 +40,7 @@ export function createMetadata({
     },
     openGraph: {
       title,
-      description,
+      description: socialCopy,
       url,
       siteName,
       type,
@@ -44,15 +50,15 @@ export function createMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${siteName} digital ecosystem preview`,
+          alt: socialImageAlt,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description,
-      images: [imageUrl],
+      description: socialCopy,
+      images: [{ url: imageUrl, alt: socialImageAlt }],
     },
   };
 }

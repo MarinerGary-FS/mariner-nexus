@@ -16,7 +16,7 @@ export default function Footer() {
               <Image alt="" className="mn-footer-logo" height={56} src="/brand/micro-logo.png" width={56} />
               <span>Mariner Nexus</span>
             </Link>
-            <p>Where strategy, experience, and technology converge.</p>
+            <p>Strategy, experience, systems, and intelligence—one architecture.</p>
           </div>
           {footerGroups.map((group) => (
             <nav aria-label={`${group.label} footer navigation`} key={group.label}>

@@ -6029,3 +6029,889 @@ body:has(.foundation-preview) > footer {
     transform: none !important;
   }
 }
+
+/* Intelligence positioning + Transformation Record 06 */
+
+.mn-discipline-flow [data-discipline="strategy"] {
+  position: relative;
+}
+
+.mn-discipline-flow [data-discipline="strategy"]::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--mn-signal-rest), var(--mn-signal-active), var(--mn-signal-rest));
+  content: "";
+}
+
+.mn-capability-sequence > .mn-container > article[data-discipline="intelligence"] {
+  background: linear-gradient(120deg, transparent, color-mix(in srgb, var(--mn-signal-active) 4%, transparent));
+}
+
+.mn-capability-boundary {
+  max-width: 46rem;
+  margin-top: var(--mn-space-5);
+  padding: var(--mn-space-4);
+  color: var(--mn-ink-secondary);
+  border: 1px dashed var(--mn-line-strong);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.mn-capability-systems-map li small {
+  grid-column: 2;
+  color: var(--mn-ink-muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.mn-home-range__worlds article[data-world="jacob-mariner"] {
+  border-color: #2e3332;
+  background: #090c0d;
+}
+
+.mn-home-range__worlds article[data-world="jacob-mariner"] img {
+  opacity: 0.86;
+  filter: saturate(0.72) contrast(1.04);
+}
+
+.mn-home-range__worlds article[data-world="jacob-mariner"] > div {
+  background: linear-gradient(transparent, rgb(7 9 10 / 96%));
+}
+
+.mn-home-range__worlds article[data-world="jacob-mariner"] p {
+  color: #ef6670;
+}
+
+.mn-nexus-peak-core--intelligence {
+  bottom: 19%;
+  left: 6%;
+}
+
+.mn-nexus-peak-outcome {
+  bottom: 5%;
+  left: 50%;
+  max-width: 24rem;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.mn-nexus-release-core {
+  white-space: nowrap;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] {
+  --jacob-red: #d0202c;
+  --jacob-red-bright: #ef3340;
+  --jacob-black: #090c0d;
+  --jacob-paper: #f3f1ec;
+  --jacob-line: #b9b7b0;
+  --jacob-muted: #686b69;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"][data-takeover-state="influence"]::before,
+[data-experience-profile="jacob-athlete-intelligence"][data-takeover-state="takeover"]::before {
+  background: var(--jacob-paper);
+  opacity: 1;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"][data-takeover-variant="index"]::after {
+  background: var(--jacob-red);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview {
+  padding-top: 0;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__proof {
+  min-height: clamp(36rem, 70vw, 54rem);
+  border-color: #292e2d;
+  background: var(--jacob-black);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__proof::after {
+  background:
+    linear-gradient(90deg, rgb(5 7 8 / 96%) 0 38%, rgb(5 7 8 / 60%) 58%, transparent 82%),
+    linear-gradient(0deg, rgb(5 7 8 / 74%), transparent 46%);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__proof > img {
+  opacity: 0.66;
+  object-position: center top;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__copy {
+  width: min(48rem, 67%);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__copy > p,
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__meta a {
+  color: var(--jacob-red-bright);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__copy h2 {
+  color: #f7f7f4;
+  font-size: clamp(3rem, 6.8vw, 7rem);
+  font-weight: 650;
+  letter-spacing: -0.07em;
+}
+
+.mn-jacob-opening {
+  padding-block: clamp(3.5rem, 8vw, 8rem);
+  color: #f7f7f4;
+  background: var(--jacob-black);
+}
+
+.mn-jacob-opening__identity {
+  display: grid;
+  gap: var(--mn-space-6);
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+  border-bottom: 1px solid #343a39;
+}
+
+.mn-jacob-opening__identity > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  color: #b9bfbc;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mn-jacob-opening__identity > div p:first-child {
+  color: var(--jacob-red-bright);
+}
+
+.mn-jacob-opening .mn-jacob-opening__identity h1 {
+  max-width: none;
+  color: #f7f7f4;
+  font-size: clamp(4.5rem, 14vw, 14rem);
+  font-weight: 720;
+  letter-spacing: -0.085em;
+  line-height: 0.76;
+  text-transform: uppercase;
+}
+
+.mn-jacob-opening__statement {
+  display: grid;
+  padding-block: clamp(3rem, 7vw, 7rem) var(--mn-space-5);
+  gap: var(--mn-space-4);
+}
+
+.mn-jacob-opening__statement h2 {
+  max-width: 15ch;
+  font-size: clamp(2.5rem, 6vw, 6.4rem);
+  font-weight: 620;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+.mn-jacob-opening__statement > p {
+  max-width: 46rem;
+  color: #afb5b2;
+  font-size: var(--mn-type-lead);
+  line-height: 1.55;
+}
+
+.mn-jacob-opening .mn-external-project-link {
+  width: fit-content;
+  margin-top: var(--mn-space-3);
+  border-color: var(--jacob-red-bright);
+  color: #fff;
+  background: var(--jacob-red);
+}
+
+.mn-jacob-opening .mn-mariner-thread {
+  --mn-thread-rest: rgb(239 51 64 / 34%);
+  --mn-thread-active: var(--jacob-red-bright);
+}
+
+.mn-jacob-product-evidence {
+  display: grid;
+  gap: clamp(1rem, 2vw, 2rem);
+  margin-top: var(--mn-space-6);
+}
+
+.mn-jacob-product-evidence figure {
+  overflow: hidden;
+  border: 1px solid #303635;
+  background: #050708;
+}
+
+.mn-jacob-product-evidence img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mn-jacob-product-evidence figcaption,
+.mn-jacob-detail-grid figcaption {
+  padding: 0.85rem 1rem;
+  color: #939a96;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mn-jacob-product-evidence__responsive {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
+}
+
+.mn-jacob-product-evidence__responsive img {
+  aspect-ratio: 0.62;
+  object-fit: cover;
+  object-position: top;
+}
+
+.mn-jacob-challenge,
+.mn-jacob-architecture,
+.mn-jacob-provenance,
+.mn-jacob-product-details,
+.mn-jacob-comparison,
+.mn-jacob-state-boundary {
+  padding-block: clamp(6rem, 11vw, 11rem);
+}
+
+.mn-jacob-challenge,
+.mn-jacob-product-details,
+.mn-jacob-state-boundary {
+  color: #101413;
+  background: var(--jacob-paper);
+}
+
+.mn-jacob-section-heading,
+.mn-jacob-provenance__statement,
+.mn-jacob-comparison__heading,
+.mn-jacob-state-boundary__heading {
+  max-width: 58rem;
+}
+
+.mn-jacob-section-heading h2,
+.mn-jacob-provenance__statement h2,
+.mn-jacob-comparison__heading h2,
+.mn-jacob-state-boundary__heading h2 {
+  margin-top: var(--mn-space-4);
+  font-size: clamp(2.7rem, 6vw, 6.5rem);
+  font-weight: 620;
+  letter-spacing: -0.068em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.mn-jacob-section-heading > p:last-child,
+.mn-jacob-provenance__statement > p:last-child {
+  max-width: 50rem;
+  margin-top: var(--mn-space-5);
+  color: var(--jacob-muted);
+  font-size: var(--mn-type-lead);
+  line-height: 1.6;
+}
+
+.mn-jacob-source-field {
+  display: grid;
+  margin-top: clamp(4rem, 8vw, 8rem);
+  border-top: 1px solid var(--jacob-line);
+}
+
+.mn-jacob-source-field > div {
+  padding-block: var(--mn-space-5);
+  border-bottom: 1px solid var(--jacob-line);
+}
+
+.mn-jacob-source-field > div > p,
+.mn-jacob-architecture-model__current > p,
+.mn-jacob-architecture-model__future > p:first-child,
+.mn-jacob-comparison article > h3,
+.mn-jacob-state-boundary article > div h3 {
+  color: var(--jacob-red);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.mn-jacob-architecture-model__current > p,
+.mn-jacob-architecture-model__future > p:first-child,
+.mn-jacob-comparison article > h3 {
+  color: var(--jacob-red-bright);
+}
+
+.mn-jacob-source-field ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: var(--mn-space-4);
+}
+
+.mn-jacob-source-field li {
+  padding: 0.62rem 0.78rem;
+  border: 1px solid var(--jacob-line);
+  font-size: 0.78rem;
+}
+
+.mn-jacob-architecture {
+  color: #f5f5f2;
+  background: var(--jacob-black);
+}
+
+.mn-jacob-architecture .mn-kicker,
+.mn-jacob-comparison .mn-kicker {
+  color: var(--jacob-red-bright);
+}
+
+.mn-jacob-architecture .mn-jacob-section-heading > p:last-child {
+  color: #aeb4b1;
+}
+
+.mn-jacob-architecture-model {
+  display: grid;
+  margin-top: clamp(4rem, 8vw, 8rem);
+  gap: var(--mn-space-6);
+}
+
+.mn-jacob-architecture-model__current > ol {
+  margin-top: var(--mn-space-4);
+  border-top: 1px solid #3b4240;
+}
+
+.mn-jacob-architecture-model__current > ol > li {
+  position: relative;
+  display: grid;
+  padding-block: var(--mn-space-5);
+  gap: var(--mn-space-4);
+  border-bottom: 1px solid #3b4240;
+}
+
+.mn-jacob-architecture-model__current > ol > li::before {
+  position: absolute;
+  top: -0.24rem;
+  left: 0;
+  width: 0.48rem;
+  height: 0.48rem;
+  background: var(--jacob-red-bright);
+  content: "";
+}
+
+.mn-jacob-architecture-model__current > ol > li > div,
+.mn-jacob-architecture-model__future > div {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr);
+  gap: 0.7rem;
+}
+
+.mn-jacob-architecture-model__current > ol > li > div span,
+.mn-jacob-architecture-model__future > div span {
+  color: var(--jacob-red-bright);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.mn-jacob-architecture-model__current > ol > li > div strong,
+.mn-jacob-architecture-model__future > div strong {
+  font-size: clamp(1.5rem, 2.4vw, 2.7rem);
+  font-weight: 580;
+  letter-spacing: -0.04em;
+}
+
+.mn-jacob-architecture-model__current > ol > li > p,
+.mn-jacob-architecture-model__future > p:nth-of-type(2) {
+  max-width: 38rem;
+  color: #aeb4b1;
+  line-height: 1.6;
+}
+
+.mn-jacob-architecture-model__current > ol > li > ul,
+.mn-jacob-architecture-model__future > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.8rem;
+}
+
+.mn-jacob-architecture-model__current > ol > li > ul li,
+.mn-jacob-architecture-model__future > ul li {
+  color: #daddda;
+  font-size: 0.76rem;
+}
+
+.mn-jacob-architecture-model__current > ol > li > ul li:not(:last-child)::after,
+.mn-jacob-architecture-model__future > ul li:not(:last-child)::after {
+  margin-left: 0.8rem;
+  color: var(--jacob-red-bright);
+  content: "/";
+}
+
+.mn-jacob-architecture-model__future {
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border: 1px dashed var(--jacob-red-bright);
+  background: rgb(208 32 44 / 7%);
+}
+
+.mn-jacob-architecture-model__future > div {
+  margin-top: var(--mn-space-5);
+}
+
+.mn-jacob-architecture-model__future > p:nth-of-type(2),
+.mn-jacob-architecture-model__future > ul {
+  margin-top: var(--mn-space-4);
+}
+
+.mn-jacob-provenance {
+  color: #fff;
+  background: var(--jacob-red);
+}
+
+.mn-jacob-provenance .mn-kicker,
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-live .mn-kicker {
+  color: #fff;
+}
+
+.mn-jacob-provenance__statement > p:last-child {
+  color: #fff;
+}
+
+.mn-jacob-evidence-ledger {
+  margin-top: clamp(4rem, 8vw, 8rem);
+  border-top: 1px solid rgb(255 255 255 / 42%);
+}
+
+.mn-jacob-evidence-ledger > li {
+  display: grid;
+  padding-block: var(--mn-space-5);
+  gap: var(--mn-space-4);
+  border-bottom: 1px solid rgb(255 255 255 / 34%);
+}
+
+.mn-jacob-evidence-ledger > li > span,
+.mn-jacob-evidence-ledger > li > div > p {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.mn-jacob-evidence-ledger time {
+  display: block;
+  margin-top: 0.45rem;
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 520;
+}
+
+.mn-jacob-evidence-ledger h3 {
+  margin-top: 0.6rem;
+  font-size: clamp(1.5rem, 2.5vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.mn-jacob-evidence-ledger > li > div > strong {
+  display: block;
+  margin-top: 0.7rem;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 520;
+  line-height: 1.55;
+}
+
+.mn-jacob-evidence-ledger a {
+  width: fit-content;
+  min-height: 2.75rem;
+  padding-block: 0.85rem 0.4rem;
+  border-bottom: 1px solid currentColor;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.mn-jacob-provenance a:focus-visible,
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-live a:focus-visible {
+  outline-color: #fff;
+}
+
+.mn-jacob-detail-grid {
+  display: grid;
+  margin-top: clamp(4rem, 8vw, 8rem);
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.mn-jacob-detail-grid figure {
+  overflow: hidden;
+  border: 1px solid var(--jacob-line);
+  background: #e4e1da;
+}
+
+.mn-jacob-detail-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mn-jacob-detail-grid figcaption {
+  color: #545855;
+}
+
+.mn-jacob-comparison {
+  color: #f7f7f4;
+  background: var(--jacob-black);
+}
+
+.mn-jacob-comparison__grid,
+.mn-jacob-state-boundary__grid {
+  display: grid;
+  margin-top: clamp(4rem, 8vw, 8rem);
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.mn-jacob-comparison article,
+.mn-jacob-state-boundary article {
+  padding: clamp(1.5rem, 3vw, 3rem);
+  border: 1px solid #3b4240;
+}
+
+.mn-jacob-comparison article:last-child {
+  border-color: var(--jacob-red-bright);
+}
+
+.mn-jacob-comparison article ul,
+.mn-jacob-state-boundary article ul {
+  margin-top: var(--mn-space-5);
+}
+
+.mn-jacob-comparison article li,
+.mn-jacob-state-boundary article li {
+  padding-block: 0.85rem;
+  border-bottom: 1px solid #343a39;
+  color: #c8cecb;
+  line-height: 1.5;
+}
+
+.mn-jacob-comparison article li::before,
+.mn-jacob-state-boundary article li::before {
+  margin-right: 0.7rem;
+  color: var(--jacob-red-bright);
+  content: "—";
+}
+
+.mn-jacob-state-boundary__grid article {
+  border-color: var(--jacob-line);
+}
+
+.mn-jacob-state-boundary__grid article:last-child {
+  border-style: dashed;
+  border-color: var(--jacob-red);
+}
+
+.mn-jacob-state-boundary article > div {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mn-jacob-state-boundary article > div span {
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--jacob-red);
+}
+
+.mn-jacob-state-boundary article:last-child > div span {
+  border: 1px solid var(--jacob-red);
+  background: transparent;
+}
+
+.mn-jacob-state-boundary article li {
+  color: #343937;
+  border-color: var(--jacob-line);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-roles {
+  color: #f7f7f4;
+  background: #151918;
+  border-color: #343a39;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-roles li {
+  border-color: #4a504e;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-transformation {
+  color: #0c0f0e;
+  background: var(--jacob-paper);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-transformation blockquote {
+  max-width: 15ch;
+  font-weight: 650;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-live {
+  color: #fff;
+  background: var(--jacob-red);
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-live .mn-external-project-link {
+  border-color: #fff;
+  color: var(--jacob-red);
+  background: #fff;
+}
+
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-live > .mn-container > p:last-child {
+  color: #fff;
+}
+
+.mn-jacob-challenge .mn-kicker,
+.mn-jacob-product-details .mn-kicker,
+.mn-jacob-state-boundary .mn-kicker,
+[data-experience-profile="jacob-athlete-intelligence"] .mn-project-transformation .mn-kicker {
+  color: #146b5b;
+}
+
+@media (min-width: 48rem) {
+  .mn-discipline-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mn-discipline-flow article {
+    border-bottom: 0;
+  }
+
+  .mn-discipline-flow [data-discipline="strategy"] {
+    display: grid;
+    grid-column: 1 / -1;
+    padding-block: var(--mn-space-5);
+    grid-template-columns: 3rem minmax(12rem, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: var(--mn-space-4);
+    border-right: 0;
+    border-bottom: 1px solid var(--mn-line-subtle);
+  }
+
+  .mn-discipline-flow [data-discipline="strategy"] h3,
+  .mn-discipline-flow [data-discipline="strategy"] p {
+    margin-top: 0;
+  }
+
+  .mn-discipline-flow [data-discipline="intelligence"] {
+    border-right: 0;
+  }
+
+  .mn-capability-boundary {
+    margin-left: calc(25% + (var(--mn-grid-gap) / 2));
+  }
+
+  .mn-capability-systems-map ol {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-capability-systems-map li,
+  .mn-capability-systems-map li:nth-child(odd),
+  .mn-capability-systems-map li:nth-child(even) {
+    padding-inline: 0;
+    grid-template-columns: 3rem minmax(8rem, 0.65fr) minmax(10rem, 1fr) minmax(0, 1.35fr);
+    gap: 1rem;
+    border-right: 0;
+  }
+
+  .mn-capability-systems-map li p,
+  .mn-capability-systems-map li small {
+    grid-column: auto;
+  }
+
+  .mn-jacob-opening__statement {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: var(--mn-grid-gap);
+  }
+
+  .mn-jacob-opening__statement h2 {
+    grid-column: 1 / span 5;
+  }
+
+  .mn-jacob-opening__statement > p {
+    grid-column: 5 / span 4;
+    margin-top: var(--mn-space-6);
+  }
+
+  .mn-jacob-opening__statement .mn-external-project-link {
+    grid-column: 5 / span 4;
+  }
+
+  .mn-jacob-product-evidence {
+    grid-template-columns: minmax(0, 2.2fr) minmax(13rem, 0.8fr);
+    align-items: start;
+  }
+
+  .mn-jacob-product-evidence__responsive {
+    grid-template-columns: 1fr;
+  }
+
+  .mn-jacob-source-field,
+  .mn-jacob-comparison__grid,
+  .mn-jacob-state-boundary__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mn-jacob-source-field > div:first-child {
+    padding-right: var(--mn-space-6);
+    border-right: 1px solid var(--jacob-line);
+  }
+
+  .mn-jacob-source-field > div:last-child {
+    padding-left: var(--mn-space-6);
+  }
+
+  .mn-jacob-architecture-model__current > ol > li {
+    grid-template-columns: minmax(12rem, 0.8fr) minmax(14rem, 1fr) minmax(0, 1.25fr);
+    align-items: start;
+  }
+
+  .mn-jacob-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mn-jacob-detail-grid figure:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 68.75rem) {
+  .mn-jacob-opening__statement {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .mn-jacob-opening__statement h2 {
+    grid-column: 1 / span 7;
+  }
+
+  .mn-jacob-opening__statement > p,
+  .mn-jacob-opening__statement .mn-external-project-link {
+    grid-column: 9 / span 4;
+  }
+
+  .mn-jacob-architecture-model {
+    grid-template-columns: minmax(0, 2.15fr) minmax(18rem, 0.85fr);
+    align-items: start;
+  }
+
+  .mn-jacob-architecture-model__future {
+    position: sticky;
+    top: 7rem;
+  }
+
+  .mn-jacob-evidence-ledger > li {
+    grid-template-columns: 3rem minmax(0, 1fr) auto;
+    align-items: center;
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .mn-home-arrival-title h1 {
+    max-width: 9ch;
+    font-size: clamp(3.5rem, 16vw, 5.5rem);
+  }
+
+  .mn-systems-continuation > span {
+    line-height: 1.7;
+    white-space: normal;
+  }
+
+  .mn-nexus-entry {
+    min-height: 5.25rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-block: 1rem;
+    white-space: normal;
+  }
+
+  .mn-nexus-entry i {
+    width: 1.2rem;
+    margin-top: 0.4rem;
+  }
+
+  .mn-nexus-peak-core--strategy {
+    top: 13%;
+  }
+
+  .mn-nexus-peak-core--experience {
+    top: 13%;
+  }
+
+  .mn-nexus-peak-core--systems {
+    right: auto;
+    bottom: 13%;
+    left: var(--mn-gutter);
+    text-align: left;
+  }
+
+  .mn-nexus-peak-core--intelligence {
+    right: var(--mn-gutter);
+    bottom: 13%;
+    left: auto;
+    text-align: right;
+  }
+
+  .mn-nexus-peak-outcome {
+    bottom: 3%;
+    left: 50%;
+    max-width: 14rem;
+    transform: translateX(-50%);
+  }
+
+  .mn-nexus-peak-outcome strong {
+    display: none;
+  }
+
+  .mn-nexus-release-core {
+    display: grid;
+    width: min(19rem, calc(100% - (var(--mn-gutter) * 2)));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem 2rem;
+    text-align: center;
+    white-space: normal;
+  }
+
+  [data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__copy {
+    width: 100%;
+    justify-content: flex-end;
+    padding: 2rem;
+  }
+
+  [data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__proof::after {
+    background: linear-gradient(180deg, transparent 20%, rgb(5 7 8 / 92%) 76%);
+  }
+
+  [data-experience-profile="jacob-athlete-intelligence"] .mn-world-preview__copy h2 {
+    font-size: clamp(2.8rem, 14vw, 4.7rem);
+  }
+
+  .mn-jacob-opening .mn-jacob-opening__identity h1 {
+    font-size: clamp(4rem, 22vw, 6.5rem);
+    line-height: 0.8;
+  }
+
+  .mn-jacob-opening__statement h2 {
+    font-size: clamp(2.7rem, 13vw, 4.6rem);
+  }
+
+  .mn-jacob-product-evidence__responsive figcaption {
+    padding-inline: 0.55rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-experience-profile="jacob-athlete-intelligence"] *,
+  [data-experience-profile="jacob-athlete-intelligence"] *::before,
+  [data-experience-profile="jacob-athlete-intelligence"] *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
