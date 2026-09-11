@@ -2,7 +2,7 @@
 
 ## Status
 
-Implementation and local verification complete; immutable deployment candidate and Production promotion remain. The user-authored release brief dated 2026-09-10 is the controlling assignment and explicitly authorizes inspection, design, implementation, verification, commit, push, deployment, and deployed-result verification for this scope.
+Complete. Implementation source `dc432a6d859963229fa662ef858ca489f8581f54` was committed and pushed as `feat: publish intelligence positioning and Jacob record`, pushed on `codex/intelligence-jacob-og-release`, deployed as immutable Vercel deployment `dpl_D7ckiKngdbxydCcjMhJSayDjgZRg`, verified before promotion, promoted, and verified at `https://www.marinernexus.com` on 2026-09-11. The user-authored release brief dated 2026-09-10 is the controlling assignment and explicitly authorized inspection, design, implementation, verification, commit, push, deployment, and deployed-result verification for this scope.
 
 ## Mission
 
@@ -92,6 +92,16 @@ The brief supplies the strategic and publication authorization required to imple
 - Representative Safari review used one desktop window; the complete mobile/tablet width matrix ran in Chromium. No browser-specific visual or interaction defect was observed.
 - No field performance data is available before release. Production verification uses the immutable candidate and public alias, with ongoing observability remaining governed by DEC-045.
 
+## Production release record
+
+- Git: implementation commit `dc432a6d859963229fa662ef858ca489f8581f54` was pushed to `origin/codex/intelligence-jacob-og-release`; the local and upstream branch tips matched before deployment.
+- Candidate: Vercel created READY Production-environment deployment `dpl_D7ckiKngdbxydCcjMhJSayDjgZRg` at `https://mariner-nexus-qu09mb7i0-garymariner-7562s-projects.vercel.app` with `releaseCommit` and `githubCommitSha` both set to the full implementation SHA. The candidate remained off the public custom domain during verification.
+- Candidate certification: all 14 canonical routes, sitemap, robots, and four OpenGraph endpoints returned 200; unknown page and unknown OpenGraph routes returned 404. Exact Home, Capabilities, Work, and Jacob title, description, canonical, OpenGraph, Twitter, image dimensions, alt text, and JSON-LD types passed. The four cards were valid 1200 × 630 PNGs, visual rendering passed, and Vercel error logs were empty.
+- Promotion: the exact certified deployment was promoted on 2026-09-11. `https://www.marinernexus.com` resolves to `dpl_D7ckiKngdbxydCcjMhJSayDjgZRg`; `https://marinernexus.com` returns 307 to the canonical `www` origin.
+- Production certification: the complete route and expected-404 matrix passed again, and all 14 HTML routes identified deployment `dpl_D7ckiKngdbxydCcjMhJSayDjgZRg`. Public metadata contains no candidate or `vercel.app` leakage. Production OpenGraph files byte-match the certified candidate, sitemap contains 14 unique canonical URLs including Jacob, robots references the canonical sitemap, and Vercel reports zero warning, error, fatal, 4xx, or 5xx runtime-log events from the release checks.
+- Independent browser certification: Safari 26.6.2 at 1080 × 768 rendered Home, Capabilities, Work, and the full Jacob record cleanly. The expanded Capabilities model exposed Input → Structure → Context → Intelligence → Action, all Jacob product captures loaded, and the final Jacob CTA opened the 200-response live product in a new tab. The Vercel build emitted one non-blocking npm `allowScripts` notice for `unrs-resolver@1.11.1`; compilation, TypeScript, 28/28 static generation, deployment readiness, and runtime checks all passed.
+- Rollback: immediate pre-release rollback is immutable deployment `dpl_EGjSRmSBdDyTPLzwFfxA1pdDJfpe`, source `106768f7318932a879bb8c6bc04378d621b9a4ab`; older known-stable fallback remains `dpl_3f14kF1yWzYcM79LrLrFmQJt8tFq`.
+
 ## Stop condition
 
-Stop only when the scoped implementation is committed and pushed; a matching Vercel artifact is READY; production routes and metadata are verified if promotion succeeds; rollback remains identified; and the executive release report records validation, performance implications, deviations, deployment identifiers, and legitimate remaining risks.
+Satisfied on 2026-09-11: the scoped implementation is committed and pushed; the matching Vercel artifact is READY and promoted; candidate and Production routes, metadata, images, schema, redirects, and logs are verified; rollback is identified; and the executive release report can record validation, performance implications, deviations, deployment identifiers, and legitimate remaining risks.
